@@ -15,8 +15,8 @@
 		</style>
 {%if done %}
     <script type="text/javascript">
-			window.opener.document.images.avatar.src = "{{ avatar.get_absolute_url }}";
      	window.close();
+			window.opener.document.images.avatar.src = "{{ avatar.get_absolute_url }}";
     </script>
 {% else %}
 {% if avatar %}
