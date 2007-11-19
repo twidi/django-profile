@@ -1,0 +1,1 @@
+Successfully registered on {{ site }}

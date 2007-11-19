@@ -1,0 +1,4 @@
+* Incorporate the new version of Jquery UI DatePicker.
+* Integrate OpenID authentication.
+* Reverse geopositioning.
+* Internacionalization.

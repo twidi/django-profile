@@ -1,0 +1,616 @@
+/*** COMMON ***/
+body {
+	min-width: 920px;
+  font-family: tahoma;
+  font-size: .9em;
+	margin: 0px;
+  padding: 0px;
+	width: 100%;
+}
+
+html {
+	margin: 0px;
+  background-color: white;
+}
+
+a {
+  text-decoration: none;
+}
+
+.avatarform {
+	margin: 0px;
+	padding: 0px;
+}
+
+.green {
+	margin: 0px; 
+	padding: 5px; 
+	background: #2caf3f;
+	font-weight: bold;
+	color: white;
+}
+
+div.parent {
+	padding-bottom: 20px;
+	position: relative;
+}
+
+div.child {
+  width: 100px;
+  height: 100px;
+  cursor: move;
+}
+
+/* This file skins resizables */
+
+.ui-resizable { position: relative; }
+
+/* Global handle styles */
+.ui-resizable-handle { position: absolute; display: none; font-size: 0.1px; }
+.ui-resizable .ui-resizable-handle { display: block; }
+body .ui-resizable-disabled .ui-resizable-handle { display: none; } /* use 'body' to make it more specific (css order) */
+body .ui-resizable-autohide .ui-resizable-handle { display: none; } /* use 'body' to make it more specific (css order) */
+.ui-resizable-se { cursor: se-resize; width: 8px; height: 8px; right: 0px; bottom: 0px; background: red;  }
+.ui-resizable-sw { cursor: sw-resize; width: 8px; height: 8px; left: 0px; bottom: 0px; background: red;  }
+.ui-resizable-nw { cursor: nw-resize; width: 8px; height: 8px; left: 0px; top: 0px; background: red;  }
+.ui-resizable-ne { cursor: ne-resize; width: 8px; height: 8px; right: 0px; top: 0px; background: red; }
+
+ul.errorlist, ul.errorlist li {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+}
+
+a:hover {
+	color: black;
+	text-decoration: underline;
+}
+
+/**** HEADER ****/
+div#header {
+	overflow: hidden;
+	padding: 0.4%;
+	margin: 0px;
+  width: 99.2%; background: #EFEFEF;
+	border-bottom: 1px solid #CCC;
+}
+
+div.top {
+  font-size: .9em;
+  overflow: hidden;
+	background: #515151;
+}
+
+ul#mainmenu {
+  float: right;
+	list-style: none;
+	margin: 0px;
+	padding: 4px 0px;
+}
+
+ul#mainmenu li {
+	display: inline;
+	text-align: center;
+	padding: 0px 15px;
+  border-right: 2px solid white;
+}
+
+ul#mainmenu li.last {
+  border-right: 0px;
+}
+
+ul#mainmenu a {
+	color: white;
+}
+
+ul#mainmenu a:hover {
+	color: yellow;
+}
+
+form#globalsearch input {
+	background: white;
+	font-size: 12px;
+  width: 170px;
+	border: 1px solid black;
+  margin: 3px 5px 0px 3px;
+	font-weight: bold;
+	color: #3D3D3D;
+  padding-left: 10px;
+}
+
+form#globalsearch {
+	margin: 0px;
+}
+
+div#userbar {
+  margin: 0px;
+  padding: 0px;
+	overflow: hidden;
+}
+
+a.logo { 
+  font-size: 24px; 
+  text-align: left;
+	padding-left: 32px;
+  font-weight: bold; 
+  background: #4D93C1;
+  line-height: 32px;
+  color: white; 
+  display: block;
+}
+
+a.logo:hover {
+	text-decoration: none;
+}
+
+div#usermenu ul {
+	list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+div#usermenu li {
+	padding: 0px;
+	margin: 0px;
+	text-align: center;
+	line-height: 16px;
+	width: 12.5%;
+	display: inline;
+	float: left;
+}
+
+div#usermenu a:hover {
+	background: #515151;
+}
+
+div#usermenu a {
+  display: block;
+	font-size: 12px;
+	color: white;
+	font-weight: bold;
+	padding: 2px;
+	background: #777777;
+}
+
+div#citybar ul {
+	font-size: 18px;
+	list-style: none;
+}
+
+div#citybar li {
+	padding: 0px 5px;
+}
+
+.right {
+	float: right;
+}
+
+.left {
+	float: left;
+}
+
+/*** BODY ***/
+
+div#content {
+	clear: both;
+	min-height: 360px;
+  background: white;
+	padding: 0px 3%;
+}
+
+#leftbar {
+	float: left;
+	width: 40%;
+	font-weight: bold;
+}
+
+#leftbar ul {
+	padding: 0px;
+	margin: 10px 0px;
+	width: 90%;
+  list-style: none;
+  font-size: 16px;
+}
+
+#leftbar li {
+	line-height: 18px;
+	margin-top: 10px;
+  padding-top: 10px;
+	border-bottom: 1px solid;
+}
+
+#leftbar a {
+	color: black;
+	text-decoration: none;
+}
+
+#leftbar a:hover {
+	color: #CCC;
+}
+
+#leftbar span {
+	font-size: 10px;
+	font-weight: normal;
+}
+
+.rightbar {
+  float: right;
+  width: 35%;
+}
+
+.rightbar ul {
+  padding: 0px;
+  margin: 10px 0px;
+  width: 100%;
+  list-style: none;
+  font-size: 16px;
+}
+
+.rightbar li {
+  line-height: 18px;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-bottom: 1px solid;
+}
+
+.rightbar a {
+  color: black;
+  text-decoration: none;
+}
+
+.rightbar a:hover {
+  color: #CCC;
+}
+
+.rightbar span {
+  font-size: 10px;
+  font-weight: normal;
+}
+
+.helpbox {
+	float: right;
+	width: 240px;
+  background: white;
+	padding: 10px;
+  border: 2px dotted;
+}
+
+#searchAddress {
+	font-size: 14px;
+	padding: 4px 8px;
+}
+
+#citysearch h2 {
+  margin: 0px;
+  color: white;
+}
+
+#right {
+	padding-top: 40px;
+  margin-left: 30.5%;
+}
+
+#citysearch {
+	background: pink;
+  padding: 10px;
+  overflow: hidden;
+}
+
+#gender a {
+	color: black;
+	float: left;
+	width: 80px;
+	border: 1px solid #CCC;
+	font-size: 16px;
+	padding: 0px;
+	padding-left: 30px;
+	margin-right: 5px;
+	display: block;
+	line-height: 28px;
+}
+
+#gender a.male {
+	background: url(/site_media/images/male.png) no-repeat #E6E6E6;
+}
+
+#gender a.female {
+	background: url(/site_media/images/female.png) no-repeat #E6E6E6;
+}
+
+#citysearch input[type=text] {
+	width: 200px;
+  font-size: 16px;
+}
+
+#citysearch input[type=button] {
+  font-size: 16px;
+}
+
+
+/*** PAGINATION ***/
+.paginator { padding: .25em .25em .6em .25em; }
+.paginate-pages { padding: 2px 3px; border: 1px solid #ddd; cursor: pointer; text-decoration: underline; }
+.paginate-first, .paginate-last { padding: 2px 6px; border: 1px solid #ddd; font-weight: bold; }
+.paginate-previous, .paginate-next { padding: 2px 3px; border: 1px solid #ddd; }
+.paginate-link { padding: 2px 4px; border: 1px solid #ddd; }
+.paginate-current { padding: 2px 4px; border: 1px solid #ddd; font-weight: bold; background:#417690; color:#f4f379; }
+
+div.item_odd {
+  background: #E6E6E6;
+}
+
+li.odd {
+  background: #E6E6E6;
+}
+
+div#jmap {
+	float: left;
+	width: 400px;
+	height: 180px;
+}
+
+/***** Footer *****/
+
+#footer {
+	margin: 0px 1%;
+  padding: 4px 0px;
+  width: 98%;
+  clear: both;
+	background: #515151;
+	overflow: hidden;
+}
+
+#footer dl {
+	float: left;
+	margin: 10px 0 0 0;
+	padding: 1px 0;
+	width: 15%;
+	border-right: 1px solid #ddd;
+	min-height: 90px;
+}
+
+div#log {
+  margin: 0px 5px;
+  padding: 5px;
+  background: #EAEAEA;
+}
+
+#footer dd {
+	margin: 0;
+	padding: 0px 10px;
+	font-size: 90%;
+}
+
+#footer dd a {
+	font: 85% tahoma, sans-serif;
+	text-decoration: none;
+	padding-bottom: 1px;
+  color: white;
+}
+
+#footer dt {
+	font-size: 105%;
+	font-weight: bold;
+	padding: 0px 0px 5px 5px;
+  color: #CCC;
+}
+
+div.voting {
+	border: 1px solid red;
+	overflow: hidden;
+	float: right; 
+	font-size: 20px;
+	background: #f4ee76;
+	text-align: center;
+  margin: 5px;
+	width: 40px;
+	height: 45px;
+}
+
+/**** FORMS ****/
+
+form.userdata {
+	margin-top: 10px;
+	overflow: hidden;
+}
+
+.userdata fieldset {
+	padding: 20px;
+	border: 2px dotted;
+}
+
+.biglabel label {
+	width: 200px;
+}
+
+.rightmsg {
+	margin-left: 5%;
+  width: 40%; 
+  padding: 10px; 
+  float: right; 
+  border: 2px dotted; 
+  float: right;
+}
+
+.errmsg {
+	margin-top: 15px;
+	font-size: 14px;
+	font-weight: bold;
+	padding: 5px;
+	text-align: center;
+	color: white;
+	background: red;
+}
+
+label {
+	width: 120px;
+	padding-right: 8px;
+  font-size: 16px;
+	line-height: 28px;
+  text-align: right;
+  float: left;
+	color:#666;
+  margin-bottom: 5px;
+  margin-right: 5px;
+	display: block;
+	clear: left;
+}
+
+p {
+  margin: 0px;
+  padding: 0px;
+  margin-bottom: 5px;
+}
+
+br {
+	clear: left;
+}
+
+.right {
+  float: right;
+}
+
+.box {
+	padding: 5px;
+	text-align: center;
+	overflow: hidden;
+}
+
+.box p.title {
+	font-weight: bold;
+}
+
+img {
+  border: 0px;
+}
+
+
+.userdata input[type=password],.userdata input[type=text] {
+	float: left;
+	width: 240px;
+	padding: 4px;
+	background-color: #EFEFEF;
+  border: 1px solid #CCC;
+  font-size: 16px;
+  padding-left: 8px;
+	margin-bottom: 5px;
+	margin-right: 5px;
+	display: block;
+	overflow: auto;
+}
+
+.newselect select {
+	font-size: 16px;
+	padding: 3px;
+	border: 1px solid #CCC;
+	background-color: #EFEFEF;
+}
+
+.userdata textarea {
+	float: left;
+	padding: 4px;
+	background-color: #EFEFEF;
+  border: 1px solid #CCC;
+  font-size: 16px;
+  padding-left: 8px;
+	margin-bottom: 5px;
+	width: 400px;
+	margin-right: 5px;
+	display: block;
+	overflow: auto;
+}
+
+input.openid {
+	float: left;
+	margin-left: 5px;
+  background: url(/openid/logo) no-repeat;
+  background-position: 5px 50%;
+  border: 1px solid;
+  font-size: 16px;
+  width: 250px;
+  padding: 5px 25px;
+}
+
+.message {
+  font-size: 14px;
+  font-weight: bold;
+  float: left;
+	color: red;
+  padding: 8px 8px;
+}
+
+.ac_results {
+	padding: 0px;
+	border: 1px solid WindowFrame;
+	background-color: Window;
+	overflow: hidden;
+}
+
+.ac_results ul {
+	width: 100%;
+	list-style-position: outside;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.ac_results li {
+	margin: 0px;
+	padding: 2px 5px;
+	cursor: default;
+	display: block;
+	width: 100%;
+	font: menu;
+	font-size: 12px;
+	overflow: hidden;
+}
+
+.ac_loading {
+	background : Window url('/site_media/images/indicator.gif') right center no-repeat;
+}
+
+.ac_over {
+	background-color: Highlight;
+	color: HighlightText;
+}
+
+/* jqModal base Styling courtesy of;
+  	Brice Burgess <bhb@iceburg.net> */
+
+/* The Window's CSS z-index value is respected (takes priority). If none is supplied,
+  	the Window's z-index value will be set to 3000 by default (in jqModal.js). You
+ 		can change this value by either;
+ 		  a) supplying one via CSS
+   	  b) passing the "zIndex" parameter. E.g.  (window).jqm({zIndex: 500}); */
+	
+.jqmWindow {
+    display: none;
+    
+    position: fixed;
+    top: 17%;
+    left: 50%;
+    
+    margin-left: -300px;
+    width: 600px;
+    
+    background-color: #EEE;
+    color: #333;
+    border: 1px solid black;
+    padding: 12px;
+}
+
+.jqmOverlay { background-color: #000; }
+
+/* Background iframe styling for IE6. Prevents ActiveX bleed-through (<select> form elements, etc.) */
+ iframe.jqm {position:absolute;top:0;left:0;z-index:-1;
+ 	width: expression(this.parentNode.offsetWidth+'px');
+	height: expression(this.parentNode.offsetHeight+'px');
+}
+
+/* Fixed posistioning emulation for IE6
+     Star selector used to hide definition from browsers other than IE6
+     For valid CSS, use a conditional include instead */
+html .jqmWindow {
+      position: absolute;
+      top: expression((document.documentElement.scrollTop || document.body.scrollTop) + Math.round(17 * (document.documentElement.offsetHeight || document.body.clientHeight) / 100) + 'px');
+}

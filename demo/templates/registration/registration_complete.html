@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block title %}Registration complete{% endblock %}
+{% load i18n %}
+{% block content %}
+<h1>Registration complete</h1>
+<p>An activation link has been sent to the email address you supplied, along with instructions for activating your account.</p>
+<p><a href="/accounts/profile">{% trans "Return to my profile" %}</a></p>
+{% endblock %}

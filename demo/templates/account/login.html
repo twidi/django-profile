@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}Log in{% endblock %}
+
+{% block customjs %}
+<script type="text/javascript" src="/site_media/js/jquery.login.js"></script>
+{% endblock %}
+
+{% block content %}
+<h1>{% trans "User login" %}</h1>
+<div class="rightmsg">If you don't have an account, you can <a style="font-size: 18px;" href="/accounts/register/">sign up</a> for one; it's free, and you'll get access to a bunch of nifty features.</div>
+<form id="login" class="userdata" method="post" action="{% if next %}?next={{ next }}{% endif %}">
+	<fieldset>
+    <label for="username" id="username">{% trans "Username:" %}</label>
+    {{ form.username }}
+    <label for="password" id="password">{% trans "Password:" %}</label>
+    {{ form.password }}
+    <p style="clear: left; margin-left: 145px;"><a href="/accounts/password/reset">Have you lost your password?</a></p>
+    <input type="submit" value="{% trans 'Login' %}" />
+  </fieldset>
+  {% if form.has_errors %}
+  <div class="errmsg">
+    <p>Your username and password didn't match. Please try again.</p>
+  </div>
+	{% endif %}
+</form>
+{% endblock %}
+

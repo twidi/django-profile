@@ -1,0 +1,8 @@
+========================
+django-profile Changelog
+========================
+
+Version 0.1, 19 Nov 2007
+------------------------
+
+* First released version
