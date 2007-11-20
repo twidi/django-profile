@@ -44,11 +44,10 @@
     {{ form.firstname }}
     <label for="id_surname">{% trans "Surname:" %}</label>
     {{ form.surname }}
-    <div id="photmsg" class="message">
-    {% if form.photo.errors %}{{ form.photo.errors|join:", " }}{% endif %}
-    </div>
+	<div>
     <label for="id_gender">{% trans "Gender:" %}</label>
 		<div id="gender"><a class="male" href="">{% trans "Male" %}</a><a class="female" href="">{% trans "Female" %}</a></div>
+	</div>
     <br />
 		<div class="newselect">
     	<label for="id_country">{% trans "Country:" %}</label>

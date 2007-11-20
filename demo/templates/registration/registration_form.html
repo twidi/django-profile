@@ -9,21 +9,28 @@
 <p>{% trans "If you don't have an account, you can sign up for one; it's free, and you'll get access to a bunch of nifty features." %}</p>
 <form class="userdata biglabel" id="registration" method="post" action="">
 	<fieldset>
+	<div style="overflow: hidden; margin-bottom: 5px;">
    	<label for="id_username">{% trans "Username:" %}</label>
    	{{ form.username }}
    	<div id="usermsg" class="message">
 		{% if form.username.errors %}{{ form.username.errors|join:", " }}{% endif %}
 		</div>
+	</div>
+	<div style="overflow: hidden; margin-bottom: 5px;">
    	<label for="id_email">{% trans "Email address:" %}</label>
    	{{ form.email }}
    	<div id="emailmsg" class="message">
 		{% if form.email.errors %}{{ form.email.errors|join:", " }}{% endif %}
 		</div>
+	</div>
+	<div style="overflow: hidden; margin-bottom: 5px;">
    	<label for="id_password1">{% trans "Password:" %}</label>
    	{{ form.password1 }}
    	<div id="passmsg1" class="message">
 		{% if form.password1.errors %}{{ form.password1.errors|join:", " }}{% endif %}
 		</div>
+	</div>
+	<div style="overflow: hidden; margin-bottom: 5px;">
    	<label for="id_password2">{% trans "Password again:" %}</label>
    	{{ form.password2 }}
    	<div id="passmsg2" class="message">
@@ -31,6 +38,7 @@
 		</div>
 		<input type="hidden" name="tos" value="1" />
 		<br />
+	</div>
    	<input type="submit" value="{% trans 'Register' %}" />
 	</fieldset>
 </form> 
