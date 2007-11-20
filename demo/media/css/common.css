@@ -26,6 +26,14 @@ a {
 	margin: 10px;
 }
 
+.usercard .username {
+	font-weight: bold;
+	background: #CCC;
+	width: 130px;
+	padding: 3px;
+	color: white;
+}
+
 .usercard ul {
 	margin: 0px;
   border: 0px;

@@ -71,25 +71,19 @@ def reset_password(request, template):
     if request.method == 'POST':
         form = PasswordResetForm(request.POST)
         if form.is_valid():
-
-            try:
-                user = User.objects.get(email=email)
-            except:
-                raise forms.ValidationError("There's a problem with your e-mail")
+            email = form.cleaned_data.get('email')
+            user = User.objects.get(email=email)
 
             if email and user:
                 from django.core.mail import send_mail
                 LostPassword.objects.filter(user=user).delete()
-                pwd = LostPassword.objects.create(user=user, key=new_key())
+                pwd = LostPassword.objects.create(user=user, key=email_new_key())
                 site = Site.objects.get_current()
                 site_name = site.name
                 t = loader.get_template('account/password_reset_email.txt')
                 message = 'http://%s/accounts/password/change/%s/' % (site_name, pwd.key)
                 send_mail('Password reset on %s' % site.name, t.render(Context(locals())), None, [user.email])
                 return HttpResponseRedirect('%sdone/' % request.path)
-
-            else:
-                raise forms.ValidationError("Mail does not exists.")
 
     else:
         form = PasswordResetForm()

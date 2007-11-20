@@ -1,6 +1,7 @@
 from django import newforms as forms
 from django.contrib.auth.models import User
 from django.contrib.sites.models import Site
+from django.utils.translation import ugettext as _
 from models import LostPassword, EmailValidate
 from django.template import Context, loader
 
@@ -28,9 +29,14 @@ class PasswordResetForm(forms.Form):
 
     def clean_email(self):
         """
-        Verify that the email exists
+        Verify that the email and the user exists
         """
         email = self.cleaned_data.get("email")
+        try:
+            User.objects.get(email=email)
+        except:
+            raise forms.ValidationError(_("There's no user with that e-mail"))
+
         return email
 
 class changePasswordKeyForm(forms.Form):
@@ -45,7 +51,7 @@ class changePasswordKeyForm(forms.Form):
         if self.cleaned_data.get("newpass1") and self.cleaned_data.get("newpass1") == self.cleaned_data.get("newpass2"):
             return self.cleaned_data.get("newpass2")
         else:
-            raise forms.ValidationError("The passwords inserted are different.")
+            raise forms.ValidationError(_("The passwords inserted are different."))
 
     def save(self, key):
         "Saves the new password."
@@ -67,7 +73,7 @@ class changePasswordAuthForm(forms.Form):
         if self.cleaned_data.get("newpass1") and self.cleaned_data.get("newpass1") == self.cleaned_data.get("newpass2"):
             return self.cleaned_data.get("newpass2")
         else:
-            raise forms.ValidationError("The passwords inserted are different.")
+            raise forms.ValidationError(_("The passwords inserted are different."))
 
     def save(self, user):
         "Saves the new password."

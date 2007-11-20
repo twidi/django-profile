@@ -4,9 +4,11 @@ from profile.models import Profile
 from django.contrib.auth import views
 from settings import APIKEY
 
+profiles = Profile.objects.all()
+
 urlpatterns = patterns('',
     #(r'^$', redirect_to, {'url': '/accounts/profile/' }),
-    (r'^$', direct_to_template, {'template': 'front.html', 'extra_context': { 'profiles': Profile.objects.all() } }),
+    (r'^$', direct_to_template, {'template': 'front.html', 'extra_context': { 'profiles': profiles } }),
 
     # Private profile
     (r'^accounts/profile/$', 'profile.views.private', {'APIKEY': APIKEY, 'template': 'profile/private.html'}),
