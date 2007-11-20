@@ -44,6 +44,6 @@ urlpatterns = patterns('',
     url(r'^accounts/register/complete/$', direct_to_template, {'template': 'registration/registration_complete.html'}),
 
     # Admin
-    #(r'^admin/', include('django.contrib.admin.urls')),
+    (r'^admin/', include('django.contrib.admin.urls')),
 
 )
