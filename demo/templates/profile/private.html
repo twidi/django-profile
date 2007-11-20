@@ -39,7 +39,7 @@
     <label for="id_username">{% trans "Username:" %}</label>
     <p style="line-height: 29px;"><span style="font-size: 16px; font-weight: bold;">{{ user }}</span> <a href="/accounts/password/change">{% trans "(Change password)" %}</a></p>
     <label for="id_email">{% trans "E-mail:" %}</label>
-    <p style="line-height: 29px;"><span style="font-size: 16px; font-weight: bold;">{%if not validated %}{% trans "New e-mail validation in process" %}{% else %}{{ email }}{% endif %}</span> (<a href="/accounts/email/change">{% trans "change" %}</a>)</p>
+    <p style="line-height: 29px;"><span style="font-size: 16px; font-weight: bold;">{%if not email %}{% trans "Not set yet" %}{% else %}{{ email }}{% endif %}</span> (<a href="/accounts/email/change">{% trans "change" %}</a>)</p>
     <label for="id_firstname">{% trans "First Name:" %}</label>
     {{ form.firstname }}
     <label for="id_surname">{% trans "Surname:" %}</label>

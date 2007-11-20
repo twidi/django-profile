@@ -4,9 +4,12 @@ from django.contrib.auth import views
 
 # Google maps API key, needed to use the Google Maps interface
 APIKEY="ABQIAAAA06IJoYHDPFMx4u3hTtaghxTU2QkCNWGFpwxhhQnHf-7Pc6f1lBTQWFSuWvEBhZGiAbR5wPO0DLqoOw"
+APIKEY="ABQIAAAA06IJoYHDPFMx4u3hTtaghxS1mGAeXhF8eEwoOC3WUqD9xSVHbhT_wvgbriWemZzoPwFT5-HqnLJ9-A"
 
 urlpatterns = patterns('',
-    (r'^$', redirect_to, {'url': '/accounts/profile/' }),
+    #(r'^$', redirect_to, {'url': '/accounts/profile/' }),
+    (r'^$', direct_to_template, {'template': 'front.html'}),
+
     # Private profile
     (r'^accounts/profile/$', 'profile.views.private', {'APIKEY': APIKEY, 'template': 'profile/private.html'}),
     (r'^accounts/profile/delete/$', 'profile.views.delete', {'template': 'profile/delete_confirm.html'}),

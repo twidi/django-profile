@@ -2,3 +2,5 @@
 * Integrate OpenID authentication.
 * Reverse geopositioning.
 * Internacionalization.
+* E-mail not detected as SPAM in Gmail.
+* Improve the country list.

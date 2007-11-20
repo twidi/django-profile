@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}Log in{% endblock %}
+
+{% block customjs %}
+<script type="text/javascript" src="/site_media/js/jquery.login.js"></script>
+{% endblock %}
+
+{% block content %}
+<h1>{% trans "People who have already tried this demo" %}</h1>
+<div class="rightmsg">If you don't have an account, you can <a style="font-size: 18px;" href="/accounts/register/">sign up</a> for one; it's free, and you'll get access to a bunch of nifty features.</div>
+<div style="border: 2px dotted; width: 55%; min-height: 50px;">
+</div>
+{% endblock %}
+

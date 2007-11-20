@@ -13,11 +13,16 @@
 <body>
 <div id="content">
 <div style="float: right;">
-  {% if user.is_authenticated %}
-  	<a href="/accounts/logout">{% trans "Logout" %}</a>
-	{% else %}
-  	<a href="/accounts/profile">{% trans "Login" %}</a>
-  {% endif %}
+	<ul>
+		<li style="display: inline;"><a href="/">{% trans "Frontpage" %}</a> | </li>
+  	{% if user.is_authenticated %}
+		<li style="display: inline;"><a href="/accounts/profile">{% trans "Profile" %}</a> | </li>
+   	<li style="display: inline;"><a href="/accounts/logout">{% trans "Logout" %}</a></li>
+		{% else %} 
+		<li style="display: inline;"><a href="/accounts/profile">{% trans "Login" %}</a></li>
+  	{% endif %}
+		</li>
+  </ul>
 </div>
 {% block content %}{% endblock %}
 </div>
