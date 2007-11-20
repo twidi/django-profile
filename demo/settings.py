@@ -4,6 +4,9 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 ACCOUNT_ACTIVATION_DAYS = 4
 
+# Google maps API key, needed to use the Google Maps interface
+APIKEY="ABQIAAAA06IJoYHDPFMx4u3hTtaghxSXii2MTQlH08211N69IoqDn0RDwxSg93HhPES135ZCuIAWoRbldN9vaA"
+
 ADMINS = (
     # ('Your Name', 'your_email@domain.com'),
 )

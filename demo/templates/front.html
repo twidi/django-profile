@@ -8,8 +8,14 @@
 
 {% block content %}
 <h1>{% trans "People who have already tried this demo" %}</h1>
-<div class="rightmsg">If you don't have an account, you can <a style="font-size: 18px;" href="/accounts/register/">sign up</a> for one; it's free, and you'll get access to a bunch of nifty features.</div>
-<div style="border: 2px dotted; width: 55%; min-height: 50px;">
+<div class="rightmsg">If you don't have an account, you can <a style="font-size: 18px;" href="/accounts/register/">sign up</a> for one; it's free, and you could try this demo and publish your usercard.</div>
+<div style="border: 3px dotted; width: 55%; overflow: hidden;">
+
+{% autoescape off %}
+{% for profile in profiles %}
+  {{ profile.htmlprint }}
+{% endfor %}
+{% endautoescape %}
 </div>
 {% endblock %}
 

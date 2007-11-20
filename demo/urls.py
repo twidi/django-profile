@@ -1,14 +1,12 @@
 from django.conf.urls.defaults import *
 from django.views.generic.simple import redirect_to, direct_to_template
+from profile.models import Profile
 from django.contrib.auth import views
-
-# Google maps API key, needed to use the Google Maps interface
-APIKEY="ABQIAAAA06IJoYHDPFMx4u3hTtaghxTU2QkCNWGFpwxhhQnHf-7Pc6f1lBTQWFSuWvEBhZGiAbR5wPO0DLqoOw"
-APIKEY="ABQIAAAA06IJoYHDPFMx4u3hTtaghxS1mGAeXhF8eEwoOC3WUqD9xSVHbhT_wvgbriWemZzoPwFT5-HqnLJ9-A"
+from settings import APIKEY
 
 urlpatterns = patterns('',
     #(r'^$', redirect_to, {'url': '/accounts/profile/' }),
-    (r'^$', direct_to_template, {'template': 'front.html'}),
+    (r'^$', direct_to_template, {'template': 'front.html', 'extra_context': { 'profiles': Profile.objects.all() } }),
 
     # Private profile
     (r'^accounts/profile/$', 'profile.views.private', {'APIKEY': APIKEY, 'template': 'profile/private.html'}),
