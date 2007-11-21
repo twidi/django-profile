@@ -2,7 +2,7 @@
 django-profile Changelog
 ========================
 
-Version 0.1, 19 Nov 2007
+Version 0.001, 19 Nov 2007
 ------------------------
 
-* First released version
+* First version uploaded to repository

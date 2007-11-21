@@ -12,8 +12,11 @@ First of all, the requerimient to run this software is:
 		http://www.pythonware.com/products/pil/
 
 
-You can see a demo of which can be accomplished with this software following 
-these steps:
+You can see a demo of which can be accomplished here:
+
+	http://profile.coredump.es
+
+Or you can run this demo with this software package following these steps:
 
 * Make django visible in your python path. You could import the last version
 from the repository executing this command on this directory:
@@ -31,4 +34,4 @@ $ svn checkout http://django-registration.googlecode.com/svn/trunk/registration/
 	$ python manage.py runserver
 
 
-You can now connect to the django web server and see what can be done with this software.
+You can now connect to the django web server.
