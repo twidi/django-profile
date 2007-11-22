@@ -40,6 +40,12 @@
 				point = self.marker.getLatLng();
 				$("#id_latitude").val(point.lat().toFixed(6));
 				$("#id_longitude").val(point.lng().toFixed(6));
+				$.post("/getcountry_info/" + point.lat() + "/" +  point.lng() + "/", function(data) {
+					var data = $.parseJSON(data);
+					$("#id_country").val(data['country']);
+					$("#id_location").val(data['region']);
+         	$("#id_location").val('');
+				});
 			});
 			jmap.addOverlay(self.marker);
 			if (!settings.showmarker) { self.marker.hide(); }
@@ -70,6 +76,12 @@
 					self.marker.setLatLng(point);
 					$("#id_latitude").val(point.lat().toFixed(6));
 					$("#id_longitude").val(point.lng().toFixed(6));
+				  $.post("/getcountry_info/" + point.lat() + "/" +  point.lng() + "/", function(data) {
+          	var data = $.parseJSON(data);
+          	$("#id_country").val(data['country']);
+					  $("#id_location").val(data['region']);
+          	$("#id_location").val('');
+        	});
 				});
 			}
 			/* On document unload, clean unload Google API*/
@@ -99,6 +111,12 @@
  				self.marker.setLatLng(point);
 				$("#id_latitude").val(point.lat().toFixed(6));
 				$("#id_longitude").val(point.lng().toFixed(6));
+				$.post("/getcountry_info/" + point.lat() + "/" +  point.lng() + "/", function(data) {
+          var data = $.parseJSON(data);
+          $("#id_country").val(data['country']);
+					$("#id_location").val(data['region']);
+         	$("#id_location").val('');
+        });
 			}
 		});
 	}

@@ -2,6 +2,8 @@
 django-profile Changelog
 ========================
 
+* Changed to new version of ui.datepicker
+
 Version 0.001, 19 Nov 2007
 ------------------------
 

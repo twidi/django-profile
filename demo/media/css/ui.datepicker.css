@@ -1,159 +1,181 @@
-/* Main Style Sheet for jQuery Calendar */
-#calendar_div, .calendar_inline {
+/* Main Style Sheet for jQuery UI date picker */
+#datepicker_div, .datepicker_inline {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 14px;
 	padding: 0;
 	margin: 0;
 	background: #ddd;
-}
-#calendar_div {
-	display: none;
-	border: 1px solid #777;
-	z-index: 10; /*must have*/ 
-}
-#calendar_div, .calendar_control, .calendar_links, .calendar_header, .calendar {
 	width: 185px;
 }
-.calendar_inline {
+#datepicker_div {
+	display: none;
+	border: 1px solid #777;
+	z-index: 10; /*must have*/
+}
+.datepicker_inline {
 	float: left;
 	display: block;
 	border: 0;
 }
-.calendar_dialog {
+.datepicker_dialog {
 	padding: 5px !important;
 	border: 4px ridge #ddd !important;
 }
-button.calendar_trigger {
+button.datepicker_trigger {
 	width: 25px;
 }
-img.calendar_trigger {
+img.datepicker_trigger {
 	margin: 2px;
 	vertical-align: middle;
 }
-.calendar_prompt {
+.datepicker_prompt {
 	float: left;
-	width: 181px;
 	padding: 2px;
 	background: #ddd;
 	color: #000;
 }
-* html .calendar_prompt {
+* html .datepicker_prompt {
 	width: 185px;
 }
-.calendar_control, .calendar_links, .calendar_header, .calendar {
+.datepicker_control, .datepicker_links, .datepicker_header, .datepicker {
 	clear: both;
 	float: left;
+	width: 100%;
 	color: #fff;
 }
-.calendar_control {
+.datepicker_control {
 	background: #400;
+	padding: 2px 0px;
 }
-.calendar_links {
+.datepicker_links {
 	background: #000;
+	padding: 2px 0px;
 }
-.calendar_control, .calendar_links {
+.datepicker_control, .datepicker_links {
 	font-weight: bold;
 	font-size: 80%;
 	letter-spacing: 1px;
 }
-.calendar_links label { /* disabled links */
+.datepicker_links label { /* disabled links */
 	padding: 2px 5px;
 	color: #888;
 }
-.calendar_clear, .calendar_prev {
+.datepicker_clear, .datepicker_prev {
 	float: left;
+	width: 34%;
 }
-.calendar_current {
+.datepicker_current {
 	float: left;
-	width: 35%;
+	width: 30%;
 	text-align: center;
 }
-.calendar_close, .calendar_next {
+.datepicker_close, .datepicker_next {
 	float: right;
+	width: 34%;
+	text-align: right;
 }
-.calendar_header {
+.datepicker_header {
+	padding: 1px 0 3px;
 	background: #333;
 	text-align: center;
 	font-weight: bold;
+	height: 1.3em;
 }
-.calendar_header select {
+.datepicker_header select {
 	background: #333;
 	color: #fff;
 	border: 0px;
 	font-weight: bold;
 }
-.calendar {
+.datepicker {
 	background: #ccc;
 	text-align: center;
 	font-size: 100%;
 }
-.calendar a {
+.datepicker a {
 	display: block;
 	width: 100%;
 }
-.calendar .calendar_titleRow {
+.datepicker_titleRow {
 	background: #777;
 }
-.calendar .calendar_daysRow {
+.datepicker_daysRow {
 	background: #eee;
 	color: #666;
 }
-.calendar .calendar_daysCell {
+.datepicker_weekCol {
+	background: #777;
+	color: #fff;
+}
+.datepicker_daysCell {
 	color: #000;
 	border: 1px solid #ddd;
 }
-#calendar .calendar_daysCell a{
+.datepicker_daysCell a{
 	display: block;
 }
-.calendar .calendar_weekEndCell {
+.datepicker_weekEndCell {
 	background: #ddd;
 }
-.calendar .calendar_daysCellOver {
+.datepicker_daysCellOver {
 	background: #fff;
 	border: 1px solid #777;
 }
-.calendar .calendar_unselectable {
+.datepicker_unselectable {
 	color: #888;
 }
-.calendar_today {
+.datepicker_today {
 	background: #fcc !important;
 }
-.calendar_currentDay {
+.datepicker_currentDay {
 	background: #999 !important;
 }
 
-/* ________ CALENDAR LINKS _______
+/* ________ Datepicker Links _______
 
 ** Reset link properties and then override them with !important */
-#calendar_div a, .calendar_inline a {
+#datepicker_div a, .datepicker_inline a {
 	cursor: pointer;
 	margin: 0;
 	padding: 0;
 	background: none;
 	color: #000;
 }
-.calendar_inline .calendar_links a {
+.datepicker_inline .datepicker_links a {
 	padding: 0 5px !important;
 }
-.calendar_control a, .calendar_links a {
+.datepicker_control a, .datepicker_links a {
 	padding: 2px 5px !important;
 	color: #eee !important;
 }
-.calendar_titleRow a {
+.datepicker_titleRow a {
 	color: #eee !important;
 }
-.calendar_control a:hover {
+.datepicker_control a:hover {
 	background: #fdd !important;
 	color: #333 !important;
 }
-.calendar_links a:hover, .calendar_titleRow a:hover {
+.datepicker_links a:hover, .datepicker_titleRow a:hover {
 	background: #ddd !important;
 	color: #333 !important;
 }
 
+/* ___________ MULTIPLE MONTHS _________*/
+
+.datepicker_multi .datepicker {
+	border: 1px solid #777;
+}
+.datepicker_oneMonth {
+	float: left;
+	width: 185px;
+}
+.datepicker_newRow {
+	clear: left;
+}
+
 /* ___________ IE6 IFRAME FIX ________ */
 
-.calendar_cover {
+.datepicker_cover {
     display: none; /*sorry for IE5*/
     display/**/: block; /*sorry for IE5*/
     position: absolute; /*must have*/
@@ -161,6 +183,6 @@ img.calendar_trigger {
     filter: mask(); /*must have*/
     top: -4px; /*must have*/
     left: -4px; /*must have*/
-    width: 193px; /*must have to match width and borders*/
-    height: 200px; /*must have to match maximum height*/ 
+    width: 200px; /*must have*/
+    height: 200px; /*must have*/
 }

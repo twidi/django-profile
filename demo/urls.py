@@ -14,6 +14,7 @@ urlpatterns = patterns('',
     (r'^avatar/delete/$', 'profile.views.avatarDelete'),
     (r'^avatar/delete/(?P<avatar_id>[0-9]+)/$', 'profile.views.avatarDelete'),
     (r'^avatar/(?P<step>one|two)/$', 'profile.views.avatar', {'template': 'profile/avatar.html'}),
+    (r'^getcountry_info/(?P<lat>[0-9\.\-]+)/(?P<lng>[0-9\.\-]+)/$', 'profile.views.fetch_geodata'),
 
     # Public profile
     (r'^users/(?P<user>[^/]*)/$', 'profile.views.public', {'template': 'profile/public.html'}),
