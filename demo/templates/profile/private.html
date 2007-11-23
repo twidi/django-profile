@@ -78,7 +78,7 @@
     <p style="line-height: 29px;"><a style="font-size: 16px; font-weight: bold;" href="/accounts/profile/delete">{% trans "Delete all my personal information" %}</a></p>
 		</div>
     <br />
-    <div>{{ form.birthdate }}{{ form.latitude }}{{ form.longitude }}{{ form.gender }}</div>
+    <div style="display:none;">{{ form.birthdate }}{{ form.latitude }}{{ form.longitude }}{{ form.gender }}</div>
     <input type="submit" value="{% trans 'Save' %}" />
   </fieldset>
 </form>
