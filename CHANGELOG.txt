@@ -2,6 +2,7 @@
 django-profile Changelog
 ========================
 
+* Use of geonames.org webservice to obtain the Country and region when clicking on the Google Map.
 * Changed to new version of ui.datepicker
 
 Version 0.001, 19 Nov 2007

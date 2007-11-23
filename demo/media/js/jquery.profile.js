@@ -28,9 +28,13 @@ $(function(){
 		return false;
   });
 
+	// Adds the Google Map
   $("#jmap").jmap({ 'zoom': 2, 'maptype': 'map' });
-  $("#jmap").addPoint($("#id_latitude").val(), $("#id_longitude").val());
-  $("#id_city").keypress(function(e) {
+	if ($("#id_latitude").val() != "-100" && $("#id_longitude").val() != "-100") {
+  	$("#jmap").addPoint($("#id_latitude").val(), $("#id_longitude").val());
+	}
+
+  $("#id_location").keypress(function(e) {
     if (e.which == 13) {
       $("#searchAddress").trigger('click');
       e.preventDefault();
@@ -62,7 +66,7 @@ $(function(){
 	});
 
   $("#id_country").change(function() {
-    $("#id_city").val('');
+    $("#id_location").val('');
     if ($("#id_country").val()) {
       $("#jmap").searchAddress($("#id_country option:selected").text());
     } else {
@@ -72,7 +76,7 @@ $(function(){
   });
 
   $("#searchAddress").click(function() {
-    $("#jmap").searchAddress($("#id_city").val() + ", " + $("#id_country").val());
+    $("#jmap").searchAddress($("#id_location").val() + ", " + $("#id_country").val());
   });
 
 	//avatar

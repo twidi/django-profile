@@ -15,10 +15,8 @@
 			showtype: false,			// G + Y
 			showoverview: false,		// G
 			dragging: true,			// G + Y
-			scrollzoom: false,		// G + Y
-			smoothzoom: true,		// G
 			clickmarker: true,		// G
-			showmarker: true
+			showmarker: false
 		},settings);
 		
 		return this.each(function(){
@@ -36,6 +34,7 @@
 			}
 			jmap.setCenter(new google.maps.LatLng(settings.center[0],settings.center[1]),settings.zoom,loadmap);
 			self.marker = new google.maps.Marker(new google.maps.LatLng(settings.center[0],settings.center[1]), {clickable: false, bouncy: true, draggable: true});
+			self.marker.hide();
 			google.maps.Event.addListener(self.marker, "dragend", function(){
 				point = self.marker.getLatLng();
 				$("#id_latitude").val(point.lat().toFixed(6));
@@ -44,7 +43,6 @@
 					var data = $.parseJSON(data);
 					$("#id_country").val(data['country']);
 					$("#id_location").val(data['region']);
-         	$("#id_location").val('');
 				});
 			});
 			jmap.addOverlay(self.marker);
@@ -68,7 +66,7 @@
 			if (settings.showoverview == true){
 				jmap.addControl(new google.maps.OverviewMapControl());//Overview Map
 			}
-			jmap.enableScrollWheelZoom();
+			//jmap.enableScrollWheelZoom();
 			jmap.enableContinuousZoom();
 			if (settings.clickmarker == true){
 				google.maps.Event.addListener(jmap, "click", function(marker, point){
@@ -80,7 +78,6 @@
           	var data = $.parseJSON(data);
           	$("#id_country").val(data['country']);
 					  $("#id_location").val(data['region']);
-          	$("#id_location").val('');
         	});
 				});
 			}
@@ -115,7 +112,6 @@
           var data = $.parseJSON(data);
           $("#id_country").val(data['country']);
 					$("#id_location").val(data['region']);
-         	$("#id_location").val('');
         });
 			}
 		});
