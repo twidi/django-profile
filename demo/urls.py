@@ -19,6 +19,9 @@ urlpatterns = patterns('',
     # Public profile
     (r'^users/(?P<user>[^/]*)/$', 'profile.views.public', {'template': 'profile/public.html'}),
 
+    # Vcard
+    #(r'^users/(?P<user>[^/]*)/card/$', 'django.views.generic.list_detail.object_detail', dict(queryset=Foo.objects.all(), slug_field='slug', template_name="microformats/vcard.html",mimetype="text/x-vcard") ),
+
     # Account
     (r'^accounts/activate/(?P<activation_key>\w+)/$', 'registration.views.activate'),
     (r'^accounts/password/reset/$', 'account.views.reset_password', {'template' : 'account/password_reset.html'}),

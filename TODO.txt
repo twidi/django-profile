@@ -1,6 +1,5 @@
-* Incorporate the new version of Jquery UI DatePicker.
+* Deal with microformats.
 * Integrate OpenID authentication.
-* Reverse geopositioning.
 * Internacionalization.
 * E-mail not detected as SPAM in Gmail.
 * Improve the country list.

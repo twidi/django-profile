@@ -61,10 +61,10 @@
 			<div id="jmap"></div>
     	<br />
 		</div>
-    <label for="id_blog">{% trans "Blog:" %}</label>
-    {{ form.blog }}
-    <div id="blogmsg" class="message">
-    {% if form.blog.errors %}{{ form.blog.errors|join:", " }}{% endif %}
+    <label for="id_url">{% trans "Url:" %}</label>
+    {{ form.url }}
+    <div id="urlmsg" class="message">
+    {% if form.url.errors %}{{ form.url.errors|join:", " }}{% endif %}
     </div>
     <br />
     <label for="id_about">{% trans "About:" %}</label>

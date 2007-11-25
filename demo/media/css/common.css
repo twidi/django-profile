@@ -17,7 +17,7 @@ a {
   text-decoration: none;
 }
 
-.usercard {
+.vcard {
 	width: 250px;
   	border: 1px solid #CCC;
 	padding: 5px;
@@ -27,7 +27,11 @@ a {
 	font-size: 12px;
 }
 
-.usercard .username {
+.vcard .photo {
+	float: left;
+}
+
+.vcard .nickname {
 	font-weight: bold;
 	background: #CCC;
 	width: 140px;
@@ -35,7 +39,7 @@ a {
 	color: white;
 }
 
-.usercard ul {
+.vcard ul {
 	margin: 0px;
   	border: 0px;
 	list-style-type: none;

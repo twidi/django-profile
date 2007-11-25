@@ -2,6 +2,8 @@
 django-profile Changelog
 ========================
 
+* Added hCard information in the UserCard.
+* Code cleaned-up and commented.
 * Use of geonames.org webservice to obtain the Country and region when clicking on the Google Map.
 * Changed to new version of ui.datepicker
 
