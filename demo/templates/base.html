@@ -16,10 +16,10 @@
 	<ul>
 		<li style="display: inline;"><a href="/">{% trans "Frontpage" %}</a> | </li>
   	{% if user.is_authenticated %}
-		<li style="display: inline;"><a href="/accounts/profile">{% trans "Profile" %}</a> | </li>
+		<li style="display: inline;"><a href="/profile">{% trans "Profile" %}</a> | </li>
    	<li style="display: inline;"><a href="/accounts/logout">{% trans "Logout" %}</a></li>
 		{% else %} 
-		<li style="display: inline;"><a href="/accounts/profile">{% trans "Login" %}</a></li>
+		<li style="display: inline;"><a href="/profile">{% trans "Login" %}</a></li>
   	{% endif %}
 		</li>
   </ul>

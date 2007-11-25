@@ -2,7 +2,7 @@ $(function() {
 
   $("input[@type=submit].buttoncancel").click(function() {
 		if ($("#avatar_id").val()) {
-    	$.post("/avatar/delete/" + $("#avatar_id").val() + "/", function(data) {
+    	$.post("/profile/avatar/delete/" + $("#avatar_id").val() + "/", function(data) {
 				window.close();
 			});
 		} else {
@@ -17,7 +17,7 @@ $(function() {
 	});
 
   $("input[@type=submit].buttonanother").click(function() {
-    $.post("/avatar/delete/" + $("#avatar_id").val() + "/", function(data) {
+    $.post("/profile/avatar/delete/" + $("#avatar_id").val() + "/", function(data) {
 			window.location = "/avatar/one/";
 			window.resizeTo(500, 220);
     });

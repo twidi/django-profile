@@ -81,10 +81,10 @@ $(function(){
 
 	//avatar
   $("a.delavatar").click(function() {
-    $.post("/avatar/delete/", function(data) {
+    $.post("/profile/avatar/delete/", function(data) {
 			data = $.parseJSON(data);
 			if (data['success']) {
-				$(".avatar img").attr("src", "/site_media/avatars/default.gif");
+				$(".avatar img").attr("src", "/site_media/images/default.gif");
 			}
     });
 

@@ -39,7 +39,7 @@
 				point = self.marker.getLatLng();
 				$("#id_latitude").val(point.lat().toFixed(6));
 				$("#id_longitude").val(point.lng().toFixed(6));
-				$.post("/getcountry_info/" + point.lat() + "/" +  point.lng() + "/", function(data) {
+				$.post("/profile/getcountry_info/" + point.lat() + "/" +  point.lng() + "/", function(data) {
 					var data = $.parseJSON(data);
 					$("#id_country").val(data['country']);
 					$("#id_location").val(data['region']);
@@ -74,7 +74,7 @@
 					self.marker.setLatLng(point);
 					$("#id_latitude").val(point.lat().toFixed(6));
 					$("#id_longitude").val(point.lng().toFixed(6));
-				  $.post("/getcountry_info/" + point.lat() + "/" +  point.lng() + "/", function(data) {
+				  $.post("/profile/getcountry_info/" + point.lat() + "/" +  point.lng() + "/", function(data) {
           	var data = $.parseJSON(data);
           	$("#id_country").val(data['country']);
 					  $("#id_location").val(data['region']);
@@ -108,7 +108,7 @@
  				self.marker.setLatLng(point);
 				$("#id_latitude").val(point.lat().toFixed(6));
 				$("#id_longitude").val(point.lng().toFixed(6));
-				$.post("/getcountry_info/" + point.lat() + "/" +  point.lng() + "/", function(data) {
+				$.post("/profile/getcountry_info/" + point.lat() + "/" +  point.lng() + "/", function(data) {
           var data = $.parseJSON(data);
           $("#id_country").val(data['country']);
 					$("#id_location").val(data['region']);
