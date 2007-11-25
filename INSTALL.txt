@@ -16,22 +16,71 @@ You can see a demo of which can be accomplished here:
 
 	http://profile.coredump.es
 
-Or you can run this demo with this software package following these steps:
+-------------------------
+-- Quick install guide --
+-------------------------
+
+You can run the demo supplied with this software package following these steps:
 
 * Make django visible in your python path. You could import the last version
 from the repository executing this command on this directory:
 
-$ svn co http://code.djangoproject.com/svn/django/trunk/django
+	$ svn co http://code.djangoproject.com/svn/django/trunk/django
 
 * Download the dependencies of this software inside this directory. 
 This software depends on django-registration. You can download the last 
 version with this command:
 
-$ svn checkout http://django-registration.googlecode.com/svn/trunk/registration/
+	$ svn checkout http://django-registration.googlecode.com/svn/trunk/registration/
 
 * Go to the "demo" directory located in this directory and run:
 
 	$ python manage.py runserver
 
 
-You can now connect to the django web server.
+You can now connect to the django web server and try the demo. You will need a valid e-mail server
+to try the e-mail validation process. You would need to fill this information of settings.py:
+
+# e-mail settings
+DEFAULT_FROM_EMAIL = ''
+EMAIL_HOST = ''
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
+
+
+
+--------------------------
+-- Custom install guide --
+--------------------------
+Once you've seen what can be done, you could integrate django-profile with your custom
+software. Basically, you need these things:
+
+* Add django and the required modules accesible from your PYTHON_PATH (Look at the demo
+  section).
+* Add this modules to the INSTALLED_APPS section of your settings.py:
+	'profile',
+	'account',
+	'registration'
+
+* Add this lines to your urls.py file:
+
+    (r'^profile/', include('profile.urls')),
+    (r'^accounts/', include('account.urls')),
+
+* Make the "media" directory accesible as your media content, or add the following line
+  to urls.py to test it:
+
+    # Serves media content. WARNING!! Only for development uses
+    (r'^site_media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': '../media/'}),
+
+* Fill the needed data of countries and continents of the profile database with these commands:
+	$ python manage.py shell
+	>>> from profile.models import Continent,Country
+	>>> Continent().importdata()
+	>>> Country().importdata()
+
+* You will need to fill the e-mail server configuration of settings.py (if you didn't have it yet)
+  to try the e-mail validation process.
+
+* You can modify the default templates supplied with the modules 'account' and 'profile'
+
