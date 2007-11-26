@@ -35,8 +35,8 @@
 			</div>
 		</div>
 		<div>
-    	<input style="margin-bottom: 10px;" type="submit" value="{% trans 'Save' %}" />
 			<p class="savedmsg">{% trans "Profile saved" %}</p>
+    	<input style="margin-bottom: 10px;" type="button" class="save" value="{% trans 'Save' %}" />
 		</div>
 		<br />
     <label for="id_username">{% trans "Username:" %}</label>
@@ -84,8 +84,8 @@
     <br />
     <div style="display:none;">{{ form.birthdate }}{{ form.latitude }}{{ form.longitude }}{{ form.gender }}</div>
 		<div>
-    	<input type="submit" value="{% trans 'Save' %}" />
       <p class="savedmsg">{% trans 'Profile saved' %}</p>
+    	<input type="button" class="save" value="{% trans 'Save' %}" />
 		</div>
   </fieldset>
 </form>

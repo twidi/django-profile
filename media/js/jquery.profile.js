@@ -28,6 +28,14 @@ $(function(){
 		return false;
   });
 
+	// Click on the save button
+	$("input[@type=button].save").click(function() {
+		$("p.savedmsg").show("slow");
+		$.post("/profile/save/", $("form").serialize(), function() {
+			setTimeout('$("p.savedmsg").hide("slow");', 3000);		
+		});
+	});
+
 	// Adds the Google Map
   $("#jmap").jmap({ 'zoom': 2, 'maptype': 'map' });
 	if ($("#id_latitude").val() != "-100" && $("#id_longitude").val() != "-100") {

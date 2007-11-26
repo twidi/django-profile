@@ -3,7 +3,7 @@ from django.conf.urls.defaults import *
 urlpatterns = patterns('',
 
     # Demo FrontPage
-    (r'^$', "profile.views.profiles", {'template': 'front.html' }),
+    (r'^$', "demo.views.front", {'template': 'front.html' }),
 
     # Profile
     (r'^profile/', include('profile.urls')),

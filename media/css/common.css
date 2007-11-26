@@ -16,6 +16,7 @@ body {
   border: 1px solid green; 
   background: #9ed;
 	float: left;
+	display: none;
 }
 
 html {
