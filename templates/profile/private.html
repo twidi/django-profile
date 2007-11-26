@@ -34,7 +34,10 @@
     		<p style="text-align: center"><span class="calendarInline"></span></p>
 			</div>
 		</div>
-    <input style="margin-bottom: 10px;" type="submit" value="{% trans 'Save' %}" />
+		<div>
+    	<input style="margin-bottom: 10px;" type="submit" value="{% trans 'Save' %}" />
+			<p class="savedmsg">{% trans "Profile saved" %}</p>
+		</div>
 		<br />
     <label for="id_username">{% trans "Username:" %}</label>
     <p style="line-height: 29px;"><span style="font-size: 16px; font-weight: bold;">{{ user }}</span> <a href="/accounts/password/change">{% trans "(Change password)" %}</a></p>
@@ -52,6 +55,7 @@
 		<div class="newselect">
     	<label for="id_country">{% trans "Country:" %}</label>
     	{{ form.country }}
+			<img id="country_loading" style="display: none;" src="/site_media/images/loading.gif" />
 		</div>
 		<div id="countrydetail" style="margin-bottom: 5px;">
     	<label for="id_location">{% trans "Location:" %}</label>
@@ -79,7 +83,10 @@
 		</div>
     <br />
     <div style="display:none;">{{ form.birthdate }}{{ form.latitude }}{{ form.longitude }}{{ form.gender }}</div>
-    <input type="submit" value="{% trans 'Save' %}" />
+		<div>
+    	<input type="submit" value="{% trans 'Save' %}" />
+      <p class="savedmsg">{% trans 'Profile saved' %}</p>
+		</div>
   </fieldset>
 </form>
 <br />

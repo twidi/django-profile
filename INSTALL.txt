@@ -1,5 +1,6 @@
-Quick install
--------------
+------------------
+-- Requeriments --
+------------------
 
 First of all, the requerimient to run this software is:
 
@@ -16,9 +17,9 @@ You can see a demo of which can be accomplished here:
 
 	http://profile.coredump.es
 
--------------------------
--- Quick install guide --
--------------------------
+-----------------
+-- Quick guide --
+-----------------
 
 You can run the demo supplied with this software package following these steps:
 
@@ -38,8 +39,12 @@ version with this command:
 	$ python manage.py runserver
 
 
-You can now connect to the django web server and try the demo. You will need a valid e-mail server
-to try the e-mail validation process. You would need to fill this information of settings.py:
+You can now connect to the django web server and try the demo. 
+
+Optional:
+
+* You will need a valid e-mail server to try the e-mail validation process. 
+  Fill this information in settings.py:
 
 # e-mail settings
 DEFAULT_FROM_EMAIL = ''
@@ -47,7 +52,11 @@ EMAIL_HOST = ''
 EMAIL_HOST_USER = ''
 EMAIL_HOST_PASSWORD = ''
 
+* You also will need a valid Google Maps API Key. Obtain one for your site name here:
 
+	http://www.google.com/apis/maps/signup.html
+
+  Put the obtained key in the constant APIKEY located in the file 'settings.py'.
 
 --------------------------
 -- Custom install guide --
@@ -81,6 +90,9 @@ software. Basically, you need these things:
 
 * You will need to fill the e-mail server configuration of settings.py (if you didn't have it yet)
   to try the e-mail validation process.
+
+* You will need a valid Google Maps API Key for your site. Put the key in the constant APIKEY located
+  in the file 'settings.py'.
 
 * Add the 'templates' directory to the TEMPLATES_DIRS section of your 'settings.py'. 
   You can also modify the default templates supplied with the modules 'account' and 'profile'

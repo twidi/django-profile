@@ -36,6 +36,7 @@
 			self.marker = new google.maps.Marker(new google.maps.LatLng(settings.center[0],settings.center[1]), {clickable: false, bouncy: true, draggable: true});
 			self.marker.hide();
 			google.maps.Event.addListener(self.marker, "dragend", function(){
+				$("#country_loading").show();
 				point = self.marker.getLatLng();
 				$("#id_latitude").val(point.lat().toFixed(6));
 				$("#id_longitude").val(point.lng().toFixed(6));
@@ -43,6 +44,7 @@
 					var data = $.parseJSON(data);
 					$("#id_country").val(data['country']);
 					$("#id_location").val(data['region']);
+					$("#country_loading").hide();
 				});
 			});
 			jmap.addOverlay(self.marker);
@@ -70,6 +72,7 @@
 			jmap.enableContinuousZoom();
 			if (settings.clickmarker == true){
 				google.maps.Event.addListener(jmap, "click", function(marker, point){
+          $("#country_loading").show();
 					self.marker.show();
 					self.marker.setLatLng(point);
 					$("#id_latitude").val(point.lat().toFixed(6));
@@ -78,6 +81,7 @@
           	var data = $.parseJSON(data);
           	$("#id_country").val(data['country']);
 					  $("#id_location").val(data['region']);
+          	$("#country_loading").hide();
         	});
 				});
 			}
@@ -109,9 +113,11 @@
 				$("#id_latitude").val(point.lat().toFixed(6));
 				$("#id_longitude").val(point.lng().toFixed(6));
 				$.post("/profile/getcountry_info/" + point.lat() + "/" +  point.lng() + "/", function(data) {
+          $("#country_loading").show();
           var data = $.parseJSON(data);
           $("#id_country").val(data['country']);
 					$("#id_location").val(data['region']);
+          $("#country_loading").hide();
         });
 			}
 		});
