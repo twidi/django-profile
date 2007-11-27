@@ -6,7 +6,7 @@
 {% endblock %}
 {% block content %}
 <h1>{% trans "User registration" %}</h1>
-<p>{% trans "If you don't have an account, you can sign up for one; it's free, and you'll get access to a bunch of nifty features." %}</p>
+<p>{% trans "You only need a valid username and a password to get access to the private content of this site." %}</p>
 <form class="userdata biglabel" id="registration" method="post" action="">
 	<fieldset>
 	<div style="overflow: hidden; margin-bottom: 5px;">
@@ -14,13 +14,6 @@
    	{{ form.username }}
    	<div id="usermsg" class="message">
 		{% if form.username.errors %}{{ form.username.errors|join:", " }}{% endif %}
-		</div>
-	</div>
-	<div style="overflow: hidden; margin-bottom: 5px;">
-   	<label for="id_email">{% trans "Email address:" %}</label>
-   	{{ form.email }}
-   	<div id="emailmsg" class="message">
-		{% if form.email.errors %}{{ form.email.errors|join:", " }}{% endif %}
 		</div>
 	</div>
 	<div style="overflow: hidden; margin-bottom: 5px;">

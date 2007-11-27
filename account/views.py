@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 from models import LostPassword, EmailValidate
 from django.utils import simplejson
 from django.contrib.sites.models import Site
-from forms import EmailChangeForm, PasswordResetForm, changePasswordKeyForm, changePasswordAuthForm
+from forms import UserForm, EmailChangeForm, PasswordResetForm, changePasswordKeyForm, changePasswordAuthForm
 from django.contrib.auth.decorators import login_required
 from django.template import Context, loader
 
@@ -66,6 +66,21 @@ def email_change(request, template):
         form = EmailChangeForm()
 
     return render_to_response(template, locals())
+
+def register(request, template_name):
+    user = request.user
+    if request.method == 'POST':
+        form = UserForm(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password1')
+            newuser = User.objects.create_user(username=username, email='', password=password)
+            newuser.save()
+            return HttpResponseRedirect('%scomplete/' % request.path)
+    else:
+        form = UserForm()
+
+    return render_to_response(template_name, locals())
 
 def reset_password(request, template):
     if request.method == 'POST':

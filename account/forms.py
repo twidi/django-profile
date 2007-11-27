@@ -13,6 +13,21 @@ def new_key():
         except LostPassword.DoesNotExist:
             return key
 
+class UserForm(forms.Form):
+    username = forms.CharField(max_length=255, min_length = 3)
+    password1 = forms.CharField( min_length = 6, widget = forms.PasswordInput )
+    password2 = forms.CharField( min_length = 6, widget = forms.PasswordInput )
+
+    def clean_password2(self):
+        """
+        Verify that the 2 passwords fields are equal
+        """
+        if self.cleaned_data.get("password1") == self.cleaned_data.get("password2"):
+            return self.cleaned_data.get("newpass2")
+        else:
+            raise forms.ValidationError(_("The passwords inserted are different."))
+
+
 class EmailChangeForm(forms.Form):
     email = forms.EmailField()
 

@@ -99,5 +99,4 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'profile',
     'account',
-    'registration',
 )

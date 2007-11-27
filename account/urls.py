@@ -21,7 +21,6 @@ urlpatterns = patterns('',
     ('^profile/$', redirect_to, {'url': '/profile/'}),
 
     # Registration
-    (r'^register/$', 'registration.views.register'),
-    (r'^activate/(?P<activation_key>\w+)/$', 'registration.views.activate'),
-    (r'^register/complete/$', direct_to_template, {'template': 'registration/registration_complete.html'}),
+    (r'^register/$', register, {'template_name' : 'account/registration_form.html'}),
+    (r'^register/complete/$', direct_to_template, {'template': 'account/registration_complete.html'}),
 )

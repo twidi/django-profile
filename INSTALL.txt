@@ -6,9 +6,6 @@ First of all, the requerimient to run this software is:
 
 	* Django version 0.96 or greater.
 
-	* The great package "django-registration", which you can find here:
-		http://code.google.com/p/django-registration
-
 	* The Python Imaging Library:
 		http://www.pythonware.com/products/pil/
 
@@ -27,12 +24,6 @@ You can run the demo supplied with this software package following these steps:
 from the repository executing this command on this directory:
 
 	$ svn co http://code.djangoproject.com/svn/django/trunk/django
-
-* Download the dependencies of this software inside this directory. 
-This software depends on django-registration. You can download the last 
-version with this command:
-
-	$ svn checkout http://django-registration.googlecode.com/svn/trunk/registration/
 
 * Go to the "demo" directory located in this directory and run:
 
@@ -69,7 +60,6 @@ software. Basically, you need these things:
 * Add this modules to the INSTALLED_APPS section of your settings.py:
 	'profile',
 	'account',
-	'registration'
 
 * Add this lines to your urls.py file:
 
