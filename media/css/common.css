@@ -315,7 +315,7 @@ div#content {
   border: 2px dotted;
 }
 
-#searchAddress {
+#searchAddress, #clearLocation {
 	font-size: 14px;
 	padding: 4px 8px;
 }

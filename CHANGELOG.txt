@@ -2,6 +2,7 @@
 django-profile Changelog
 ========================
 
+* Save profile Ajax-like.
 * Removed the django-registration dependency.
 * Added hCard information in the UserCard.
 * Code cleaned-up and commented.

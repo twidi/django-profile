@@ -21,6 +21,10 @@ $(function(){
 			$("#gender a.female").css("background-color", "yellow");
 	}
 
+	$("#clearLocation").click(function() {
+		$("#id_location").val('');
+	});
+
 	var date = $("#id_birthdate").val().split("-");
   $(".calendarInline").datepicker({onSelect: updateInline, hideIfNoPrevNext: true, yearRange: "1940:2007", defaultDate: new Date(date[0], date[1] -1, date[2])});
   $("a.avatar").click(function() {
