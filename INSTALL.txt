@@ -27,12 +27,23 @@ from the repository executing this command on this directory:
 
 * Go to the "demo" directory located in this directory and run:
 
+	$ python manage.py syncdb
+and
 	$ python manage.py runserver
 
 
 You can now connect to the django web server and try the demo. 
 
 Optional:
+
+* Fill the Continents and Countries information with the database supplied. Follow
+  this steps:
+
+$ python manage.py shell
+>>> from profile.models import Continent,Country
+>>> Continent().importdata()
+>>> Country().importdata()
+
 
 * You will need a valid e-mail server to try the e-mail validation process. 
   Fill this information in settings.py:

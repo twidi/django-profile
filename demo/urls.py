@@ -5,10 +5,10 @@ urlpatterns = patterns('',
     # Demo FrontPage
     (r'^$', "demo.views.front", {'template': 'front.html' }),
 
-    # Profile
+    # Profile application
     (r'^profile/', include('profile.urls')),
 
-    # Account
+    # Account application
     (r'^accounts/', include('account.urls')),
 
     # Serves media content. WARNING!! Only for development uses
