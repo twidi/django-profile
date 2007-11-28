@@ -18,6 +18,15 @@ class UserForm(forms.Form):
     password1 = forms.CharField( min_length = 6, widget = forms.PasswordInput )
     password2 = forms.CharField( min_length = 6, widget = forms.PasswordInput )
 
+    def clean_username(self):
+        """
+        Verify that the username isn't already registered
+        """
+        if len(User.objects.filter(username=self.cleaned_data.get("username"))) == 0:
+            return self.cleaned_data.get("username")
+        else:
+            raise forms.ValidationError(_("The username is already registered."))
+
     def clean_password2(self):
         """
         Verify that the 2 passwords fields are equal

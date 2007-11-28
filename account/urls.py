@@ -16,6 +16,7 @@ urlpatterns = patterns('',
     (r'^logout/$', logout, {'template': 'account/logout.html'}),
     (r'^check_user/(?P<user>.*)/$', check_user),
     (r'^check_email/(?P<email>.*)/$', check_email),
+    (r'^check_email_unused/(?P<email>.*)/$', check_email_unused),
 
     # Profile
     ('^profile/$', redirect_to, {'url': '/profile/'}),

@@ -29,7 +29,6 @@
    	<div id="passmsg2" class="message">
 		{% if form.password2.errors %}{{ form.password2.errors|join:", " }}{% endif %}
 		</div>
-		<input type="hidden" name="tos" value="1" />
 		<br />
 	</div>
    	<input type="submit" value="{% trans 'Register' %}" />

@@ -78,10 +78,10 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'demo.urls'
 
 # e-mail settings
-#DEFAULT_FROM_EMAIL = ''
-#EMAIL_HOST = ''
-#EMAIL_HOST_USER = ''
-#EMAIL_HOST_PASSWORD = ''
+DEFAULT_FROM_EMAIL = 'django@coredump.es'
+EMAIL_HOST = 'mail.elementales.com'
+EMAIL_HOST_USER = 'django.elementales.com'
+EMAIL_HOST_PASSWORD = 'perico'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".

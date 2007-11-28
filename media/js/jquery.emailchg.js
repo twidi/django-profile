@@ -30,7 +30,7 @@ $(function() {
 				$("#emailmsg").css("color", "red");
 				$("#emailmsg").text("Invalid e-mail");
 			} else {
-   			$.get("/accounts/check_email/" + val + "/", function(data) {
+   			$.get("/accounts/check_email_unused/" + val + "/", function(data) {
      			data = $.parseJSON(data);
 					if (!data['success']) {
 						$("#emailmsg").css("color", "red");

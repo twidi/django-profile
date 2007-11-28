@@ -3,7 +3,7 @@
 
 {% block title %}{% trans "E-mail change" %}{% endblock %}
 {% block customjs %}
-<script type="text/javascript" src="/site_media/js/jquery.passwd-reset.js"></script>
+<script type="text/javascript" src="/site_media/js/jquery.emailchg.js"></script>
 {% endblock %}
 
 {% block content %}
@@ -14,9 +14,15 @@
 
 <form class="userdata" action="" method="post">
   <fieldset>
-    <label for="id_email" style="width: 170px;">{% trans 'New e-mail address:' %}</label>
-    {{ form.email }}
-    <input type="submit" value="{% trans 'Send confirmation' %}" />
+    <div style="overflow: hidden; margin-bottom: 5px;">
+    	<label for="id_email" style="width: 170px;">{% trans 'New e-mail address:' %}</label>
+    	{{ form.email }}
+      <div id="emailmsg" class="message">
+        {% if form.username.errors %}{{ form.username.errors|join:", " }}{% endif %}
+      </div>
+		</div>
+		<br />
+   	<input type="submit" value="{% trans 'Send confirmation' %}" />
   </fieldset>
   {% if form.errors %}
   <div class="errmsg">

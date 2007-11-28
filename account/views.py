@@ -155,15 +155,27 @@ def check_user(request, user):
     else:
         raise Http404()
 
+def check_email_unused(request, email):
+    """
+    Check if an  exists. Only HTTPXMLRequest. Returns JSON
+    """
+    if request.META.get('HTTP_X_REQUESTED_WITH') == 'XMLHttpRequest':
+        if not User.objects.filter(email=email):
+            return HttpResponse(simplejson.dumps({'success': True}))
+        else:
+            return json_error_response(_("E-mail not registered"))
+    else:
+        raise Http404()
+
 def check_email(request, email):
     """
     Check if a username exists. Only HTTPXMLRequest. Returns JSON
     """
     if request.META.get('HTTP_X_REQUESTED_WITH') == 'XMLHttpRequest':
         if (len(User.objects.filter(email=email)) == 1):
-            return json_error_response(_("E-mail already registered"))
-        else:
             return HttpResponse(simplejson.dumps({'success': True}))
+        else:
+            return json_error_response(_("E-mail not registered"))
     else:
         raise Http404()
 

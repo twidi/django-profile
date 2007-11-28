@@ -55,6 +55,7 @@ $(function(){
 			} else if (pass1.length > 0 || pass2.length > 0) {
 				msgbox.text("");
 			}
+			$("#passmsg1").text("");
 		}
   }
 
