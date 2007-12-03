@@ -5,7 +5,7 @@ import datetime
 
 class LostPassword(models.Model):
     user    = models.ForeignKey(User)
-    key     = models.CharField(maxlength=70, unique=True)
+    key     = models.CharField(max_length=70, unique=True)
     created = models.DateTimeField(auto_now_add=True)
 
     def is_expired(self):
@@ -17,7 +17,7 @@ class LostPassword(models.Model):
 class EmailValidate(models.Model):
     user    = models.ForeignKey(User)
     email = models.EmailField()
-    key     = models.CharField(maxlength=70, unique=True)
+    key     = models.CharField(max_length=70, unique=True)
     created = models.DateTimeField(auto_now_add=True)
 
     class Admin:
