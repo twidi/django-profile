@@ -68,6 +68,10 @@ software. Basically, you need these things:
 
 * Add django and the required modules accesible from your PYTHON_PATH (Look at the demo
   section).
+
+* Add this directive to the 'settings.py' file:
+	AUTH_PROFILE_MODULE = 'profile.profile'
+
 * Add this modules to the INSTALLED_APPS section of your settings.py:
 	'profile',
 	'account',
