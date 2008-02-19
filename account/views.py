@@ -97,7 +97,7 @@ def reset_password(request, template):
                 site_name = site.name
                 t = loader.get_template('account/password_reset_email.txt')
                 message = 'http://%s/accounts/password/change/%s/' % (site_name, pwd.key)
-                send_mail('Password reset on %s' % site.name, t.render(Context(locals())), None, [user.email])
+                send_mail(_('Password reset on %s') % site.name, t.render(Context(locals())), None, [user.email])
                 return HttpResponseRedirect('%sdone/' % request.path)
 
     else:
@@ -149,7 +149,7 @@ def check_user(request, user):
     """
     if request.META.get('HTTP_X_REQUESTED_WITH') == 'XMLHttpRequest':
         if (len(User.objects.filter(username=user)) == 1):
-            return json_error_response(_("This username is already taken. Please choose another."))
+            return json_error_response(_("Username in use. Choose another."))
         else:
             return HttpResponse(simplejson.dumps({'success': True}))
     else:
@@ -179,10 +179,7 @@ def check_email(request, email):
     else:
         raise Http404()
 
-def logout(request, template, next=None):
+def logout(request, template):
     from django.contrib.auth import logout
     logout(request)
-    if next:
-        return HttpResponseRedirect(next)
-    else:
-        return render_to_response(template, locals())
+    return render_to_response(template, locals())
