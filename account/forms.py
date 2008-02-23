@@ -14,9 +14,10 @@ def new_key():
             return key
 
 class UserForm(forms.Form):
+
     username = forms.CharField(max_length=255, min_length = 3)
-    password1 = forms.CharField( min_length = 6, widget = forms.PasswordInput )
-    password2 = forms.CharField( min_length = 6, widget = forms.PasswordInput )
+    password1 = forms.CharField(min_length=6, widget=forms.PasswordInput)
+    password2 = forms.CharField(min_length=6, widget=forms.PasswordInput)
 
     def clean_username(self):
         """
@@ -27,12 +28,12 @@ class UserForm(forms.Form):
         else:
             raise forms.ValidationError(_("The username is already registered."))
 
-    def clean_password2(self):
+    def clean(self):
         """
         Verify that the 2 passwords fields are equal
         """
         if self.cleaned_data.get("password1") == self.cleaned_data.get("password2"):
-            return self.cleaned_data.get("newpass2")
+            return self.cleaned_data
         else:
             raise forms.ValidationError(_("The passwords inserted are different."))
 
@@ -45,8 +46,11 @@ class EmailChangeForm(forms.Form):
         Verify that the email exists
         """
         email = self.cleaned_data.get("email")
-
-        return email
+        try:
+            User.objects.get(email=email)
+            raise forms.ValidationError(_("That e-mail is already used."))
+        except:
+            return email
 
 class PasswordResetForm(forms.Form):
     email = forms.EmailField()
@@ -64,16 +68,16 @@ class PasswordResetForm(forms.Form):
         return email
 
 class changePasswordKeyForm(forms.Form):
-    newpass1 = forms.CharField( min_length = 6, widget = forms.PasswordInput )
-    newpass2 = forms.CharField( min_length = 6, widget = forms.PasswordInput )
+    newpass1 = forms.CharField(min_length=6, widget=forms.PasswordInput)
+    newpass2 = forms.CharField(min_length=6, widget=forms.PasswordInput)
 
-    def clean_newpass2(self):
+    def clean(self):
         """
         Verify the equality of the two passwords
         """
 
         if self.cleaned_data.get("newpass1") and self.cleaned_data.get("newpass1") == self.cleaned_data.get("newpass2"):
-            return self.cleaned_data.get("newpass2")
+            return self.cleaned_data
         else:
             raise forms.ValidationError(_("The passwords inserted are different."))
 
@@ -89,13 +93,13 @@ class changePasswordAuthForm(forms.Form):
     newpass1 = forms.CharField( min_length = 6, widget = forms.PasswordInput )
     newpass2 = forms.CharField( min_length = 6, widget = forms.PasswordInput )
 
-    def clean_newpass2(self):
+    def clean(self):
         """
         Verify the equality of the two passwords
         """
 
         if self.cleaned_data.get("newpass1") and self.cleaned_data.get("newpass1") == self.cleaned_data.get("newpass2"):
-            return self.cleaned_data.get("newpass2")
+            return self.cleaned_data
         else:
             raise forms.ValidationError(_("The passwords inserted are different."))
 
