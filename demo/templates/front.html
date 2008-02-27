@@ -1,21 +1,16 @@
 {% extends "base.html" %}
 {% load i18n %}
 {% load profile_tags %}
-{% block title %}Log in{% endblock %}
-
-{% block customjs %}
-<script type="text/javascript" src="/site_media/js/jquery.login.js"></script>
-{% endblock %}
+{% block title %}{% trans "Front page" %}{% endblock %}
 
 {% block content %}
+{% if profiles %}
 <h1>{% trans "People who have already tried this demo" %}</h1>
-<div class="rightmsg" style="min-width: 120px; width: 20%;">If you don't have an account, you can <a style="font-size: 18px;" href="/accounts/register/">sign up</a> for one; it's free, and you could try this demo and publish your usercard.</div>
-<div style="border: 2px dotted; min-width: 600px; width: 70%; overflow: hidden; padding-bottom: 10px;">
 
 {% for profile in profiles %}
   {% get_usercard profile %}
 {% endfor %}
 
-</div>
+{% endif %}
 {% endblock %}
 

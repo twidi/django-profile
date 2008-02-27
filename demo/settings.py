@@ -4,14 +4,8 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 ACCOUNT_ACTIVATION_DAYS = 4
 
-# Google maps API key, needed to use the Google Maps interface
-APIKEY = "ABQIAAAA06IJoYHDPFMx4u3hTtaghxSXii2MTQlH08211N69IoqDn0RDwxSg93HhPES135ZCuIAWoRbldN9vaA"
-
 # 192.168.0.100:8000/
 APIKEY = "ABQIAAAA06IJoYHDPFMx4u3hTtaghxTU2QkCNWGFpwxhhQnHf-7Pc6f1lBTQWFSuWvEBhZGiAbR5wPO0DLqoOw"
-
-# Haddock
-APIKEY="ABQIAAAA06IJoYHDPFMx4u3hTtaghxS1mGAeXhF8eEwoOC3WUqD9xSVHbhT_wvgbriWemZzoPwFT5-HqnLJ9-A"
 
 ADMINS = (
     # ('Your Name', 'your_email@domain.com'),

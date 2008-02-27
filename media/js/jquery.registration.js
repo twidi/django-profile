@@ -4,58 +4,51 @@ $(function(){
   function userFn() {
 
 		this.user = '';
-		this.status = false;
 
 		this.check = function() {
 			var val = $("#id_username").val();
-			if (val.length == 0) return;
-			var msgbox = $("#usermsg");
+			if (val.length == 0) {
+				$("#username_img").hide();
+				return;
+			}
 
       if (this.user != val) {
-        msgbox.html('<img src="/site_media/images/loading.gif" />');
-        msgbox.show();
-        setTimeout(function() { checkuser(val) }, 500);
+				$("#username_img").attr("src", "/site_media/images/loading.gif");
+        $("#username_img").show();
+
+   			$.getJSON("/accounts/check_user/" + val + "/", function(data) {
+          if (data.success) {
+            $("#username_img").attr("src", "/site_media/images/good.png");
+          } else {
+            $("#username_img").attr("src", "/site_media/images/error.png");
+            $("#username_img").attr("alt", data.error_message);
+          }
+				});
+
 				this.user = val;
       }
 		}
 
-		function checkuser(val) {
-   		$.get("/accounts/check_user/" + val + "/", function(data) {
-     		data = $.parseJSON(data);
-				if (!data['success']) {
-					$("#usermsg").css("color", "red");
-					$("#usermsg").text(data["error_message"]);
-				} else {
-					$("#usermsg").css("color", "green");
-					$("#usermsg").html("Ok.");
-					this.status = true;
-				}
-			});
-		}
   }
 
 	// Check passwords function
   function passwordFn() {
-		this.status = false;
 
 		this.check = function() {
-			var msgbox = $("#passmsg2");
 			var pass1 = $("#id_password1").val();
 			var pass2 = $("#id_password2").val();
 
 			if (pass1.length > 0 && pass2.length > 0) {
+				$("#password_img").show();
 				if (pass1 != pass2) {
-					msgbox.css("color", "red");
-					msgbox.text("The passwords are not equal.");
+          $("#password_img").attr("src", "/site_media/images/error.png");
+          $("#password_img").attr("alt", "The passwords are not equal:");
 				} else {
-					msgbox.css("color", "green");
-					msgbox.text("Ok.");	
-					this.status = true;
+          $("#password_img").attr("src", "/site_media/images/good.png");
 				}
 			} else if (pass1.length > 0 || pass2.length > 0) {
-				msgbox.text("");
+				$("#password_img").hide();
 			}
-			$("#passmsg1").text("");
 		}
   }
 

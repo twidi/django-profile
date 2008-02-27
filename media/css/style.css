@@ -1,0 +1,141 @@
+body {
+  min-width: 920px;
+  font-family: Verdana, sans;
+  font-size: .9em;
+  margin: 0px;
+  padding: 0px;
+}
+
+div.content {
+	padding: 15px;
+}
+
+ul.menu {
+	list-style: none;
+	padding: 0px;
+	margin: 0px;
+	font-size: 1.2em;
+}
+
+ul.menu li {
+	display: inline;
+	padding-right: 15px;
+}
+
+p.register a {
+	font-size: 1.3em;
+}
+
+form.commonform strong {
+	font-weight: bold;
+	font-size: 1.4em;
+}
+
+form.commonform fieldset {
+	border: 0px solid;
+}
+
+form.commonform textarea {
+  padding: 4px;
+  background-color: #EFEFEF;
+  border: 2px solid #CCC;
+  padding-left: 8px;
+  width: 400px;
+}
+
+form.commonform label {
+	float: left;
+	width: 120px;
+	line-height: 28px;
+	text-align: right;
+	margin-right: 5px;
+}
+
+form.commonform p {
+	clear: both;
+	margin: 2px;
+	overflow: hidden;
+}
+
+form.commonform input[type=text], form.commonform input[type=password] {
+	float: left;
+	background: #EFEFEF;
+	width: 200px;
+	font-size: 1.2em;
+	height: 24px;
+	padding-left: 5px;
+	line-height: 24px;
+	border: 2px solid #CCC;
+}
+
+form.login input[type=submit] {
+	margin-left: 270px;
+}
+
+form.registration input[type=submit] {
+	margin-left: 260px;
+}
+
+form.login, form.passwd, form.registration {
+	width: 60%;
+	margin: auto;
+}
+
+form.login p.lostpw {
+	margin: 0px;
+	margin-left: 140px;
+}
+
+form.passwd input[type=text] {
+	width: 300px;
+}
+
+form.passwd input[type=submit] {
+	margin-left: 340px;
+}
+
+p.error {
+	background: #f06f5c;
+	width: 100%;
+	font-size: 1.3em;
+	text-align: center;
+}
+
+form.commonform img {
+	display: none;
+	float: left;
+}
+
+a.male, a.female {
+  color: black;
+  float: left;
+  width: 80px;
+  border: 2px solid #CCC;
+  font-size: 16px;
+  padding: 0px;
+  padding-left: 30px;
+  margin-right: 5px;
+  line-height: 24px;
+}
+
+a.male {
+  background: url(/site_media/images/male.png) no-repeat #E6E6E6;
+}
+
+a.female {
+  background: url(/site_media/images/female.png) no-repeat #E6E6E6;
+}
+
+div#jmap {
+  float: left;
+  width: 400px;
+  height: 180px;
+}
+
+div.calendar {
+	float: left;
+}
+
+hr {
+  clear: both;
+}

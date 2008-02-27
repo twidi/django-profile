@@ -1,17 +1,20 @@
 from django.conf.urls.defaults import *
+from settings import APIKEY
 
 urlpatterns = patterns('',
 
     # Demo FrontPage
     (r'^$', "demo.views.front", {'template': 'front.html' }),
 
-    # Profile application
-    (r'^profile/', include('profile.urls')),
-
     # Account application
     (r'^accounts/', include('account.urls')),
 
-    # Serves media content. WARNING!! Only for development uses
+    # Profile application
+    #(r'^profile/', include('profile.urls')),
+    (r'^profile/$', 'profile.views.private', {'APIKEY': APIKEY, 'template': 'profile/private.html'}),
+
+
+    # Serves media content. WARNING!! Only for development uses. On production use lighthttpd for media content.
     (r'^site_media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': '../media/'}),
 
 

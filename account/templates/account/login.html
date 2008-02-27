@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load i18n %}
-{% block title %}Log in{% endblock %}
+{% block title %}{% trans "User login" %}{% endblock %}
 
 {% block customjs %}
 <script type="text/javascript" src="/site_media/js/jquery.login.js"></script>
@@ -8,20 +8,22 @@
 
 {% block content %}
 <h1>{% trans "User login" %}</h1>
-<div class="rightmsg">{% trans "If you don't have an account, you can" %} <a style="font-size: 18px;" href="/accounts/register/">{% trans "sign up" %}</a> {%trans "for one; it's free, and you could try this demo and publish your usercard." %}</div>
-<form id="login" class="userdata" method="post" action="{% if next %}?next={{ next }}{% endif %}">
+
+<form class="login commonform" method="post" action="{% if next %}?next={{ next }}{% endif %}">
 	<fieldset>
-    <label for="username" id="username">{% trans "Username:" %}</label>
-    {{ form.username }}
-    <label for="password" id="password">{% trans "Password:" %}</label>
-    {{ form.password }}
-    <p style="clear: left; margin-left: 145px;"><a href="/accounts/password/reset">{% trans "Have you lost your password?" %}</a></p>
+		<p>
+    	<label for="id_username">{% trans "Username:" %}</label>
+    	{{ form.username }}
+		</p>
+		<p>
+    	<label for="id_password">{% trans "Password:" %}</label>
+    	{{ form.password }}
+		</p>
+    <p class="lostpw"><a href="/accounts/password/reset">{% trans "Have you lost your password?" %}</a></p>
     <input type="submit" value="{% trans 'Login' %}" />
   </fieldset>
   {% if form.has_errors %}
-  <div class="errmsg">
-    <p>{% trans "Your username and password didn't match. Please try again." %}</p>
-  </div>
+  <p class="error">{% trans "Your username and password didn't match. Please try again." %}</p>
 	{% endif %}
 </form>
 {% endblock %}

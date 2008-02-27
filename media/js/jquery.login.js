@@ -6,7 +6,8 @@ $(function(){
 
   // On blur, unlight the focused input
   $(".required").blur(function() {
-		$(this).css("background", "#E6E6E6");
+		$(this).css("background", "#EFEFEF");
   });  
+
 	$("#id_username").focus();
 });

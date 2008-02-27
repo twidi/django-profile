@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load i18n %}
+	{% block title %}{% trans "User registration" %}{% endblock %}
+{% block customjs %}
+	<script type="text/javascript" src="/site_media/js/jquery.registration.js"></script>
+{% endblock %}
+
+{% block content %}
+<h1>{% trans "User registration" %}</h1>
+<p>{% trans "You only need a valid username and a password to get access to the private content of this site." %}</p>
+<form class="commonform registration" method="post" action="">
+	<fieldset>
+		<p>
+   		<label for="id_username">{% trans "Username:" %}</label>
+   		{{ form.username }}
+			<img id="username_img" src="/site_media/images/loading.gif" />
+		</p>
+		<p>
+   		<label for="id_password1">{% trans "Password:" %}</label>
+   		{{ form.password1 }}
+		</p>
+		<p>
+   		<label for="id_password2">{% trans "Password again:" %}</label>
+   		{{ form.password2 }}
+			<img id="password_img" src="/site_media/images/loading.gif" />
+		</p>
+   	<input type="submit" value="{% trans 'Register' %}" />
+	</fieldset>
+  {% if form.errors %}
+		{% for error,desc in form.errors.items %}
+  		<p class="error">{{desc|join:","}}</p>
+		{% endfor %}
+  {% endif %}
+</form> 
+{% endblock %}

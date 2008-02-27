@@ -3,28 +3,27 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
     <title>{% block title %}{% endblock %}</title>
-    <link rel="stylesheet" href="/site_media/css/common.css" type="text/css" />
+    <link rel="stylesheet" href="/site_media/css/style.css" type="text/css" />
     {% block customcss %}{% endblock %}
-    <script type="text/javascript" src="/site_media/js/jquery-1.2.3.js"></script>
-    <script type="text/javascript" src="/site_media/js/json.js"></script>
+    <script type="text/javascript" src="/site_media/js/jquery-1.2.3.pack.js"></script>
     {% block customjs %}{% endblock %}
 </head>
 {% load i18n %}
 <body>
-<div id="content">
-<div style="float: right;">
-	<ul>
-		<li style="display: inline;"><a href="/">{% trans "Frontpage" %}</a> | </li>
-  	{% if user.is_authenticated %}
-		<li style="display: inline;"><a href="/profile">{% trans "Profile" %}</a> | </li>
-   	<li style="display: inline;"><a href="/accounts/logout">{% trans "Logout" %}</a></li>
-		{% else %} 
-		<li style="display: inline;"><a href="/profile">{% trans "Login" %}</a></li>
-  	{% endif %}
-		</li>
-  </ul>
-</div>
-{% block content %}{% endblock %}
-</div>
+	<div class="content">
+		<ul class="menu">
+			<li><a href="/">{% trans "Frontpage" %}</a></li>
+  		{% if user.is_authenticated %}
+			<li><a href="/profile">{% trans "Profile" %}</a></li>
+   		<li><a href="/accounts/logout">{% trans "Logout" %}</a></li>
+			{% else %} 
+			<li><a href="/profile">{% trans "Login" %}</a></li>
+  		{% endif %}
+  	</ul>
+		{% if not request.user.is_authenticated %}
+		<p class="register">{% trans "If you don't have an account, you can" %} <a href="/accounts/register/">{% trans "sign up" %}</a> {% trans "for one; it's free, and you could try this demo and publish your usercard." %}</p>
+		{% endif %}
+		{% block content %}{% endblock %}
+	</div>
 </body>
 </html>
