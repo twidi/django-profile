@@ -13,26 +13,24 @@ $(function(){
 
 	// Check passwords function
   function passwordFn() {
-		this.status = false;
 
 		this.check = function() {
 			var msgbox = $("#passmsg2");
 			var pass1 = $("#id_newpass1").val();
 			var pass2 = $("#id_newpass2").val();
 
-			if (pass1.length > 0 && pass2.length > 0) {
-				if (pass1 != pass2) {
-					msgbox.css("color", "red");
-					msgbox.text("The passwords are not equal.");
-				} else {
-					msgbox.css("color", "green");
-					msgbox.text("Ok.");	
-					this.status = true;
-				}
-			} else if (pass1.length > 0 || pass2.length > 0) {
-				msgbox.text("");
-			}
-		}
+      if (pass1.length > 0 && pass2.length > 0) {
+        $("#password_img").show();
+        if (pass1 != pass2 || pass1.length < 6) {
+          $("#password_img").attr("src", "/site_media/images/error.png");
+          $("#password_img").attr("alt", "The passwords are not equal:");
+        } else {
+          $("#password_img").attr("src", "/site_media/images/good.png");
+        }
+      } else if (pass1.length > 0 || pass2.length > 0) {
+        $("#password_img").hide();
+      }
+    }
   }
 
 	var pass = new passwordFn();

@@ -3,3 +3,5 @@
 * Internacionalization.
 * E-mail not detected as SPAM in Gmail.
 * Improve the country list.
+* Country/Continent list internationalized.
+* Calendar internationalized.

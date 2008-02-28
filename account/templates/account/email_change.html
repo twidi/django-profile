@@ -7,21 +7,15 @@
 {% endblock %}
 
 {% block content %}
-
 <h1>{% trans "E-mail change" %}</h1>
-
 <p>{% trans "Insert the new e-mail address. An e-mail will be send to it for testing and confirmation." %}
-
-<form class="userdata" action="" method="post">
+<form class="commonform emailchg" action="" method="post">
   <fieldset>
-    <div style="overflow: hidden; margin-bottom: 5px;">
+    <div>
     	<label for="id_email" style="width: 170px;">{% trans 'New e-mail address:' %}</label>
     	{{ form.email }}
-      <div id="emailmsg" class="message">
-        {% if form.username.errors %}{{ form.username.errors|join:", " }}{% endif %}
-      </div>
+      <img id="email_img" src="/site_media/images/loading.gif" />
 		</div>
-		<br />
    	<input type="submit" value="{% trans 'Send confirmation' %}" />
   </fieldset>
   {% if form.errors %}
@@ -29,6 +23,8 @@
     <p>{{form.email.errors}}</p>
   </div>
   {% endif %}
+  {% if form.errors %}
+  <p class="error">{{form.newpass2.errors|join:","}}</p>
+  {% endif %}
 </form>
-<p><a href="/profile">Return to my profile</a></p>
 {% endblock %}

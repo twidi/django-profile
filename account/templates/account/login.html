@@ -11,14 +11,14 @@
 
 <form class="login commonform" method="post" action="{% if next %}?next={{ next }}{% endif %}">
 	<fieldset>
-		<p>
+		<div>
     	<label for="id_username">{% trans "Username:" %}</label>
     	{{ form.username }}
-		</p>
-		<p>
+		</div>
+		<div>
     	<label for="id_password">{% trans "Password:" %}</label>
     	{{ form.password }}
-		</p>
+		</div>
     <p class="lostpw"><a href="/accounts/password/reset">{% trans "Have you lost your password?" %}</a></p>
     <input type="submit" value="{% trans 'Login' %}" />
   </fieldset>

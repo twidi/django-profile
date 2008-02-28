@@ -4,6 +4,10 @@ $(function(){
 		$(this).css("background", "white");
   });  
 
+	$("a.location").click(function() {
+		$("div.changelocation").toggle();	
+	});
+
   // On blur, unlight the focused input
   $("input[@type=text],textarea").blur(function() {
 		$(this).css("background", "#E6E6E6");
@@ -26,8 +30,8 @@ $(function(){
 	});
 
 	var date = $("#id_birthdate").val().split("-");
-  $("div.calendar").datePicker({ inline: true, onSelect: updateInline, hideIfNoPrevNext: true, startDate: "01/01/1940", month: date[1] -1, year: date[2], day: date[0]});
-  $("a.avatar").click(function() {
+  $("div.calendar").datepicker({ onSelect: updateInline, hideIfNoPrevNext: true, yearRange: "1940:2010", defaultDate: "01/02/2005", defaultDate: new Date(date[0],date[1] -1, date[2]) });
+  $("a.newavatar").click(function() {
 		window.open($(this).attr("href"), "Avatar", "width=500, height=150,resizable=yes").moveTo(100,100);
 		return false;
   });
@@ -41,9 +45,9 @@ $(function(){
 	});
 
 	// Adds the Google Map
-  $("#jmap").jmap({ 'zoom': 2, 'maptype': 'map' });
-	if ($("#id_latitude").val() != "-100" && $("#id_longitude").val() != "-100") {
-  	$("#jmap").addPoint($("#id_latitude").val(), $("#id_longitude").val());
+  $("#jmap").jmap();
+	if ($("#id_latitude").val() && $("#id_longitude").val()) {
+		$("#jmap").addPoint( $("#id_latitude").val(), $("#id_longitude").val() );
 	}
 
   $("#id_location").keypress(function(e) {
@@ -53,6 +57,7 @@ $(function(){
     }
   });
 
+	// Gender select
 	$("a.male").click(function() {
 		if ($("#id_gender").val() == "M") {
 			$("#id_gender").val("");	
@@ -80,7 +85,7 @@ $(function(){
   $("#id_country").change(function() {
     $("#id_location").val('');
     if ($("#id_country").val()) {
-      $("#jmap").searchAddress($("#id_country option:selected").text());
+      $("#jmap").searchAddress({ 'address': $("#id_country option:selected").text() });
     } else {
       $("#id_latitude").val(0);
       $("#id_longitude").val(0);
@@ -88,14 +93,14 @@ $(function(){
   });
 
   $("#searchAddress").click(function() {
-    $("#jmap").searchAddress($("#id_location").val() + ", " + $("#id_country").val());
+    $("#jmap").searchAddress({ 'address': $("#id_location").val() + ", " + $("#id_country").val() });
   });
 
 	//avatar
   $("a.delavatar").click(function() {
     $.getJSON("/profile/avatar/delete/", function(data) {
 			if (data.success) {
-				$(".avatar img").attr("src", "/site_media/images/default.gif");
+				$("img#avatarimg").attr("src", "/site_media/images/default.gif");
 			}
     });
 

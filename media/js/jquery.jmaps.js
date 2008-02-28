@@ -3,7 +3,7 @@
 
 	$.fn.extend({
 	jmap: function(settings) {
-		var version = "1.3.1";
+		var version = "1.4";
 		var marker;
 
 		/* Default Settings*/	
@@ -11,9 +11,9 @@
 			maptype: "hybrid",		// can be "map", "sat" or "hybrid"
 			center: [40.416706, -3.703269],	// G + Y
 			zoom: 15,				// G + Y
-			controlsize: "small",	// G + Y
+			controlsize: "medium",	// G + Y
 			showtype: false,			// G + Y
-			showoverview: false,		// G
+			showoverview: true,		// G
 			dragging: true,			// G + Y
 			clickmarker: true,		// G
 			showmarker: false
@@ -21,6 +21,8 @@
 		
 		return this.each(function(){
 			var jmap = this.jMap = new google.maps.Map2(this);
+			jmap.enableContinuousZoom();
+
 			switch(settings.maptype) {
 				case "map":
 					var loadmap = G_NORMAL_MAP;
@@ -43,7 +45,7 @@
 				$.getJSON("/profile/getcountry_info/" + point.lat() + "/" +  point.lng() + "/", function(data) {
 					$("#id_country").val(data['country']);
 					$("#id_location").val(data['region']);
-					$("#country_loading").hide();
+					$("img.loading").hide();
 				});
 			});
 			jmap.addOverlay(self.marker);

@@ -26,16 +26,22 @@ p.register a {
 	font-size: 1.3em;
 }
 
-form.commonform strong {
+form.commonform > fieldset > div > strong {
 	font-weight: bold;
 	font-size: 1.4em;
 }
 
-form.commonform fieldset {
+form.commonform > fieldset {
 	border: 0px solid;
 }
 
-form.commonform textarea {
+form.commonform > fieldset > div {
+	overflow: hidden;
+	clear: both;
+	margin: 2px;
+}
+
+form.commonform > fieldset > div > textarea {
   padding: 4px;
   background-color: #EFEFEF;
   border: 2px solid #CCC;
@@ -43,7 +49,7 @@ form.commonform textarea {
   width: 400px;
 }
 
-form.commonform label {
+form.commonform > fieldset > div > label {
 	float: left;
 	width: 120px;
 	line-height: 28px;
@@ -51,13 +57,13 @@ form.commonform label {
 	margin-right: 5px;
 }
 
-form.commonform p {
+form.commonform > fieldset > p {
 	clear: both;
-	margin: 2px;
+	margin: 5px;
 	overflow: hidden;
 }
 
-form.commonform input[type=text], form.commonform input[type=password] {
+form.commonform > fieldset > div > input[type=text], form.commonform > fieldset > div > input[type=password] {
 	float: left;
 	background: #EFEFEF;
 	width: 200px;
@@ -68,29 +74,46 @@ form.commonform input[type=text], form.commonform input[type=password] {
 	border: 2px solid #CCC;
 }
 
-form.login input[type=submit] {
+form.login > fieldset > div > input[type=submit] {
 	margin-left: 270px;
 }
 
-form.registration input[type=submit] {
+form.registration > fieldset > div > input[type=submit] {
 	margin-left: 260px;
 }
 
-form.login, form.passwd, form.registration {
+form.pwdchg > fieldset > div > input[type=submit] {
+	margin-left: 210px;
+}
+
+form.emailchg fieldset > div > input[type=submit] {
+	margin-left: 360px;
+}
+
+form.emailchg fieldset > div > input[type=text] {
+	width: 300px;
+}
+
+form.login, form.passwd, form.registration, form.pwdchg {
 	width: 60%;
 	margin: auto;
 }
 
-form.login p.lostpw {
-	margin: 0px;
-	margin-left: 140px;
+form.pwdchg > fieldset > div > label {
+	width: 150px;
 }
 
-form.passwd input[type=text] {
+form.login p.lostpw {
+	margin: 0px;
+	font-size: 0.7em;
+	margin-left: 170px;
+}
+
+form.passwd > fieldset > div > input[type=text] {
 	width: 300px;
 }
 
-form.passwd input[type=submit] {
+form.passwd > fieldset > div > input[type=submit] {
 	margin-left: 340px;
 }
 
@@ -101,7 +124,7 @@ p.error {
 	text-align: center;
 }
 
-form.commonform img {
+form.commonform > fieldset > div > img {
 	display: none;
 	float: left;
 }
@@ -127,9 +150,9 @@ a.female {
 }
 
 div#jmap {
-  float: left;
-  width: 400px;
-  height: 180px;
+	float: left;
+  width: 640px;
+  height: 380px;
 }
 
 div.calendar {
@@ -138,4 +161,24 @@ div.calendar {
 
 hr {
   clear: both;
+}
+
+div.avatar > a.img {
+	display: block;
+}
+
+div.avatar {
+	float: left;
+}
+
+div.avatar > a > img {
+	border: 0px;
+	text-align: center;
+}
+
+div.changelocation {
+}
+
+img.loading {
+	display: none;
 }

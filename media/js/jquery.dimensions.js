@@ -2,8 +2,8 @@
  * Dual licensed under the MIT (http://www.opensource.org/licenses/mit-license.php)
  * and GPL (http://www.opensource.org/licenses/gpl-license.php) licenses.
  *
- * $LastChangedDate$
- * $Rev$
+ * $LastChangedDate: 2007-12-20 15:43:48 +0100 (Do, 20 Dez 2007) $
+ * $Rev: 4257 $
  *
  * Version: @VERSION
  *
@@ -113,7 +113,7 @@ $.fn.extend({
 });
 
 function num(el, prop) {
-	return parseInt($.css(el.jquery?el[0]:el,prop))||0;
+	return parseInt($.curCSS(el.jquery?el[0]:el,prop,true))||0;
 };
 
 })(jQuery);

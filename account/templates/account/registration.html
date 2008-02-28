@@ -10,20 +10,20 @@
 <p>{% trans "You only need a valid username and a password to get access to the private content of this site." %}</p>
 <form class="commonform registration" method="post" action="">
 	<fieldset>
-		<p>
+		<div>
    		<label for="id_username">{% trans "Username:" %}</label>
    		{{ form.username }}
 			<img id="username_img" src="/site_media/images/loading.gif" />
-		</p>
-		<p>
+		</div>
+		<div>
    		<label for="id_password1">{% trans "Password:" %}</label>
    		{{ form.password1 }}
-		</p>
-		<p>
+		</div>
+		<div>
    		<label for="id_password2">{% trans "Password again:" %}</label>
    		{{ form.password2 }}
 			<img id="password_img" src="/site_media/images/loading.gif" />
-		</p>
+		</div>
    	<input type="submit" value="{% trans 'Register' %}" />
 	</fieldset>
   {% if form.errors %}
