@@ -5,8 +5,6 @@ function mapFramework() {
 	if (GBrowserIsCompatible()) {
 		$("div.mapinfo").show();
    	map = new GMap2(document.getElementById("map"));
-   	map.setCenter(new GLatLng(37.4419, -122.1419), 6);
-   	map.addOverlay(new GMarker(map.getCenter()));
 		map.addControl(new GLargeMapControl());
 		map.addControl(new GOverviewMapControl())
 		map.addControl(new GMapTypeControl())
@@ -19,20 +17,37 @@ function mapFramework() {
  			}
  		});
 
-		$("#searchAddress").click(function() {
- 			$("#jmap").searchAddress({ 'address': $("#id_location").val() + ", " + $("#id_country").val() });
- 		});
+		function searchLocation() {
+			if (!$("#id_country option:selected").text() && !$("#id_location").val()) {
+				return;
+			} else if ($("#id_country option:selected").text() && !$("#id_location").val()) {
+				address = $("#id_country option:selected").text();
+			} else {
+				address = $("#id_location").val() + ", " + $("#id_country").val()
+			}
 
+			$("#id_country option:selected").text()
+    	$("img.loading").show();
+    	geocoder = new GClientGeocoder();
+    	geocoder.getLatLng(address, function(point){
+      	if (point) {
+        	map.setCenter(point);
+        	marker.setLatLng(point);
+        	$("#id_latitude").val(point.lat().toFixed(6));
+        	$("#id_longitude").val(point.lng().toFixed(6));
+        	$.getJSON("/profile/getcountry_info/" + point.lat() + "/" +  point.lng() + "/", function(data) {
+          	$("#id_country").val(data['country']);
+          	$("img.loading").hide();
+        	});
+      	}
+    	});
+ 		}
+
+		$("#searchAddress").click(searchLocation);
  		$("#id_country").change(function() {
- 			$("#id_location").val('');
- 			if ($("#id_country").val()) {
-   			$("#jmap").searchAddress($("#id_country option:selected").text());
- 			} else {
-   			$("#id_latitude").val(0);
-   			$("#id_longitude").val(0);
- 			}
+			$("#id_location").val('');
+			searchLocation();
 		});
-
  	}
 
   map.setCenter(new GLatLng($("#id_latitude").val(), $("#id_longitude").val()), 4);
