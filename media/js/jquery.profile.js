@@ -1,11 +1,67 @@
+function mapFramework() {
+	var map;
+	var marker;
+
+	if (GBrowserIsCompatible()) {
+		$("div.mapinfo").show();
+   	map = new GMap2(document.getElementById("map"));
+   	map.setCenter(new GLatLng(37.4419, -122.1419), 6);
+   	map.addOverlay(new GMarker(map.getCenter()));
+		map.addControl(new GLargeMapControl());
+		map.addControl(new GOverviewMapControl())
+		map.addControl(new GMapTypeControl())
+		map.enableContinuousZoom();
+
+		$("#id_location").keypress(function(e) {
+ 			if (e.which == 13) {
+  			$("#searchAddress").trigger('click');
+  			e.preventDefault();
+ 			}
+ 		});
+
+		$("#searchAddress").click(function() {
+ 			$("#jmap").searchAddress({ 'address': $("#id_location").val() + ", " + $("#id_country").val() });
+ 		});
+
+ 		$("#id_country").change(function() {
+ 			$("#id_location").val('');
+ 			if ($("#id_country").val()) {
+   			$("#jmap").searchAddress($("#id_country option:selected").text());
+ 			} else {
+   			$("#id_latitude").val(0);
+   			$("#id_longitude").val(0);
+ 			}
+		});
+
+ 	}
+
+  map.setCenter(new GLatLng($("#id_latitude").val(), $("#id_longitude").val()), 4);
+  marker = new GMarker(new GLatLng($("#id_latitude").val(), $("#id_longitude").val()), {clickable: false, bouncy: true, draggable: true});
+  marker.hide();
+  GEvent.addListener(marker, "dragend", function(){
+    $("img.loading").show();
+    point = marker.getLatLng();
+    $("#id_latitude").val(point.lat().toFixed(6));
+    $("#id_longitude").val(point.lng().toFixed(6));
+    $.getJSON("/profile/getcountry_info/" + point.lat() + "/" +  point.lng() + "/", function(data) {
+      $("#id_country").val(data['country']);
+      $("#id_location").val(data['region']);
+      $("img.loading").hide();
+    });
+  });
+  map.addOverlay(marker);
+}
+
 $(function(){
   // On focus, light the focused input
   $("input[@type=text],textarea").focus(function() {
 		$(this).css("background", "white");
   });  
 
+	// Google maps code
 	$("a.location").click(function() {
-		$("div.changelocation").toggle();	
+		$.getScript("http://maps.google.com/maps?file=api&v=2.x&key=" + $("#apikey").text() + "&async=2&callback=mapFramework");
+		return false;
 	});
 
   // On blur, unlight the focused input
@@ -44,19 +100,6 @@ $(function(){
 		});
 	});
 
-	// Adds the Google Map
-  $("#jmap").jmap();
-	if ($("#id_latitude").val() && $("#id_longitude").val()) {
-		$("#jmap").addPoint( $("#id_latitude").val(), $("#id_longitude").val() );
-	}
-
-  $("#id_location").keypress(function(e) {
-    if (e.which == 13) {
-      $("#searchAddress").trigger('click');
-      e.preventDefault();
-    }
-  });
-
 	// Gender select
 	$("a.male").click(function() {
 		if ($("#id_gender").val() == "M") {
@@ -81,20 +124,6 @@ $(function(){
 		}
 		return false;
 	});
-
-  $("#id_country").change(function() {
-    $("#id_location").val('');
-    if ($("#id_country").val()) {
-      $("#jmap").searchAddress({ 'address': $("#id_country option:selected").text() });
-    } else {
-      $("#id_latitude").val(0);
-      $("#id_longitude").val(0);
-    }
-  });
-
-  $("#searchAddress").click(function() {
-    $("#jmap").searchAddress({ 'address': $("#id_location").val() + ", " + $("#id_country").val() });
-  });
 
 	//avatar
   $("a.delavatar").click(function() {

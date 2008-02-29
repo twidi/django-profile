@@ -117,6 +117,10 @@ form.passwd > fieldset > div > input[type=submit] {
 	margin-left: 340px;
 }
 
+form.profile > fieldset > div > select {
+	float: left;
+}
+
 p.error {
 	background: #f06f5c;
 	width: 100%;
@@ -149,7 +153,7 @@ a.female {
   background: url(/site_media/images/female.png) no-repeat #E6E6E6;
 }
 
-div#jmap {
+div#map {
 	float: left;
   width: 640px;
   height: 380px;
@@ -180,5 +184,10 @@ div.changelocation {
 }
 
 img.loading {
+	display: none;
+	float: left;
+}
+
+div.mapinfo {
 	display: none;
 }

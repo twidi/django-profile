@@ -1,6 +1,4 @@
 (function($) {
-  google.load("maps", "2");
-
 	$.fn.extend({
 	jmap: function(settings) {
 		var version = "1.4";
@@ -10,7 +8,7 @@
 		var settings = jQuery.extend({
 			maptype: "hybrid",		// can be "map", "sat" or "hybrid"
 			center: [40.416706, -3.703269],	// G + Y
-			zoom: 15,				// G + Y
+			zoom: 4,				// G + Y
 			controlsize: "medium",	// G + Y
 			showtype: false,			// G + Y
 			showoverview: true,		// G
@@ -38,7 +36,7 @@
 			self.marker = new google.maps.Marker(new google.maps.LatLng(settings.center[0],settings.center[1]), {clickable: false, bouncy: true, draggable: true});
 			self.marker.hide();
 			google.maps.Event.addListener(self.marker, "dragend", function(){
-				$("#country_loading").show();
+				$("img.loading").show();
 				point = self.marker.getLatLng();
 				$("#id_latitude").val(point.lat().toFixed(6));
 				$("#id_longitude").val(point.lng().toFixed(6));
@@ -99,6 +97,7 @@
 	},
 	searchAddress: function (address, settings, callback) {
 
+    $("img.loading").show();
 		var settings = jQuery.extend({
 			returntype: "map"	//Return as Map or a Object
 		},settings);
@@ -113,10 +112,9 @@
 				$("#id_latitude").val(point.lat().toFixed(6));
 				$("#id_longitude").val(point.lng().toFixed(6));
 				$.getJSON("/profile/getcountry_info/" + point.lat() + "/" +  point.lng() + "/", function(data) {
-          $("#country_loading").show();
           $("#id_country").val(data['country']);
 					$("#id_location").val(data['region']);
-          $("#country_loading").hide();
+          $("img.loading").hide();
         });
 			}
 		});
