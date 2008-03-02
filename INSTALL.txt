@@ -7,7 +7,12 @@ First of all, the requerimient to run this software is:
 	* Django version 0.96 or greater.
 
 	* The Python Imaging Library:
-		http://www.pythonware.com/products/pil/
+		* python-imaging package (on Debian or Ubuntu).
+		* Source: http://www.pythonware.com/products/pil/
+
+	* The Python libmagic bindings:
+		* python-magic package (on Debian or Ubuntu):
+		* Source: ftp://ftp.gw.com/mirrors/pub/unix/file/file-4.23.tar.gz
 
 
 You can see a demo of which can be accomplished here:
