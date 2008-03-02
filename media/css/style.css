@@ -94,11 +94,6 @@ form.emailchg fieldset > div > input[type=text] {
 	width: 300px;
 }
 
-form.login, form.passwd, form.registration, form.pwdchg {
-	width: 60%;
-	margin: auto;
-}
-
 form.pwdchg > fieldset > div > label {
 	width: 150px;
 }
@@ -189,5 +184,9 @@ img.loading {
 }
 
 div.mapinfo {
+	display: none;
+}
+
+img.saving {
 	display: none;
 }

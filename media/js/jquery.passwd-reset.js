@@ -15,7 +15,6 @@ $(function() {
   function emailFn() {
 
 		this.email = '';
-		this.status = false;
 
 		this.check = function() {
 			var val = $("#id_email").val();
@@ -34,7 +33,6 @@ $(function() {
    				$.getJSON("/accounts/check_email/" + val + "/", function(data) {
 						if (data.success) {
 							$("#email_img").attr("src", "/site_media/images/good.png");
-							this.status = true;
 						} else {
 							$("#email_img").attr("src", "/site_media/images/error.png");
 							$("#email_img").attr("alt", data.error_message);

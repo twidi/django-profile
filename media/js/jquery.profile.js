@@ -1,104 +1,84 @@
 function mapFramework() {
-	var map;
-	var marker;
 
 	if (GBrowserIsCompatible()) {
-		$("div.mapinfo").show();
-   	map = new GMap2(document.getElementById("map"));
-		map.addControl(new GLargeMapControl());
-		map.addControl(new GOverviewMapControl())
-		map.addControl(new GMapTypeControl())
-		map.enableContinuousZoom();
 
-		$("#id_location").keypress(function(e) {
- 			if (e.which == 13) {
-  			$("#searchAddress").trigger('click');
-  			e.preventDefault();
- 			}
- 		});
+   	this.map = new GMap2(document.getElementById("map"));
+		this.map.addControl(new GLargeMapControl());
+		this.map.addControl(new GOverviewMapControl())
+		this.map.addControl(new GMapTypeControl())
+		this.map.enableContinuousZoom();
 
-		function searchLocation() {
-			if (!$("#id_country option:selected").text() && !$("#id_location").val()) {
-				return;
-			} else if ($("#id_country option:selected").text() && !$("#id_location").val()) {
-				address = $("#id_country option:selected").text();
-			} else {
-				address = $("#id_location").val() + ", " + $("#id_country").val()
-			}
+		var lat = lng = 0;
+		if ($("#id_latitude").val()) lat = $("#id_latitude").val();
+		if ($("#id_longitude").val()) lng = $("#id_longitude").val();
 
-			$("#id_country option:selected").text()
+  	this.map.setCenter(new GLatLng(lat, lng), 4);
+		this.marker = new GMarker(new GLatLng(lat, lng), {clickable: false, bouncy: true, draggable: true}); 
+  	this.map.addOverlay(this.marker);
+
+		GEvent.addListener(this.marker, "dragend", function(){
     	$("img.loading").show();
-    	geocoder = new GClientGeocoder();
-    	geocoder.getLatLng(address, function(point){
-      	if (point) {
-        	map.setCenter(point);
-        	marker.setLatLng(point);
-        	$("#id_latitude").val(point.lat().toFixed(6));
-        	$("#id_longitude").val(point.lng().toFixed(6));
-        	$.getJSON("/profile/getcountry_info/" + point.lat() + "/" +  point.lng() + "/", function(data) {
-          	$("#id_country").val(data['country']);
-          	$("img.loading").hide();
-        	});
-      	}
+    	var point = this.getLatLng();
+    	$("#id_latitude").val(point.lat().toFixed(6));
+    	$("#id_longitude").val(point.lng().toFixed(6));
+    	$.getJSON("/profile/getcountry_info/" + point.lat() + "/" +  point.lng() + "/", function(data) {
+      	$("#id_country").val(data['country']);
+      	$("#id_location").val(data['region']);
+      	$("img.loading").hide();
     	});
+  	});
+	}
+}
+
+mapFramework.prototype.searchLocation = function() {
+	if (!$("#id_country option:selected").text()) {
+		return;
+	} 
+
+	address = $("#id_country option:selected").text();
+	$("img.loading").show();
+ 	geocoder = new GClientGeocoder();
+
+	var g = this;
+ 	geocoder.getLatLng(address, function(point){
+ 		if (point) {
+ 			g.map.setCenter(point);
+ 			g.marker.setLatLng(point);
+ 			$("#id_latitude").val(point.lat().toFixed(6));
+ 			$("#id_longitude").val(point.lng().toFixed(6));
+ 			$.getJSON("/profile/getcountry_info/" + point.lat() + "/" +  point.lng() + "/", function(data) {
+ 				$("#id_country").val(data['country']);
+ 				$("img.loading").hide();
+ 			});
  		}
+ 	}); 
+}
 
-		$("#searchAddress").click(searchLocation);
- 		$("#id_country").change(function() {
-			$("#id_location").empty();
-			searchLocation();
-		});
- 	}
+var googlemaps;
 
-  map.setCenter(new GLatLng($("#id_latitude").val(), $("#id_longitude").val()), 4);
-  marker = new GMarker(new GLatLng($("#id_latitude").val(), $("#id_longitude").val()), {clickable: false, bouncy: true, draggable: true});
-  marker.hide();
-  GEvent.addListener(marker, "dragend", function(){
-    $("img.loading").show();
-    point = marker.getLatLng();
-    $("#id_latitude").val(point.lat().toFixed(6));
-    $("#id_longitude").val(point.lng().toFixed(6));
-    $.getJSON("/profile/getcountry_info/" + point.lat() + "/" +  point.lng() + "/", function(data) {
-      $("#id_country").val(data['country']);
-      $("#id_location").val(data['region']);
-      $("img.loading").hide();
-    });
-  });
-  map.addOverlay(marker);
+function initMap() {
+	googlemaps = new mapFramework();
+	$("#searchAddress").click(googlemaps.searchLocation);
+}
+
+function updateInline(date) {
+	var arrdate = date.split("/");
+  $("#id_birthdate").val(arrdate[2] + "-" + arrdate[0] + "-" + arrdate[1]);
 }
 
 $(function(){
+
+  $("#id_firstname").focus();
+
   // On focus, light the focused input
   $("input[@type=text],textarea").focus(function() {
 		$(this).css("background", "white");
   });  
 
-	// Google maps code
-	$("a.location").click(function() {
-		$.getScript("http://maps.google.com/maps?file=api&v=2.x&key=" + $("#apikey").text() + "&async=2&callback=mapFramework");
-		return false;
-	});
-
   // On blur, unlight the focused input
   $("input[@type=text],textarea").blur(function() {
 		$(this).css("background", "#E6E6E6");
   });  
-
-  function updateInline(date) {
-			var arrdate = date.split("/");
-      $("#id_birthdate").val(arrdate[2] + "-" + arrdate[0] + "-" + arrdate[1]);
-  }
-
-  $("#id_firstname").focus();
-	if ($("#id_gender").val() == "M") {
-			$("#gender a.male").css("background-color", "yellow");
-	} else if ($("#id_gender").val() == "F") {
-			$("#gender a.female").css("background-color", "yellow");
-	}
-
-	$("#clearLocation").click(function() {
-		$("#id_location").val('');
-	});
 
 	var date = $("#id_birthdate").val().split("-");
   $("div.calendar").datepicker({ onSelect: updateInline, hideIfNoPrevNext: true, yearRange: "1940:2010", defaultDate: "01/02/2005", defaultDate: new Date(date[0],date[1] -1, date[2]) });
@@ -109,13 +89,36 @@ $(function(){
 
 	// Click on the save button
 	$("input[@type=button].save").click(function() {
-		$("p.savedmsg").show("slow");
+		$("img.saving").show();
 		$.post("/profile/save/", $("form").serialize(), function() {
-			setTimeout('$("p.savedmsg").hide("slow");', 3000);		
+			$("img.saving").hide();
 		});
 	});
 
+
+	$("#id_country").change(function() {
+		$("#id_location").val("");
+		if (!$("#id_country option:selected").val()) {
+			$("div.mapinfo").hide();
+			return;
+		}
+		if ($("div.mapinfo").css("display") == "none") {
+			$("div.mapinfo").show();
+			$.getScript("http://maps.google.com/maps?file=api&v=2.x&key=" + $("#apikey").text() + "&async=2&callback=initMap")
+		} else {
+			googlemaps.searchLocation();
+		}
+	});
+
+	if ($("#id_country option:selected").val()) $("#id_country").trigger("change");
+
 	// Gender select
+	if ($("#id_gender").val() == "M") {
+			$("a.male").css("background-color", "yellow");
+	} else if ($("#id_gender").val() == "F") {
+			$("a.female").css("background-color", "yellow");
+	}
+
 	$("a.male").click(function() {
 		if ($("#id_gender").val() == "M") {
 			$("#id_gender").val("");	

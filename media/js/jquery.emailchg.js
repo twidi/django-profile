@@ -11,43 +11,36 @@ $(function() {
 
 	$("#id_email").focus();
 
-	// Check email function
   function emailFn() {
 
-		this.email = '';
-		this.status = false;
+    this.email = '';
 
-		this.check = function() {
-			var val = $("#id_email").val();
-			if (val.length == 0) return;
-			var msgbox = $("#emailmsg");
+    this.check = function() {
+      var val = $("#id_email").val();
+      if (val.length == 0) {
+        $("#email_img").hide();
+        return;
+      }
 
       if (this.email != val) {
-        msgbox.html('<img src="/site_media/images/loading.gif" />');
-        msgbox.show();
-        setTimeout(function() { checkemail(val) }, 500);
-				this.email = val;
+        $("#email_img").attr("src", "/site_media/images/loading.gif");
+        $("#email_img").show();
+        if (!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/i.test(val)) {
+            $("#email_img").attr("src", "/site_media/images/error.png");
+            $("#email_img").attr("alt", "Invalid e-mail");
+        } else {
+          $.getJSON("/accounts/check_email_unused/" + val + "/", function(data) {
+            if (data.success) {
+              $("#email_img").attr("src", "/site_media/images/good.png");
+            } else {
+              $("#email_img").attr("src", "/site_media/images/error.png");
+              $("#email_img").attr("alt", data.error_message);
+            }
+          });
+        }
+        this.email = val;
       }
-		}
-
-		function checkemail(val) {
-			if (!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/i.test(val)) {
-				$("#emailmsg").css("color", "red");
-				$("#emailmsg").text("Invalid e-mail");
-			} else {
-   			$.getJSON("/accounts/check_email_unused/" + val + "/", function(data) {
-					if (data.success) {
-						$("#emailmsg").css("color", "red");
-						$("#emailmsg").text(data["error_message"]);
-					} else {
-						$("#emailmsg").css("color", "green");
-						$("#emailmsg").text("Ok");
-						this.status = true;
-					}
-				});
-			}
-
-		}
+    }
   };
 
 	var email = new emailFn();
