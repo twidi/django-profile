@@ -23,5 +23,5 @@ urlpatterns = patterns('',
 
     # Registration
     (r'^register/$', register, {'template_name' : 'account/registration.html'}),
-    (r'^register/complete/$', direct_to_template, {'template': 'account/registration_complete.html'}),
+    (r'^register/complete/$', direct_to_template, {'template': 'account/registration_done.html'}),
 )

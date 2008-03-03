@@ -6,8 +6,50 @@ body {
   padding: 0px;
 }
 
+div.vcard {
+	background: #EFEFEF;
+	padding: 5px;
+	float: left;
+	border: 4px dotted grey;
+	margin: 15px;
+	overflow: hidden;
+}
+
+div.usercard {
+	width: 250px;
+}
+
+div.vcard > ul {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+}
+
+div.vcard > img.gender {
+	float: right;
+}
+
+a {
+	text-decoration: none;
+	color: grey;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+
 div.content {
 	padding: 15px;
+}
+
+div.header {
+	background: #CCC;
+	padding: 10px;
+}
+
+div.header a {
+	color: white;
 }
 
 ul.menu {
@@ -51,7 +93,7 @@ form.commonform > fieldset > div > textarea {
 
 form.commonform > fieldset > div > label {
 	float: left;
-	width: 120px;
+	width: 150px;
 	line-height: 28px;
 	text-align: right;
 	margin-right: 5px;
@@ -74,12 +116,12 @@ form.commonform > fieldset > div > input[type=text], form.commonform > fieldset 
 	border: 2px solid #CCC;
 }
 
-form.login > fieldset > div > input[type=submit] {
-	margin-left: 270px;
+form.login > fieldset > input[type=submit] {
+	margin-left: 300px;
 }
 
-form.registration > fieldset > div > input[type=submit] {
-	margin-left: 260px;
+form.registration > fieldset > input[type=submit] {
+	margin-left: 280px;
 }
 
 form.pwdchg > fieldset > div > input[type=submit] {
@@ -189,4 +231,10 @@ div.mapinfo {
 
 img.saving {
 	display: none;
+}
+
+select#id_country > option[disabled=disabled] {
+	font-size: 1.4em;
+	font-weight: bold;
+	background: #ECECEC;
 }

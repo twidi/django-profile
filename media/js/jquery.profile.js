@@ -110,7 +110,10 @@ $(function(){
 		}
 	});
 
-	if ($("#id_country option:selected").val()) $("#id_country").trigger("change");
+	if ($("#id_country option:selected").val()) {
+      $("div.mapinfo").show();
+      $.getScript("http://maps.google.com/maps?file=api&v=2.x&key=" + $("#apikey").text() + "&async=2&callback=initMap")
+	}
 
 	// Gender select
 	if ($("#id_gender").val() == "M") {
