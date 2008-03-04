@@ -9,11 +9,12 @@ jQuery.fn.crop = function(image, opts) {
   };
   
   jQuery.extend(o, opts);
-  
+ 
+	/* 
   $(window).bind("load", function(){
     $("div.instruction").text("drag to select");
   });
-  
+ 	*/ 
   return this.each(function(){
     var selectionBorder = 1;
     var dimensions = { height: image.height(), width: image.width() };
@@ -25,9 +26,9 @@ jQuery.fn.crop = function(image, opts) {
     var imageSource = image.attr("src");
     var imageDiv = jQuery("<div class='image'><img height='" + (dimensions.height / scale) + 
       "' width='" + (dimensions.width / scale) + "' src='" + imageSource + "'/></div>");
-    var selectMax = jQuery("<a href='#'>select maximum</a>");
-    var selectNone = jQuery("<a href='#'>select none</a>");
-    var instruction = jQuery("<div class='instruction'>loading ...</div>");
+    var selectMax = jQuery("<a href='#'>Select maximum</a>");
+    var selectNone = jQuery("<a href='#'>Select none</a>");
+    var instruction = jQuery("<div class='instruction'>drag to select<div>");
     var warning = jQuery("<div class='warning' style='display: none'>The selection is too small. " +
       "Please select a larger region to ensure a quality image.</div>");
     var selection = jQuery("<div class='selection' style='display: none'><img height='" + (dimensions.height / scale) + 
@@ -77,6 +78,7 @@ jQuery.fn.crop = function(image, opts) {
         });
       warning.hide();
       selectionSize.text(selectionDimensions + "x" + selectionDimensions);
+      updateForm("0", "0", selectionDimensions / scale - selectionBorder * 2, selectionDimensions / scale - selectionBorder * 2);
     }
   
     function beginSelect(e){
