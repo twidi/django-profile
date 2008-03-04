@@ -58,7 +58,7 @@ var googlemaps;
 
 function initMap() {
 	googlemaps = new mapFramework();
-	$("#searchAddress").click(googlemaps.searchLocation);
+	googlemaps.searchLocation();
 }
 
 function updateInline(date) {
