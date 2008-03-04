@@ -10,9 +10,13 @@ div.vcard {
 	background: #EFEFEF;
 	padding: 5px;
 	float: left;
-	border: 4px dotted grey;
+	border: 4px dotted #CCC;
 	margin: 15px;
 	overflow: hidden;
+}
+
+div.vcard img.photo {
+	border: 2px solid #CCC;
 }
 
 div.usercard {
@@ -31,7 +35,7 @@ div.vcard > img.gender {
 
 a {
 	text-decoration: none;
-	color: grey;
+	color: #000;
 }
 
 a:hover {
