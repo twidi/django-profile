@@ -92,6 +92,10 @@ software. Basically, you need these things:
     # Serves media content. WARNING!! Only for development uses
     (r'^site_media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': '../media/'}),
 
+    This sample assumes that settings.MEDIA_URL="site_media", if you want to use another URI for
+    the media content, you also need to change the paths /site_media/.. of the static content 
+    files (CSS and javascript files).
+
 * Fill the needed data of countries and continents of the profile database with these commands:
 	$ python manage.py shell
 	>>> from profile.models import Continent,Country

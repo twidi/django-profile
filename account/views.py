@@ -6,6 +6,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.models import User
 from models import LostPassword, EmailValidate
 from django.utils import simplejson
+from django.template import RequestContext
 from django.contrib.sites.models import Site
 from forms import UserForm, EmailChangeForm, PasswordResetForm, changePasswordKeyForm, changePasswordAuthForm
 from django.contrib.auth.decorators import login_required
@@ -28,6 +29,7 @@ def change_email_with_key(request, key, template):
     """
     Verify key and change email
     """
+    context = RequestContext(request)
     try:
         verify = EmailValidate.objects.get(key=key, user=request.user)
         user = User.objects.get(username=str(request.user))
@@ -40,11 +42,13 @@ def change_email_with_key(request, key, template):
         message = _('The key you received via e-mail is no longer valid. Please try the e-mail change process again.')
         successful = False
 
-    return render_to_response(template, locals())
+    return render_to_response(template, locals(), context_instance=context)
+
 def email_change(request, template):
     """
     Change the e-mail page
     """
+    context = RequestContext(request)
     user = request.user
     if request.method == 'POST':
         form = EmailChangeForm(request.POST)
@@ -66,9 +70,10 @@ def email_change(request, template):
     else:
         form = EmailChangeForm()
 
-    return render_to_response(template, locals())
+    return render_to_response(template, locals(), context_instance=context)
 
 def register(request, template_name):
+    context = RequestContext(request)
     user = request.user
     if request.method == 'POST':
         form = UserForm(request.POST)
@@ -81,9 +86,10 @@ def register(request, template_name):
     else:
         form = UserForm()
 
-    return render_to_response(template_name, locals())
+    return render_to_response(template, locals(), context_instance=context)
 
 def reset_password(request, template):
+    context = RequestContext(request)
     if request.method == 'POST':
         form = PasswordResetForm(request.POST)
         if form.is_valid():
@@ -104,18 +110,19 @@ def reset_password(request, template):
     else:
         form = PasswordResetForm()
 
-    return render_to_response(template, locals())
+    return render_to_response(template, locals(), context_instance=context)
 
 
 def change_password_with_key(request, key, template):
     """
     Change a user password with the key sended by e-mail
     """
+    context = RequestContext(request)
     lostpassword = get_object_or_404(LostPassword, key=key)
 
     if lostpassword.is_expired():
         lostpassword.delete()
-        return render_to_response('passwd/expired.html')
+        return render_to_response('passwd/expired.html', context_instance=context)
 
     user = lostpassword.user
     if request.method == "POST":
@@ -126,13 +133,14 @@ def change_password_with_key(request, key, template):
     else:
         form = changePasswordKeyForm()
 
-    return render_to_response(template, locals())
+    return render_to_response(template, locals(), context_instance=context)
 
 @login_required
 def change_password_authenticated(request, template):
     """
     Change the password of the authenticated user
     """
+    context = RequestContext(request)
     user = request.user
     if request.method == "POST":
         form = changePasswordAuthForm(request.POST)
@@ -142,7 +150,7 @@ def change_password_authenticated(request, template):
     else:
         form = changePasswordAuthForm()
 
-    return render_to_response(template, locals())
+    return render_to_response(template, locals(), context_instance=context)
 
 def check_user(request, user):
     """
@@ -181,6 +189,7 @@ def check_email(request, email):
         raise Http404()
 
 def logout(request, template):
+    context = RequestContext(request)
     from django.contrib.auth import logout
     logout(request)
-    return render_to_response(template, locals())
+    return render_to_response(template, locals(), context_instance=context)

@@ -3,7 +3,7 @@
 
 {% block title %}{% trans "E-mail change" %}{% endblock %}
 {% block customjs %}
-<script type="text/javascript" src="/site_media/js/jquery.emailchg.js"></script>
+<script type="text/javascript" src="{{ MEDIA_URL }}js/jquery.emailchg.js"></script>
 {% endblock %}
 
 {% block content %}
@@ -14,7 +14,7 @@
     <div>
     	<label for="id_email" style="width: 170px;">{% trans 'New e-mail address:' %}</label>
     	{{ form.email }}
-      <img id="email_img" src="/site_media/images/loading.gif" />
+      <img id="email_img" src="{{ MEDIA_URL }}images/loading.gif" />
 		</div>
    	<input type="submit" value="{% trans 'Send confirmation' %}" />
   </fieldset>

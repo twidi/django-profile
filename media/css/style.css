@@ -242,3 +242,13 @@ select#id_country > option[disabled=disabled] {
 	font-weight: bold;
 	background: #ECECEC;
 }
+
+div.save {
+	background: #EFEFEF;
+	border: 1px solid #CCC;
+	padding: 5px;
+}
+
+div.save input[type=button] {
+	font-size: 1.4em;
+}
