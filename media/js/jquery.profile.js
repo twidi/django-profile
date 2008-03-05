@@ -97,7 +97,7 @@ $(function(){
 
 
 	$("#id_country").change(function() {
-		$("#id_location").val("");
+		$("#id_location").val("Drag the marker on the map to establish a more precise location.");
 		if (!$("#id_country option:selected").val()) {
 			$("div.mapinfo").hide();
 			return;
