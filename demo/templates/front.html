@@ -4,11 +4,11 @@
 {% block title %}{% trans "Front page" %}{% endblock %}
 
 {% block content %}
-{% if profiles %}
+{% if users %}
 <h1>{% trans "People who have already tried this demo" %}</h1>
 
-{% for profile in profiles %}
-  {% get_usercard profile %}
+{% for user in users %}
+  {% get_usercard user %}
 {% endfor %}
 
 {% endif %}

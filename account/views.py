@@ -49,15 +49,14 @@ def email_change(request, template):
     Change the e-mail page
     """
     context = RequestContext(request)
-    user = request.user
     if request.method == 'POST':
         form = EmailChangeForm(request.POST)
         if form.is_valid():
 
             email = form.cleaned_data.get('email')
             from django.core.mail import send_mail
-            EmailValidate.objects.filter(user=user, email=email).delete()
-            validate = EmailValidate(user=user, email=email, key=email_new_key())
+            EmailValidate.objects.filter(user=request.user, email=email).delete()
+            validate = EmailValidate(user=request.user, email=email, key=email_new_key())
 
             site = Site.objects.get_current()
             site_name = site.name
@@ -72,9 +71,8 @@ def email_change(request, template):
 
     return render_to_response(template, locals(), context_instance=context)
 
-def register(request, template_name):
+def register(request, template):
     context = RequestContext(request)
-    user = request.user
     if request.method == 'POST':
         form = UserForm(request.POST)
         if form.is_valid():
@@ -141,11 +139,10 @@ def change_password_authenticated(request, template):
     Change the password of the authenticated user
     """
     context = RequestContext(request)
-    user = request.user
     if request.method == "POST":
         form = changePasswordAuthForm(request.POST)
         if form.is_valid():
-            form.save(user)
+            form.save(request.user)
             return HttpResponseRedirect('/accounts/password/change/done/')
     else:
         form = changePasswordAuthForm()

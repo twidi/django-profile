@@ -128,12 +128,12 @@ form.registration > fieldset > input[type=submit] {
 	margin-left: 280px;
 }
 
-form.pwdchg > fieldset > div > input[type=submit] {
+form.pwdchg > fieldset > input[type=submit] {
 	margin-left: 210px;
 }
 
-form.emailchg fieldset > div > input[type=submit] {
-	margin-left: 360px;
+form.emailchg fieldset > input[type=submit] {
+	margin-left: 340px;
 }
 
 form.emailchg fieldset > div > input[type=text] {

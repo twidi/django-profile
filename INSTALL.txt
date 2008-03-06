@@ -11,7 +11,7 @@ First of all, the requerimient to run this software is:
 		* Source: http://www.pythonware.com/products/pil/
 
 	* The Python libmagic bindings:
-		* python-magic package (on Debian or Ubuntu):
+		* python-magic package (on Debian, Ubuntu or Fedora):
 		* Source: ftp://ftp.gw.com/mirrors/pub/unix/file/file-4.23.tar.gz
 
 

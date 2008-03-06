@@ -1,5 +1,5 @@
 from django.shortcuts import render_to_response
-from profile.models import Profile
+from django.contrib.auth.models import User
 from django.template import RequestContext
 
 def front(request, template):
@@ -8,8 +8,7 @@ def front(request, template):
     a template with the list of profiles in the DB.
     """
     context = RequestContext(request)
-    profiles = Profile.objects.all()
-    user = request.user
+    users = User.objects.order_by("-date_joined")
 
     return render_to_response(template, locals(), context_instance=context)
 
