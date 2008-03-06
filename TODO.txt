@@ -1,3 +1,4 @@
+* Check the chars on the username of the registered users.
 * First and Last name is included in the User model. Date joined too:
 	http://www.djangoproject.com/documentation/authentication
 

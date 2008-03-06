@@ -154,7 +154,7 @@ form.passwd > fieldset > div > input[type=text] {
 	width: 300px;
 }
 
-form.passwd > fieldset > div > input[type=submit] {
+form.passwd > fieldset > input[type=submit] {
 	margin-left: 340px;
 }
 
