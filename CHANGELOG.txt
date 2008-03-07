@@ -2,6 +2,14 @@
 django-profile Changelog
 ========================
 
+Version 0.2.1
+-------------
+
+* Better registration form. Check valid usernames.
+
+Version 0.1
+-----------
+
 * Save profile Ajax-like.
 * Removed the django-registration dependency.
 * Added hCard information in the UserCard.

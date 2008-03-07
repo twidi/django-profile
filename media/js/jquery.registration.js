@@ -40,9 +40,12 @@ $(function(){
 
 			if (pass1.length > 0 && pass2.length > 0) {
 				$("#password_img").show();
-				if (pass1 != pass2) {
+				if (pass1.lenght < 6 || pass2.length < 6) {
           $("#password_img").attr("src", "/site_media/images/error.png");
-          $("#password_img").attr("alt", "The passwords are not equal:");
+          $("#password_img").attr("alt", "The passwords are too short.");
+				} else if (pass1 != pass2) {
+          $("#password_img").attr("src", "/site_media/images/error.png");
+          $("#password_img").attr("alt", "The passwords are not equal.");
 				} else {
           $("#password_img").attr("src", "/site_media/images/good.png");
 				}

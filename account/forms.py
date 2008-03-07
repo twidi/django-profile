@@ -23,8 +23,12 @@ class UserForm(forms.Form):
         """
         Verify that the username isn't already registered
         """
-        if len(User.objects.filter(username=self.cleaned_data.get("username"))) == 0:
-            return self.cleaned_data.get("username")
+        username = self.cleaned_data.get("username")
+        if not set(username).issubset("abcdefghijklmnopqrstuvwxyz0123456789_-"):
+            raise forms.ValidationError(_("That username has invalid characters."))
+
+        if len(User.objects.filter(username=username)) == 0:
+            return username
         else:
             raise forms.ValidationError(_("The username is already registered."))
 

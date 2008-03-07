@@ -28,7 +28,7 @@
 	</fieldset>
   {% if form.errors %}
 		{% for error,desc in form.errors.items %}
-  		<p class="error">{{desc|join:","}}</p>
+  		<p class="error">{{ error }}: {{desc|join:","}}</p>
 		{% endfor %}
   {% endif %}
 </form> 
