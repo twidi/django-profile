@@ -4,12 +4,6 @@
 {% block title %}{% trans "Logged out" %}{% endblock %}
 
 {% block content %}
-<h2>{% trans "Logged out" %}</h2>
-<p>{% trans "You've been logged out." %}</p>
-<hr />
-{% if next %}
-<p><a href="{{ next}}">{% trans "Return to last page" %}</a></p>
-{% else %}
-<p><a href="/profile">{% trans "Return to the profile page" %}</a></p>
-{% endif %}
+<h1>{% trans "Logged out" %}</h1>
+<p class="intro">{% trans "You've been logged out." %}</p>
 {% endblock %}

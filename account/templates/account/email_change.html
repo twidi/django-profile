@@ -8,23 +8,25 @@
 
 {% block content %}
 <h1>{% trans "E-mail change" %}</h1>
-<p>{% trans "Insert the new e-mail address. An e-mail will be send to it for testing and confirmation." %}
-<form class="commonform emailchg" action="" method="post">
-  <fieldset>
-    <div>
-    	<label for="id_email" style="width: 170px;">{% trans 'New e-mail address:' %}</label>
-    	{{ form.email }}
-      <img id="email_img" src="{{ MEDIA_URL }}images/loading.gif" />
-		</div>
-   	<input type="submit" value="{% trans 'Send confirmation' %}" />
-  </fieldset>
-  {% if form.errors %}
-  <div class="errmsg">
-    <p>{{form.email.errors}}</p>
-  </div>
-  {% endif %}
-  {% if form.errors %}
-  <p class="error">{{form.newpass2.errors|join:","}}</p>
-  {% endif %}
-</form>
+<p class="intro">{% trans "Insert the new e-mail address. An e-mail will be send to it for testing and confirmation." %}
+<div class="center">
+	<form class="commonform emailchg" action="" method="post">
+  	<fieldset>
+    	<div>
+    		<label for="id_email" style="width: 170px;">{% trans 'New e-mail address:' %}</label>
+    		{{ form.email }}
+      	<img id="email_img" src="{{ MEDIA_URL }}images/loading.gif" />
+			</div>
+   		<input type="submit" value="{% trans 'Send confirmation' %}" />
+  	</fieldset>
+  	{% if form.errors %}
+  	<div class="errmsg">
+    	<p>{{form.email.errors}}</p>
+  	</div>
+  	{% endif %}
+  	{% if form.errors %}
+  	<p class="error">{{form.newpass2.errors|join:","}}</p>
+  	{% endif %}
+	</form>
+</div>
 {% endblock %}
