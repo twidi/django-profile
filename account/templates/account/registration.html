@@ -7,29 +7,31 @@
 
 {% block content %}
 <h1>{% trans "User registration" %}</h1>
-<p>{% trans "You only need a valid username and a password to get access to the private content of this site." %}</p>
-<form class="commonform registration" method="post" action="">
-	<fieldset>
-		<div>
-   		<label for="id_username">{% trans "Username:" %}</label>
-   		{{ form.username }}
-			<img id="username_img" src="{{ MEDIA_URL }}images/loading.gif" />
-		</div>
-		<div>
-   		<label for="id_password1">{% trans "Password:" %}</label>
-   		{{ form.password1 }}
-		</div>
-		<div>
-   		<label for="id_password2">{% trans "Password again:" %}</label>
-   		{{ form.password2 }}
-			<img id="password_img" src="{{ MEDIA_URL }}images/loading.gif" />
-		</div>
-   	<input type="submit" value="{% trans 'Register' %}" />
-	</fieldset>
-  {% if form.errors %}
-		{% for error,desc in form.errors.items %}
-  		<p class="error">{{ error }}: {{desc|join:","}}</p>
-		{% endfor %}
-  {% endif %}
-</form> 
+<p class="intro">{% trans "You only need a valid username and a password to get access to the private content of this site." %}</p>
+<div class="center">
+	<form class="commonform registration" method="post" action="">
+		<fieldset>
+			<div>
+   			<label for="id_username">{% trans "Username:" %}</label>
+   			{{ form.username }}
+				<img id="username_img" src="{{ MEDIA_URL }}images/loading.gif" />
+			</div>
+			<div>
+   			<label for="id_password1">{% trans "Password:" %}</label>
+   			{{ form.password1 }}
+			</div>
+			<div>
+   			<label for="id_password2">{% trans "Password again:" %}</label>
+   			{{ form.password2 }}
+				<img id="password_img" src="{{ MEDIA_URL }}images/loading.gif" />
+			</div>
+   		<input type="submit" value="{% trans 'Register' %}" />
+		</fieldset>
+  	{% if form.errors %}
+			{% for error,desc in form.errors.items %}
+  			<p class="error">{{ error }}: {{desc|join:","}}</p>
+			{% endfor %}
+  	{% endif %}
+	</form> 
+</div>
 {% endblock %}
