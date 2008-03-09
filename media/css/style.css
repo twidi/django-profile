@@ -79,7 +79,7 @@ form.commonform > fieldset > div > textarea {
 
 form.commonform > fieldset > div > label {
 	float: left;
-	width: 150px;
+	width: 180px;
 	line-height: 28px;
 	text-align: right;
 	margin-right: 5px;
@@ -102,42 +102,22 @@ form.commonform > fieldset > div > input[type=text], form.commonform > fieldset 
 	border: 2px solid #CCC;
 }
 
-form.login > fieldset > input[type=submit] {
-	margin-left: 300px;
+form.login p.lostpw {
+	margin: 0px;
+	font-size: 0.7em;
+	margin-left: 185px;
 }
 
-form.registration > fieldset > input[type=submit] {
-	margin-left: 280px;
-}
-
-form.pwdchg > fieldset > input[type=submit] {
-	margin-left: 210px;
-}
-
-form.emailchg fieldset > input[type=submit] {
-	margin-left: 340px;
+form.commonform > fieldset > input[type=submit] {
+	margin-left: 185px;
 }
 
 form.emailchg fieldset > div > input[type=text] {
 	width: 300px;
 }
 
-form.pwdchg > fieldset > div > label {
-	width: 150px;
-}
-
-form.login p.lostpw {
-	margin: 0px;
-	font-size: 0.7em;
-	margin-left: 170px;
-}
-
-form.passwd > fieldset > div > input[type=text] {
+form.lostpw > fieldset > div > input[type=text] {
 	width: 300px;
-}
-
-form.passwd > fieldset > input[type=submit] {
-	margin-left: 340px;
 }
 
 form.profile > fieldset > div > select {
