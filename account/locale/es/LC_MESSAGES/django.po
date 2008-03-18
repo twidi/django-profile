@@ -1,0 +1,221 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-03-18 11:43+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: forms.py:28
+msgid "That username has invalid characters."
+msgstr "Ese usuario tiene carácteres inválidos"
+
+#: forms.py:33
+msgid "The username is already registered."
+msgstr "Ese nombre de usuario ya está registrado."
+
+#: forms.py:42 forms.py:86 forms.py:108
+msgid "The passwords inserted are different."
+msgstr "Las contraseñas introducidas no coinciden."
+
+#: forms.py:55
+msgid "That e-mail is already used."
+msgstr "Ese e-mail ya está utilizado."
+
+#: forms.py:70
+msgid "There's no user with that e-mail"
+msgstr "No existe ningún usuario con ese e-mail"
+
+#: views.py:39
+msgid "E-mail changed successfully."
+msgstr "La dirección de correo ha sido cambiada correctamente."
+
+#: views.py:42
+msgid ""
+"The key you received via e-mail is no longer valid. Please try the e-mail "
+"change process again."
+msgstr "La clave que recibiste por e-mail ya no es válida. Por favor, inicia el proceso de cambio de e-mail de nuevo."
+
+#: views.py:105
+#, python-format
+msgid "Password reset on %s"
+msgstr "Reseteo de contraseña en %s"
+
+#: views.py:172 views.py:184
+msgid "E-mail not registered"
+msgstr "E-mail no registrado"
+
+#: templates/account/email_change.html:4
+#: templates/account/email_change.html:10
+msgid "E-mail change"
+msgstr "Cambio de e-mail"
+
+#: templates/account/email_change.html:11
+msgid ""
+"Insert the new e-mail address. An e-mail will be send to it for testing and "
+"confirmation."
+msgstr "Introduce la nueva dirección de correo. Se te enviará un e-mail para probar y confirmar."
+
+#: templates/account/email_change.html:16
+msgid "New e-mail address:"
+msgstr "Nueva dirección de correo:"
+
+#: templates/account/email_change.html:20
+msgid "Send confirmation"
+msgstr "Enviar confirmación"
+
+#: templates/account/email_change_done.html:4
+#: templates/account/email_change_done.html:9
+msgid "E-mail change successful"
+msgstr "Cambio de dirección de correo satisfactorio"
+
+#: templates/account/email_change_done.html:11
+msgid "E-mail change unsuccessful"
+msgstr "Fallo en el cambio de dirección de correo"
+
+#: templates/account/email_change_processed.html:4
+#: templates/account/email_change_processed.html:8
+msgid "E-mail change processed"
+msgstr "Cambio de dirección de correo procesado"
+
+#: templates/account/email_change_processed.html:10
+msgid ""
+"An e-mail has been sent to the new e-mail address to verify and activate it. "
+"Please access to your e-mail and complete this process following the "
+"instructions specified in the e-mail body."
+msgstr ""
+"Se te ha enviado un e-mail a la nueva dirección de correo para verificar y activarla. "
+"Por favor, accede a tu correo y completa este proceso siguiendo las instrucciones descritas en él."
+
+#: templates/account/login.html:3 templates/account/login.html.py:10
+msgid "User login"
+msgstr "Entrada de usuario"
+
+#: templates/account/login.html:15 templates/account/registration.html:15
+msgid "Username:"
+msgstr "Usuario:"
+
+#: templates/account/login.html:19 templates/account/registration.html:20
+msgid "Password:"
+msgstr "Contraseña:"
+
+#: templates/account/login.html:22
+msgid "Have you lost your password?"
+msgstr "¿Has perdido tu contraseña?"
+
+#: templates/account/login.html:23
+msgid "Login"
+msgstr "Entrar"
+
+#: templates/account/login.html:26
+msgid "Your username and password didn't match. Please try again."
+msgstr "Tu usuario y contraseña no coinciden. Por favor, vuelve a intentarlo."
+
+#: templates/account/logout.html:4 templates/account/logout.html.py:7
+msgid "Logged out"
+msgstr "Desconectado"
+
+#: templates/account/logout.html:8
+msgid "You've been logged out."
+msgstr "Has sido desconectado."
+
+#: templates/account/password_change.html:4
+#: templates/account/password_change.html:9
+msgid "Password change"
+msgstr "Cambio de contraseña"
+
+#: templates/account/password_change.html:10
+msgid ""
+"Please enter your new password twice so we can verify you typed it in "
+"correctly."
+msgstr ""
+"Por favor introduce tu nueva contraseña dos veces para que podamos verificar que la "
+"has tecleado correctamente."
+
+#: templates/account/password_change.html:15
+msgid "New password:"
+msgstr "Nueva contraseña:"
+
+#: templates/account/password_change.html:19
+msgid "Confirm password:"
+msgstr "Confirmar contraseña:"
+
+#: templates/account/password_change.html:23
+msgid "Change my password"
+msgstr "Cambiar mi contraseña"
+
+#: templates/account/password_change_done.html:4
+#: templates/account/password_change_done.html:7
+msgid "Password change successful"
+msgstr "Cambio de contraseña satisfactorio"
+
+#: templates/account/password_change_done.html:8
+msgid "The password has been changed successfully."
+msgstr "La contraseña se ha cambiado satisfactoriamente"
+
+#: templates/account/password_reset.html:4
+#: templates/account/password_reset.html:10
+msgid "Password reset"
+msgstr "Reseteo de contraseña"
+
+#: templates/account/password_reset.html:11
+msgid ""
+"Forgotten your password? Enter your e-mail address below, and we'll reset "
+"your password and e-mail the new one to you."
+msgstr ""
+"¿Has olvidado tu contraseña? Introduce tu dirección de correo para que la reseteemos y "
+"te enviemos una nueva por e-mail."
+
+#: templates/account/password_reset.html:16
+msgid "E-mail address:"
+msgstr "Dirección de correo:"
+
+#: templates/account/password_reset.html:20
+msgid "Reset my password"
+msgstr "Resetear mi contraseña"
+
+#: templates/account/password_reset_done.html:4
+#: templates/account/password_reset_done.html:7
+msgid "Password reset successful"
+msgstr "Reseteo de contraseña satisfactorio"
+
+#: templates/account/password_reset_done.html:8
+msgid ""
+"We've e-mailed a new password to the e-mail address you submitted. You "
+"should be receiving it shortly."
+msgstr ""
+"Te hemos enviado una nueva contraseña a la dirección de correo que introdujiste. La "
+"recibirás en breve."
+
+#: templates/account/registration.html:3 templates/account/registration.html:9
+msgid "User registration"
+msgstr "Registro de usuario"
+
+#: templates/account/registration.html:10
+msgid ""
+"You only need a valid username and a password to get access to the private "
+"content of this site."
+msgstr ""
+"Únicamente necesitas un usuario y una contraseña para acceder al contenido privado de este sitio web."
+
+#: templates/account/registration.html:24
+msgid "Password again:"
+msgstr "Contraseña de nuevo:"
+
+#: templates/account/registration.html:28
+msgid "Register"
+msgstr "Registrar"
+
+#: templates/account/registration_done.html:7
+msgid "You have successfully registered a new account."
+msgstr "Has registrado una nueva cuenta satisfactoriamente."
