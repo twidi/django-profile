@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-03-18 11:43+0100\n"
+"POT-Creation-Date: 2008-03-18 12:16+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -44,7 +44,9 @@ msgstr "La dirección de correo ha sido cambiada correctamente."
 msgid ""
 "The key you received via e-mail is no longer valid. Please try the e-mail "
 "change process again."
-msgstr "La clave que recibiste por e-mail ya no es válida. Por favor, inicia el proceso de cambio de e-mail de nuevo."
+msgstr ""
+"La clave que recibiste por e-mail ya no es válida. Por favor, inicia el "
+"proceso de cambio de e-mail de nuevo."
 
 #: views.py:105
 #, python-format
@@ -64,7 +66,9 @@ msgstr "Cambio de e-mail"
 msgid ""
 "Insert the new e-mail address. An e-mail will be send to it for testing and "
 "confirmation."
-msgstr "Introduce la nueva dirección de correo. Se te enviará un e-mail para probar y confirmar."
+msgstr ""
+"Introduce la nueva dirección de correo. Se te enviará un e-mail para probar "
+"y confirmar."
 
 #: templates/account/email_change.html:16
 msgid "New e-mail address:"
@@ -94,8 +98,9 @@ msgid ""
 "Please access to your e-mail and complete this process following the "
 "instructions specified in the e-mail body."
 msgstr ""
-"Se te ha enviado un e-mail a la nueva dirección de correo para verificar y activarla. "
-"Por favor, accede a tu correo y completa este proceso siguiendo las instrucciones descritas en él."
+"Se te ha enviado un e-mail a la nueva dirección de correo para verificar y "
+"activarla. Por favor, accede a tu correo y completa este proceso siguiendo "
+"las instrucciones descritas en él."
 
 #: templates/account/login.html:3 templates/account/login.html.py:10
 msgid "User login"
@@ -139,8 +144,8 @@ msgid ""
 "Please enter your new password twice so we can verify you typed it in "
 "correctly."
 msgstr ""
-"Por favor introduce tu nueva contraseña dos veces para que podamos verificar que la "
-"has tecleado correctamente."
+"Por favor introduce tu nueva contraseña dos veces para que podamos verificar "
+"que la has tecleado correctamente."
 
 #: templates/account/password_change.html:15
 msgid "New password:"
@@ -173,8 +178,8 @@ msgid ""
 "Forgotten your password? Enter your e-mail address below, and we'll reset "
 "your password and e-mail the new one to you."
 msgstr ""
-"¿Has olvidado tu contraseña? Introduce tu dirección de correo para que la reseteemos y "
-"te enviemos una nueva por e-mail."
+"¿Has olvidado tu contraseña? Introduce tu dirección de correo para que la "
+"reseteemos y te enviemos una nueva por e-mail."
 
 #: templates/account/password_reset.html:16
 msgid "E-mail address:"
@@ -194,8 +199,8 @@ msgid ""
 "We've e-mailed a new password to the e-mail address you submitted. You "
 "should be receiving it shortly."
 msgstr ""
-"Te hemos enviado una nueva contraseña a la dirección de correo que introdujiste. La "
-"recibirás en breve."
+"Te hemos enviado una nueva contraseña a la dirección de correo que "
+"introdujiste. La recibirás en breve."
 
 #: templates/account/registration.html:3 templates/account/registration.html:9
 msgid "User registration"
@@ -206,7 +211,8 @@ msgid ""
 "You only need a valid username and a password to get access to the private "
 "content of this site."
 msgstr ""
-"Únicamente necesitas un usuario y una contraseña para acceder al contenido privado de este sitio web."
+"Únicamente necesitas un usuario y una contraseña para acceder al contenido "
+"privado de este sitio web."
 
 #: templates/account/registration.html:24
 msgid "Password again:"
@@ -217,5 +223,23 @@ msgid "Register"
 msgstr "Registrar"
 
 #: templates/account/registration_done.html:7
-msgid "You have successfully registered a new account."
-msgstr "Has registrado una nueva cuenta satisfactoriamente."
+#, fuzzy
+msgid "You have successfully registered a new account. Access"
+msgstr "Has registrado una nueva cuenta satisfactoriamente. Accede a"
+
+#: templates/account/registration_done.html:7
+msgid "your profile"
+msgstr "tu perfil"
+
+#: templates/account/registration_done.html:7
+msgid ""
+"to add more information about you (your e-mail for example), or go to the"
+msgstr "para añadir más información acerca de ti (por ejemplo tu dirección de correo), o ves a la"
+
+#: templates/account/registration_done.html:7
+msgid "login page"
+msgstr "página de entrada de usuario"
+
+#: templates/account/registration_done.html:7
+msgid "to authenticate and start using this site."
+msgstr "para autenticarte y empezar a utilizar este sitio."
