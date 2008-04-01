@@ -5,6 +5,9 @@ django-profile Changelog
 Version 0.2.1
 -------------
 
+* Added Portuguese Brazilian (pt-br) localization. Thanks to Pedro Valente.
+* Added Spanish (es) localization.
+* Localization framework. 
 * Better registration form. Check valid usernames.
 
 Version 0.1
