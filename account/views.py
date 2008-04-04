@@ -154,7 +154,7 @@ def check_user(request, user):
     Check if a username exists. Only HTTPXMLRequest. Returns JSON
     """
     if request.META.get('HTTP_X_REQUESTED_WITH') == 'XMLHttpRequest':
-        if len(user) < 3 or not set(user).issubset("abcdefghijklmnopqrstuvwxyz0123456789_-") or len(User.objects.filter(username=user)) == 1:
+        if len(user) < 3 or not set(user).issubset("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_-") or len(User.objects.filter(username=user)) == 1:
             return json_error_response(simplejson.dumps({'success': False}))
         else:
             return HttpResponse(simplejson.dumps({'success': True}))
