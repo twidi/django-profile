@@ -61,6 +61,10 @@ function initMap() {
 	googlemaps.searchLocation();
 }
 
+function initMap2() {
+	googlemaps = new mapFramework();
+}
+
 function updateInline(date) {
 	var arrdate = date.split("/");
   $("#id_birthdate").val(arrdate[2] + "-" + arrdate[0] + "-" + arrdate[1]);
@@ -83,16 +87,21 @@ $(function(){
 	var date = $("#id_birthdate").val().split("-");
   $("div.calendar").datepicker({ onSelect: updateInline, hideIfNoPrevNext: true, yearRange: "1940:2010", defaultDate: new Date(date[0],date[1] -1, date[2]) });
   $("a.newavatar").click(function() {
-		window.open($(this).attr("href"), "Avatar", "width=410, height=160,resizable=yes").moveTo(100,100);
+		window.open($(this).attr("href"), "Avatar", "width=410, height=200,resizable=yes").moveTo(100,100);
 		return false;
   });
 
 	// Click on the save button
 	$("input[@type=button].save").click(function() {
+		$("img.saving").attr("src", "/site_media/images/loading3.png");
 		$("img.saving").show();
-		$.post("/profile/save/", $("form").serialize(), function() {
-			$("img.saving").hide();
-		});
+		$.post("/profile/save/", $("form").serialize(), function(data) {
+			if (data.success) {
+				$("img.saving").attr("src", "/site_media/images/good.png");
+			} else {
+				$("img.saving").attr("src", "/site_media/images/error.png");
+			}
+		}, "json");
 	});
 
 
@@ -104,7 +113,7 @@ $(function(){
 		}
 		if ($("div.mapinfo").css("display") == "none") {
 			$("div.mapinfo").show();
-			$.getScript("http://maps.google.com/maps?file=api&v=2.x&key=" + $("#apikey").text() + "&async=2&callback=initMap")
+			$.getScript("http://maps.google.com/maps?file=api&v=2.x&key=" + $("#apikey").text() + "&async=2&callback=initMap");
 		} else {
 			googlemaps.searchLocation();
 		}
@@ -112,7 +121,7 @@ $(function(){
 
 	if ($("#id_country option:selected").val()) {
       $("div.mapinfo").show();
-      $.getScript("http://maps.google.com/maps?file=api&v=2.x&key=" + $("#apikey").text() + "&async=2&callback=initMap")
+      $.getScript("http://maps.google.com/maps?file=api&v=2.x&key=" + $("#apikey").text() + "&async=2&callback=initMap2");
 	}
 
 	// Gender select
