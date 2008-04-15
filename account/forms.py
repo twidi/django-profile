@@ -2,7 +2,7 @@ from django import newforms as forms
 from django.contrib.auth.models import User
 from django.contrib.sites.models import Site
 from django.utils.translation import ugettext as _
-from models import LostPassword, EmailValidate
+from account.models import LostPassword, EmailValidate
 from django.template import Context, loader
 
 def new_key():
