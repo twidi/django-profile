@@ -1,6 +1,6 @@
 from django.conf.urls.defaults import *
 from django.views.generic.simple import redirect_to, direct_to_template
-from profile.views import *
+from userprofile.views import *
 from django.conf import settings
 
 urlpatterns = patterns('',

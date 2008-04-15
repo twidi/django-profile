@@ -2,7 +2,7 @@ from django.template import Library
 from django.template.defaultfilters import stringfilter
 from django.utils.translation import ugettext as _
 from django.contrib.auth.models import User
-from profile.models import Profile,Avatar
+from userprofile.models import Profile,Avatar
 from django.conf import settings
 import datetime
 import os.path

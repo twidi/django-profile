@@ -31,7 +31,7 @@ TIME_ZONE = 'America/Chicago'
 # http://www.i18nguy.com/unicode/language-identifiers.html
 LANGUAGE_CODE = 'en-us'
 
-AUTH_PROFILE_MODULE = 'profile.profile'
+AUTH_PROFILE_MODULE = 'userprofile.profile'
 
 SITE_ID = 1
 
@@ -93,6 +93,6 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.admin',
-    'profile',
+    'userprofile',
     'account',
 )
