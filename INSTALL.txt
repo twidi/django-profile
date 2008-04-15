@@ -30,7 +30,7 @@ from the repository executing this command on this directory:
 
 	$ svn co http://code.djangoproject.com/svn/django/trunk/django
 
-* Make the "profile" and "account" modules visible to your PYTHONPATH.
+* Make the "userprofile" and "account" modules visible to your PYTHONPATH.
 
 * Go to the "demo" directory located in this directory and run:
 
@@ -47,7 +47,7 @@ Optional:
   this steps:
 
 $ python manage.py shell
->>> from profile.models import Continent,Country
+>>> from userprofile.models import Continent,Country
 >>> Continent().importdata()
 >>> Country().importdata()
 
@@ -77,15 +77,15 @@ software. Basically, you need these things:
   section).
 
 * Add this directive to the 'settings.py' file:
-	AUTH_PROFILE_MODULE = 'profile.profile'
+	AUTH_PROFILE_MODULE = 'userprofile.profile'
 
 * Add this modules to the INSTALLED_APPS section of your settings.py:
-	'profile',
+	'userprofile',
 	'account',
 
 * Add this lines to your urls.py file:
 
-    (r'^profile/', include('profile.urls')),
+    (r'^profile/', include('userprofile.urls')),
     (r'^accounts/', include('account.urls')),
 
 * Make the "media" directory accesible as your media content, or add the following line
@@ -100,7 +100,7 @@ software. Basically, you need these things:
 
 * Fill the needed data of countries and continents of the profile database with these commands:
 	$ python manage.py shell
-	>>> from profile.models import Continent,Country
+	>>> from userprofile.models import Continent,Country
 	>>> Continent().importdata()
 	>>> Country().importdata()
 
@@ -111,5 +111,5 @@ software. Basically, you need these things:
   in the file 'settings.py'.
 
 * Add the 'templates' directory to the TEMPLATES_DIRS section of your 'settings.py'. 
-  You can also modify the default templates supplied with the modules 'account' and 'profile'
+  You can also modify the default templates supplied with the modules 'account' and 'userprofile'
 

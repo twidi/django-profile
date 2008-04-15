@@ -2,6 +2,12 @@
 django-profile Changelog
 ========================
 
+Version 0.2.2
+-------------
+* "profile" module renamed to "userprofile". The old name had a conflict with the python-profiler
+  module. Thanks to Mario Cesar.
+* Solved some mess with the importing of settings variables. Thanks to Mario Cesar.
+
 Version 0.2.1
 -------------
 
