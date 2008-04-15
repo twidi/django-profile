@@ -30,6 +30,8 @@ from the repository executing this command on this directory:
 
 	$ svn co http://code.djangoproject.com/svn/django/trunk/django
 
+* Make the "profile" and "account" modules visible to your PYTHONPATH.
+
 * Go to the "demo" directory located in this directory and run:
 
 	$ python manage.py syncdb
