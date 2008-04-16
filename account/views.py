@@ -78,8 +78,15 @@ def register(request, template):
             username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password1')
             newuser = User.objects.create_user(username=username, email='', password=password)
-            newuser.save()
-            return HttpResponseRedirect('%scomplete/' % request.path)
+
+            if not hasattr(settings, "EMAIL_VALIDATION"):
+                newuser.is_active = False
+                newuser.email = form.cleaned_data.get('email')
+                newuser.save()
+                return HttpResponseRedirect('%svalidate/' % request.path)
+            else:
+                newuser.save()
+                return HttpResponseRedirect('%scomplete/' % request.path)
     else:
         form = UserForm()
 
