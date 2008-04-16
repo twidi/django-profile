@@ -11,6 +11,8 @@ from django.contrib.sites.models import Site
 from forms import UserForm, EmailChangeForm, PasswordResetForm, changePasswordKeyForm, changePasswordAuthForm
 from django.contrib.auth.decorators import login_required
 from django.template import Context, loader
+from django.conf import settings
+from django.core.validators import email_re
 
 def json_error_response(error_message, *args, **kwargs):
     return HttpResponse(simplejson.dumps(dict(success=False,
@@ -80,6 +82,9 @@ def register(request, template):
             return HttpResponseRedirect('%scomplete/' % request.path)
     else:
         form = UserForm()
+
+    if hasattr(settings, "EMAIL_VALIDATION"):
+        email = True
 
     return render_to_response(template, locals(), context_instance=RequestContext(request))
 
@@ -157,9 +162,12 @@ def check_user(request, user):
 
 def check_email_unused(request, email):
     """
-    Check if an  exists. Only HTTPXMLRequest. Returns JSON
+    Check if an e-mail exists. Only HTTPXMLRequest. Returns JSON
     """
     if request.META.get('HTTP_X_REQUESTED_WITH') == 'XMLHttpRequest':
+        if not email_re.search(email):
+            return json_error_response(_("Invalid e-mail"))
+
         if not User.objects.filter(email=email):
             return HttpResponse(simplejson.dumps({'success': True}))
         else:

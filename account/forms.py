@@ -4,6 +4,7 @@ from django.contrib.sites.models import Site
 from django.utils.translation import ugettext as _
 from account.models import LostPassword, EmailValidate
 from django.template import Context, loader
+from django.conf import settings
 
 def new_key():
     while True:
@@ -16,6 +17,7 @@ def new_key():
 class UserForm(forms.Form):
 
     username = forms.CharField(max_length=255, min_length = 3)
+    email = forms.EmailField(required=hasattr(settings, "EMAIL_VALIDATION"))
     password1 = forms.CharField(min_length=6, widget=forms.PasswordInput)
     password2 = forms.CharField(min_length=6, widget=forms.PasswordInput)
 
@@ -41,6 +43,16 @@ class UserForm(forms.Form):
         else:
             raise forms.ValidationError(_("The passwords inserted are different."))
 
+    def clean_email(self):
+        """
+        Verify that the email exists
+        """
+        email = self.cleaned_data.get("email")
+        try:
+            User.objects.get(email=email)
+            raise forms.ValidationError(_("That e-mail is already used."))
+        except:
+            return email
 
 class EmailChangeForm(forms.Form):
     email = forms.EmailField()

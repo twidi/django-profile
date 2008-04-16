@@ -8,6 +8,7 @@ Version 0.2.2
   module. If you're updating from the old version, you will have to dump and restore the old database data. 
   Thanks to Mario Cesar for the report.
 * Solved some mess with the importing of settings variables. Thanks to Mario Cesar.
+* We can activate an e-mail validation on the registration process.
 
 Version 0.2.1
 -------------

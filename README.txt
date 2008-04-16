@@ -12,3 +12,9 @@ in the package.
 
 For installation instructions, see the file "INSTALL.txt" in this
 directory.
+
+
+Options on settings.py:
+
+ACCOUNT_ACTIVATION_DAYS
+EMAIL_VALIDATION

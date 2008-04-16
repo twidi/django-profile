@@ -16,6 +16,13 @@
    			{{ form.username }}
 				<img id="username_img" src="{{ MEDIA_URL }}images/loading.gif" />
 			</div>
+			{% if email %}
+			<div>
+   			<label for="id_email">{% trans "E-mail:" %}</label>
+   			{{ form.email }}
+				<img id="email_img" src="{{ MEDIA_URL }}images/loading.gif" />
+			</div>
+			{% endif %}
 			<div>
    			<label for="id_password1">{% trans "Password:" %}</label>
    			{{ form.password1 }}
