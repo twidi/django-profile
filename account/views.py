@@ -1,6 +1,7 @@
 from django.shortcuts import render_to_response, get_object_or_404
 from django import newforms as forms
 from django.http import Http404
+from django.core.mail import send_mail
 from django.utils.translation import ugettext as _
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.models import User
@@ -54,10 +55,8 @@ def email_change(request, template):
         if form.is_valid():
 
             email = form.cleaned_data.get('email')
-            from django.core.mail import send_mail
             EmailValidate.objects.filter(user=request.user, email=email).delete()
             validate = EmailValidate(user=request.user, email=email, key=email_new_key())
-
             site = Site.objects.get_current()
             site_name = site.name
             t = loader.get_template('account/email_change_confirmation.txt')

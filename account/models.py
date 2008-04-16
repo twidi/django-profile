@@ -16,8 +16,12 @@ class LostPassword(models.Model):
 class EmailValidate(models.Model):
     user = models.ForeignKey(User)
     email = models.EmailField()
-    key = models.CharField(max_length=70, unique=True)
+    key = models.CharField(max_length=70, unique=True, db_index=True)
     created = models.DateTimeField(auto_now_add=True)
 
     class Admin:
-        pass
+        list_display = ('__unicode__',)
+        search_fields = ('user__username', 'user__first_name')
+
+    def __unicode__(self):
+        return _("Email validation process for %s") % self.user
