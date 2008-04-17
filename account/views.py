@@ -78,7 +78,7 @@ def register(request, template):
             password = form.cleaned_data.get('password1')
             newuser = User.objects.create_user(username=username, email='', password=password)
 
-            if not hasattr(settings, "EMAIL_VALIDATION"):
+            if hasattr(settings, "EMAIL_VALIDATION"):
                 newuser.is_active = False
                 newuser.email = form.cleaned_data.get('email')
                 newuser.save()
@@ -126,7 +126,7 @@ def change_password_with_key(request, key, template):
 
     if lostpassword.is_expired():
         lostpassword.delete()
-        return render_to_response('passwd/expired.html', context_instance=context)
+        return render_to_response('account/password_expired.html', context_instance=RequestContext(request))
 
     user = lostpassword.user
     if request.method == "POST":

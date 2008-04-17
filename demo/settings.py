@@ -32,7 +32,7 @@ TIME_ZONE = 'America/Chicago'
 # http://www.i18nguy.com/unicode/language-identifiers.html
 LANGUAGE_CODE = 'en-us'
 
-AUTH_PROFILE_MODULE = 'userprofile.profile'
+AUTH_PROFILE_MODULE = 'userprofile.Profile'
 
 SITE_ID = 1
 
