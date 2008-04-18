@@ -76,7 +76,7 @@ ROOT_URLCONF = 'demo.urls'
 
 # e-mail settings
 DEFAULT_FROM_EMAIL = ''
-EMAIL_HOST = ''
+EMAIL_HOST = 'localhost'
 EMAIL_HOST_USER = ''
 EMAIL_HOST_PASSWORD = ''
 

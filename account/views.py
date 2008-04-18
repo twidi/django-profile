@@ -24,15 +24,10 @@ def change_email_with_key(request, key, template):
     """
     Verify key and change email
     """
-    try:
-        verify = Validate.objects.get(key=key, user=request.user)
-        user = User.objects.get(username=str(request.user))
-        user.email = verify.email
-        user.save()
-        verify.delete()
+    if Validate.objects.verify(key=key, user=request.user, type="email"):
         message = _('E-mail changed successfully.')
         successful = True
-    except:
+    else:
         message = _('The key you received via e-mail is no longer valid. Please try the e-mail change process again.')
         successful = False
 
@@ -45,8 +40,7 @@ def email_change(request, template):
     if request.method == 'POST':
         form = EmailChangeForm(request.POST)
         if form.is_valid():
-            validate = Validate(user=request.user, email=form.cleaned_data.get('email'), type="email")
-            validate.save()
+            Validate.objects.add(user=request.user, email=form.cleaned_data.get('email'), type="email")
             return HttpResponseRedirect('%sprocessed/' % request.path)
     else:
         form = EmailChangeForm()

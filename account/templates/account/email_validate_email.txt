@@ -1,8 +1,8 @@
 {% load i18n %}
-{% trans "You're receiving this e-mail because you requested an email change" %}
-{% blocktrans %}for your user account at {{ site.name }}{% endblocktrans %}.
+{% trans "You're receiving this e-mail because you requested an account " %}
+{% blocktrans %}at {{ site_name }}{% endblocktrans %}.
 
-{% trans "If you want to change the e-mail associated with your account, follow this link:" %}
+{% trans "Following this link, you will validate your e-mail address:" %}
 
 {{ message }}
 
@@ -10,4 +10,4 @@
 
 {% trans "Thanks for using our site!" %}
 
-{% blocktrans %}The {{ site.name }} team{% endblocktrans %}
+{% blocktrans %}The {{ site_name }} team{% endblocktrans %}
