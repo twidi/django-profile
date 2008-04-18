@@ -1,31 +1,23 @@
 from django.shortcuts import render_to_response, get_object_or_404
 from django import newforms as forms
 from django.http import Http404
-from django.core.mail import send_mail
+from django.template.defaultfilters import slugify
 from django.utils.translation import ugettext as _
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.models import User
-from models import LostPassword, EmailValidate
+from models import Validate
 from django.utils import simplejson
 from django.template import RequestContext
-from django.contrib.sites.models import Site
 from forms import UserForm, EmailChangeForm, PasswordResetForm, changePasswordKeyForm, changePasswordAuthForm
 from django.contrib.auth.decorators import login_required
 from django.template import Context, loader
 from django.conf import settings
 from django.core.validators import email_re
+from userprofile.models import Profile
 
 def json_error_response(error_message, *args, **kwargs):
     return HttpResponse(simplejson.dumps(dict(success=False,
                                               error_message=error_message), ensure_ascii=False))
-
-def email_new_key():
-    while True:
-        key = User.objects.make_random_password(70)
-        try:
-            EmailValidate.objects.get(key=key)
-        except EmailValidate.DoesNotExist:
-            return key
 
 @login_required
 def change_email_with_key(request, key, template):
@@ -33,7 +25,7 @@ def change_email_with_key(request, key, template):
     Verify key and change email
     """
     try:
-        verify = EmailValidate.objects.get(key=key, user=request.user)
+        verify = Validate.objects.get(key=key, user=request.user)
         user = User.objects.get(username=str(request.user))
         user.email = verify.email
         user.save()
@@ -53,17 +45,8 @@ def email_change(request, template):
     if request.method == 'POST':
         form = EmailChangeForm(request.POST)
         if form.is_valid():
-
-            email = form.cleaned_data.get('email')
-            EmailValidate.objects.filter(user=request.user, email=email).delete()
-            validate = EmailValidate(user=request.user, email=email, key=email_new_key())
-            site = Site.objects.get_current()
-            site_name = site.name
-            t = loader.get_template('account/email_change_confirmation.txt')
-            message = 'http://%s/accounts/email/change/%s/' % (site_name, validate.key)
-            send_mail('Email change confirmation on %s' % site.name, t.render(Context(locals())), None, [email])
+            validate = Validate(user=request.user, email=form.cleaned_data.get('email'), type="email")
             validate.save()
-
             return HttpResponseRedirect('%sprocessed/' % request.path)
     else:
         form = EmailChangeForm()
@@ -78,7 +61,7 @@ def register(request, template):
             password = form.cleaned_data.get('password1')
             newuser = User.objects.create_user(username=username, email='', password=password)
 
-            if hasattr(settings, "EMAIL_VALIDATION"):
+            if hasattr(settings, "EMAIL_VALIDATION") and settings.EMAIL_VALIDATION == True:
                 newuser.is_active = False
                 newuser.email = form.cleaned_data.get('email')
                 newuser.save()
@@ -89,7 +72,7 @@ def register(request, template):
     else:
         form = UserForm()
 
-    if hasattr(settings, "EMAIL_VALIDATION"):
+    if hasattr(settings, "EMAIL_VALIDATION") and settings.EMAIL_VALIDATION == True:
         email = True
 
     return render_to_response(template, locals(), context_instance=RequestContext(request))
@@ -159,7 +142,7 @@ def check_user(request, user):
     Check if a username exists. Only HTTPXMLRequest. Returns JSON
     """
     if request.META.get('HTTP_X_REQUESTED_WITH') == 'XMLHttpRequest':
-        if len(user) < 3 or not set(user).issubset("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_-") or len(User.objects.filter(username=user)) == 1:
+        if len(user) < 3 or not set(user).issubset("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_- ") or len(Profile.objects.filter(slug=slugify(user))) == 1:
             return json_error_response(simplejson.dumps({'success': False}))
         else:
             return HttpResponse(simplejson.dumps({'success': True}))

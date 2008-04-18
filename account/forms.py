@@ -2,22 +2,14 @@ from django import newforms as forms
 from django.contrib.auth.models import User
 from django.contrib.sites.models import Site
 from django.utils.translation import ugettext as _
-from account.models import LostPassword, EmailValidate
+from account.models import Validate
 from django.template import Context, loader
 from django.conf import settings
-
-def new_key():
-    while True:
-        key = User.objects.make_random_password(70)
-        try:
-            LostPassword.objects.get(key=key)
-        except LostPassword.DoesNotExist:
-            return key
 
 class UserForm(forms.Form):
 
     username = forms.CharField(max_length=255, min_length = 3)
-    email = forms.EmailField(required=hasattr(settings, "EMAIL_VALIDATION"))
+    email = forms.EmailField(required=(hasattr(settings, "EMAIL_VALIDATION") and settings.EMAIL_VALIDATION == True))
     password1 = forms.CharField(min_length=6, widget=forms.PasswordInput)
     password2 = forms.CharField(min_length=6, widget=forms.PasswordInput)
 
@@ -26,7 +18,7 @@ class UserForm(forms.Form):
         Verify that the username isn't already registered
         """
         username = self.cleaned_data.get("username")
-        if not set(username).issubset("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_-"):
+        if not set(username).issubset("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_- "):
             raise forms.ValidationError(_("That username has invalid characters."))
 
         if len(User.objects.filter(username=username)) == 0:
@@ -99,7 +91,7 @@ class changePasswordKeyForm(forms.Form):
 
     def save(self, key):
         "Saves the new password."
-        lostpassword = LostPassword.objects.get(key=key)
+        lostpassword = Validate.objects.get(key=key)
         user = lostpassword.user
         user.set_password(self.cleaned_data.get('newpass1'))
         user.save()
