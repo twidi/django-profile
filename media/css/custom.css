@@ -18,3 +18,7 @@ a:hover {
 hr {
   clear: both;
 }
+
+p.intro {
+	margin-left: 25px;
+}

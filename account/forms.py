@@ -61,12 +61,12 @@ class EmailChangeForm(forms.Form):
         except:
             return email
 
-class PasswordResetForm(forms.Form):
+class ValidationForm(forms.Form):
     email = forms.EmailField()
 
     def clean_email(self):
         """
-        Verify that the email and the user exists
+        Verify that the email or the user exists
         """
         email = self.cleaned_data.get("email")
         try:

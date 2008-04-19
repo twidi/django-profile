@@ -127,7 +127,8 @@ form.profile > fieldset > div > select {
 p.error {
 	background: #f06f5c;
 	width: 100%;
-	font-size: 1.3em;
+	font-size: 1.1em;
+	color: white;
 	text-align: center;
 	margin: 0px;
 	padding: 3px;
@@ -177,7 +178,8 @@ div.avatar {
 }
 
 div.avatar > a > img {
-	border: 0px;
+	border: 1px solid #CCC;
+	padding: 1px;
 	text-align: center;
 }
 

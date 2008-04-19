@@ -15,7 +15,7 @@
 		<div class="header">
 			<ul class="menu">
 				<li><a href="/">{% trans "Frontpage" %}</a></li>
-  			{% if request.user.is_authenticated %}
+  			{% if user.is_authenticated %}
 				<li><a href="/profile/">{% trans "Profile" %}</a></li>
    			<li><a href="/accounts/logout/">{% trans "Logout" %}</a></li>
 				{% else %} 

@@ -8,7 +8,7 @@ from django.contrib.auth.models import User
 from models import Validation
 from django.utils import simplejson
 from django.template import RequestContext
-from forms import UserForm, EmailChangeForm, PasswordResetForm, changePasswordKeyForm, changePasswordAuthForm
+from forms import UserForm, EmailChangeForm, ValidationForm, changePasswordKeyForm, changePasswordAuthForm
 from django.contrib.auth.decorators import login_required
 from django.template import Context, loader
 from django.conf import settings
@@ -87,7 +87,7 @@ def register(request, template):
 
 def reset_password(request, template):
     if request.method == 'POST':
-        form = PasswordResetForm(request.POST)
+        form = ValidationForm(request.POST)
         if form.is_valid():
             email = form.cleaned_data.get('email')
             user = User.objects.get(email=email)
@@ -97,10 +97,28 @@ def reset_password(request, template):
                 return HttpResponseRedirect('%sdone/' % request.path)
 
     else:
-        form = PasswordResetForm()
+        form = ValidationForm()
 
     return render_to_response(template, locals(), context_instance=RequestContext(request))
 
+def resend_validation(request, template):
+    if request.method == 'POST':
+        form = ValidationForm(request.POST)
+        if form.is_valid():
+            email = form.cleaned_data.get('email')
+            user = User.objects.get(email=email)
+            if email and user and not user.is_active:
+                Validation.objects.add(user=user, email=email, type="user")
+                success = True
+            else:
+                success = False
+
+            return HttpResponseRedirect('%sdone/' % request.path)
+
+    else:
+        form = ValidationForm()
+
+    return render_to_response(template, locals(), context_instance=RequestContext(request))
 
 def change_password_with_key(request, key, template):
     """
