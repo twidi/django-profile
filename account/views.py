@@ -160,12 +160,12 @@ def check_user(request, user):
     Check if a username exists. Only HTTPXMLRequest. Returns JSON
     """
     if request.META.get('HTTP_X_REQUESTED_WITH') == 'XMLHttpRequest':
-        if len(user) < 3 or not set(user).issubset("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_- ") or len(Profile.objects.filter(slug=slugify(user))) == 1:
+        if len(user) < 3 or not set(user).issubset("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_- ") or len(Profile.objects.filter(slug=slugify(user))) > 0:
             return json_error_response(simplejson.dumps({'success': False}))
         else:
             return HttpResponse(simplejson.dumps({'success': True}))
     else:
-        raise Http404()
+        raise Http404
 
 def check_email_unused(request, email):
     """
@@ -180,7 +180,7 @@ def check_email_unused(request, email):
         else:
             return json_error_response(_("E-mail not registered"))
     else:
-        raise Http404()
+        raise Http404
 
 def check_email(request, email):
     """
@@ -192,7 +192,7 @@ def check_email(request, email):
         else:
             return json_error_response(_("E-mail not registered"))
     else:
-        raise Http404()
+        raise Http404
 
 def logout(request, template):
     from django.contrib.auth import logout

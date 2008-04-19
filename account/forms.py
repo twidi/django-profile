@@ -43,9 +43,10 @@ class UserForm(forms.Form):
         email = self.cleaned_data.get("email")
         try:
             User.objects.get(email=email)
-            raise forms.ValidationError(_("That e-mail is already used."))
         except:
             return email
+
+        raise forms.ValidationError(_("That e-mail is already used."))
 
 class EmailChangeForm(forms.Form):
     email = forms.EmailField()
@@ -57,9 +58,10 @@ class EmailChangeForm(forms.Form):
         email = self.cleaned_data.get("email")
         try:
             User.objects.get(email=email)
-            raise forms.ValidationError(_("That e-mail is already used."))
         except:
             return email
+
+        raise forms.ValidationError(_("That e-mail is already used."))
 
 class ValidationForm(forms.Form):
     email = forms.EmailField()

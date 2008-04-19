@@ -19,14 +19,11 @@
 			</div>
    		<input type="submit" value="{% trans 'Send confirmation' %}" />
   	</fieldset>
-  	{% if form.errors %}
-  	<div class="errmsg">
-    	<p>{{form.email.errors}}</p>
-  	</div>
-  	{% endif %}
-  	{% if form.errors %}
-  	<p class="error">{{form.newpass2.errors|join:","}}</p>
-  	{% endif %}
+    {% if form.errors %}
+      {% for error,desc in form.errors.items %}
+        <p class="error">{{ error }}: {{desc|join:","}}</p>
+      {% endfor %}
+    {% endif %}
 	</form>
 </div>
 {% endblock %}

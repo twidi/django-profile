@@ -22,7 +22,7 @@
 				<li><a href="/profile/">{% trans "Login" %}</a></li>
   			{% endif %}
   		</ul>
-			{% if not request.user.is_authenticated %}
+			{% if not user.is_authenticated %}
 			<p class="register">{% trans "If you don't have an account, you can" %} <a href="/accounts/register/">{% trans "sign up" %}</a> {% trans "for one; it's free, and you could try this demo and publish your usercard." %}</p>
 			{% endif %}
 		</div>
