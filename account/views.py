@@ -5,7 +5,7 @@ from django.template.defaultfilters import slugify
 from django.utils.translation import ugettext as _
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.models import User
-from models import Validate
+from models import Validation
 from django.utils import simplejson
 from django.template import RequestContext
 from forms import UserForm, EmailChangeForm, PasswordResetForm, changePasswordKeyForm, changePasswordAuthForm
@@ -24,11 +24,24 @@ def change_email_with_key(request, key, template):
     """
     Verify key and change email
     """
-    if Validate.objects.verify(key=key, user=request.user, type="email"):
+    if Validation.objects.verify(key=key):
         message = _('E-mail changed successfully.')
         successful = True
     else:
         message = _('The key you received via e-mail is no longer valid. Please try the e-mail change process again.')
+        successful = False
+
+    return render_to_response(template, locals(), context_instance=RequestContext(request))
+
+def email_validation_with_key(request, key, template):
+    """
+    Validate the e-mail of an account and activate it
+    """
+    if Validation.objects.verify(key=key):
+        message = _('Account validated successfully.')
+        successful = True
+    else:
+        message = _('The key you received via e-mail is no longer valid. Please try the e-mail validation process again.')
         successful = False
 
     return render_to_response(template, locals(), context_instance=RequestContext(request))
@@ -40,7 +53,7 @@ def email_change(request, template):
     if request.method == 'POST':
         form = EmailChangeForm(request.POST)
         if form.is_valid():
-            Validate.objects.add(user=request.user, email=form.cleaned_data.get('email'), type="email")
+            Validation.objects.add(user=request.user, email=form.cleaned_data.get('email'), type="email")
             return HttpResponseRedirect('%sprocessed/' % request.path)
     else:
         form = EmailChangeForm()
@@ -59,6 +72,7 @@ def register(request, template):
                 newuser.is_active = False
                 newuser.email = form.cleaned_data.get('email')
                 newuser.save()
+                Validation.objects.add(user=newuser, email=newuser.email, type="user")
                 return HttpResponseRedirect('%svalidate/' % request.path)
             else:
                 newuser.save()
@@ -79,14 +93,7 @@ def reset_password(request, template):
             user = User.objects.get(email=email)
 
             if email and user:
-                from django.core.mail import send_mail
-                LostPassword.objects.filter(user=user).delete()
-                pwd = LostPassword.objects.create(user=user, key=email_new_key())
-                site = Site.objects.get_current()
-                site_name = site.name
-                t = loader.get_template('account/password_reset_email.txt')
-                message = 'http://%s/accounts/password/change/%s/' % (site_name, pwd.key)
-                send_mail(_('Password reset on %s') % site.name, t.render(Context(locals())), None, [user.email])
+                Validation.objects.add(user=user, email=email, type="passwd")
                 return HttpResponseRedirect('%sdone/' % request.path)
 
     else:
@@ -99,16 +106,15 @@ def change_password_with_key(request, key, template):
     """
     Change a user password with the key sended by e-mail
     """
-    lostpassword = get_object_or_404(LostPassword, key=key)
 
-    if lostpassword.is_expired():
-        lostpassword.delete()
+    if not Validation.objects.verify(key=key):
         return render_to_response('account/password_expired.html', context_instance=RequestContext(request))
 
-    user = lostpassword.user
+    user = Validation.objects.getuser(key=key)
     if request.method == "POST":
         form = changePasswordKeyForm(request.POST)
         if form.is_valid():
+            Validation.objects.filter(key=key).delete()
             form.save(key)
             return HttpResponseRedirect('/accounts/password/change/done/')
     else:

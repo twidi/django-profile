@@ -2,9 +2,10 @@ from django import newforms as forms
 from django.contrib.auth.models import User
 from django.contrib.sites.models import Site
 from django.utils.translation import ugettext as _
-from account.models import Validate
+from account.models import Validation
 from django.template import Context, loader
 from django.conf import settings
+from userprofile.models import Profile
 
 class UserForm(forms.Form):
 
@@ -21,7 +22,7 @@ class UserForm(forms.Form):
         if not set(username).issubset("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_- "):
             raise forms.ValidationError(_("That username has invalid characters."))
 
-        if len(User.objects.filter(username=username)) == 0:
+        if len(User.objects.filter(username=username)) == 0 and len(Profile.objects.filter(user=username)) == 0:
             return username
         else:
             raise forms.ValidationError(_("The username is already registered."))
@@ -91,7 +92,7 @@ class changePasswordKeyForm(forms.Form):
 
     def save(self, key):
         "Saves the new password."
-        lostpassword = Validate.objects.get(key=key)
+        lostpassword = Validation.objects.get(key=key)
         user = lostpassword.user
         user.set_password(self.cleaned_data.get('newpass1'))
         user.save()

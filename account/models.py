@@ -1,20 +1,25 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.utils.translation import ugettext_lazy as _
 from django.core.mail import send_mail
 from django.template import loader, Context
 from django.contrib.sites.models import Site
 import datetime
 
-class ValidateManager(models.Manager):
+class ValidationManager(models.Manager):
 
-    def verify(self, key, user, type):
+    def verify(self, key):
         try:
-            verify = self.get(key=key, user=user, type=type)
-            if verify.is_valid():
-                user = User.objects.get(username=user)
-                user.email = verify.email
-                user.save()
-                verify.delete()
+            verify = self.get(key=key)
+            if not verify.is_expired():
+                if verify.type == "email":
+                    verify.user.email = verify.email
+                    verify.user.save()
+                    verify.delete()
+                if verify.type == "user":
+                    verify.user.is_active = True
+                    verify.user.save()
+                    verify.delete()
                 return True
             else:
                 verify.delete()
@@ -22,48 +27,62 @@ class ValidateManager(models.Manager):
         except:
             return False
 
-    def add(self, user, type, email=""):
+    def getuser(self, key):
+        try:
+            return self.get(key=key).user
+        except:
+            return False
+
+    def add(self, user, type, email):
         """
         Add a new validation process entry
         """
         while True:
             key = User.objects.make_random_password(70)
             try:
-                Validate.objects.get(key=key)
-            except Validate.DoesNotExist:
+                Validation.objects.get(key=key)
+            except Validation.DoesNotExist:
                 self.key = key
                 break
 
         site = Site.objects.get_current()
         if type == "email":
+            message = 'http://%s/accounts/email/change/%s/' % (site.name, key)
             template = "account/email_change_email.txt"
-            title = 'Email change confirmation on %s' % site.name
+            title = _("Email change confirmation on %s") % site.name
+        elif type == "passwd":
+            message = 'http://%s/accounts/password/change/%s/' % (site.name, key)
+            template = "account/email_password_reset.txt"
+            title = _("Password reset on %s") % site.name
+        elif type == "user":
+            message = 'http://%s/accounts/validate/%s/' % (site.name, key)
+            template = "account/email_validate_email.txt"
+            title = _("Activate your account on %s") % site.name
 
         t = loader.get_template(template)
-        message = 'http://%s/accounts/email/change/%s/' % (site.name, key)
         site_name = site.name
         send_mail(title, t.render(Context(locals())), None, [email])
         user = User.objects.get(username=str(user))
         self.filter(user=user, type=type).delete()
         return self.create(user=user, key=key, type=type, email=email)
 
-class Validate(models.Model):
+class Validation(models.Model):
     type = models.PositiveSmallIntegerField(choices=( (1, 'email'), (2, 'passwd'), (3, 'user')))
     user = models.ForeignKey(User)
     email = models.EmailField(blank=True)
     key = models.CharField(max_length=70, unique=True, db_index=True)
     created = models.DateTimeField(auto_now_add=True)
-    objects = ValidateManager()
+    objects = ValidationManager()
 
     class Admin:
         list_display = ('__unicode__',)
         search_fields = ('user__username', 'user__first_name')
 
     def __unicode__(self):
-        return _("Email validation process for %s") % self.user
+        return _("Email validation process for %(user)s of type %(type)s") % { 'user': self.user, 'type': self.type }
 
     def is_expired(self):
         return (datetime.datetime.today() - self.created).days > 0
 
     def save(self):
-        super(Validate, self).save()
+        super(Validation, self).save()

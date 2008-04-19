@@ -17,6 +17,7 @@ urlpatterns = patterns('',
     (r'^check_user/(?P<user>.*)/$', check_user),
     (r'^check_email/(?P<email>.*)/$', check_email),
     (r'^check_email_unused/(?P<email>.*)/$', check_email_unused),
+    (r'^validate/(?P<key>.{70})/$', email_validation_with_key, {'template': 'account/email_validation.html'}),
 
     # Profile
     ('^profile/$', redirect_to, {'url': '/profile/'}),

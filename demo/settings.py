@@ -3,7 +3,7 @@
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 ACCOUNT_ACTIVATION_DAYS = 4
-EMAIL_VALIDATION = False
+EMAIL_VALIDATION = True
 
 # 192.168.0.100:8000/
 APIKEY = "ABQIAAAA06IJoYHDPFMx4u3hTtaghxTU2QkCNWGFpwxhhQnHf-7Pc6f1lBTQWFSuWvEBhZGiAbR5wPO0DLqoOw"
@@ -76,9 +76,9 @@ ROOT_URLCONF = 'demo.urls'
 
 # e-mail settings
 DEFAULT_FROM_EMAIL = ''
-EMAIL_HOST = 'localhost'
-EMAIL_HOST_USER = ''
-EMAIL_HOST_PASSWORD = ''
+EMAIL_HOST = 'mail.elementales.com'
+EMAIL_HOST_USER = 'django.elementales.com'
+EMAIL_HOST_PASSWORD = 'perico'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
