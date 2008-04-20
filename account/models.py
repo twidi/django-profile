@@ -52,11 +52,9 @@ class ValidationManager(models.Manager):
             title = _("Email change confirmation on %s") % site.name
         elif type == "passwd":
             message = 'http://%s/accounts/password/change/%s/' % (site.name, key)
-            template = "account/email_password_reset.html"
             title = _("Password reset on %s") % site.name
         elif type == "user":
             message = 'http://%s/accounts/validate/%s/' % (site.name, key)
-            template = "account/email_validate_email.html"
             title = _("Activate your account on %s") % site.name
 
         t = loader.get_template(template)
