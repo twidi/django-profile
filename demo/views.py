@@ -7,6 +7,6 @@ def front(request, template):
     Frontpage of this sample application. It simply shows
     a template with the list of profiles in the DB.
     """
-    users = User.objects.order_by("-date_joined")
+    users = User.objects.filter(is_active=True).order_by("-date_joined")
 
     return render_to_response(template, locals(), context_instance=RequestContext(request))

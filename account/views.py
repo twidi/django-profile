@@ -13,7 +13,6 @@ from django.contrib.auth.decorators import login_required
 from django.template import Context, loader
 from django.conf import settings
 from django.core.validators import email_re
-from userprofile.models import Profile
 
 def json_error_response(error_message, *args, **kwargs):
     return HttpResponse(simplejson.dumps(dict(success=False,
@@ -109,11 +108,11 @@ def resend_validation(request, template):
             user = User.objects.get(email=email)
             if email and user and not user.is_active:
                 Validation.objects.add(user=user, email=email, type="user")
-                success = True
+                action = "success"
             else:
-                success = False
+                action = "failed"
 
-            return HttpResponseRedirect('%sdone/' % request.path)
+            return HttpResponseRedirect('%s%s/' % (request.path, action))
 
     else:
         form = ValidationForm()
@@ -160,7 +159,7 @@ def check_user(request, user):
     Check if a username exists. Only HTTPXMLRequest. Returns JSON
     """
     if request.META.get('HTTP_X_REQUESTED_WITH') == 'XMLHttpRequest':
-        if len(user) < 3 or not set(user).issubset("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_- ") or len(Profile.objects.filter(slug=slugify(user))) > 0:
+        if len(user) < 3 or not set(user).issubset("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_") or User.objects.filter(username__iexact=user).count() > 0:
             return json_error_response(simplejson.dumps({'success': False}))
         else:
             return HttpResponse(simplejson.dumps({'success': True}))

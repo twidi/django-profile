@@ -7,7 +7,7 @@ Version 0.2.2
 * WARNING!!! "profile" module renamed to "userprofile". The old name had a conflict with the python-profiler
   module. If you're updating from the old version, you will have to dump and restore the old database data. 
   Thanks to Mario Cesar for the report.
-* Allow the "blank space" as a username character.
+* The allowed chars for a username are A-Z, a-z, 0-9 and _
 * Solved some mess with the importing of settings variables. Thanks to Mario Cesar.
 * We can activate an e-mail validation on the registration process.
 

@@ -6,7 +6,7 @@ from django.contrib.auth import views
 urlpatterns = patterns('',
     (r'^password/reset/$', reset_password, {'template' : 'account/password_reset.html'}),
     (r'^validation/reset/$', resend_validation, {'template' : 'account/validation_reset.html'}),
-    (r'^validation/reset/done/$', direct_to_template, {'template' : 'account/validation_reset_done.html'}),
+    (r'^validation/reset/(?P<action>success|failed)/$', direct_to_template, {'template' : 'account/validation_reset_done.html'}),
     (r'^password/reset/done/$', direct_to_template, {'template': 'account/password_reset_done.html'}),
     (r'^password/change/(?P<key>.{70})/$', change_password_with_key, {'template': 'account/password_change.html'}),
     (r'^password/change/$', change_password_authenticated, {'template': 'account/password_change.html'}),

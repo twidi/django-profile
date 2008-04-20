@@ -1,14 +1,14 @@
 {% extends "base.html" %}
 {% load i18n %}
 
-{% block title %}{% trans 'E-mail change successful' %}{% endblock %}
+{% block title %}{% trans 'E-mail validation successful' %}{% endblock %}
 
 {% block content %}
 
 {% if successful %}
-<h1>{% trans 'E-mail change successful' %}</h1>
+<h1>{% trans 'E-mail validation successful' %}</h1>
 {% else %}
-<h1>{% trans 'E-mail change unsuccessful' %}</h1>
+<h1>{% trans 'E-mail validation unsuccessful' %}</h1>
 {% endif %}
 
 <p class="intro">{{ message }}</p>

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-04-01 16:54+0200\n"
+"POT-Creation-Date: 2008-04-20 09:40+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,31 +16,55 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: forms.py:28
-msgid "That username has invalid characters."
-msgstr "Ese usuario tiene carácteres inválidos"
+#: forms.py:22
+msgid ""
+"That username has invalid characters. The valid values are letters, numbers "
+"and underscore."
+msgstr ""
+"Ese usuario tiene carácteres no permitidos. Se permiten letras, números y "
+"subrayado."
 
-#: forms.py:33
+#: forms.py:27
 msgid "The username is already registered."
 msgstr "Ese nombre de usuario ya está registrado."
 
-#: forms.py:42 forms.py:86 forms.py:108
+#: forms.py:36 forms.py:92 forms.py:114
 msgid "The passwords inserted are different."
 msgstr "Las contraseñas introducidas no coinciden."
 
-#: forms.py:55
+#: forms.py:48 forms.py:63
 msgid "That e-mail is already used."
 msgstr "Ese e-mail ya está utilizado."
 
-#: forms.py:70
+#: forms.py:76
 msgid "There's no user with that e-mail"
 msgstr "No existe ningún usuario con ese e-mail"
 
-#: views.py:39
+#: models.py:52
+#, python-format
+msgid "Email change confirmation on %s"
+msgstr "Confirmación de cambio de e-mail en %s"
+
+#: models.py:56
+#, python-format
+msgid "Password reset on %s"
+msgstr "Reseteo de contraseña en %s"
+
+#: models.py:60
+#, python-format
+msgid "Activate your account on %s"
+msgstr "Activa tu cuenta en %s"
+
+#: models.py:82
+#, python-format
+msgid "Email validation process for %(user)s of type %(type)s"
+msgstr "Proceso de validación por e-mail para %(user)s del tipo %(type)s"
+
+#: views.py:27
 msgid "E-mail changed successfully."
 msgstr "La dirección de correo ha sido cambiada correctamente."
 
-#: views.py:42
+#: views.py:30
 msgid ""
 "The key you received via e-mail is no longer valid. Please try the e-mail "
 "change process again."
@@ -48,12 +72,23 @@ msgstr ""
 "La clave que recibiste por e-mail ya no es válida. Por favor, inicia el "
 "proceso de cambio de e-mail de nuevo."
 
-#: views.py:105
-#, python-format
-msgid "Password reset on %s"
-msgstr "Reseteo de contraseña en %s"
+#: views.py:40
+msgid "Account validated successfully."
+msgstr "La cuenta ha sido validada correctamente."
 
-#: views.py:172 views.py:184
+#: views.py:43
+msgid ""
+"The key you received via e-mail is no longer valid. Please try the e-mail "
+"validation process again."
+msgstr ""
+"La clave que recibiste por e-mail ya no es válida. Por favor, inicia el "
+"proceso de validación de cuenta de nuevo."
+
+#: views.py:175
+msgid "Invalid e-mail"
+msgstr "Dirección de correo incorrecta"
+
+#: views.py:180 views.py:192
 msgid "E-mail not registered"
 msgstr "E-mail no registrado"
 
@@ -87,6 +122,39 @@ msgstr "Cambio de dirección de correo satisfactorio"
 msgid "E-mail change unsuccessful"
 msgstr "Fallo en el cambio de dirección de correo"
 
+#: templates/account/email_change_email.html:2
+msgid "You're receiving this e-mail because you requested an e-mail change"
+msgstr ""
+
+#: templates/account/email_change_email.html:3
+#: templates/account/email_password_reset.html:3
+#, python-format
+msgid "for your user account at %(site_name)s"
+msgstr ""
+
+#: templates/account/email_change_email.html:5
+msgid "If you want to proceed with this change, follow this link:"
+msgstr ""
+
+#: templates/account/email_change_email.html:9
+#: templates/account/email_password_reset.html:9
+#: templates/account/email_validate_email.html:9
+msgid "Your username, in case you've forgotten:"
+msgstr ""
+
+#: templates/account/email_change_email.html:11
+#: templates/account/email_password_reset.html:11
+#: templates/account/email_validate_email.html:11
+msgid "Thanks for using our site!"
+msgstr ""
+
+#: templates/account/email_change_email.html:13
+#: templates/account/email_password_reset.html:13
+#: templates/account/email_validate_email.html:13
+#, python-format
+msgid "The %(site_name)s team"
+msgstr ""
+
 #: templates/account/email_change_processed.html:4
 #: templates/account/email_change_processed.html:8
 msgid "E-mail change processed"
@@ -102,6 +170,38 @@ msgstr ""
 "activarla. Por favor, accede a tu correo y completa este proceso siguiendo "
 "las instrucciones descritas en él."
 
+#: templates/account/email_password_reset.html:2
+msgid "You're receiving this e-mail because you requested a password reset"
+msgstr ""
+
+#: templates/account/email_password_reset.html:5
+msgid "Feel free to change this password by going to this page:"
+msgstr ""
+
+#: templates/account/email_validate_email.html:2
+msgid "You're receiving this e-mail because you requested an account "
+msgstr ""
+
+#: templates/account/email_validate_email.html:3
+#, python-format
+msgid "at %(site_name)s"
+msgstr ""
+
+#: templates/account/email_validate_email.html:5
+msgid "Following this link, you will validate your e-mail address:"
+msgstr ""
+
+#: templates/account/email_validation.html:4
+#: templates/account/email_validation.html:9
+#, fuzzy
+msgid "E-mail validation successful"
+msgstr "Cambio de dirección de correo satisfactorio"
+
+#: templates/account/email_validation.html:11
+#, fuzzy
+msgid "E-mail validation unsuccessful"
+msgstr "Fallo en el cambio de dirección de correo"
+
 #: templates/account/login.html:3 templates/account/login.html.py:10
 msgid "User login"
 msgstr "Entrada de usuario"
@@ -110,7 +210,7 @@ msgstr "Entrada de usuario"
 msgid "Username:"
 msgstr "Usuario:"
 
-#: templates/account/login.html:19 templates/account/registration.html:20
+#: templates/account/login.html:19 templates/account/registration.html:27
 msgid "Password:"
 msgstr "Contraseña:"
 
@@ -122,7 +222,21 @@ msgstr "¿Has perdido tu contraseña?"
 msgid "Login"
 msgstr "Entrar"
 
-#: templates/account/login.html:26
+#: templates/account/login.html:28
+msgid ""
+"This account has not been activated yet. You must have received an e-mail "
+"with instructions to activate it. If you want to resend the e-mail, please, "
+"click"
+msgstr ""
+"Esta cuenta no ha sido activada todavía. Debes haber recibido un correo con "
+"instrucciones sobre como activarla. Si quieres que te reenviemos el e-mail, "
+"por favor, pincha"
+
+#: templates/account/login.html:28 templates/account/registration.html:43
+msgid "here"
+msgstr "aquí"
+
+#: templates/account/login.html:30
 msgid "Your username and password didn't match. Please try again."
 msgstr "Tu usuario y contraseña no coinciden. Por favor, vuelve a intentarlo."
 
@@ -136,8 +250,8 @@ msgstr "Has sido desconectado."
 
 #: templates/account/password_change.html:4
 #: templates/account/password_change.html:9
-msgid "Password change"
-msgstr "Cambio de contraseña"
+msgid "Password change for"
+msgstr "Cambio de contraseña de"
 
 #: templates/account/password_change.html:10
 msgid ""
@@ -168,6 +282,18 @@ msgstr "Cambio de contraseña satisfactorio"
 msgid "The password has been changed successfully."
 msgstr "La contraseña se ha cambiado satisfactoriamente"
 
+#: templates/account/password_expired.html:4
+#: templates/account/password_expired.html:7
+msgid "Password key expired"
+msgstr "Clave de reseteo de contraseña expirada"
+
+#: templates/account/password_expired.html:8
+msgid ""
+"The password key you're trying to use is expired. Please, request a new one."
+msgstr ""
+"La clave de cambio de contraseña que estás intentando utilizar ya ha "
+"expirado. Por favor, solicita una nueva."
+
 #: templates/account/password_reset.html:4
 #: templates/account/password_reset.html:10
 msgid "Password reset"
@@ -182,6 +308,7 @@ msgstr ""
 "reseteemos y te enviemos una nueva por e-mail."
 
 #: templates/account/password_reset.html:16
+#: templates/account/validation_reset.html:16
 msgid "E-mail address:"
 msgstr "Dirección de correo:"
 
@@ -196,11 +323,11 @@ msgstr "Reseteo de contraseña satisfactorio"
 
 #: templates/account/password_reset_done.html:8
 msgid ""
-"We've e-mailed a new password to the e-mail address you submitted. You "
-"should be receiving it shortly."
+"We've e-mailed you the instructions to obtain a new password. You should be "
+"receiving it shortly."
 msgstr ""
-"Te hemos enviado una nueva contraseña a la dirección de correo que "
-"introdujiste. La recibirás en breve."
+"Te hemos enviado un e-mail con instrucciones para obtener una nueva "
+"contraseña. La recibirás en breve."
 
 #: templates/account/registration.html:3 templates/account/registration.html:9
 msgid "User registration"
@@ -208,22 +335,35 @@ msgstr "Registro de usuario"
 
 #: templates/account/registration.html:10
 msgid ""
-"You only need a valid username and a password to get access to the private "
-"content of this site."
+"Joining this community is quick and easy. You only need to fill the "
+"following information to get access to the all the private content."
 msgstr ""
-"Únicamente necesitas un usuario y una contraseña para acceder al contenido "
-"privado de este sitio web."
+"Unirse a esta comunidad es rápido y fácil. Únicamente tienes que rellenar la "
+"siguiente información para poder acceder a todo el contenido privado."
 
-#: templates/account/registration.html:24
+#: templates/account/registration.html:21
+msgid "E-mail:"
+msgstr "Dirección de correo:"
+
+#: templates/account/registration.html:31
 msgid "Password again:"
 msgstr "Contraseña de nuevo:"
 
-#: templates/account/registration.html:28
+#: templates/account/registration.html:35
 msgid "Register"
 msgstr "Registrar"
 
+#: templates/account/registration.html:43
+msgid ""
+"If you already registered an account, but have not received the validation e-"
+"mail, please, click"
+msgstr ""
+"Si ya habías registrado una cuenta, pero no has recibido el e-mail de "
+"validación de cuenta, por favor, pincha"
+
 #: templates/account/registration_done.html:4
 #: templates/account/registration_done.html:6
+#: templates/account/validate.html:4 templates/account/validate.html.py:6
 msgid "Registration complete"
 msgstr "Registro de usuario completado"
 
@@ -249,3 +389,65 @@ msgstr "página de entrada de usuario"
 #: templates/account/registration_done.html:7
 msgid "to authenticate and start using this site."
 msgstr "para autenticarte y empezar a utilizar este sitio."
+
+#: templates/account/validate.html:7
+msgid ""
+"Your user has been created successfully, but you must validate your e-mail "
+"address before login to this site. You're going to receive an e-mail with "
+"instructions of how to finish the registration process."
+msgstr ""
+"Tu usuario ha sido creado correctamente, pero debes validar tu dirección de "
+"correo antes de poder acceder a este sitio. En breve recibirás un e-mail con "
+"instrucciones sobre cómo finalizar el proceso de registro de cuenta."
+
+#: templates/account/validation_reset.html:4
+#: templates/account/validation_reset.html:10
+msgid "Resend validation"
+msgstr "Reenviar validación"
+
+#: templates/account/validation_reset.html:11
+msgid ""
+"Enter your e-mail address below and we'll resend the user activation e-mail "
+"to you."
+msgstr ""
+"Introduce tu dirección de correo y te enviaremos un e-mail con instrucciones "
+"para la activación de tu usuario."
+
+#: templates/account/validation_reset.html:20
+msgid "Resend the activation e-mail"
+msgstr "Reenviar el e-mail de activación de cuenta"
+
+#: templates/account/validation_reset_done.html:4
+#: templates/account/validation_reset_done.html:8
+msgid "Validation e-mail sent"
+msgstr "E-mail de validación enviado"
+
+#: templates/account/validation_reset_done.html:9
+msgid ""
+"We've e-mailed you the new account validation e-mail. You are going to "
+"receive it shortly."
+msgstr ""
+"Te hemos enviado un e-mail para la validación de tu nueva cuenta a la "
+"dirección de correo que introdujiste. La recibirás en breve."
+
+#: templates/account/validation_reset_done.html:11
+msgid "Your user account was already active"
+msgstr "Tu cuenta de usuario ya estaba activa"
+
+#: templates/account/validation_reset_done.html:12
+msgid "If you have lost your password you can change it with this utility"
+msgstr "Si has perdido tu contraseña, puedes cambiarla con esta utilidad"
+
+#: templates/account/validation_reset_done.html:13
+msgid "Lost password utility"
+msgstr "Utilidad de recuperación de contraseña"
+
+#~ msgid "That username has invalid characters."
+#~ msgstr "Ese usuario tiene carácteres inválidos"
+
+#~ msgid ""
+#~ "You only need a valid username and a password to get access to the "
+#~ "private content of this site."
+#~ msgstr ""
+#~ "Únicamente necesitas un usuario y una contraseña para acceder al "
+#~ "contenido privado de este sitio web."

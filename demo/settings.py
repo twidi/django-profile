@@ -30,7 +30,7 @@ TIME_ZONE = 'America/Chicago'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es'
 
 AUTH_PROFILE_MODULE = 'userprofile.Profile'
 
@@ -76,9 +76,9 @@ ROOT_URLCONF = 'demo.urls'
 
 # e-mail settings
 DEFAULT_FROM_EMAIL = ''
-EMAIL_HOST = 'mail.elementales.com'
-EMAIL_HOST_USER = 'django.elementales.com'
-EMAIL_HOST_PASSWORD = 'perico'
+EMAIL_HOST = ''
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
