@@ -64,7 +64,8 @@ class ValidationManager(models.Manager):
         send_mail(title, t.render(Context(locals())), None, [email])
         user = User.objects.get(username=str(user))
         self.filter(user=user, type=type).delete()
-        return self.create(user=user, key=key, type=type, email=email)
+        type_choices = { "email": 1, "passwd": 2, "user": 3}
+        return self.create(user=user, key=key, type=type_choices[type], email=email)
 
 class Validation(models.Model):
     type = models.PositiveSmallIntegerField(choices=( (1, 'email'), (2, 'passwd'), (3, 'user')))
