@@ -12,11 +12,11 @@ class ValidationManager(models.Manager):
         try:
             verify = self.get(key=key)
             if not verify.is_expired():
-                if verify.type == "email":
+                if verify.get_type_display() == "email":
                     verify.user.email = verify.email
                     verify.user.save()
                     verify.delete()
-                if verify.type == "user":
+                if verify.get_type_display() == "user":
                     verify.user.is_active = True
                     verify.user.save()
                     verify.delete()
