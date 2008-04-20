@@ -125,6 +125,7 @@ form.profile > fieldset > div > select {
 }
 
 p.error {
+	clear: both;
 	background: #f06f5c;
 	width: 100%;
 	font-size: 1.1em;
