@@ -1,7 +1,13 @@
 {% extends "base.html" %}
 {% load i18n %}
 
-{% block title %}{% trans 'E-mail validation successful' %}{% endblock %}
+{% block title %}
+{% if successful %}
+{% trans 'E-mail validation successful' %}
+{% else %}
+{% trans 'E-mail validation unsuccessful' %}
+{% endif %}
+{% endblock %}
 
 {% block content %}
 
