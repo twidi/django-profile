@@ -80,7 +80,7 @@ class Validation(models.Model):
         search_fields = ('user__username', 'user__first_name')
 
     def __unicode__(self):
-        return _("Email validation process for %(user)s of type %(type)s") % { 'user': self.user, 'type': self.type }
+        return _("Email validation process for %(user)s of type %(type)s") % { 'user': self.user, 'type': self.get_type_display() }
 
     def is_expired(self):
         return (datetime.datetime.today() - self.created).days > 0
