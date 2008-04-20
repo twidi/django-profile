@@ -16,7 +16,7 @@ class ValidationManager(models.Manager):
                     verify.user.email = verify.email
                     verify.user.save()
                     verify.delete()
-                if verify.get_type_display() == "user":
+                elif verify.get_type_display() == "user":
                     verify.user.is_active = True
                     verify.user.save()
                     verify.delete()
@@ -46,9 +46,9 @@ class ValidationManager(models.Manager):
                 break
 
         site = Site.objects.get_current()
+        template = "account/%s_email.txt" % type
         if type == "email":
             message = 'http://%s/accounts/email/change/%s/' % (site.name, key)
-            template = "account/email_change_email.html"
             title = _("Email change confirmation on %s") % site.name
         elif type == "passwd":
             message = 'http://%s/accounts/password/change/%s/' % (site.name, key)

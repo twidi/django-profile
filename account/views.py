@@ -131,7 +131,6 @@ def change_password_with_key(request, key, template):
     if request.method == "POST":
         form = changePasswordKeyForm(request.POST)
         if form.is_valid():
-            Validation.objects.filter(key=key).delete()
             form.save(key)
             return HttpResponseRedirect('/accounts/password/change/done/')
     else:

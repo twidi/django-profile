@@ -1,8 +1,8 @@
 {% load i18n %}
-{% trans "You're receiving this e-mail because you requested a password reset" %}
+{% trans "You're receiving this e-mail because you requested an e-mail change" %}
 {% blocktrans %}for your user account at {{ site_name }}{% endblocktrans %}.
 
-{% trans "Feel free to change this password by going to this page:" %}
+{% trans "If you want to proceed with this change, follow this link:" %}
 
 {{ message }}
 
