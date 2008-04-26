@@ -174,7 +174,7 @@ msgstr "El equipo de %(site_name)s"
 #: templates/account/email_validation.html:6
 #: templates/account/email_validation.html:15
 msgid "E-mail validation successful"
-msgstr "Cambio de dirección de correo satisfactorio"
+msgstr "Validación de e-mail satisfactorio"
 
 #: templates/account/email_validation.html:8
 #: templates/account/email_validation.html:17
