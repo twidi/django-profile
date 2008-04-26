@@ -40,6 +40,10 @@ class UserForm(forms.Form):
         Verify that the email exists
         """
         email = self.cleaned_data.get("email")
+
+        if not (hasattr(settings, "EMAIL_VALIDATION") and settings.EMAIL_VALIDATION == True):
+            return  email
+
         try:
             User.objects.get(email=email)
         except:

@@ -2,7 +2,12 @@
 django-profile Changelog
 ========================
 
-Version 0.2.2
+Version 0.3.1
+-------------
+
+* Solved some bug issues. Thanks to evo for the report.
+
+Version 0.3
 -------------
 * WARNING!!! "profile" module renamed to "userprofile". The old name had a conflict with the python-profiler
   module. If you're updating from the old version, you will have to dump and restore the old database data. 

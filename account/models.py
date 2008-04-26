@@ -46,7 +46,7 @@ class ValidationManager(models.Manager):
                 break
 
         site = Site.objects.get_current()
-        template = "account/%s_email.txt" % type
+        template = "account/%s_email.html" % type
         if type == "email":
             message = 'http://%s/accounts/email/change/%s/' % (site.name, key)
             title = _("Email change confirmation on %s") % site.name

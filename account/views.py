@@ -37,7 +37,7 @@ def email_validation_with_key(request, key, template):
     Validate the e-mail of an account and activate it
     """
     if Validation.objects.verify(key=key):
-        message = _('Account validated successfully.')
+        message = _('Account validated successfully. Now you can access to the login page with your username and password and start using this site.')
         successful = True
     else:
         message = _('The key you received via e-mail is no longer valid. Please try the e-mail validation process again.')

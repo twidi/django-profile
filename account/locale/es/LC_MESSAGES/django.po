@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-04-20 09:40+0200\n"
+"POT-Creation-Date: 2008-04-26 15:38+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -45,17 +45,17 @@ msgstr "No existe ningún usuario con ese e-mail"
 msgid "Email change confirmation on %s"
 msgstr "Confirmación de cambio de e-mail en %s"
 
-#: models.py:56
+#: models.py:55
 #, python-format
 msgid "Password reset on %s"
 msgstr "Reseteo de contraseña en %s"
 
-#: models.py:60
+#: models.py:58
 #, python-format
 msgid "Activate your account on %s"
 msgstr "Activa tu cuenta en %s"
 
-#: models.py:82
+#: models.py:81
 #, python-format
 msgid "Email validation process for %(user)s of type %(type)s"
 msgstr "Proceso de validación por e-mail para %(user)s del tipo %(type)s"
@@ -73,8 +73,12 @@ msgstr ""
 "proceso de cambio de e-mail de nuevo."
 
 #: views.py:40
-msgid "Account validated successfully."
-msgstr "La cuenta ha sido validada correctamente."
+msgid ""
+"Account validated successfully. Now you can access to the login page with "
+"your username and password and start using this site."
+msgstr ""
+"Tu cuenta ha sido validada correctamente. Ya puedes acceder a la página de "
+"login con tu usuario y contraseña y empezar a utilizar este sitio."
 
 #: views.py:43
 msgid ""
@@ -84,11 +88,11 @@ msgstr ""
 "La clave que recibiste por e-mail ya no es válida. Por favor, inicia el "
 "proceso de validación de cuenta de nuevo."
 
-#: views.py:175
+#: views.py:174
 msgid "Invalid e-mail"
 msgstr "Dirección de correo incorrecta"
 
-#: views.py:180 views.py:192
+#: views.py:179 views.py:191
 msgid "E-mail not registered"
 msgstr "E-mail no registrado"
 
@@ -122,39 +126,6 @@ msgstr "Cambio de dirección de correo satisfactorio"
 msgid "E-mail change unsuccessful"
 msgstr "Fallo en el cambio de dirección de correo"
 
-#: templates/account/email_change_email.html:2
-msgid "You're receiving this e-mail because you requested an e-mail change"
-msgstr ""
-
-#: templates/account/email_change_email.html:3
-#: templates/account/email_password_reset.html:3
-#, python-format
-msgid "for your user account at %(site_name)s"
-msgstr ""
-
-#: templates/account/email_change_email.html:5
-msgid "If you want to proceed with this change, follow this link:"
-msgstr ""
-
-#: templates/account/email_change_email.html:9
-#: templates/account/email_password_reset.html:9
-#: templates/account/email_validate_email.html:9
-msgid "Your username, in case you've forgotten:"
-msgstr ""
-
-#: templates/account/email_change_email.html:11
-#: templates/account/email_password_reset.html:11
-#: templates/account/email_validate_email.html:11
-msgid "Thanks for using our site!"
-msgstr ""
-
-#: templates/account/email_change_email.html:13
-#: templates/account/email_password_reset.html:13
-#: templates/account/email_validate_email.html:13
-#, python-format
-msgid "The %(site_name)s team"
-msgstr ""
-
 #: templates/account/email_change_processed.html:4
 #: templates/account/email_change_processed.html:8
 msgid "E-mail change processed"
@@ -170,37 +141,45 @@ msgstr ""
 "activarla. Por favor, accede a tu correo y completa este proceso siguiendo "
 "las instrucciones descritas en él."
 
-#: templates/account/email_password_reset.html:2
-msgid "You're receiving this e-mail because you requested a password reset"
-msgstr ""
+#: templates/account/email_email.html:2
+msgid "You're receiving this e-mail because you requested an e-mail change"
+msgstr "Has recibido este mensaje porque has solicitado un cambio de "
+"dirección de correo"
 
-#: templates/account/email_password_reset.html:5
-msgid "Feel free to change this password by going to this page:"
-msgstr ""
-
-#: templates/account/email_validate_email.html:2
-msgid "You're receiving this e-mail because you requested an account "
-msgstr ""
-
-#: templates/account/email_validate_email.html:3
+#: templates/account/email_email.html:3 templates/account/passwd_email.html:3
 #, python-format
-msgid "at %(site_name)s"
-msgstr ""
+msgid "for your user account at %(site_name)s"
+msgstr "para tu cuenta de usuario en %(site_name)s"
 
-#: templates/account/email_validate_email.html:5
-msgid "Following this link, you will validate your e-mail address:"
-msgstr ""
+#: templates/account/email_email.html:5
+msgid "If you want to proceed with this change, follow this link:"
+msgstr "Si quieres proceder con este cambio, accede a este enlace:"
 
-#: templates/account/email_validation.html:4
-#: templates/account/email_validation.html:9
-#, fuzzy
+#: templates/account/email_email.html:9 templates/account/passwd_email.html:9
+#: templates/account/user_email.html:9
+msgid "Your username, in case you've forgotten:"
+msgstr "Tu usuario, en caso de que lo hayas olvidado:"
+
+#: templates/account/email_email.html:11
+#: templates/account/passwd_email.html:11 templates/account/user_email.html:11
+msgid "Thanks for using our site!"
+msgstr "¡Gracias por utilizar nuestro sitio!"
+
+#: templates/account/email_email.html:13
+#: templates/account/passwd_email.html:13 templates/account/user_email.html:13
+#, python-format
+msgid "The %(site_name)s team"
+msgstr "El equipo de %(site_name)s"
+
+#: templates/account/email_validation.html:6
+#: templates/account/email_validation.html:15
 msgid "E-mail validation successful"
 msgstr "Cambio de dirección de correo satisfactorio"
 
-#: templates/account/email_validation.html:11
-#, fuzzy
+#: templates/account/email_validation.html:8
+#: templates/account/email_validation.html:17
 msgid "E-mail validation unsuccessful"
-msgstr "Fallo en el cambio de dirección de correo"
+msgstr "Fallo en la validación de la dirección de correo"
 
 #: templates/account/login.html:3 templates/account/login.html.py:10
 msgid "User login"
@@ -247,6 +226,14 @@ msgstr "Desconectado"
 #: templates/account/logout.html:8
 msgid "You've been logged out."
 msgstr "Has sido desconectado."
+
+#: templates/account/passwd_email.html:2
+msgid "You're receiving this e-mail because you requested a password reset"
+msgstr "Has recibido este e-mail porque has solicitado un resetedo de contraseña"
+
+#: templates/account/passwd_email.html:5
+msgid "Feel free to change this password going to this page:"
+msgstr "Puedes cambiar tu contraseña accediendo al siguiente enlace:"
 
 #: templates/account/password_change.html:4
 #: templates/account/password_change.html:9
@@ -390,6 +377,19 @@ msgstr "página de entrada de usuario"
 msgid "to authenticate and start using this site."
 msgstr "para autenticarte y empezar a utilizar este sitio."
 
+#: templates/account/user_email.html:2
+msgid "You're receiving this e-mail because you requested an account "
+msgstr "Has recibido este e-mail porque has solicitado una cuenta "
+
+#: templates/account/user_email.html:3
+#, python-format
+msgid "at %(site_name)s"
+msgstr "en %(site_name)s"
+
+#: templates/account/user_email.html:5
+msgid "Following this link, you will validate your e-mail address:"
+msgstr "Accediendo a este enlace, validarás tu dirección de correo:"
+
 #: templates/account/validate.html:7
 msgid ""
 "Your user has been created successfully, but you must validate your e-mail "
@@ -441,6 +441,9 @@ msgstr "Si has perdido tu contraseña, puedes cambiarla con esta utilidad"
 #: templates/account/validation_reset_done.html:13
 msgid "Lost password utility"
 msgstr "Utilidad de recuperación de contraseña"
+
+#~ msgid "Account validated successfully."
+#~ msgstr "La cuenta ha sido validada correctamente."
 
 #~ msgid "That username has invalid characters."
 #~ msgstr "Ese usuario tiene carácteres inválidos"
