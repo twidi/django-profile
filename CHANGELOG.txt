@@ -6,6 +6,9 @@ Version 0.3.1
 -------------
 
 * Solved some bug issues. Thanks to evo for the report.
+* Modified the Profile model with the new syntax for the OneToOne fields after the QuerySet Refactor on Django.
+  Thanks to Arin. Read more:
+        http://code.djangoproject.com/wiki/QuerysetRefactorBranch#Backwardsincompatiblechanges
 
 Version 0.3
 -------------
