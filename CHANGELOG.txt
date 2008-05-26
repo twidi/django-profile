@@ -9,6 +9,8 @@ Version 0.3.1
 * Modified the Profile model with the new syntax for the OneToOne fields after the QuerySet Refactor on Django.
   Thanks to Arin. Read more:
         http://code.djangoproject.com/wiki/QuerysetRefactorBranch#Backwardsincompatiblechanges
+* Added Italian translation. Thanks to the author of django-press (http://code.google.com/p/django-press/).
+
 
 Version 0.3
 -------------
