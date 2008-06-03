@@ -2,6 +2,12 @@
 django-profile Changelog
 ========================
 
+Version 0.4.0
+-------------
+
+* Added fixtures for the inital load of Countries and Continents. Thanks to Rob Yates.
+
+
 Version 0.3.1
 -------------
 
