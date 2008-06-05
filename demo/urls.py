@@ -1,9 +1,11 @@
 from django.conf.urls.defaults import *
+from django.views.generic.simple import direct_to_template
+from userprofile.views import valid_users
 
 urlpatterns = patterns('',
 
-    # Demo FrontPage
-    (r'^$', "demo.views.front", {'template': 'front.html' }),
+    # Demo FrontPage$
+    (r'^$', direct_to_template, {'extra_context': { 'users': valid_users }, 'template': 'front.html' }),
 
     # Account application
     (r'^accounts/', include('account.urls')),

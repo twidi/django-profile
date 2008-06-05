@@ -1,5 +1,5 @@
 body {
-	background: #b2e6ad;
+	background: #EFEFEF;
 	padding: 0px;
 	margin: 0px;
 	min-width: 410px;
@@ -7,12 +7,10 @@ body {
 
 a {
 	text-decoration: none;
-	color: grey;
 }
 
 p.title {
 	background: white;
-	color: grey;
 	font-weight: bold;
 	padding: 5px;
 	margin: 0px;
@@ -39,3 +37,12 @@ div.loading > p {
 	padding: 0px;
 	margin: 0px;
 }
+
+div.photos img {
+	border: 5px solid white;
+}
+
+div.photos img:hover {
+	border: 5px solid #CCC;
+}
+

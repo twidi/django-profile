@@ -9,8 +9,10 @@ function mapFramework() {
 		this.map.enableContinuousZoom();
 
 		var lat = lng = 0;
-		if ($("#id_latitude").val()) lat = $("#id_latitude").val();
-		if ($("#id_longitude").val()) lng = $("#id_longitude").val();
+		if ($("#id_geopoint").val()) {
+			lat = $("#id_geopoint").val().split(",")[0];
+			lng = $("#id_geopoint").val().split(",")[1];
+		}
 
   	this.map.setCenter(new GLatLng(lat, lng), 4);
 		this.marker = new GMarker(new GLatLng(lat, lng), {clickable: false, bouncy: true, draggable: true}); 
@@ -19,8 +21,7 @@ function mapFramework() {
 		GEvent.addListener(this.marker, "dragend", function(){
     	$("img.loading").show();
     	var point = this.getLatLng();
-    	$("#id_latitude").val(point.lat().toFixed(6));
-    	$("#id_longitude").val(point.lng().toFixed(6));
+    	$("#id_geopoint").val(point.lat().toFixed(6) + "," + point.lng().toFixed(6));
     	$.getJSON("/profile/getcountry_info/" + point.lat() + "/" +  point.lng() + "/", function(data) {
       	$("#id_country").val(data['country']);
       	$("#id_location").val(data['region']);
@@ -44,8 +45,7 @@ mapFramework.prototype.searchLocation = function() {
  		if (point) {
  			g.map.setCenter(point);
  			g.marker.setLatLng(point);
- 			$("#id_latitude").val(point.lat().toFixed(6));
- 			$("#id_longitude").val(point.lng().toFixed(6));
+ 			$("#id_geopoint").val(point.lat().toFixed(6) + "," + point.lng().toFixed(6));
  			$.getJSON("/profile/getcountry_info/" + point.lat() + "/" +  point.lng() + "/", function(data) {
  				$("#id_country").val(data['country']);
  				$("img.loading").hide();
@@ -87,19 +87,19 @@ $(function(){
 	var date = $("#id_birthdate").val().split("-");
   $("div.calendar").datepicker({ onSelect: updateInline, hideIfNoPrevNext: true, yearRange: "1940:2010", defaultDate: new Date(date[0],date[1] -1, date[2]) });
   $("a.newavatar").click(function() {
-		window.open($(this).attr("href"), "Avatar", "width=410, height=200,resizable=yes").moveTo(100,100);
+		window.open($(this).attr("href"), "Avatar", "width=640, height=480,resizable=yes").moveTo(100,100);
 		return false;
   });
 
 	// Click on the save button
 	$("input[@type=button].save").click(function() {
-		$("img.saving").attr("src", "/site_media/images/loading3.png");
+		$("img.saving").attr("src", "/static/images/loading2.gif");
 		$("img.saving").show();
 		$.post("/profile/save/", $("form").serialize(), function(data) {
 			if (data.success) {
-				$("img.saving").attr("src", "/site_media/images/good.png");
+				$("img.saving").attr("src", "/static/images/good.png");
 			} else {
-				$("img.saving").attr("src", "/site_media/images/error.png");
+				$("img.saving").attr("src", "/static/images/error.png");
 			}
 		}, "json");
 	});
@@ -159,7 +159,7 @@ $(function(){
   $("a.delavatar").click(function() {
     $.getJSON("/profile/avatar/delete/", function(data) {
 			if (data.success) {
-				$("img#avatarimg").attr("src", "/site_media/images/default.gif");
+				$("img#avatarimg").attr("src", "/static/images/default.png");
 			}
     });
 
