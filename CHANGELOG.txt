@@ -5,8 +5,13 @@ django-profile Changelog
 Version 0.4.0
 -------------
 
+* Backward incompatible with older versions. It could be possible to make a migration script, but it's not done.
 * Added fixtures for the inital load of Countries and Continents. Thanks to Rob Yates.
 * Removed the "libmagic" dependency.
+* Updated jquery version.
+* New avatar crop&resize plugin.
+* New avatar management. You can insert an image from an URL, or make a search to Picasaweb.
+* Removed the Avatar model. It was innecesary and everything is better managed from the Profile model.
 
 
 Version 0.3.1
