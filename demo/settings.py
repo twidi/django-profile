@@ -1,9 +1,13 @@
 # Django settings for demo project.
+import os.path
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 ACCOUNT_ACTIVATION_DAYS = 4
 EMAIL_VALIDATION = False
+
+ROOT_PATH = os.path.dirname(__file__)
+
 
 # 192.168.0.100:8000/
 APIKEY = "ABQIAAAA06IJoYHDPFMx4u3hTtaghxTU2QkCNWGFpwxhhQnHf-7Pc6f1lBTQWFSuWvEBhZGiAbR5wPO0DLqoOw"
@@ -45,7 +49,7 @@ USE_I18N = True
 
 # Absolute path to the directory that holds media.
 # Example: "/home/media/media.lawrence.com/"
-MEDIA_ROOT = '../media/'
+MEDIA_ROOT = os.path.join(ROOT_PATH, '../media')
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).
@@ -87,8 +91,8 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    'templates',
-    '../templates/'
+    os.path.join(ROOT_PATH, 'templates'),
+    os.path.join(ROOT_PATH, '../templates'),
 )
 
 INSTALLED_APPS = (
