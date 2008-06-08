@@ -7,6 +7,7 @@ Version 0.4.0
 
 * Backward incompatible with older versions. It could be possible to make a migration script, but it's not done.
 * Added fixtures for the inital load of Countries and Continents. Thanks to Rob Yates.
+* Solved some bugs on the "account" module. Thanks to Rob Yates again.
 * Removed the "libmagic" dependency.
 * Updated jquery version.
 * New avatar crop&resize plugin.

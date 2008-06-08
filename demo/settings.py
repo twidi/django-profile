@@ -3,8 +3,11 @@ import os.path
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
+
+# django-profile specific options
 ACCOUNT_ACTIVATION_DAYS = 4
 EMAIL_VALIDATION = False
+WEBSEARCH = True
 
 ROOT_PATH = os.path.dirname(__file__)
 

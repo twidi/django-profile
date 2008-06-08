@@ -10,14 +10,17 @@ First of all, the requerimient to run this software is:
 		* python-imaging package (on Debian or Ubuntu).
 		* Source: http://www.pythonware.com/products/pil/
 
-	* The Python libmagic bindings:
-		* python-magic package (on Debian, Ubuntu or Fedora):
-		* Source: ftp://ftp.gw.com/mirrors/pub/unix/file/file-4.23.tar.gz
-
+	* The Google Data APIs (Optional):
+		* Download from: http://code.google.com/p/gdata-python-client/
 
 You can see a demo of which can be accomplished here:
 
 	http://profile.coredump.es
+
+or here (Google AppEngine branch of this application):
+
+	http://django-profile.appspot.com
+
 
 -----------------
 -- Quick guide --
@@ -32,6 +35,16 @@ from the repository executing this command on this directory:
 
 * Make the "userprofile" and "account" modules visible to your PYTHONPATH.
 
+* Download and put on the PYTHONPATH the Google Data APIs. This allow to select avatars directly from Picasaweb:
+	$ wget http://gdata-python-client.googlecode.com/files/gdata.py-1.1.0.tar.gz
+	$ tar zxvf gdata.py-1.1.0.tar.gz
+	$ mv gdata.py-1.1.0/src/gdata .
+
+* Fill the Continents and Countries information with the database supplied. Follow this steps:
+	$ cd demo
+	$ python manage.py loaddata userprofile-continent
+	$ python manage.py loaddata userprofile-country
+
 * Go to the "demo" directory located in this directory and run:
 
 	$ python manage.py syncdb
@@ -41,15 +54,7 @@ and
 
 You can now connect to the django web server and try the demo. 
 
-Optional:
-
-* Fill the Continents and Countries information with the database supplied. Follow
-  this steps:
-
-$ python manage.py shell
->>> from userprofile.models import Continent,Country
->>> Continent().importdata()
->>> Country().importdata()
+	http://127.0.0.1:8000
 
 
 * You will need a valid e-mail server to try the e-mail validation process. 
@@ -73,7 +78,7 @@ EMAIL_HOST_PASSWORD = ''
 Once you've seen what can be done, you could integrate django-profile with your custom
 software. Basically, you need these things:
 
-* Add django and the required modules accesible from your PYTHON_PATH (Look at the demo
+* Add django and the required modules accesible from your PYTHONPATH (Look at the demo
   section).
 
 * Add this directive to the 'settings.py' file:
@@ -99,10 +104,8 @@ software. Basically, you need these things:
     files (CSS and javascript files).
 
 * Fill the needed data of countries and continents of the profile database with these commands:
-	$ python manage.py shell
-	>>> from userprofile.models import Continent,Country
-	>>> Continent().importdata()
-	>>> Country().importdata()
+	$ python manage.py loaddata userprofile-continent
+	$ python manage.py loaddata userprofile-country
 
 * You will need to fill the e-mail server configuration of settings.py (if you didn't have it yet)
   to try the e-mail validation process.
