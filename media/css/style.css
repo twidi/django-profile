@@ -216,3 +216,17 @@ div.save {
 div.save input[type=button] {
 	font-size: 1.4em;
 }
+
+ul.profilemenu {
+	border: 2px #CCC; 
+	background: #EFEFEF; 
+	margin: 0px; 
+	padding: 0px; 
+	list-style: none;
+}
+
+ul.profilemenu li {
+	line-height: 32px;
+	display: inline;
+	margin: 0px 20px;
+}
