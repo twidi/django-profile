@@ -28,7 +28,7 @@ $(function(){
 	$("input[@type=button].save").click(function() {
 		$("img.saving").attr("src", "/site_media/images/loading2.gif");
 		$("img.saving").show();
-		$.post("/profile/save/", $("form").serialize(), function(data) {
+		$.post($("form").attr("action"), $("form").serialize(), function(data) {
 			if (data.success) {
 				$("img.saving").attr("src", "/site_media/images/good.png");
 			} else {

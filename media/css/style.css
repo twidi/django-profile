@@ -214,8 +214,10 @@ select#id_country > option[disabled=disabled] {
 }
 
 div.save {
+	overflow: hidden;
 	background: #EFEFEF;
 	border: 1px solid #CCC;
+	margin-top: 15px;
 	padding: 5px;
 }
 
@@ -235,4 +237,30 @@ ul.profilemenu li {
 	line-height: 32px;
 	display: inline;
 	margin: 0px 20px;
+}
+
+div.loading {
+  margin: auto;
+  width: 180px;
+  font-weight: bold;
+  overflow: hidden;
+  display: none;
+}
+
+div.loading > p > img {
+  vertical-align: middle;
+}
+
+div.loading > p {
+  margin-left: 10px;
+  padding: 0px;
+  margin: 0px;
+}
+
+div.photos img {
+  border: 5px solid white;
+}
+
+div.photos img:hover {
+  border: 5px solid #CCC;
 }
