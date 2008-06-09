@@ -66,20 +66,6 @@ function initMap2() {
 }
 
 $(function(){
-	// Click on the save button
-	$("input[@type=button].save").click(function() {
-		$("img.saving").attr("src", "/site_media/images/loading2.gif");
-		$("img.saving").show();
-		$.post($("form").attr("action"), $("form").serialize(), function(data) {
-			if (data.success) {
-				$("img.saving").attr("src", "/site_media/images/good.png");
-			} else {
-				$("img.saving").attr("src", "/site_media/images/error.png");
-			}
-		}, "json");
-	});
-
-
 	$("#id_country").change(function() {
 		$("#id_location").val("Drag the marker on the map to establish a more precise location.");
 		if (!$("#id_country option:selected").val()) {

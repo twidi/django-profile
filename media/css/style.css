@@ -225,7 +225,7 @@ div.save {
 	padding: 5px;
 }
 
-div.save input[type=button] {
+div.save input[type=submit] {
 	font-size: 1.4em;
 }
 
