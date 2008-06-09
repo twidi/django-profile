@@ -4,7 +4,6 @@ function updateInline(date) {
 }
 
 $(function(){
-
   $("#id_firstname").focus();
 
   // On focus, light the focused input
@@ -23,39 +22,6 @@ $(function(){
 		window.open($(this).attr("href"), "Avatar", "width=640, height=480,resizable=yes").moveTo(100,100);
 		return false;
   });
-
-	// Click on the save button
-	$("input[@type=button].save").click(function() {
-		$("img.saving").attr("src", "/site_media/images/loading2.gif");
-		$("img.saving").show();
-		$.post($("form").attr("action"), $("form").serialize(), function(data) {
-			if (data.success) {
-				$("img.saving").attr("src", "/site_media/images/good.png");
-			} else {
-				$("img.saving").attr("src", "/site_media/images/error.png");
-			}
-		}, "json");
-	});
-
-
-	$("#id_country").change(function() {
-		$("#id_location").val("Drag the marker on the map to establish a more precise location.");
-		if (!$("#id_country option:selected").val()) {
-			$("div.mapinfo").hide();
-			return;
-		}
-		if ($("div.mapinfo").css("display") == "none") {
-			$("div.mapinfo").show();
-			$.getScript("http://maps.google.com/maps?file=api&v=2.x&key=" + $("#apikey").text() + "&async=2&callback=initMap");
-		} else {
-			googlemaps.searchLocation();
-		}
-	});
-
-	if ($("#id_country option:selected").val()) {
-      $("div.mapinfo").show();
-      $.getScript("http://maps.google.com/maps?file=api&v=2.x&key=" + $("#apikey").text() + "&async=2&callback=initMap2");
-	}
 
 	// Gender select
 	if ($("#id_gender").val() == "M") {
@@ -87,16 +53,4 @@ $(function(){
 		}
 		return false;
 	});
-
-	//avatar
-  $("a.delavatar").click(function() {
-    $.getJSON("/profile/avatar/delete/", function(data) {
-			if (data.success) {
-				$("img#avatarimg").attr("src", "/site_media/images/default.png");
-			}
-    });
-
-    return false;
-  });
-
 });

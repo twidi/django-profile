@@ -54,6 +54,10 @@ p.register a {
 	font-size: 1.3em;
 }
 
+form.commonform {
+	overflow: hidden;
+}
+
 form.commonform > fieldset > div > strong {
 	font-weight: bold;
 	font-size: 1.4em;
@@ -185,9 +189,9 @@ div.avatar {
 	float: left;
 }
 
-div.avatar > a > img {
-	border: 1px solid #CCC;
-	padding: 1px;
+div.avatar img {
+	border: 3px solid #CCC;
+	padding: 2px;
 	text-align: center;
 }
 
