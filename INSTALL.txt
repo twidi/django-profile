@@ -38,7 +38,7 @@ from the repository executing this command on this directory:
 * Download and put on the PYTHONPATH the Google Data APIs. This allow to select avatars directly from Picasaweb:
 	$ wget http://gdata-python-client.googlecode.com/files/gdata.py-1.1.0.tar.gz
 	$ tar zxvf gdata.py-1.1.0.tar.gz
-	$ mv gdata.py-1.1.0/src/gdata .
+	Now move the gdata.py-1.1.0/src/gdata directory to your PYTHONPATH.
 
 * Fill the Continents and Countries information with the database supplied. Follow this steps:
 	$ cd demo

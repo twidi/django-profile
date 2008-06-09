@@ -61,6 +61,12 @@ form.commonform > fieldset > div > strong {
 
 form.commonform > fieldset {
 	border: 0px solid;
+	margin: 0px;
+	padding: 0px;
+}
+
+form.commonform h1 {
+	border-bottom: 2px solid black;
 }
 
 form.commonform > fieldset > div {
