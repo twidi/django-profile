@@ -18,13 +18,13 @@
   			{% if user.is_authenticated %}
 				<li><a href="/profile/manage/">{% trans "Profile" %}</a></li>
 				<li><a href="/account/manage/">{% trans "Account" %}</a></li>
-   			<li><a href="/accounts/logout/">{% trans "Logout" %}</a></li>
+   			<li><a href="/account/logout/">{% trans "Logout" %}</a></li>
 				{% else %} 
-				<li><a href="/profile/">{% trans "Login" %}</a></li>
+				<li><a href="/profile/manage/">{% trans "Login" %}</a></li>
   			{% endif %}
   		</ul>
 			{% if not user.is_authenticated %}
-			<p class="register">{% trans "If you don't have an account, you can" %} <a href="/accounts/register/">{% trans "sign up" %}</a> {% trans "for one; it's free, and you could try this demo and publish your usercard." %}</p>
+			<p class="register">{% trans "If you don't have an account, you can" %} <a href="/account/register/">{% trans "sign up" %}</a> {% trans "for one; it's free, and you could try this demo and publish your usercard." %}</p>
 			{% endif %}
 		</div>
 		{% block content %}{% endblock %}
