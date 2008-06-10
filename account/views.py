@@ -19,6 +19,10 @@ def json_error_response(error_message, *args, **kwargs):
                                               error_message=error_message), ensure_ascii=False))
 
 @login_required
+def overview(request, template, section):
+    return render_to_response(template, locals(), context_instance=RequestContext(request))
+
+@login_required
 def change_email_with_key(request, key, template):
     """
     Verify key and change email

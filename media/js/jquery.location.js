@@ -24,6 +24,7 @@ function mapFramework() {
     	$.getJSON("/profile/getcountry_info/" + point.lat() + "/" +  point.lng() + "/", function(data) {
       	$("#id_country").val(data['country']);
       	$("#id_location").val(data['region']);
+      	$("#location_info").text(data['region']);
       	$("img.loading").hide();
     	});
   	});
@@ -65,10 +66,13 @@ function initMap2() {
 	googlemaps = new mapFramework();
 }
 
-$(function(){
+$(function() {
 	$("#id_country").change(function() {
-		$("#id_location").val("Drag the marker on the map to establish a more precise location.");
+		$("#location_info").text("Drag the marker on the map to establish a more precise location.");
 		if (!$("#id_country option:selected").val()) {
+			$("#id_location").val('');
+			$("#id_latitude").val('');
+			$("#id_longitude").val('');
 			$("div.mapinfo").hide();
 			return;
 		}

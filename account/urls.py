@@ -4,14 +4,15 @@ from account.views import *
 from django.contrib.auth import views
 
 urlpatterns = patterns('',
+    (r'^manage/$', overview, { 'section': 'overview', 'template' : 'account/overview.html'}),
     (r'^password/reset/$', reset_password, {'template' : 'account/password_reset.html'}),
     (r'^validation/reset/$', resend_validation, {'template' : 'account/validation_reset.html'}),
     (r'^validation/reset/(?P<action>success|failed)/$', direct_to_template, {'template' : 'account/validation_reset_done.html'}),
     (r'^password/reset/done/$', direct_to_template, {'template': 'account/password_reset_done.html'}),
     (r'^password/change/(?P<key>.{70})/$', change_password_with_key, {'template': 'account/password_change.html'}),
-    (r'^password/change/$', change_password_authenticated, {'template': 'account/password_change.html'}),
+    (r'^password/change/$', change_password_authenticated, { 'section': 'password_change', 'template': 'account/password_change.html'}),
     (r'^password/change/done/$', direct_to_template, {'template': 'account/password_change_done.html'}),
-    (r'^email/change/$', email_change, {'template': 'account/email_change.html'}),
+    (r'^email/change/$', email_change, { 'section': 'password_change', 'template': 'account/email_change.html'}),
     (r'^email/change/processed/$', direct_to_template, {'template': 'account/email_change_processed.html'}),
     (r'^email/change/(?P<key>.{70})/$', change_email_with_key, {'template': 'account/email_change_done.html'}),
     (r'^login/$', views.login, {'template_name': 'account/login.html'}),

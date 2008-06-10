@@ -8,7 +8,7 @@ urlpatterns = patterns('',
     (r'^$', direct_to_template, {'extra_context': { 'users': valid_users }, 'template': 'front.html' }),
 
     # Account application
-    (r'^accounts/', include('account.urls')),
+    (r'^account/', include('account.urls')),
 
     # Profile application
     (r'^profile/', include('userprofile.urls')),

@@ -1,0 +1,5 @@
+{% load i18n %}
+<ul class="profilemenu">
+	<li {% ifequal section "overview" %}class="active"{% endifequal %}><a href="/account/manage/">{% trans "Overview" %}</a></li>
+	<li {% ifequal section "password" %}class="active"{% endifequal %}><a href="/account/password/change/">{% trans "Change password" %}</a></li>
+</ul>
