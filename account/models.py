@@ -48,13 +48,13 @@ class ValidationManager(models.Manager):
         site = Site.objects.get_current()
         template = "account/%s_email.html" % type
         if type == "email":
-            message = 'http://%s/accounts/email/change/%s/' % (site.domain, key)
+            message = 'http://%s/account/email/change/%s/' % (site.domain, key)
             title = _("Email change confirmation on %s") % site.name
         elif type == "passwd":
-            message = 'http://%s/accounts/password/change/%s/' % (site.domain, key)
+            message = 'http://%s/account/password/change/%s/' % (site.domain, key)
             title = _("Password reset on %s") % site.name
         elif type == "user":
-            message = 'http://%s/accounts/validate/%s/' % (site.domain, key)
+            message = 'http://%s/account/validate/%s/' % (site.domain, key)
             title = _("Activate your account on %s") % site.name
 
         t = loader.get_template(template)

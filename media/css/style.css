@@ -237,20 +237,15 @@ ul.profilemenu {
 }
 
 li.active {
-	border: 4px solid #EFEFEF;
+	border: 4px solid #777;
 	background: #CCC;
-	color: #FFF;
-}
-
-ul.profilemenu a {
-	color: inherit;
 }
 
 ul.profilemenu li {
 	line-height: 35px;
 	display: inline;
 	margin: 0px;
-	padding: 5px 25px;
+	padding: 5px 18px;
 }
 
 div.loading {

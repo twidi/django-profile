@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-04-26 15:38+0200\n"
+"POT-Creation-Date: 2008-06-10 16:06+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,15 +28,15 @@ msgstr ""
 msgid "The username is already registered."
 msgstr "Ese nombre de usuario ya está registrado."
 
-#: forms.py:36 forms.py:92 forms.py:114
+#: forms.py:36 forms.py:96 forms.py:118
 msgid "The passwords inserted are different."
 msgstr "Las contraseñas introducidas no coinciden."
 
-#: forms.py:48 forms.py:63
+#: forms.py:52 forms.py:67
 msgid "That e-mail is already used."
 msgstr "Ese e-mail ya está utilizado."
 
-#: forms.py:76
+#: forms.py:80
 msgid "There's no user with that e-mail"
 msgstr "No existe ningún usuario con ese e-mail"
 
@@ -60,11 +60,11 @@ msgstr "Activa tu cuenta en %s"
 msgid "Email validation process for %(user)s of type %(type)s"
 msgstr "Proceso de validación por e-mail para %(user)s del tipo %(type)s"
 
-#: views.py:27
+#: views.py:37
 msgid "E-mail changed successfully."
 msgstr "La dirección de correo ha sido cambiada correctamente."
 
-#: views.py:30
+#: views.py:40
 msgid ""
 "The key you received via e-mail is no longer valid. Please try the e-mail "
 "change process again."
@@ -72,7 +72,7 @@ msgstr ""
 "La clave que recibiste por e-mail ya no es válida. Por favor, inicia el "
 "proceso de cambio de e-mail de nuevo."
 
-#: views.py:40
+#: views.py:50
 msgid ""
 "Account validated successfully. Now you can access to the login page with "
 "your username and password and start using this site."
@@ -80,7 +80,7 @@ msgstr ""
 "Tu cuenta ha sido validada correctamente. Ya puedes acceder a la página de "
 "login con tu usuario y contraseña y empezar a utilizar este sitio."
 
-#: views.py:43
+#: views.py:53
 msgid ""
 "The key you received via e-mail is no longer valid. Please try the e-mail "
 "validation process again."
@@ -88,20 +88,24 @@ msgstr ""
 "La clave que recibiste por e-mail ya no es válida. Por favor, inicia el "
 "proceso de validación de cuenta de nuevo."
 
-#: views.py:174
+#: views.py:184
 msgid "Invalid e-mail"
 msgstr "Dirección de correo incorrecta"
 
-#: views.py:179 views.py:191
+#: views.py:189 views.py:201
 msgid "E-mail not registered"
 msgstr "E-mail no registrado"
 
 #: templates/account/email_change.html:4
-#: templates/account/email_change.html:10
+#: templates/account/email_change.html:14
 msgid "E-mail change"
 msgstr "Cambio de e-mail"
 
-#: templates/account/email_change.html:11
+#: templates/account/email_change.html:16
+msgid "Add e-mail"
+msgstr "Añadir una dirección de correo"
+
+#: templates/account/email_change.html:18
 msgid ""
 "Insert the new e-mail address. An e-mail will be send to it for testing and "
 "confirmation."
@@ -109,20 +113,20 @@ msgstr ""
 "Introduce la nueva dirección de correo. Se te enviará un e-mail para probar "
 "y confirmar."
 
-#: templates/account/email_change.html:16
+#: templates/account/email_change.html:21
 msgid "New e-mail address:"
 msgstr "Nueva dirección de correo:"
 
-#: templates/account/email_change.html:20
+#: templates/account/email_change.html:25
 msgid "Send confirmation"
 msgstr "Enviar confirmación"
 
-#: templates/account/email_change_done.html:4
-#: templates/account/email_change_done.html:9
+#: templates/account/email_change_done.html:3
+#: templates/account/email_change_done.html:7
 msgid "E-mail change successful"
 msgstr "Cambio de dirección de correo satisfactorio"
 
-#: templates/account/email_change_done.html:11
+#: templates/account/email_change_done.html:9
 msgid "E-mail change unsuccessful"
 msgstr "Fallo en el cambio de dirección de correo"
 
@@ -131,7 +135,7 @@ msgstr "Fallo en el cambio de dirección de correo"
 msgid "E-mail change processed"
 msgstr "Cambio de dirección de correo procesado"
 
-#: templates/account/email_change_processed.html:10
+#: templates/account/email_change_processed.html:9
 msgid ""
 "An e-mail has been sent to the new e-mail address to verify and activate it. "
 "Please access to your e-mail and complete this process following the "
@@ -143,8 +147,9 @@ msgstr ""
 
 #: templates/account/email_email.html:2
 msgid "You're receiving this e-mail because you requested an e-mail change"
-msgstr "Has recibido este mensaje porque has solicitado un cambio de "
-"dirección de correo"
+msgstr ""
+"Has recibido este mensaje porque has solicitado un cambio de dirección de "
+"correo"
 
 #: templates/account/email_email.html:3 templates/account/passwd_email.html:3
 #, python-format
@@ -185,7 +190,8 @@ msgstr "Fallo en la validación de la dirección de correo"
 msgid "User login"
 msgstr "Entrada de usuario"
 
-#: templates/account/login.html:15 templates/account/registration.html:15
+#: templates/account/login.html:15 templates/account/overview.html:15
+#: templates/account/registration.html:15
 msgid "Username:"
 msgstr "Usuario:"
 
@@ -227,20 +233,62 @@ msgstr "Desconectado"
 msgid "You've been logged out."
 msgstr "Has sido desconectado."
 
+#: templates/account/menu.html:3
+msgid "Overview"
+msgstr "Resumen"
+
+#: templates/account/menu.html:4 templates/account/overview.html:17
+msgid "Change password"
+msgstr "Cambiar contraseña"
+
+#: templates/account/menu.html:5
+msgid "Change email"
+msgstr "Cambiar dirección de correo"
+
+#: templates/account/menu.html:5
+msgid "Add email"
+msgstr "Añadir una dirección de correo"
+
+#: templates/account/overview.html:3
+#, python-format
+msgid "%(user)s's Dashboard"
+msgstr "Tablero de %(user)s"
+
+#: templates/account/overview.html:7
+msgid "Overview of your public profile"
+msgstr "Resumen de tu perfil público"
+
+#: templates/account/overview.html:20 templates/account/registration.html:21
+msgid "E-mail:"
+msgstr "Dirección de correo:"
+
+#: templates/account/overview.html:21
+msgid "Not set yet"
+msgstr "No establecido todavía"
+
+#: templates/account/overview.html:22
+msgid "Change your e-mail address"
+msgstr "Cambiar tu dirección de correo"
+
+#: templates/account/overview.html:22
+msgid "Add your e-mail address"
+msgstr "Añade tu dirección de correo"
+
 #: templates/account/passwd_email.html:2
 msgid "You're receiving this e-mail because you requested a password reset"
-msgstr "Has recibido este e-mail porque has solicitado un resetedo de contraseña"
+msgstr ""
+"Has recibido este e-mail porque has solicitado un resetedo de contraseña"
 
 #: templates/account/passwd_email.html:5
 msgid "Feel free to change this password going to this page:"
 msgstr "Puedes cambiar tu contraseña accediendo al siguiente enlace:"
 
 #: templates/account/password_change.html:4
-#: templates/account/password_change.html:9
+#: templates/account/password_change.html:12
 msgid "Password change for"
 msgstr "Cambio de contraseña de"
 
-#: templates/account/password_change.html:10
+#: templates/account/password_change.html:13
 msgid ""
 "Please enter your new password twice so we can verify you typed it in "
 "correctly."
@@ -248,24 +296,24 @@ msgstr ""
 "Por favor introduce tu nueva contraseña dos veces para que podamos verificar "
 "que la has tecleado correctamente."
 
-#: templates/account/password_change.html:15
+#: templates/account/password_change.html:16
 msgid "New password:"
 msgstr "Nueva contraseña:"
 
-#: templates/account/password_change.html:19
+#: templates/account/password_change.html:20
 msgid "Confirm password:"
 msgstr "Confirmar contraseña:"
 
-#: templates/account/password_change.html:23
+#: templates/account/password_change.html:24
 msgid "Change my password"
 msgstr "Cambiar mi contraseña"
 
 #: templates/account/password_change_done.html:4
-#: templates/account/password_change_done.html:7
+#: templates/account/password_change_done.html:8
 msgid "Password change successful"
 msgstr "Cambio de contraseña satisfactorio"
 
-#: templates/account/password_change_done.html:8
+#: templates/account/password_change_done.html:9
 msgid "The password has been changed successfully."
 msgstr "La contraseña se ha cambiado satisfactoriamente"
 
@@ -327,10 +375,6 @@ msgid ""
 msgstr ""
 "Unirse a esta comunidad es rápido y fácil. Únicamente tienes que rellenar la "
 "siguiente información para poder acceder a todo el contenido privado."
-
-#: templates/account/registration.html:21
-msgid "E-mail:"
-msgstr "Dirección de correo:"
 
 #: templates/account/registration.html:31
 msgid "Password again:"

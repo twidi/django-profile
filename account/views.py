@@ -20,10 +20,16 @@ def json_error_response(error_message, *args, **kwargs):
 
 @login_required
 def overview(request, template, section):
+    try:
+        email = Validation.objects.get(user=user).email
+        validated = False
+    except:
+        email = request.user.email
+        validated = True
     return render_to_response(template, locals(), context_instance=RequestContext(request))
 
 @login_required
-def change_email_with_key(request, key, template):
+def change_email_with_key(request, key, template, section):
     """
     Verify key and change email
     """
@@ -49,7 +55,7 @@ def email_validation_with_key(request, key, template):
 
     return render_to_response(template, locals(), context_instance=RequestContext(request))
 
-def email_change(request, template):
+def email_change(request, template, section):
     """
     Change the e-mail page
     """
@@ -136,14 +142,14 @@ def change_password_with_key(request, key, template):
         form = changePasswordKeyForm(request.POST)
         if form.is_valid():
             form.save(key)
-            return HttpResponseRedirect('/accounts/password/change/done/')
+            return HttpResponseRedirect('%s/done/' % request.path)
     else:
         form = changePasswordKeyForm()
 
     return render_to_response(template, locals(), context_instance=RequestContext(request))
 
 @login_required
-def change_password_authenticated(request, template):
+def change_password_authenticated(request, template, section):
     """
     Change the password of the authenticated user
     """
@@ -151,7 +157,7 @@ def change_password_authenticated(request, template):
         form = changePasswordAuthForm(request.POST)
         if form.is_valid():
             form.save(request.user)
-            return HttpResponseRedirect('/accounts/password/change/done/')
+            return HttpResponseRedirect('/account/password/change/done/')
     else:
         form = changePasswordAuthForm()
 

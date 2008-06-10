@@ -19,13 +19,13 @@
     		<label for="id_password">{% trans "Password:" %}</label>
     		{{ form.password }}
 			</div>
-    	<p class="lostpw"><a href="/accounts/password/reset/">{% trans "Have you lost your password?" %}</a></p>
+    	<p class="lostpw"><a href="/account/password/reset/">{% trans "Have you lost your password?" %}</a></p>
     	<input type="submit" value="{% trans 'Login' %}" />
   	</fieldset>
   	{% if form.has_errors %}
 		{% load account_tags %}
 		{%if form.username|is_inactive %}
-  	<p class="error">{% trans "This account has not been activated yet. You must have received an e-mail with instructions to activate it. If you want to resend the e-mail, please, click" %} <a href="/accounts/validation/reset/">{% trans "here" %}</a>.</p>
+  	<p class="error">{% trans "This account has not been activated yet. You must have received an e-mail with instructions to activate it. If you want to resend the e-mail, please, click" %} <a href="/account/validation/reset/">{% trans "here" %}</a>.</p>
 		{% else %}
   	<p class="error">{% trans "Your username and password didn't match. Please try again." %}</p>
 		{% endif %}
