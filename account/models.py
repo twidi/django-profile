@@ -6,6 +6,34 @@ from django.template import loader, Context
 from django.contrib.sites.models import Site
 import datetime
 
+# this code based in-part on django-registration
+
+class EmailAddressManager(models.Manager):
+
+    def add_email(self, user, email):
+        try:
+            email_address = self.create(user=user, email=email)
+            Validation.objects.add(user=newuser, email=newuser.email, type="user")
+            return email_address
+        except IntegrityError:
+            return None
+
+class EmailAddress(models.Model):
+
+    user = models.ForeignKey(User)
+    email = models.EmailField()
+    verified = models.BooleanField(default=False)
+    objects = EmailAddressManager()
+
+    def __unicode__(self):
+        return u"%s (%s)" % (self.email, self.user)
+
+    class Meta:
+        unique_together = (("user", "email"),)
+
+    class Admin:
+        pass
+
 class ValidationManager(models.Manager):
 
     def verify(self, key):

@@ -16,11 +16,6 @@ directory.
 
 Options you can use on settings.py:
 
-ACCOUNT_ACTIVATION_DAYS: Defines the maximum days that the activation
-e-mail will be valid. Example:
-	ACCOUNT_ACTIVATION_DAYS = 4
-
-
 EMAIL_VALIDATION: Defines if we are requiring an e-mail validation before
 activate an account.  Example:
 	EMAIL_VALIDATION = True

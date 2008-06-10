@@ -77,20 +77,14 @@ def register(request, template):
             password = form.cleaned_data.get('password1')
             newuser = User.objects.create_user(username=username, email='', password=password)
 
-            if hasattr(settings, "EMAIL_VALIDATION") and settings.EMAIL_VALIDATION == True:
-                newuser.is_active = False
+            if form.cleaned_data.get('email'):
                 newuser.email = form.cleaned_data.get('email')
-                newuser.save()
-                Validation.objects.add(user=newuser, email=newuser.email, type="user")
-                return HttpResponseRedirect('%svalidate/' % request.path)
-            else:
-                newuser.save()
-                return HttpResponseRedirect('%scomplete/' % request.path)
+
+            newuser.save()
+            Validation.objects.add(user=newuser, email=newuser.email, type="user")
+            return HttpResponseRedirect('%scomplete/' % request.path)
     else:
         form = UserForm()
-
-    if hasattr(settings, "EMAIL_VALIDATION") and settings.EMAIL_VALIDATION == True:
-        email = True
 
     return render_to_response(template, locals(), context_instance=RequestContext(request))
 

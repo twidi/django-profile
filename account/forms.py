@@ -9,7 +9,7 @@ from django.conf import settings
 class UserForm(forms.Form):
 
     username = forms.CharField(max_length=255, min_length = 3)
-    email = forms.EmailField(required=(hasattr(settings, "EMAIL_VALIDATION") and settings.EMAIL_VALIDATION == True))
+    email = forms.EmailField(required=False)
     password1 = forms.CharField(min_length=6, widget=forms.PasswordInput)
     password2 = forms.CharField(min_length=6, widget=forms.PasswordInput)
 
@@ -41,15 +41,13 @@ class UserForm(forms.Form):
         """
         email = self.cleaned_data.get("email")
 
-        if not (hasattr(settings, "EMAIL_VALIDATION") and settings.EMAIL_VALIDATION == True):
-            return  email
+        if not email: return  email
 
         try:
             User.objects.get(email=email)
+            raise forms.ValidationError(_("That e-mail is already used."))
         except:
             return email
-
-        raise forms.ValidationError(_("That e-mail is already used."))
 
 class EmailChangeForm(forms.Form):
     email = forms.EmailField()

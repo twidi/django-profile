@@ -5,8 +5,6 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 # django-profile specific options
-ACCOUNT_ACTIVATION_DAYS = 4
-EMAIL_VALIDATION = False
 WEBSEARCH = True
 
 PROJECT_PATH = os.path.abspath(os.path.dirname(__file__))
