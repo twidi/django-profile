@@ -30,7 +30,7 @@ $(function() {
 						$("#email_img").attr("src", "/site_media/images/error.png");
 						$("#email_img").attr("alt", "Invalid e-mail");
 				} else {
-   				$.getJSON("/account/check_email/" + val + "/", function(data) {
+   				$.getJSON("/accounts/check_email/" + val + "/", function(data) {
 						if (data.success) {
 							$("#email_img").attr("src", "/site_media/images/good.png");
 						} else {

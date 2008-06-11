@@ -26,16 +26,17 @@ div.vcard > img.gender {
 }
 
 div.content {
-	padding: 15px;
+	padding: 0px;
 }
 
 div.header {
-	background: #CCC;
+	background: #EFEFEF;
 	padding: 10px;
+	border-bottom: 4px solid #CCC;
 }
 
 div.header a {
-	color: white;
+	color: blue;
 }
 
 ul.menu {
@@ -136,12 +137,12 @@ form.profile > fieldset > div > select {
 
 p.error {
 	clear: both;
-	background: #f06f5c;
-	width: 100%;
+	border: 2px solid #f06f5c;
+	width: 60%;
 	font-size: 1.1em;
-	color: white;
 	text-align: center;
 	margin: 0px;
+	margin-top: 20px;
 	padding: 3px;
 }
 
@@ -234,6 +235,8 @@ ul.profilemenu {
 	margin: 0px; 
 	padding: 0px; 
 	list-style: none;
+	font-size: 0.9em;
+	border: 1px solid #777;
 }
 
 li.active {
@@ -242,7 +245,7 @@ li.active {
 }
 
 ul.profilemenu li {
-	line-height: 35px;
+	line-height: 34px;
 	display: inline;
 	margin: 0px;
 	padding: 5px 18px;
@@ -272,4 +275,8 @@ div.photos img {
 
 div.photos img:hover {
   border: 5px solid #CCC;
+}
+
+p.intro {
+	margin: 10px 0px;
 }

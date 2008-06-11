@@ -8,7 +8,7 @@ body {
 
 a {
   text-decoration: none;
-  color: #000;
+  color: blue;
 }
 
 a:hover {
@@ -21,4 +21,8 @@ hr {
 
 p.intro {
 	margin-left: 25px;
+}
+
+h1 {
+	border-bottom: 2px solid black;
 }

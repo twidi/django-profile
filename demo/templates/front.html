@@ -1,16 +1,13 @@
 {% extends "base.html" %}
 {% load i18n %}
-{% load userprofile_tags %}
 {% block title %}{% trans "Front page" %}{% endblock %}
 
 {% block content %}
-{% if users %}
 <h1>{% trans "People who have already tried this demo" %}</h1>
 
-{% for user in users %}
-  {% get_usercard user %}
+{% for profile in profiles %}
+	{% include "userprofile/usercard.html" %}
 {% endfor %}
 
-{% endif %}
 {% endblock %}
 

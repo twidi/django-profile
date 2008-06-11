@@ -16,7 +16,7 @@ $(function(){
 				$("#email_img").attr("src", "/site_media/images/loading.gif");
         $("#email_img").show();
 
-   			$.getJSON("/account/check_email_unused/" + val + "/", function(data) {
+   			$.getJSON("/accounts/check_email_unused/" + val + "/", function(data) {
           if (data.success) {
             $("#email_img").attr("src", "/site_media/images/good.png");
           } else {
@@ -47,7 +47,7 @@ $(function(){
 				$("#username_img").attr("src", "/site_media/images/loading.gif");
         $("#username_img").show();
 
-   			$.getJSON("/account/check_user/" + val + "/", function(data) {
+   			$.getJSON("/accounts/check_user/" + val + "/", function(data) {
           if (data.success) {
             $("#username_img").attr("src", "/site_media/images/good.png");
           } else {

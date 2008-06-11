@@ -21,7 +21,7 @@ function mapFramework() {
     	var point = this.getLatLng();
       $("#id_latitude").val(point.lat().toFixed(6));
       $("#id_longitude").val(point.lng().toFixed(6));
-    	$.getJSON("/profile/getcountry_info/" + point.lat() + "/" +  point.lng() + "/", function(data) {
+    	$.getJSON("/accounts/profile/getcountry_info/" + point.lat() + "/" +  point.lng() + "/", function(data) {
       	$("#id_country").val(data['country']);
       	$("#id_location").val(data['region']);
       	$("#location_info").text(data['region']);
@@ -47,7 +47,7 @@ mapFramework.prototype.searchLocation = function() {
  			g.marker.setLatLng(point);
       $("#id_latitude").val(point.lat().toFixed(6));
       $("#id_longitude").val(point.lng().toFixed(6));
- 			$.getJSON("/profile/getcountry_info/" + point.lat() + "/" +  point.lng() + "/", function(data) {
+ 			$.getJSON("/accounts/profile/getcountry_info/" + point.lat() + "/" +  point.lng() + "/", function(data) {
  				$("#id_country").val(data['country']);
  				$("img.loading").hide();
  			});
