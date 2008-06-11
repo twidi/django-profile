@@ -16,9 +16,5 @@ directory.
 
 Options you can use on settings.py:
 
-EMAIL_VALIDATION: Defines if we are requiring an e-mail validation before
-activate an account.  Example:
-	EMAIL_VALIDATION = True
-
 WEBSEARCH. Allow the users to select images from Picasa web or flickr directly, making use of the web API of these sites (requires the installation of some python modules, read INSTALL.txt). Example:
 	WEBSEARCH = True

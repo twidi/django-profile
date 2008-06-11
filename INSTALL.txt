@@ -10,7 +10,7 @@ First of all, the requerimient to run this software is:
 		* python-imaging package (on Debian or Ubuntu).
 		* Source: http://www.pythonware.com/products/pil/
 
-	* The Google Data APIs (Optional):
+	* Optional: the Google Data API
 		* Download from: http://code.google.com/p/gdata-python-client/
 
 You can see a demo of which can be accomplished here:
@@ -33,7 +33,7 @@ from the repository executing this command on this directory:
 
 	$ svn co http://code.djangoproject.com/svn/django/trunk/django
 
-* Make the "userprofile" and "account" modules visible to your PYTHONPATH.
+* Make the "userprofile" module visible to your PYTHONPATH.
 
 * Download and put on the PYTHONPATH the Google Data APIs. This allow to select avatars directly from Picasaweb:
 	$ wget http://gdata-python-client.googlecode.com/files/gdata.py-1.1.0.tar.gz
@@ -78,20 +78,18 @@ EMAIL_HOST_PASSWORD = ''
 Once you've seen what can be done, you could integrate django-profile with your custom
 software. Basically, you need these things:
 
-* Add django and the required modules accesible from your PYTHONPATH (Look at the demo
+* Add django and the required module accesible from your PYTHONPATH (Look at the demo
   section).
 
 * Add this directive to the 'settings.py' file:
 	AUTH_PROFILE_MODULE = 'userprofile.profile'
 
-* Add this modules to the INSTALLED_APPS section of your settings.py:
-	'userprofile',
-	'account',
+* Add this module to the INSTALLED_APPS section of your settings.py:
+	'userprofile'
 
-* Add this lines to your urls.py file:
+* Add this line to your urls.py file:
 
     (r'^profile/', include('userprofile.urls')),
-    (r'^accounts/', include('account.urls')),
 
 * Make the "media" directory accesible as your media content, or add the following line
   to urls.py to test it:
