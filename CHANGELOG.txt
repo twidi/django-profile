@@ -2,6 +2,11 @@
 django-profile Changelog
 ========================
 
+Version 0.4.1
+-------------
+
+* Solved a typo on the registration form. Thanks to stephan.d.walter.
+
 Version 0.4.0
 -------------
 
