@@ -2,16 +2,12 @@
 django-profile Changelog
 ========================
 
-Version 0.4.1
--------------
-
-* Solved a typo on the registration form. Thanks to stephan.d.walter.
-* Renamed ROOT_PATH to PROJECT_PATH and solved a bug about directory paths. Thanks to jonas.esp.
-
 Version 0.4.0.1
 ---------------
 
 * Solved a problem with license issues. Thanks to Kless.
+* Solved a typo on the registration form. Thanks to stephan.d.walter.
+* Renamed ROOT_PATH to PROJECT_PATH and solved a bug about directory paths. Thanks to jonas.esp.
 
 Version 0.4.0
 -------------
