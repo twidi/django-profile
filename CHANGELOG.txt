@@ -2,6 +2,14 @@
 django-profile Changelog
 ========================
 
+Version 0.4.1
+-------------
+* Solved some bugs on the optional configuration parameters APIKEY and WEBSEARCH. Now they are
+  totally optional. Thanks to Kless.
+* Solved a bug on the image crop&resize. If you didn't select a portion of the image, an error
+  was raised. Thanks to David Castello for the report.
+* Some cleanup of the javascript files.
+
 Version 0.4.0.1
 ---------------
 
