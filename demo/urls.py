@@ -6,7 +6,7 @@ from userprofile.views import get_profiles
 urlpatterns = patterns('',
 
     # Demo FrontPage$
-    (r'^$', direct_to_template, {'extra_context': { 'hola': 'adios', 'profiles': get_profiles }, 'template': 'front.html' }),
+    (r'^$', direct_to_template, {'extra_context': { 'profiles': get_profiles }, 'template': 'front.html' }),
 
     # Profile application
     (r'^accounts/', include('userprofile.urls')),
