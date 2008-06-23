@@ -39,3 +39,12 @@ a.male {
 a.female {
   background: url(/site_media/images/female.png) no-repeat #E6E6E6;
 }
+
+div#map {
+	width: 800px;
+	height: 480px;
+}
+
+div.mapinfo {
+	display: none;
+}
