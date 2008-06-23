@@ -86,16 +86,6 @@ $(function(){
 		}
   }
 
-  // On focus, light the focused input
-  $(".required").focus(function() {
-		$(this).css("background", "white");
-  });  
-
-  // On blur, unlight the focused input
-  $(".required").blur(function() {
-		$(this).css("background", "#E6E6E6");
-  });  
-
 	var user = new userFn();
 	var email = new emailFn();
 	var pass = new passwordFn();
@@ -103,7 +93,5 @@ $(function(){
 	$("#id_email").blur(email.check);
 	$("#id_password1").blur(pass.check);
 	$("#id_password2").blur(pass.check);
-
-  $("#id_username").focus();
 
 });

@@ -1,16 +1,4 @@
 $(function() {
-  // On focus, light the focused input
-  $("input[@type=text]").focus(function() {
-    $(this).css("background", "white");
-  });
-
-  // On blur, unlight the focused input
-  $("input[@type=text]").blur(function() {
-  	$(this).css("background", "#E6E6E6");
-  });
-
-	$("#id_email").focus();
-
 	// Check email function
   function emailFn() {
 

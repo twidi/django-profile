@@ -1,166 +1,35 @@
-div.vcard {
-	background: #EFEFEF;
-	padding: 5px;
-	float: left;
-	border: 4px dotted #CCC;
-	margin: 15px;
-	overflow: hidden;
-}
-
-div.vcard img.photo {
-	border: 2px solid #CCC;
-}
-
-div.usercard {
-	width: 250px;
-}
-
-div.vcard > ul {
+ul.hmenu {
+	padding: 0px;
 	list-style: none;
-	margin: 0px;
-	padding: 0px;
-}
-
-div.vcard > img.gender {
-	float: right;
-}
-
-div.content {
-	padding: 0px;
-}
-
-div.header {
-	background: #EFEFEF;
-	padding: 10px;
-	border-bottom: 4px solid #CCC;
-}
-
-div.header a {
-	color: blue;
-}
-
-ul.menu {
-	list-style: none;
-	padding: 0px;
-	margin: 0px;
-	font-size: 1.2em;
-}
-
-ul.menu li {
-	display: inline;
-	padding-right: 15px;
-}
-
-p.register a {
-	font-size: 1.3em;
-}
-
-form.commonform {
-	overflow: hidden;
-}
-
-form.commonform > fieldset > div > strong {
-	font-weight: bold;
-	font-size: 1.4em;
-}
-
-form.commonform > fieldset {
-	border: 0px solid;
-	margin: 0px;
-	padding: 0px;
-}
-
-form.commonform h1 {
-	border-bottom: 2px solid black;
-}
-
-form.commonform > fieldset > div {
-	overflow: hidden;
-	clear: both;
-	margin: 2px;
-}
-
-form.commonform > fieldset > div > textarea {
-  padding: 4px;
-  background-color: #EFEFEF;
-  border: 2px solid #CCC;
-  padding-left: 8px;
-  width: 400px;
-}
-
-form.commonform > fieldset > div > label {
-	float: left;
-	width: 180px;
-	line-height: 28px;
-	text-align: right;
-	margin-right: 5px;
-}
-
-form.commonform > fieldset > p {
-	clear: both;
-	margin: 5px;
-	overflow: hidden;
-}
-
-form.commonform > fieldset > div > input[type=text], form.commonform > fieldset > div > input[type=password] {
-	float: left;
-	background: #EFEFEF;
-	width: 200px;
-	font-size: 1.2em;
-	height: 24px;
-	padding-left: 5px;
-	line-height: 24px;
-	border: 2px solid #CCC;
-}
-
-form.login p.lostpw {
-	margin: 0px;
-	font-size: 0.7em;
-	margin-left: 185px;
-}
-
-form.commonform > fieldset > input[type=submit] {
-	margin-left: 185px;
-}
-
-form.emailchg fieldset > div > input[type=text] {
-	width: 300px;
-}
-
-form.lostpw > fieldset > div > input[type=text] {
-	width: 300px;
-}
-
-form.profile > fieldset > div > select {
-	float: left;
-}
-
-p.error {
-	clear: both;
-	border: 2px solid #f06f5c;
-	width: 60%;
-	font-size: 1.1em;
 	text-align: center;
-	margin: 0px;
-	margin-top: 20px;
-	padding: 3px;
+	width: 100%;
+	margin: 1.45em 0;
 }
 
-form.commonform > fieldset > div > img {
-	display: none;
-	float: left;
+ul.hmenu > li {
+	display: inline-block;
+	width: 16%;
+}
+
+ul.hmenu > li > a {
+	text-decoration: none;
+}
+
+ul.hmenu > li.active {
+	background: #EFEFEF;
+	border: 2px solid #CCC;
+}
+
+div#header a {
+	text-decoration: none;	
 }
 
 a.male, a.female {
-  color: black;
   float: left;
-  width: 80px;
   border: 2px solid #CCC;
-  font-size: 16px;
-  padding: 0px;
-  padding-left: 30px;
+  font-size: 1.3em;
+  padding: 0px 30px;
   margin-right: 5px;
-  line-height: 24px;
 }
 
 a.male {
@@ -169,114 +38,4 @@ a.male {
 
 a.female {
   background: url(/site_media/images/female.png) no-repeat #E6E6E6;
-}
-
-div#map {
-	float: left;
-  width: 640px;
-  height: 380px;
-}
-
-div.calendar {
-	float: left;
-	line-height: 1em;
-}
-
-div.avatar > a.img {
-	display: block;
-}
-
-div.avatar {
-	float: left;
-}
-
-div.avatar img {
-	border: 3px solid #CCC;
-	padding: 2px;
-	text-align: center;
-}
-
-div.changelocation {
-}
-
-img.loading {
-	display: none;
-	float: left;
-}
-
-div.mapinfo {
-	display: none;
-}
-
-img.saving {
-	display: none;
-}
-
-select#id_country > option[disabled=disabled] {
-	font-size: 1.4em;
-	font-weight: bold;
-	background: #ECECEC;
-}
-
-div.save {
-	overflow: hidden;
-	background: #EFEFEF;
-	border: 1px solid #CCC;
-	margin-top: 15px;
-	padding: 5px;
-}
-
-div.save input[type=submit] {
-	font-size: 1.4em;
-}
-
-ul.profilemenu {
-	background: #EFEFEF; 
-	margin: 0px; 
-	padding: 0px; 
-	list-style: none;
-	font-size: 0.9em;
-	border: 1px solid #777;
-}
-
-ul.profilemenu li.active {
-	border: 4px solid #777;
-	background: #CCC;
-}
-
-ul.profilemenu li {
-	line-height: 34px;
-	display: inline;
-	margin: 0px;
-	padding: 5px 18px;
-}
-
-div.loading {
-  margin: auto;
-  width: 180px;
-  font-weight: bold;
-  overflow: hidden;
-  display: none;
-}
-
-div.loading > p > img {
-  vertical-align: middle;
-}
-
-div.loading > p {
-  margin-left: 10px;
-  padding: 0px;
-  margin: 0px;
-}
-
-div.photos img {
-  border: 5px solid white;
-}
-
-div.photos img:hover {
-  border: 5px solid #CCC;
-}
-
-p.intro {
-	margin: 10px 0px;
 }

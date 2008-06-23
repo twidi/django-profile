@@ -4,18 +4,6 @@ function updateInline(date) {
 }
 
 $(function(){
-  $("#id_firstname").focus();
-
-  // On focus, light the focused input
-  $("input[@type=text],textarea").focus(function() {
-		$(this).css("background", "white");
-  });  
-
-  // On blur, unlight the focused input
-  $("input[@type=text],textarea").blur(function() {
-		$(this).css("background", "#E6E6E6");
-  });  
-
 	var date = $("#id_birthdate").val().split("-");
   $("div.calendar").datepicker({ onSelect: updateInline, hideIfNoPrevNext: true, yearRange: "1940:2010", defaultDate: new Date(date[0],date[1] -1, date[2]) });
   $("a.newavatar").click(function() {
@@ -25,9 +13,9 @@ $(function(){
 
 	// Gender select
 	if ($("#id_gender").val() == "M") {
-			$("a.male").css("background-color", "yellow");
+			$("a.male").addClass("highlight");
 	} else if ($("#id_gender").val() == "F") {
-			$("a.female").css("background-color", "yellow");
+			$("a.female").addClass("highlight");
 	}
 
 	$("a.male").click(function() {
