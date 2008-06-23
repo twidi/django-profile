@@ -2,6 +2,13 @@
 django-profile Changelog
 ========================
 
+Version 0.4.2
+-------------
+
+* Changed the CSS structure. Now is managed with the great Blueprint CSS Framework. Thanks to Kless.
+	http://code.google.com/p/blueprintcss/
+* Some cleanup on the image directory.
+
 Version 0.4.1
 -------------
 * Solved some bugs on the optional configuration parameters APIKEY and WEBSEARCH. Now they are

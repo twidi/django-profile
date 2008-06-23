@@ -72,6 +72,10 @@ EMAIL_HOST_PASSWORD = ''
 
   Put the obtained key in the constant APIKEY located in the file 'settings.py'.
 
+* If you want to use the Picasa search for avatars, put this variable on 'settings.py'.
+
+	WEBSEARCH = True
+
 --------------------------
 -- Custom install guide --
 --------------------------
