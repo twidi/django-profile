@@ -48,3 +48,13 @@ div#map {
 div.mapinfo {
 	display: none;
 }
+
+div.vcard {
+	border: 4px dotted #CCC;
+	background: #EFEFEF;
+	padding: 5px;
+}
+
+div.vcard ul {
+	list-style: none;
+}

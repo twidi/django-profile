@@ -22,40 +22,19 @@ or here (Google AppEngine branch of this application):
 	http://django-profile.appspot.com
 
 
------------------
--- Quick guide --
------------------
+---------------------------------------------
+-- Quick guide to run the demo application --
+---------------------------------------------
 
-You can run the demo supplied with this software package following these steps:
+You can run the demo above on your own server. It's supplied on this software 
+package. Follow these steps to make it run:
 
 * Make django visible in your python path. You could import the last version
 from the repository executing this command on this directory:
 
 	$ svn co http://code.djangoproject.com/svn/django/trunk/django
 
-* Make the "userprofile" module visible to your PYTHONPATH.
-
-* Download and put on the PYTHONPATH the Google Data APIs. This allow to select avatars directly from Picasaweb:
-	$ wget http://gdata-python-client.googlecode.com/files/gdata.py-1.1.0.tar.gz
-	$ tar zxvf gdata.py-1.1.0.tar.gz
-	Now move the gdata.py-1.1.0/src/gdata and gdata.py-1.1.0/src/atom directories to your PYTHONPATH.
-
-* Fill the Continents and Countries information with the database supplied. Follow this steps:
-	$ cd demo
-	$ python manage.py loaddata userprofile-continent
-	$ python manage.py loaddata userprofile-country
-
-* Go to the "demo" directory located in this directory and run:
-
-	$ python manage.py syncdb
-and
-	$ python manage.py runserver
-
-
-You can now connect to the django web server and try the demo. 
-
-	http://127.0.0.1:8000
-
+* Make the "userprofile" module (supplied on this package) visible to your PYTHONPATH.
 
 * You will need a valid e-mail server to try the e-mail validation process. 
   Fill this information in settings.py:
@@ -66,7 +45,10 @@ EMAIL_HOST = ''
 EMAIL_HOST_USER = ''
 EMAIL_HOST_PASSWORD = ''
 
-* You also will need a valid Google Maps API Key. Obtain one for your site name here:
+OPTIONAL
+
+* You also will need a valid Google Maps API Key if you want that your users can
+  use the Google Maps functionality. Obtain one for your site name here:
 
 	http://www.google.com/apis/maps/signup.html
 
@@ -76,9 +58,33 @@ EMAIL_HOST_PASSWORD = ''
 
 	WEBSEARCH = True
 
+  Then, download and put on the PYTHONPATH the Google Data APIs. This allow to select avatars directly from Picasaweb:
+	$ wget http://gdata-python-client.googlecode.com/files/gdata.py-1.1.0.tar.gz
+	$ tar zxvf gdata.py-1.1.0.tar.gz
+	Now move the gdata.py-1.1.0/src/gdata and gdata.py-1.1.0/src/atom directories to your PYTHONPATH.
+
+
+* Once everything has been configured, go to the "demo" directory located in this project and run:
+
+	$ python manage.py syncdb (this creates a sqlite database)
+and
+	$ python manage.py runserver
+
+* Fill the Continents and Countries information with the database supplied. Follow this steps:
+	$ cd demo
+	$ python manage.py loaddata userprofile-continent
+	$ python manage.py loaddata userprofile-country
+
+
+You can now connect to the django web server and try the demo. 
+
+	http://127.0.0.1:8000
+
+
 --------------------------
 -- Custom install guide --
 --------------------------
+
 Once you've seen what can be done, you could integrate django-profile with your custom
 software. Basically, you need these things:
 
@@ -93,7 +99,7 @@ software. Basically, you need these things:
 
 * Add this line to your urls.py file:
 
-    (r'^profile/', include('userprofile.urls')),
+    (r'^accounts/', include('userprofile.urls')),
 
 * Make the "media" directory accesible as your media content, or add the following line
   to urls.py to test it:

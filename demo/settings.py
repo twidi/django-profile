@@ -1,4 +1,5 @@
 # Django settings for demo project.
+from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS
 import os.path
 
 DEBUG = True
@@ -85,18 +86,19 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'demo.urls'
 
 # e-mail settings
-DEFAULT_FROM_EMAIL = 'django@elementales.com'
-EMAIL_HOST = 'elementales.com'
-EMAIL_HOST_USER = 'django.elementales.com'
-EMAIL_HOST_PASSWORD = 'perico'
+DEFAULT_FROM_EMAIL = ''
+EMAIL_HOST = ''
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
     os.path.join(PROJECT_PATH, 'templates'),
-    os.path.join(PROJECT_PATH, '../templates'),
 )
+
+TEMPLATE_CONTEXT_PROCESSORS += ('userprofile.context_processors.site',)
 
 INSTALLED_APPS = (
     'django.contrib.auth',
