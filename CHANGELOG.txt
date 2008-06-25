@@ -7,7 +7,7 @@ Version 0.5.0
 
 * CSS and HTML formatted with Blueprint CSS (http://code.google.com/p/blueprintcss/). Thanks so much
   to Kless to let me know about it.
-* Lot of code optimization of Django, HTML, CSS and Javascript.
+* Lot of code optimization of Django, HTML, CSS and Javascript. Thanks again to Kless for reporting.
 * Great effort on application usability.
 
 Version 0.4.2
