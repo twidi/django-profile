@@ -53,6 +53,7 @@ div.vcard {
 	border: 4px dotted #CCC;
 	background: #EFEFEF;
 	padding: 5px;
+	margin-bottom: 5px;
 }
 
 div.vcard ul {
