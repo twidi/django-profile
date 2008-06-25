@@ -3,12 +3,10 @@
 {% block title %}{% trans "Front page" %}{% endblock %}
 
 {% block content %}
-<h3>{% trans "People who have already tried this demo" %}</h3>
+<h2>{% trans "People who have already tried this demo" %}</h2>
 
 {% for profile in profiles %}
-	<div class="span-8">
 	{% include "userprofile/usercard.html" %}
-	</div>
 {% endfor %}
 
 {% endblock %}

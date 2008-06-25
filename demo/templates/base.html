@@ -1,5 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
     <title>{% block title %}{% endblock %}</title>
@@ -17,11 +17,11 @@
 		<div id="header">
 			<div class="span-14">
 				<h1><a href="/"><strong>{% trans "Django profile demo" %}</strong></a></h1>
-				<p>{% trans "A django-profile demonstration application" %}</a>
+				<p>{% trans "A django-profile demonstration application" %}</p>
 			</div>
 			<div class="span-10 last">
 				<ul class="hmenu large">
-					<li><a href="/">{% trans "Frontpage" %}</li>
+					<li><a href="/">{% trans "Frontpage" %}</a></li>
 					{% if user.is_authenticated %}
 					<li><a href="/accounts/profile/">{% trans "Profile" %}</a></li>
    				<li><a href="/accounts/logout/">{% trans "Logout" %}</a></li>
