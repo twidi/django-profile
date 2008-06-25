@@ -600,6 +600,7 @@ $.extend(Datepicker.prototype, {
 		inst[period == 'M' ? '_drawMonth' : '_drawYear'] =
 			select.options[select.selectedIndex].value - 0;
 		this._adjustDate(inst);
+    this._selectDate(id);
 	},
 
 	/* Restore input focus after not changing month/year. */
