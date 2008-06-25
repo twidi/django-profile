@@ -1,8 +1,3 @@
-function updateInline(date) {
-	var arrdate = date.split("/");
-  $("#id_birthdate").val(arrdate[2] + "-" + arrdate[0] + "-" + arrdate[1]);
-}
-
 $(function(){
 	var date = $("#id_birthdate").val().split("-");
   $("div.calendar").datepicker({ onSelect: updateInline, hideIfNoPrevNext: true, yearRange: "1940:2010", defaultDate: new Date(date[0],date[1] -1, date[2]) });
@@ -13,9 +8,9 @@ $(function(){
 
 	// Gender select
 	if ($("#id_gender").val() == "M") {
-			$("a.male").addClass("highlight");
+			$("a.male").css("background-color", "yellow");
 	} else if ($("#id_gender").val() == "F") {
-			$("a.female").addClass("highlight");
+			$("a.female").css("background-color", "yellow");
 	}
 
 	$("a.male").click(function() {
