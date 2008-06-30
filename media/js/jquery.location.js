@@ -49,6 +49,8 @@ mapFramework.prototype.searchLocation = function() {
       $("#id_longitude").val(point.lng().toFixed(6));
  			$.getJSON("/accounts/profile/getcountry_info/" + point.lat() + "/" +  point.lng() + "/", function(data) {
  				$("#id_country").val(data['country']);
+      	$("#id_location").val(data['region']);
+      	$("#location_info").text(data['region']);
  				$("img.loading").hide();
  			});
  		}
@@ -68,7 +70,6 @@ function initMap2() {
 
 $(function() {
 	$("#id_country").change(function() {
-		$("#location_info").text("Drag the marker on the map to establish a more precise location.");
 		if (!$("#id_country option:selected").val()) {
 			$("#id_location").val('');
 			$("#id_latitude").val('');

@@ -1,26 +1,27 @@
-<?xml version="1.0" encoding="UTF-8"?>
+{% load i18n %}<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
     <title>{% block title %}{% endblock %}</title>
-		<link rel="stylesheet" href="{{ MEDIA_URL}}css/django-profile.css" type="text/css" media="screen, projection" />
     <link rel="stylesheet" href="{{ MEDIA_URL}}css/blueprint/screen.css" type="text/css" media="screen, projection" />
 		<link rel="stylesheet" href="{{ MEDIA_URL }}css/blueprint/print.css" type="text/css" media="print" />
 		<link rel="stylesheet" href="{{ MEDIA_URL }}css/blueprint/plugins/fancy-type/screen.css" type="text/css" media="screen, projection" />
-    {% block customcss %}{% endblock %}
+		<link rel="stylesheet" href="{{ MEDIA_URL}}css/django-profile.css" type="text/css" media="screen, projection" />
+    {% block extracss %}{% endblock %}
     <script type="text/javascript" src="{{ MEDIA_URL }}js/jquery-1.2.6.min.js"></script>
-    {% block customjs %}{% endblock %}
+    {% block extrajs %}{% endblock %}
+		<meta name="robots" content="{% block robots %}index,follow{% endblock %}" />
 </head>
-{% load i18n %}
+
 <body>
 	<div class="container">
 		<div id="header">
-			<div class="span-14">
+			<div class="span-16">
 				<h1><a href="/"><strong>{% trans "Django profile demo" %}</strong></a></h1>
 				<p>{% trans "A django-profile demonstration application" %}</p>
 			</div>
-			<div class="span-10 last">
-				<ul class="hmenu large">
+			<div class="span-8 last">
+				<ul class="hmenu large three">
 					<li><a href="/">{% trans "Frontpage" %}</a></li>
 					{% if user.is_authenticated %}
 					<li><a href="/accounts/profile/">{% trans "Profile" %}</a></li>
@@ -33,7 +34,19 @@
 			</div>
 		</div>
 		<hr />
-		{% block content %}{% endblock %}
+
+		<div id="nav" class="span-24" style="overflow: hidden;">
+		{% block nav-main %}{% endblock %}
+		</div><!-- END navigation -->
+
+		<div id="columnwrap">
+			{% block columnwrap %}
+				<div id="content-main" class="span-22 prepend-1 append-1">
+				{% block content %}{% endblock %}
+				</div><!-- END content-main -->
+			{% endblock %}
+		</div><!-- END content -->
+
 	</div>
 </body>
 </html>

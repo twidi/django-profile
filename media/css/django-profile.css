@@ -1,14 +1,24 @@
 ul.hmenu {
-	padding: 0px;
+	padding: 0em;
 	list-style: none;
 	text-align: center;
-	width: 100%;
 	margin: 1.45em 0;
+	overflow: hidden;
 }
 
 ul.hmenu > li {
-	display: inline-block;
+	float: left;
+	display: block;
 	width: 16%;
+	line-height: 2.5em;
+}
+
+ul.three > li{
+	width: 33%;
+}
+
+.quiet {
+	color: #8a1f11;
 }
 
 ul.hmenu > li > a {
@@ -20,8 +30,12 @@ ul.hmenu > li.active {
 	border: 2px solid #CCC;
 }
 
-div#header a {
+div.container a {
 	text-decoration: none;	
+}
+
+div.container a:hover {
+	text-decoration: underline;	
 }
 
 a.male, a.female {
@@ -87,6 +101,7 @@ div.calendar {
 	line-height: 1em;
 	clear: both;
 	overflow: hidden;
+	margin-bottom: 1em;
 }
 
 div.calendar a {
@@ -101,4 +116,9 @@ div.calendar th, div.calendar td {
 
 div.calendar select {
 	margin: 0px;
+}
+
+img.border {
+	padding: 1px;
+	border: 1px solid #CCC;
 }
