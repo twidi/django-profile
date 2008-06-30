@@ -68,6 +68,7 @@ div.vcard {
 	background: #EFEFEF;
 	padding: 5px;
 	margin-bottom: 10px;
+	overflow: hidden;
 }
 
 div.vcard ul {
