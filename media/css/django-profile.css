@@ -55,8 +55,8 @@ a.female {
 }
 
 div#map {
-	width: 800px;
-	height: 480px;
+	width: 480px;
+	height: 320px;
 }
 
 div.mapinfo {

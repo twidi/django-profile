@@ -4,7 +4,6 @@ function mapFramework() {
 
    	this.map = new GMap2(document.getElementById("map"));
 		this.map.addControl(new GLargeMapControl());
-		this.map.addControl(new GOverviewMapControl())
 		this.map.addControl(new GMapTypeControl())
 		this.map.enableContinuousZoom();
 
