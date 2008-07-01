@@ -5,10 +5,12 @@ django-profile Changelog
 Version 0.5.0
 -------------
 
-* CSS and HTML formatted with Blueprint CSS (http://code.google.com/p/blueprintcss/). Thanks so much
-  to Kless to let me know about it.
-* Lot of code optimization of Django, HTML, CSS and Javascript. Thanks again to Kless for reporting.
-* Great effort on application usability.
+* CSS and HTML formatted with Blueprint CSS (http://code.google.com/p/blueprintcss/).
+* Lot of code optimization of Django, HTML, CSS and Javascript.
+* Great effort on application usability and template design.
+* Removed every javascript effectism not really needed.
+* Lot of this work made as team with jonas.esp (http://code.google.com/u/jonas.esp/).
+
 
 Version 0.4.2
 -------------

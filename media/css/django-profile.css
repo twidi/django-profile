@@ -6,6 +6,14 @@ ul.hmenu {
 	overflow: hidden;
 }
 
+div#nav {
+	overflow: hidden;
+}
+
+div#content-related {
+	margin-top: 1em;
+}
+
 ul.hmenu > li {
 	float: left;
 	display: block;

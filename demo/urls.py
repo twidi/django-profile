@@ -11,11 +11,27 @@ urlpatterns = patterns('',
     # Profile application
     (r'^accounts/', include('userprofile.urls')),
 
-    # Serves media content. WARNING!! Only for development uses. On production use lighthttpd for media content.
-    (r'^site_media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': '%s/../media/' % settings.PROJECT_PATH}),
-
-
     # Admin (not really needed)
     (r'^admin/', include('django.contrib.admin.urls')),
 
 )
+
+# Serves media content. WARNING!! Only for development uses.
+# On production use lighthttpd for media content.
+if settings.DEBUG:
+
+    # Delete the first trailing slash, if any.
+    if settings.MEDIA_URL.startswith('/'):
+        media_url = settings.MEDIA_URL[1:]
+    else:
+        media_url = settings.MEDIA_URL
+
+    # Add the last trailing slash, if have not.
+    if not media_url.endswith('/'):
+        media_url = media_url + '/'
+
+    urlpatterns += patterns('',
+        (r'^' + media_url + '(?P<path>.*)$', 'django.views.static.serve',
+            {'document_root': settings.MEDIA_ROOT}
+        ),
+    )
