@@ -1,8 +1,8 @@
 ------------------
--- Requeriments --
+-- Requirements --
 ------------------
 
-First of all, the requerimient to run this software is:
+First of all, the requirement to run this software is:
 
 	* Django version 0.96 or greater.
 

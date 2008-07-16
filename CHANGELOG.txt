@@ -2,6 +2,11 @@
 django-profile Changelog
 ========================
 
+Development version
+-------------------
+
+* Corrected a misspellings on the documentation. Thanks to paltman.
+
 Version 0.5.0
 -------------
 
