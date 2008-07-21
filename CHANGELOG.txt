@@ -5,8 +5,8 @@ django-profile Changelog
 Development version
 -------------------
 
-* newforms-admin has been merged into trunk on revision [7967]. Newforms is now the official form management library. 
-* This revision of django-profile will be compatible with django rev. [7967] or greater.
+* Django newforms-admin has been merged into trunk on revision [7967]. Newforms is now the official form management library, so this version of django-profile has been adapted to make it compatible with the new changes.
+* This revision of django-profile is only compatible with django rev. [7967] or greater.
 * Solved some issues with the form upload library. Thanks to Alvaro Mouriño.
 * Make the Continent/Country models compatible with the new newforms-admin interface. Thanks to Alvaro Mouriño.
 * Corrected a misspellings on the documentation. Thanks to paltman.
