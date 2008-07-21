@@ -1,7 +1,10 @@
 from django.conf.urls.defaults import *
+from django.contrib import admin
 from django.views.generic.simple import direct_to_template
 from django.conf import settings
 from userprofile.views import get_profiles
+
+admin.autodiscover()
 
 urlpatterns = patterns('',
 
@@ -12,8 +15,8 @@ urlpatterns = patterns('',
     (r'^accounts/', include('userprofile.urls')),
 
     # Admin (not really needed)
-    (r'^admin/', include('django.contrib.admin.urls')),
-
+    (r'^admin/doc/', include('django.contrib.admindocs.urls')),
+    (r'^admin/(.*)', admin.site.root),
 )
 
 # Serves media content. WARNING!! Only for development uses.
