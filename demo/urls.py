@@ -12,7 +12,7 @@ urlpatterns = patterns('',
     (r'^$', direct_to_template, {'extra_context': { 'profiles': get_profiles }, 'template': 'front.html' }),
 
     # Profile application
-    (r'^accounts/', include('userprofile.urls')),
+    (r'^accounts/', include('userprofile.urls.%s' % settings.LANGUAGE_CODE)),
 
     # Admin (not really needed)
     (r'^admin/doc/', include('django.contrib.admindocs.urls')),
