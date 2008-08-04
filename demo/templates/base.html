@@ -25,11 +25,11 @@
 				<ul class="hmenu large three">
 					<li><a href="/">{% trans "Frontpage" %}</a></li>
 					{% if user.is_authenticated %}
-					<li><a href="/accounts/profile/">{% trans "Profile" %}</a></li>
-   				<li><a href="/accounts/logout/">{% trans "Logout" %}</a></li>
+					<li><a href="{% url profile_overview %}">{% trans "Profile" %}</a></li>
+   				<li><a href="{% url logout %}">{% trans "Logout" %}</a></li>
 					{% else %} 
-					<li><a href="/accounts/profile/">{% trans "Login" %}</a></li>
-					<li><a href="/accounts/register/">{% trans "Register" %}</a></li>
+					<li><a href="{% url profile_overview %}">{% trans "Login" %}</a></li>
+					<li><a href="{% url signup %}">{% trans "Register" %}</a></li>
   				{% endif %}
 				</ul>
 			</div>
