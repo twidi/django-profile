@@ -12,7 +12,6 @@ urlpatterns = patterns('',
     (r'^$', direct_to_template, {'extra_context': { 'profiles': get_profiles }, 'template': 'front.html' }),
 
     # Profile application
-    #(r'^accounts/', include('userprofile.urls.%s' % settings.LANGUAGE_CODE)),
     (r'^accounts/', include('userprofile.urls')),
 
     # Admin (not really needed)
