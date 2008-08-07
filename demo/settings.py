@@ -7,6 +7,7 @@ TEMPLATE_DEBUG = DEBUG
 # START of django-profile specific options
 WEBSEARCH = True
 PROJECT_PATH = os.path.abspath(os.path.dirname(__file__))
+GEOIP_PATH = PROJECT_PATH
 # 192.168.0.100:8000/
 #GOOGLE_MAPS_API_KEY = "ABQIAAAA06IJoYHDPFMx4u3hTtaghxTU2QkCNWGFpwxhhQnHf-7Pc6f1lBTQWFSuWvEBhZGiAbR5wPO0DLqoOw"
 # 127.0.0.1:8000/

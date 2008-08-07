@@ -4,7 +4,7 @@ django-profile Changelog
 
 Development version
 -------------------
-
+* Use of utils.gis to obtain more detailed Geo information.
 * Better management of urls/view variables. Thanks to Alvaro Mouriño.
 * Renamed APIKEY setting to GOOGLE_MAPS_API_KEY.
 * Templates modified to do reverse URL.
