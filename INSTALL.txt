@@ -52,7 +52,7 @@ OPTIONAL
 
 	http://www.google.com/apis/maps/signup.html
 
-  Put the obtained key in the constant APIKEY located in the file 'settings.py'.
+  Put the obtained key in the constant GOOGLE_MAPS_API_KEY located in the file 'settings.py'.
 
 * If you want to use the Picasa search for avatars, put this variable on 'settings.py'.
 
@@ -118,7 +118,7 @@ software. Basically, you need these things:
 * You will need to fill the e-mail server configuration of settings.py (if you didn't have it yet)
   to try the e-mail validation process.
 
-* You will need a valid Google Maps API Key for your site. Put the key in the constant APIKEY located
+* You will need a valid Google Maps API Key for your site. Put the key in the constant GOOGLE_MAPS_API_KEY located
   in the file 'settings.py'.
 
 * Add the 'templates' directory to the TEMPLATES_DIRS section of your 'settings.py'. 
