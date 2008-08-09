@@ -4,18 +4,7 @@ import os.path
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
-# START of django-profile specific options
-WEBSEARCH = True
 PROJECT_PATH = os.path.abspath(os.path.dirname(__file__))
-GEOIP_PATH = PROJECT_PATH
-# 192.168.0.100:8000/
-#GOOGLE_MAPS_API_KEY = "ABQIAAAA06IJoYHDPFMx4u3hTtaghxTU2QkCNWGFpwxhhQnHf-7Pc6f1lBTQWFSuWvEBhZGiAbR5wPO0DLqoOw"
-# 127.0.0.1:8000/
-GOOGLE_MAPS_API_KEY = "ABQIAAAA06IJoYHDPFMx4u3hTtaghxTpH3CbXHjuCVmaTc5MkkU4wO1RRhST5bKY_U7dUG1ZGu1S-n-ukXGNjQ"
-# Haddock
-#GOOGLE_MAPS_API_KEY = "ABQIAAAA06IJoYHDPFMx4u3hTtaghxS1mGAeXhF8eEwoOC3WUqD9xSVHbhT_wvgbriWemZzoPwFT5-HqnLJ9-A"
-# END of django-profile specific options
-
 ADMINS = (
     # ('Your Name', 'your_email@domain.com'),
 )
@@ -50,7 +39,7 @@ USE_I18N = True
 
 # Absolute path to the directory that holds media.
 # Example: "/home/media/media.lawrence.com/"
-MEDIA_ROOT = os.path.join(PROJECT_PATH, '../media')
+MEDIA_ROOT = os.path.join(PROJECT_PATH, '../media/')
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).
@@ -102,3 +91,15 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'userprofile',
 )
+
+# START of django-profile specific options
+DEFAULT_AVATAR = os.path.join(MEDIA_ROOT, 'avatars', 'generic.jpg')
+WEBSEARCH = True
+GEOIP_PATH = PROJECT_PATH
+# 192.168.0.100:8000/
+#GOOGLE_MAPS_API_KEY = "ABQIAAAA06IJoYHDPFMx4u3hTtaghxTU2QkCNWGFpwxhhQnHf-7Pc6f1lBTQWFSuWvEBhZGiAbR5wPO0DLqoOw"
+# 127.0.0.1:8000/
+GOOGLE_MAPS_API_KEY = "ABQIAAAA06IJoYHDPFMx4u3hTtaghxTpH3CbXHjuCVmaTc5MkkU4wO1RRhST5bKY_U7dUG1ZGu1S-n-ukXGNjQ"
+# Haddock
+#GOOGLE_MAPS_API_KEY = "ABQIAAAA06IJoYHDPFMx4u3hTtaghxS1mGAeXhF8eEwoOC3WUqD9xSVHbhT_wvgbriWemZzoPwFT5-HqnLJ9-A"
+# END of django-profile specific options
