@@ -10,10 +10,14 @@ div#nav {
 	overflow: hidden;
 }
 
+form.personal label {
+	display: block;
+}
+
 ul.hmenu > li {
 	float: left;
 	display: block;
-	width: 16%;
+	width: 19.5%;
 	line-height: 2.5em;
 }
 

@@ -3,41 +3,37 @@
 ------------------
 
 First of all, the requirement to run this software is:
+    * Django version 1.0 or greater.
 
-	* Django version 0.96 or greater.
+    * The Python Imaging Library:
+        * python-imaging package (on Debian or Ubuntu).
+        * Source: http://www.pythonware.com/products/pil/
 
-	* The Python Imaging Library:
-		* python-imaging package (on Debian or Ubuntu).
-		* Source: http://www.pythonware.com/products/pil/
-
-	* Optional: the Google Data API
-		* Download from: http://code.google.com/p/gdata-python-client/
+    * Optional: the Google Data API (allows image searching)
+      Download it from http://code.google.com/p/gdata-python-client/
 
 You can see a demo of which can be accomplished here:
-
-	http://profile.coredump.es
-
-or here (Google AppEngine branch of this application):
-
-	http://django-profile.appspot.com
+    http://profile.coredump.es
 
 
----------------------------------------------
--- Quick guide to run the demo application --
----------------------------------------------
+-----------------
+-- Quick guide --
+-----------------
 
-You can run the demo above on your own server. It's supplied on this software 
-package. Follow these steps to make it run:
+You can run the demo application supplied on this package on your own server to
+make and idea of what can be accomplished with django-profile.
+Follow these steps to make it run:
 
 * Make django visible in your python path. You could import the last version
-from the repository executing this command on this directory:
+from the repository executing this command:
+    $ svn co http://code.djangoproject.com/svn/django/trunk/django
 
-	$ svn co http://code.djangoproject.com/svn/django/trunk/django
+* Make the "userprofile" module (supplied on this package) visible on your 
+  PYTHONPATH.
 
-* Make the "userprofile" module (supplied on this package) visible to your PYTHONPATH.
-
-* You will need a valid e-mail server to try the e-mail validation process. 
-  Fill this information in settings.py:
+* You need a valid e-mail server to try the e-mail validation process
+  or password recovery utilities, and fill this information in the demo
+  project 'settings.py' file:
 
 # e-mail settings
 DEFAULT_FROM_EMAIL = ''
@@ -45,38 +41,34 @@ EMAIL_HOST = ''
 EMAIL_HOST_USER = ''
 EMAIL_HOST_PASSWORD = ''
 
-OPTIONAL
+* You also need a valid Google Maps API Key so your users can use the Google 
+  Maps positioning functionality. Obtain one for your site name here:
 
-* You also will need a valid Google Maps API Key if you want that your users can
-  use the Google Maps functionality. Obtain one for your site name here:
+    http://www.google.com/apis/maps/signup.html
 
-	http://www.google.com/apis/maps/signup.html
+  Put the obtained key in the constant GOOGLE_MAPS_API_KEY located in the demo
+  project 'settings.py' file.
 
-  Put the obtained key in the constant GOOGLE_MAPS_API_KEY located in the file 'settings.py'.
+* OPTIONAL. If you want to use the Picasa search for avatars, put this variable
+  on the demo project 'settings.py' file.
 
-* If you want to use the Picasa search for avatars, put this variable on 'settings.py'.
+    WEBSEARCH = True
 
-	WEBSEARCH = True
+  Then, download and put on the PYTHONPATH the Google Data APIs. 
+  This will allow your users to select avatars directly from Picasaweb:
+    $ wget http://gdata-python-client.googlecode.com/files/gdata.py-1.1.0.tar.gz
+    $ tar zxvf gdata.py-1.1.0.tar.gz
 
-  Then, download and put on the PYTHONPATH the Google Data APIs. This allow to select avatars directly from Picasaweb:
-	$ wget http://gdata-python-client.googlecode.com/files/gdata.py-1.1.0.tar.gz
-	$ tar zxvf gdata.py-1.1.0.tar.gz
-	Now move the gdata.py-1.1.0/src/gdata and gdata.py-1.1.0/src/atom directories to your PYTHONPATH.
+    Now move the gdata.py-1.1.0/src/gdata and gdata.py-1.1.0/src/atom 
+    directories to your PYTHONPATH.
 
-
-* Once everything has been configured, go to the "demo" directory located in this project and run:
+* Once everything has been configured, you can start the the "demo" application:
 
 	$ python manage.py syncdb (this creates a sqlite database)
 and
 	$ python manage.py runserver
 
-* Fill the Continents and Countries information with the database supplied. Follow this steps:
-	$ cd demo
-	$ python manage.py loaddata userprofile-continent
-	$ python manage.py loaddata userprofile-country
-
-
-You can now connect to the django web server and try the demo. 
+* You can now connect to the django web server and try the demo. 
 
 	http://127.0.0.1:8000
 
@@ -85,11 +77,8 @@ You can now connect to the django web server and try the demo.
 -- Custom install guide --
 --------------------------
 
-Once you've seen what can be done, you could integrate django-profile with your custom
-software. Basically, you need these things:
-
-* Add django and the required module accesible from your PYTHONPATH (Look at the demo
-  section).
+Once you've seen what can be done with this pluggable application, you could 
+integrate django-profile with your custom software. Basically, you need to:
 
 * Add this directive to the 'settings.py' file:
 	AUTH_PROFILE_MODULE = 'userprofile.profile'
@@ -110,10 +99,6 @@ software. Basically, you need these things:
     This sample assumes that settings.MEDIA_URL="site_media", if you want to use another URI for
     the media content, you also need to change the paths /site_media/.. of the static content 
     files (CSS and javascript files).
-
-* Fill the needed data of countries and continents of the profile database with these commands:
-	$ python manage.py loaddata userprofile-continent
-	$ python manage.py loaddata userprofile-country
 
 * You will need to fill the e-mail server configuration of settings.py (if you didn't have it yet)
   to try the e-mail validation process.

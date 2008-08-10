@@ -9,12 +9,8 @@
 {% endblock %}
 
 {% block extrajs %}
-<script type="text/javascript">
-	$(function() {
-		$("input[type='text']").addClass("text");
-		$("form input")[0].focus();
-	});
-</script>
+<script type="text/javascript" src="{{ MEDIA_URL }}js/ui.datepicker.js"></script>
+<script type="text/javascript" src="{{ MEDIA_URL }}js/jquery.personal.js"></script>
 {% endblock %}
 
 {% block nav-main %}
@@ -25,7 +21,9 @@
 	<form class="personal" action="{{ request.path_info }}" method="post" enctype="multipart/form-data">
 	<fieldset>
 		<legend>{% trans "Edit your personal information" %}</legend>
-		{{ form.as_p }}
+		{{ form.as_p }}	
+	</fieldset>
+	<input type="submit" value="{% trans 'Save' %}" />
 	</form>
 {% endblock %}
 
