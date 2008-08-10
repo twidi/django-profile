@@ -5,7 +5,6 @@ from django.conf import settings
 import datetime
 
 GENDER_CHOICES = ( ('F', _('Female')), ('M', _('Male')),)
-GENDER_IMAGES = { "M": "%simages/male.png" % settings.MEDIA_URL, "F": "%simages/female.png" % settings.MEDIA_URL }
 
 class Profile(BaseProfile):
     firstname = models.CharField(max_length=255, blank=True)

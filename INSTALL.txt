@@ -80,32 +80,51 @@ and
 Once you've seen what can be done with this pluggable application, you could 
 integrate django-profile with your custom software. Basically, you need to:
 
-* Add this directive to the 'settings.py' file:
-	AUTH_PROFILE_MODULE = 'userprofile.profile'
+* Create a Profile model which inherits from BaseProfile (defined on 
+  userprofile.models). You can see an example on the demo project, named
+  "demoprofile". Look at the code:
 
-* Add this module to the INSTALLED_APPS section of your settings.py:
-	'userprofile'
+    class Profile(BaseProfile):
+        firstname = models.CharField(max_length=255, blank=True)
+        surname = models.CharField(max_length=255, blank=True)
+        gender = models.CharField(max_length=1, choices=GENDER_CHOICES, blank=True)
+        birthdate = models.DateField(default=datetime.date.today(), blank=True)
+        url = models.URLField(blank=True, core=True)
+        about = models.TextField(blank=True)
 
-* Add this line to your urls.py file:
+  You can define any attribute of information you want to store on the user 
+  profile.
 
+* Define the AUTH_PROFILE_MODULE variable of your 'settings.py' project file
+  pointing to your new profile model class (remember, everything lowercase).
+  For example, look at the 'settings.py' demo project definition:
+
+    AUTH_PROFILE_MODULE = 'demoprofile.profile'
+
+* Add the new application and the 'userprofile' application to the 
+  INSTALLED_APPS section of your 'settings.py' project file. For example:
+
+INSTALLED_APPS = (
+    ...
+    'userprofile',
+    'demoprofile',
+)
+
+* Include the urlpatterns of the 'userprofile' application to your project
+  'urls.py' file. For example:
+
+urlpatterns += patterns('',
     (r'^accounts/', include('userprofile.urls')),
+)
 
-* Make the "media" directory accesible as your media content, or add the following line
-  to urls.py to test it:
+* Copy the data of the "media" directory to your own "media" static serve of
+  files. Look at the demo application to learn how can be accomplished this.
 
-    # Serves media content. WARNING!! Only for development uses
-    (r'^site_media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': '../media/'}),
+*  You can also customize the default templates supplied with the 'userprofile'
+   application. Basically, two templates are the most propsense to customize:
+   "userprofile/profile/personal.html" and "userprofile/profile/public.html"
 
-    This sample assumes that settings.MEDIA_URL="site_media", if you want to use another URI for
-    the media content, you also need to change the paths /site_media/.. of the static content 
-    files (CSS and javascript files).
-
-* You will need to fill the e-mail server configuration of settings.py (if you didn't have it yet)
-  to try the e-mail validation process.
-
-* You will need a valid Google Maps API Key for your site. Put the key in the constant GOOGLE_MAPS_API_KEY located
-  in the file 'settings.py'.
-
-* Add the 'templates' directory to the TEMPLATES_DIRS section of your 'settings.py'. 
-  You can also modify the default templates supplied with the modules 'account' and 'userprofile'
-
+   In "personal.html" template you could add your own widgets to make more 
+   usable the introduction of information of your users. Look at the demo
+   template customization of "personal.html" to get a tip of how to customize
+   a date introduction, or a selectable info introduction.
