@@ -4,6 +4,9 @@ django-profile Changelog
 
 Development version
 -------------------
+* Renamed the setting WEBSEARCH to AVATAR_WEBSEARCH.
+* Setting AVATAR_DEFAULT is required, if it's not stablished an exception
+  will raise.
 * Lot of simplifications. Removed the public/private user selection. It was 
   confusing.
 * Model abstraction with django model inheritance. Now the Profile class has 
@@ -47,8 +50,8 @@ Version 0.4.2
 
 Version 0.4.1
 -------------
-* Solved some bugs on the optional configuration parameters APIKEY and WEBSEARCH. Now they are
-  totally optional. Thanks to Kless.
+* Solved some bugs on the optional configuration parameters APIKEY and 
+  AVATAR_WEBSEARCH. Now they are totally optional. Thanks to Kless.
 * Solved a bug on the image crop&resize. If you didn't select a portion of the image, an error
   was raised. Thanks to David Castello for the report.
 * Some cleanup of the javascript files.

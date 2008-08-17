@@ -52,7 +52,7 @@ EMAIL_HOST_PASSWORD = ''
 * OPTIONAL. If you want to use the Picasa search for avatars, put this variable
   on the demo project 'settings.py' file.
 
-    WEBSEARCH = True
+    AVATAR_WEBSEARCH = True
 
   Then, download and put on the PYTHONPATH the Google Data APIs. 
   This will allow your users to select avatars directly from Picasaweb:
@@ -128,3 +128,16 @@ urlpatterns += patterns('',
    usable the introduction of information of your users. Look at the demo
    template customization of "personal.html" to get a tip of how to customize
    a date introduction, or a selectable info introduction.
+
+
+------------------------
+-- Settings variables --
+------------------------
+You can customize some of the behaviour of django-profile stablishing these
+variables on your own project "settings.py" file:
+
+Examples:
+DEFAULT_AVATAR = os.path.join(MEDIA_ROOT, 'avatars', 'generic.jpg')
+AVATAR_WEBSEARCH = True
+GOOGLE_MAPS_API_KEY = "ABQIAAAA06IJoYHDPFMx4u3hTtaghxTpH3CbXHjuCVmaTc5MkkU4wO1RRhST5bKY_U7dUG1ZGu1S-n-ukXGNjQ"
+
