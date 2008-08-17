@@ -27,7 +27,7 @@ TIME_ZONE = 'America/Chicago'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'en'
+LANGUAGE_CODE = 'es'
 
 AUTH_PROFILE_MODULE = 'demoprofile.profile'
 
@@ -94,6 +94,7 @@ INSTALLED_APPS = (
 )
 
 # START of django-profile specific options
+I18N_URLS = True
 DEFAULT_AVATAR = os.path.join(MEDIA_ROOT, 'avatars', 'generic.jpg')
 AVATAR_WEBSEARCH = True
 # 127.0.0.1:8000 Google Maps API Key
