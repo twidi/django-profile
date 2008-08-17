@@ -136,18 +136,18 @@ urlpatterns += patterns('',
 You can customize some of the behaviour of django-profile stablishing these
 variables on your own project "settings.py" file:
 
-* DEFAULT_AVATAR (Option). It's the filesystema path to the default avatar 
-  image.  Normally, you will define it as "%MEDIAROOT%/avatars/generic.jpg".
-  If this setting is not set, a default image will be copied to
+* DEFAULT_AVATAR. It's the filesystema path to the default avatar image.  
+  Normally, you will define it as "%MEDIAROOT%/avatars/generic.jpg".  If this 
+  setting is not set, a default image will be copied to 
   "%MEDIAROOT%/generic.jpg".
-* I18N_URLS (Optional). If this setting is set to True, the application will
-  try to use internationalized urls. The language will be obtained from the 
-  LANGUAGE_CODE setting variable, and must be a file named as this
-  LANGUAGE_CODE on the "userprofile/urls" directory.
-* AVATAR_WEBSEARCH (Optional). If set to True, it will enable the Google Picasa
-  web search of avatars.
-* GOOGLE_MAPS_API_KEY (Optional). If set to True, it will enable the
-  geopositioning utility on the user profile control panel.
+* I18N_URLS. If this setting is set to True, the application will try to use 
+  internationalized urls. The language will be obtained from the LANGUAGE_CODE 
+  setting variable, and must be a file named as this LANGUAGE_CODE on the 
+  "userprofile/urls" directory.
+* AVATAR_WEBSEARCH. If set to True, it will enable the Google Picasa web search
+  of avatars.
+* GOOGLE_MAPS_API_KEY. If set to True, it will enable the geopositioning 
+  utility on the user profile control panel.
 
 Examples:
 I18N_URLS = True
