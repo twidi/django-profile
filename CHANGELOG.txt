@@ -15,6 +15,7 @@ Development version
   Thanks to Alvaro Mouriño.
 * Password managament modified to use the new django password management 
   utilities.
+* Templates modified to do reverse URL.
 * Better management of urls/view variables. Thanks to Alvaro Mouriño.
 * Renamed APIKEY setting to GOOGLE_MAPS_API_KEY.
 * Templates modified to do reverse URL.
