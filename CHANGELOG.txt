@@ -4,6 +4,7 @@ django-profile Changelog
 
 Development version
 -------------------
+* Added Traditional Chinese translation. Thanks to Chiu Wei Jia.
 * Renamed the setting WEBSEARCH to AVATAR_WEBSEARCH.
 * Setting AVATAR_DEFAULT is required, if it's not stablished an exception
   will raise.
