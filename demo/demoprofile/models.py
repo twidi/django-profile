@@ -11,5 +11,5 @@ class Profile(BaseProfile):
     surname = models.CharField(max_length=255, blank=True)
     gender = models.CharField(max_length=1, choices=GENDER_CHOICES, blank=True)
     birthdate = models.DateField(default=datetime.date.today(), blank=True)
-    url = models.URLField(blank=True, core=True)
+    url = models.URLField(blank=True)
     about = models.TextField(blank=True)
