@@ -84,17 +84,26 @@ integrate django-profile with your custom software. Basically, you need to:
   userprofile.models). You can see an example on the demo project, named
   "demoprofile". Look at this code:
 
-    GENDER_CHOICES = ( ('F', _('Female')), ('M', _('Male')),)
-    class Profile(BaseProfile):
-        firstname = models.CharField(max_length=255, blank=True)
-        surname = models.CharField(max_length=255, blank=True)
-        gender = models.CharField(max_length=1, choices=GENDER_CHOICES, blank=True)
-        birthdate = models.DateField(default=datetime.date.today(), blank=True)
-        url = models.URLField(blank=True, core=True)
-        about = models.TextField(blank=True)
+###############
+from django.db import models
+from userprofile.models import BaseProfile
+from django.utils.translation import ugettext as _
+from django.conf import settings
+import datetime
 
-  You can define any attribute of information you want to store on the user 
-  profile.
+GENDER_CHOICES = ( ('F', _('Female')), ('M', _('Male')),)
+
+class Profile(BaseProfile):
+    firstname = models.CharField(max_length=255, blank=True)
+    surname = models.CharField(max_length=255, blank=True)
+    gender = models.CharField(max_length=1, choices=GENDER_CHOICES, blank=True)
+    birthdate = models.DateField(default=datetime.date.today(), blank=True)
+    url = models.URLField(blank=True, core=True)
+    about = models.TextField(blank=True)
+###############
+
+You can define any attribute of information you want to store on the user 
+profile.
 
 * Define the AUTH_PROFILE_MODULE variable of your 'settings.py' project file
   pointing to your new profile model class (remember, everything lowercase).
