@@ -2,7 +2,7 @@
 django-profile Changelog
 ========================
 
-Development version
+Version 0.6.0
 -------------------
 * Solved some bugs. Thanks to Fabio Varesano.
 * Added Traditional Chinese translation. Thanks to Chiu Wei Jia.
