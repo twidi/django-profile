@@ -41,6 +41,14 @@ EMAIL_HOST = ''
 EMAIL_HOST_USER = ''
 EMAIL_HOST_PASSWORD = ''
 
+If you want to use Gmail as the SMTP server, you can use these settings:
+DEFAULT_FROM_EMAIL = '<youraccount>@gmail.com'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = '<youraccount>@gmail.com'
+EMAIL_HOST_PASSWORD = '<yourpassword>'
+EMAIL_USE_TLS = True 
+EMAIL_PORT = "587"  #this line may not be required.
+
 * You also need a valid Google Maps API Key so your users can use the Google 
   Maps positioning functionality. Obtain one for your site name here:
 
