@@ -95,7 +95,7 @@ INSTALLED_APPS = (
 
 # START of django-profile specific options
 I18N_URLS = False
-DEFAULT_AVATAR = os.path.join(MEDIA_ROOT, 'generic.jpg')
+DEFAULT_AVATAR = os.path.join(MEDIA_ROOT, 'userprofile/generic.jpg')
 AVATAR_WEBSEARCH = True
 # 127.0.0.1:8000 Google Maps API Key
 GOOGLE_MAPS_API_KEY = "ABQIAAAA06IJoYHDPFMx4u3hTtaghxTpH3CbXHjuCVmaTc5MkkU4wO1RRhST5bKY_U7dUG1ZGu1S-n-ukXGNjQ"

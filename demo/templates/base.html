@@ -3,13 +3,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
     <title>{% block title %}{% endblock %}</title>
-    <link rel="stylesheet" href="{{ MEDIA_URL}}css/blueprint/screen.css" type="text/css" media="screen, projection" />
-		<link rel="stylesheet" href="{{ MEDIA_URL }}css/blueprint/print.css" type="text/css" media="print" />
-		<link rel="stylesheet" href="{{ MEDIA_URL }}css/blueprint/plugins/fancy-type/screen.css" type="text/css" media="screen, projection" />
-  	<!--[if IE]><link rel="stylesheet" href="{{ MEDIA_URL}}css/blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
-		<link rel="stylesheet" href="{{ MEDIA_URL}}css/django-profile.css" type="text/css" media="screen, projection" />
+    <link rel="stylesheet" href="{{ MEDIA_URL}}userprofile/css/blueprint/screen.css" type="text/css" media="screen, projection" />
+		<link rel="stylesheet" href="{{ MEDIA_URL }}userprofile/css/blueprint/print.css" type="text/css" media="print" />
+		<link rel="stylesheet" href="{{ MEDIA_URL }}userprofile/css/blueprint/plugins/fancy-type/screen.css" type="text/css" media="screen, projection" />
+  	<!--[if IE]><link rel="stylesheet" href="{{ MEDIA_URL}}userprofile/css/blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
+		<link rel="stylesheet" href="{{ MEDIA_URL}}userprofile/css/django-profile.css" type="text/css" media="screen, projection" />
     {% block extracss %}{% endblock %}
-    <script type="text/javascript" src="{{ MEDIA_URL }}js/jquery-1.2.6.min.js"></script>
+    <script type="text/javascript" src="{{ MEDIA_URL }}userprofile/js/jquery-1.2.6.min.js"></script>
     {% block extrajs %}{% endblock %}
 		<meta name="robots" content="{% block robots %}index,follow{% endblock %}" />
 </head>
