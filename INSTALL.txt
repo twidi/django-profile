@@ -157,7 +157,7 @@ variables on your own project "settings.py" file:
 * DEFAULT_AVATAR. It's the filesystema path to the default avatar image.  
   Normally, you will define it as "%MEDIAROOT%/avatars/generic.jpg".  If this 
   setting is not set, a default image will be copied to 
-  "%MEDIAROOT%/generic.jpg".
+  "%MEDIAROOT%/userprofile/generic.jpg".
 * I18N_URLS. If this setting is set to True, the application will try to use 
   internationalized urls. The language will be obtained from the LANGUAGE_CODE 
   setting variable, and must be a file named as this LANGUAGE_CODE on the 
