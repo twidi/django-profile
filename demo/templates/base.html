@@ -3,14 +3,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
     <title>{% block title %}{% endblock %}</title>
-    <link rel="stylesheet" href="{{ MEDIA_URL}}userprofile/css/blueprint/screen.css" type="text/css" media="screen, projection" />
+		<link rel="stylesheet" href="{{ MEDIA_URL}}userprofile/css/blueprint/screen.css" type="text/css" media="screen, projection" />
 		<link rel="stylesheet" href="{{ MEDIA_URL }}userprofile/css/blueprint/print.css" type="text/css" media="print" />
 		<link rel="stylesheet" href="{{ MEDIA_URL }}userprofile/css/blueprint/plugins/fancy-type/screen.css" type="text/css" media="screen, projection" />
-  	<!--[if IE]><link rel="stylesheet" href="{{ MEDIA_URL}}userprofile/css/blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
+		<!--[if IE]><link rel="stylesheet" href="{{ MEDIA_URL}}userprofile/css/blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
 		<link rel="stylesheet" href="{{ MEDIA_URL}}userprofile/css/django-profile.css" type="text/css" media="screen, projection" />
-    {% block extracss %}{% endblock %}
-    <script type="text/javascript" src="{{ MEDIA_URL }}userprofile/js/jquery-1.2.6.min.js"></script>
-    {% block extrajs %}{% endblock %}
+		{% block extracss %}{% endblock %}
+
+		<script type="text/javascript" src="{{ MEDIA_URL }}userprofile/js/jquery-1.2.6.min.js"></script>
+		{% block extrajs %}{% endblock %}
+
 		<meta name="robots" content="{% block robots %}index,follow{% endblock %}" />
 </head>
 
@@ -36,16 +38,8 @@
 		</div>
 		<hr />
 
-		{% block nav-main %}{% endblock %}
-		<!-- END navigation -->
+		{% block content %}{% endblock %}
 
-		<div id="columnwrap">
-			{% block columnwrap %}
-				<div id="content-main" class="span-22 prepend-1 append-1">
-				{% block content %}{% endblock %}
-				</div><!-- END content-main -->
-			{% endblock %}
-		</div><!-- END content -->
 	</div>
 </body>
 </html>

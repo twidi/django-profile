@@ -2,6 +2,15 @@
 django-profile Changelog
 ========================
 
+Development version
+-------------------
+
+* Media directory made independent from the global media. Thanks to waifunlee for reporting:
+	http://code.google.com/p/django-profile/issues/detail?id=37
+
+  Seen on this thread discussion too:
+	https://groups.google.com/group/django-developers/browse_thread/thread/94efe43b1d1c7787?pli=1
+
 Version 0.6.0
 -------------------
 * Solved some bugs. Thanks to Fabio Varesano.
