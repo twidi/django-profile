@@ -55,11 +55,11 @@ a.male, a.female {
 }
 
 a.male {
-  background: url(/site_media/images/male.png) no-repeat #E6E6E6;
+  background: url(/site_media/userprofile/images/male.png) no-repeat #E6E6E6;
 }
 
 a.female {
-  background: url(/site_media/images/female.png) no-repeat #E6E6E6;
+  background: url(/site_media/userprofile/images/female.png) no-repeat #E6E6E6;
 }
 
 div#map {
