@@ -13,11 +13,11 @@
 <script type="text/javascript" src="{{ MEDIA_URL }}userprofile/js/jquery.personal.js"></script>
 {% endblock %}
 
-{% block nav-main %}
+{% block userprofile_navigation %}
 {% include "userprofile/menu.html" %}
 {% endblock %}
 
-{% block content %}
+{% block userprofile_content %}
 	<form class="personal" action="{{ request.path_info }}" method="post" enctype="multipart/form-data">
 	<fieldset>
 		<legend>{% trans "Edit your personal information" %}</legend>
@@ -27,7 +27,7 @@
 	</form>
 {% endblock %}
 
-{% block content-related %}
+{% block userprofile_content_related %}
   <div class="box">
     <h3>{% trans "Personal information" %}</h3>
     <p>{% trans "Insert some information about you" %}.</p>
