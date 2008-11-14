@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-25 22:04+0200\n"
+"POT-Creation-Date: 2008-11-14 09:15+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,31 +16,39 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: templates/base.html:19
+#: demoprofile/models.py:7
+msgid "Female"
+msgstr "Mujer"
+
+#: demoprofile/models.py:7
+msgid "Male"
+msgstr "Hombre"
+
+#: templates/base.html:23
 msgid "Django profile demo"
 msgstr "Demo de Django profile"
 
-#: templates/base.html:20
-msgid "A django-profile demonstration application"
+#: templates/base.html:24
+msgid "A django-profile demo application"
 msgstr "Una aplicación de demostración de django-profile"
 
-#: templates/base.html:24
+#: templates/base.html:28
 msgid "Frontpage"
 msgstr "Portada"
 
-#: templates/base.html:26
+#: templates/base.html:30
 msgid "Profile"
 msgstr "Perfil"
 
-#: templates/base.html:27
+#: templates/base.html:31
 msgid "Logout"
 msgstr "Salir"
 
-#: templates/base.html:29
+#: templates/base.html:33
 msgid "Login"
 msgstr "Entrar"
 
-#: templates/base.html:30
+#: templates/base.html:34
 msgid "Register"
 msgstr "Registrarse"
 
@@ -51,6 +59,23 @@ msgstr "Portada"
 #: templates/front.html:6
 msgid "People who have already tried this demo"
 msgstr "Gente que ya ha probado esta demo"
+
+#: templates/userprofile/profile/personal.html:4
+#: templates/userprofile/profile/personal.html:23
+msgid "Edit your personal information"
+msgstr "Edita tu información personal"
+
+#: templates/userprofile/profile/personal.html:26
+msgid "Save"
+msgstr "Guardar"
+
+#: templates/userprofile/profile/personal.html:32
+msgid "Personal information"
+msgstr "Información personal"
+
+#: templates/userprofile/profile/personal.html:33
+msgid "Insert some information about you"
+msgstr "Añade algo de información acerca de ti"
 
 #~ msgid "If you don't have an account, you can"
 #~ msgstr "Si no tienes una cuenta, puedes"
