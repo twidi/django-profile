@@ -5,6 +5,7 @@ django-profile Changelog
 Development version
 -------------------
 
+* Added the possibility to auto-discover the user localization based in his IP.
 * Media directory made independent from the global media. Thanks to waifunlee for reporting:
 	http://code.google.com/p/django-profile/issues/detail?id=37
 
