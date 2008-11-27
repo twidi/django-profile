@@ -181,8 +181,9 @@ REQUIRE_EMAIL_CONFIRMATION = True
 
 Activate IP Localization:
 -------------------------
-* Install the GeoIP C Library:
+* Install the GeoIP C Library and the Python ctypes library:
 	apt-get install python-geoip
+	apt-get install python-ctypes
 
 * Download the geolitecountry and geolitecity binary databases:
 	http://www.maxmind.com/app/geolitecountry
