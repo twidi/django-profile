@@ -99,6 +99,8 @@ DEFAULT_AVATAR = os.path.join(MEDIA_ROOT, 'userprofile/generic.jpg')
 AVATAR_WEBSEARCH = True
 # 127.0.0.1:8000 Google Maps API Key
 GOOGLE_MAPS_API_KEY = "ABQIAAAA06IJoYHDPFMx4u3hTtaghxTpH3CbXHjuCVmaTc5MkkU4wO1RRhST5bKY_U7dUG1ZGu1S-n-ukXGNjQ"
+# Haddock
+#GOOGLE_MAPS_API_KEY="ABQIAAAA06IJoYHDPFMx4u3hTtaghxS1mGAeXhF8eEwoOC3WUqD9xSVHbhT_wvgbriWemZzoPwFT5-HqnLJ9-A"
 REQUIRE_EMAIL_CONFIRMATION = False
 #GEOIP_PATH = "%s/db/" % PROJECT_PATH
 # END of django-profile specific options
