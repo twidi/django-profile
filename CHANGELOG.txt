@@ -5,6 +5,8 @@ django-profile Changelog
 Development version
 -------------------
 
+* Added the French translation. Thanks so much to stephane.angel:
+	http://code.google.com/p/django-profile/issues/detail?id=50
 * Added and aditional check to the code to make sure that this bug doesn't happen:
 	http://code.google.com/p/django-profile/issues/detail?id=49
 * Added a setup.py file. Thanks to Abhishek Mukher:
