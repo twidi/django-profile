@@ -147,6 +147,13 @@ urlpatterns += patterns('',
    template customization of "personal.html" to get a tip of how to customize
    a date introduction, or a selectable info introduction.
 
+*  Import in your html required css and js files (from your media directory) :
+   *  userprofile/js/jquery-1.2.6.min.js
+   *  userprofile/css/django-profile.css
+   *  userprofile/css/django-profile-basics.css if you don't want to use blueprint
+
+*  Add "userprofile.context_processors.css_classes" to your
+   "TEMPLATE_CONTEXT_PROCESSORS" in your "settings.py" file
 
 ------------------------
 -- Settings variables --
@@ -168,6 +175,14 @@ variables on your own project "settings.py" file:
   utility on the user profile control panel.
 * REQUIRE_EMAIL_CONFIRMATION. If set to True, the user e-mail will be required to
   get an account on the system.
+* USERPROFILE_CSS_CLASSES. Specify which set of classes use for html structure 
+  of django-profile. Are provided :
+  - blueprint (the default, for blueprint css framework, full width) 
+  - 960gs-12 (for 960.gs css framework, 12 columns, full width)
+  - 960-gs-16 (for 960.gs, 16 columns, full width)
+  - 960gs-12-in-9 (for 960.gs css, in a width of 9 columns, given as example)
+  You can specify one of these, or a entire dict for your own classes (see
+  context_processors.py to see all keys))
 
 Examples:
 I18N_URLS = True
@@ -176,6 +191,7 @@ DEFAULT_AVATAR_WIDTH = 96
 AVATAR_WEBSEARCH = True
 GOOGLE_MAPS_API_KEY = "ABQIAAAA06IJoYHDPFMx4u3hTtaghxTpH3CbXHjuCVmaTc5MkkU4wO1RRhST5bKY_U7dUG1ZGu1S-n-ukXGNjQ"
 REQUIRE_EMAIL_CONFIRMATION = True
+USERPROFILE_CSS_CLASSES = 'blueprint'
 
 ** ADVANCED FEATURES **
 
