@@ -1,4 +1,5 @@
 # Django settings for demo project.
+from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS
 import os.path
 
 DEBUG = True
@@ -91,6 +92,10 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'userprofile',
     'demoprofile',
+)
+
+TEMPLATE_CONTEXT_PROCESSORS += (
+        "userprofile.context_processors.css_classes",
 )
 
 # START of django-profile specific options
