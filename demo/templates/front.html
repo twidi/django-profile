@@ -1,12 +1,25 @@
 {% extends "base.html" %}
 {% load i18n %}
+{% load avatars %}
 {% block title %}{% trans "Front page" %}{% endblock %}
 
 {% block content %}
 <h2>{% trans "People who have already tried this demo" %}</h2>
 
 {% for profile in profiles %}
-	{% include "userprofile/profile/usercard.html" %}
+<div class="vcard span-8 grid_8">
+  <div class="span-2 grid_2">
+    <a href="{{ profile.get_absolute_url }}">
+      <img class="border" src="{% avatar 64 profile.user %}" alt="{{ profile.user }}"/>
+    </a>
+  </div>
+  <div class="span-5 grid_5">
+    <ul>
+    <li class="fn username"><strong>{% trans "Username" %}:</strong> {{ profile.user }}</li>
+    <li><a href="{{ profile.get_absolute_url }}">{% trans "Public profile information" %}</a></li>
+    </ul>
+  </div>
+</div>
 {% endfor %}
 
 {% endblock %}
