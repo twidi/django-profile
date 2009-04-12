@@ -171,6 +171,7 @@ variables on your own project "settings.py" file:
   "userprofile/urls" directory.
 * AVATAR_WEBSEARCH. If set to True, it will enable the Google Picasa web search
   of avatars.
+* AVATAR_QUOTA. Max upload size (in MB) of the avatar image.
 * GOOGLE_MAPS_API_KEY. If set to True, it will enable the geopositioning 
   utility on the user profile control panel.
 * REQUIRE_EMAIL_CONFIRMATION. If set to True, the user e-mail will be required to
