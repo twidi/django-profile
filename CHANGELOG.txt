@@ -4,6 +4,8 @@ django-profile Changelog
 
 Development version
 -------------------
+* If no area is selected on the avatar crop form, an auto-cropped are is selected.
+  Thanks to Tristan Brotherton.
 * Added an additional Jquery check on the avatar crop utility to ensure that the selected size of the avatar
   has a minimum size of 96x96 pixels. Thanks to Tristan Brotherton.
 * Solved this bug:
