@@ -4,6 +4,8 @@ django-profile Changelog
 
 Development version
 -------------------
+* Added an additional Jquery check on the avatar crop utility to ensure that the selected size of the avatar
+  has a minimum size of 96x96 pixels. Thanks to Tristan Brotherton.
 * Solved this bug:
 	http://code.google.com/p/django-profile/issues/detail?id=45
 * Added an avatar upload quota. By default, 5Mbytes, but can be
