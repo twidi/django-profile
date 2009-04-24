@@ -208,3 +208,25 @@ Activate IP Localization:
 * Set the GEOIP_PATH on settings.py to the directory where the databases are stored:
 	GEOIP_PATH = "%s/db/" % PROJECT_PATH
 
+Custom templates and additional context variables
+-------------------------------------------------
+If you want to use your own templates instead of the provided ones, you would
+like to have your own variables.
+Each view send a signal named "context_signal" which have three parameters :
+- "sender", the view which is sending the signal (the view, not a string)
+- "request", the request object passed to the view
+- "context", a dictionnary of context variables ready to pass to the template
+You can connect to this signal for the view you want and update the context 
+variables.
+Here is an example where we define a new template variable named "my_var" for
+use in our own template "userprofile/profile/public.html" (the "public" view)
+
+#--------------------------------------------------------------
+# in your application
+def public(sender, **kwargs):
+    kwargs['context']['my_var'] = 'MY_VAR'
+
+from userprofile import views as userprofile_views
+from userprofile.signals import context_signal
+context_signal.connect(public, sender=userprofile_views.public)
+#--------------------------------------------------------------
