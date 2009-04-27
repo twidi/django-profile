@@ -218,15 +218,49 @@ Each view send a signal named "context_signal" which have three parameters :
 - "context", a dictionnary of context variables ready to pass to the template
 You can connect to this signal for the view you want and update the context 
 variables.
+
 Here is an example where we define a new template variable named "my_var" for
 use in our own template "userprofile/profile/public.html" (the "public" view)
 
 #--------------------------------------------------------------
 # in your application
-def public(sender, **kwargs):
+def public_signal(sender, **kwargs):
     kwargs['context']['my_var'] = 'MY_VAR'
 
 from userprofile import views as userprofile_views
 from userprofile.signals import context_signal
-context_signal.connect(public, sender=userprofile_views.public)
+context_signal.connect(public_signal, sender=userprofile_views.public)
+#--------------------------------------------------------------
+
+
+Custom actions and response after user input
+--------------------------------------------
+For each view which receive an input value, a signal is sent in order to
+do what you want with request, form and other values, and to choose if you
+want to replace the response originally provided by the view
+Each of these view send a signal named "post_signal" which have four parameters :
+- "sender", the view which is sending the signal (the view, not a string)
+- "request", the request object passed to the view
+- "form", the form object if the view has one
+- "extra", an optional dictionary with values depending of the view :
+   - "key" for "email_validation_process"
+   - "newuser" for "register"
+   - "response" for "email_validation_reset"
+
+Here is an example where we do auto-login after registration and redirect to our own url
+
+#--------------------------------------------------------------
+# in your application
+def register_signal(sender, **kwargs):
+    newuser = kwargs['extra']['newuser']
+    username = newuser.username
+    password = kwargs['form'].cleaned_data.get('password1')
+    from django.contrib.auth import authenticate, login
+    user = authenticate(username=username, password=password)
+    login(request, user)
+    return HttpResponseRedirect(reverse("our_own_url_name"))
+
+from userprofile import views as userprofile_views
+from userprofile.signals import post_signal
+post_signal.connect(register_signal, sender=userprofile_views.register)
 #--------------------------------------------------------------
