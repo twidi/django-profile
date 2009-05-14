@@ -108,5 +108,17 @@ GOOGLE_MAPS_API_KEY = "ABQIAAAA06IJoYHDPFMx4u3hTtaghxTpH3CbXHjuCVmaTc5MkkU4wO1RR
 #GOOGLE_MAPS_API_KEY="ABQIAAAA06IJoYHDPFMx4u3hTtaghxS1mGAeXhF8eEwoOC3WUqD9xSVHbhT_wvgbriWemZzoPwFT5-HqnLJ9-A"
 REQUIRE_EMAIL_CONFIRMATION = False
 AVATAR_QUOTA = 2
+
+# Uncomment and fill the field above to activate GEOIP
 #GEOIP_PATH = "%s/db/" % PROJECT_PATH
+
+# Uncomment and fill the fields above to activa the S3 Storage backend
+# S3 Storage Settings
+#AWS_SECRET_ACCESS_KEY = ""
+#AWS_ACCESS_KEY_ID = ""
+#AWS_STORAGE_BUCKET_NAME = ""
+#if "AWS_SECRET_ACCESS_KEY" in locals().keys():
+#    from S3 import CallingFormat
+#AWS_CALLING_FORMAT = CallingFormat.PATH
+
 # END of django-profile specific options
