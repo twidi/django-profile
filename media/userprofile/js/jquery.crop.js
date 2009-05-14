@@ -26,57 +26,60 @@ $(function() {
 	// display legend (hidden if no js)
 	$('form[name=cropavatar] legend').show();
 
-	//calculate source image size
-	crop_img_size.width = $('#cropimage').width();
-	crop_img_size.height = $('#cropimage').height();
+	$("#cropimage").load(function() {
 
-	// calculate initial selection (maximum square)
-	var selection = {
-		x1: 0, x2: 0, y1: 0, y2: 0,
-		width: 0, height: 0
-	}
-	if (crop_img_size.width > crop_img_size.height) {
-		selection.width = selection.height = crop_img_size.height;
-		var diff = (crop_img_size.width - crop_img_size.height) / 2;
-		selection.x1 = diff;
-		selection.x2 = crop_img_size.width - diff;
-		selection.y2 = crop_img_size.height;
-	} else {
-		selection.width = selection.height = crop_img_size.width;
-		var diff = (crop_img_size.height - crop_img_size.width) / 2;
-		selection.x2 = crop_img_size.width;
-		selection.y1 = diff;
-		selection.y2 = crop_img_size.height - diff;
-	}
+		//calculate source image size
+		crop_img_size.width = $('#cropimage').width();
+		crop_img_size.height = $('#cropimage').height();
 
-	// prepare avatarimg and its container
-	$('#avatarimg_container').css({
-		position: 'relative',
-		overflow: 'hidden',
-		width: '96px',
-		height: '96px',
-		margin: 'auto',
-		padding: '1px'
-	});
-	$('#avatarimg').attr('src', $("#cropimage").attr('src')).css({
-		position: 'relative'
-	}).removeClass('border');
+		// calculate initial selection (maximum square)
+		var selection = {
+			x1: 0, x2: 0, y1: 0, y2: 0,
+			width: 0, height: 0
+		}
+		if (crop_img_size.width > crop_img_size.height) {
+			selection.width = selection.height = crop_img_size.height;
+			var diff = (crop_img_size.width - crop_img_size.height) / 2;
+			selection.x1 = diff;
+			selection.x2 = crop_img_size.width - diff;
+			selection.y2 = crop_img_size.height;
+		} else {
+			selection.width = selection.height = crop_img_size.width;
+			var diff = (crop_img_size.height - crop_img_size.width) / 2;
+			selection.x2 = crop_img_size.width;
+			selection.y1 = diff;
+			selection.y2 = crop_img_size.height - diff;
+		}
 
-	// simulate a first preview with initial selection
-	previewAvatar($("#cropimage"), selection);
+		// prepare avatarimg and its container
+		$('#avatarimg_container').css({
+			position: 'relative',
+			overflow: 'hidden',
+			width: '96px',
+			height: '96px',
+			margin: 'auto',
+			padding: '1px'
+		});
+		$('#avatarimg').attr('src', $("#cropimage").attr('src')).css({
+			position: 'relative'
+		}).removeClass('border');
+
+		// simulate a first preview with initial selection
+		previewAvatar($("#cropimage"), selection);
 	
-	// run imgAreaSelect
-	$("#cropimage").imgAreaSelect({
-		handles: 'corners',
-		aspectRatio: "1:1",
-		minHeight: "96",
-		minWidth: "96",
-		x1: selection.x1,
-		x2: selection.x2,
-		y1: selection.y1,
-		y2: selection.y2,
-		onSelectChange: previewAvatar,
-		onSelectEnd: updateValues
+		// run imgAreaSelect
+		$("#cropimage").imgAreaSelect({
+			handles: 'corners',
+			aspectRatio: "1:1",
+			minHeight: "96",
+			minWidth: "96",
+			x1: selection.x1,
+			x2: selection.x2,
+			y1: selection.y1,
+			y2: selection.y2,
+			onSelectChange: previewAvatar,
+			onSelectEnd: updateValues
+		});
 	});
 });
 
