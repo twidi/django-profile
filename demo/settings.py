@@ -116,9 +116,7 @@ AVATAR_QUOTA = 2
 # S3 Storage Settings
 #AWS_SECRET_ACCESS_KEY = ""
 #AWS_ACCESS_KEY_ID = ""
-#AWS_STORAGE_BUCKET_NAME = ""
-#if "AWS_SECRET_ACCESS_KEY" in locals().keys():
-#    from S3 import CallingFormat
-#AWS_CALLING_FORMAT = CallingFormat.PATH
-
+#AWS_STORAGE_BUCKET_NAME = "avatar-test"
+#from S3 import CallingFormat
+#AWS_CALLING_FORMAT = CallingFormat.SUBDOMAIN
 # END of django-profile specific options
