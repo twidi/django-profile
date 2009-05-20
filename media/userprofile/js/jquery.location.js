@@ -78,7 +78,7 @@ $(function() {
 		}
 		if ($("div.mapinfo").css("display") == "none") {
 			$("div.mapinfo").show();
-			$.getScript("http://maps.google.com/maps?file=api&v=2.x&key=" + $("#apikey").val() + "&async=2&callback=initMap");
+			$.getScript("http://maps.google.com/maps?file=api&v=2.x&key=" + $("#google_maps_apikey").val() + "&async=2&callback=initMap");
 		} else {
 			googlemaps.searchLocation();
 		}
@@ -86,6 +86,6 @@ $(function() {
 
 	if ($("#id_country option:selected").val()) {
 		$("div.mapinfo").show();
-		$.getScript("http://maps.google.com/maps?file=api&v=2.x&key=" + $("#apikey").val() + "&async=2&callback=initMap2");
+		$.getScript("http://maps.google.com/maps?file=api&v=2.x&key=" + $("#google_maps_apikey").val() + "&async=2&callback=initMap2");
 	}
 });
