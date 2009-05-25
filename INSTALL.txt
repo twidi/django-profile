@@ -13,7 +13,7 @@ First of all, the requirement to run this software is:
       Download it from http://code.google.com/p/gdata-python-client/
 
 You can see a demo of which can be accomplished here:
-    http://profile.coredump.es
+    http://profile.elementales.com
 
 
 -----------------
