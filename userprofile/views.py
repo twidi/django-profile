@@ -340,6 +340,7 @@ def avatardelete(request, avatar_id=False):
     else:
         raise Http404()
 
+@login_required
 def email_validation_process(request, key):
     """
     Verify key and change email
@@ -359,6 +360,7 @@ def email_validation_process(request, key):
     signals.context_signal.send(sender=email_validation_process, request=request, context=data)
     return render_to_response(template, data, context_instance=RequestContext(request))
 
+@login_required
 def email_validation(request):
     """
     E-mail Change form
