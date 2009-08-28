@@ -71,20 +71,22 @@ class ResizedThumbnailNode(Node):
             url_tuple = urlparse.urlparse(avatar.url)
             url = urlparse.urljoin(urllib.unquote(urlparse.urlunparse(url_tuple)), "%s.%s%s" % (name, self.size, extension))
 
-            if not storage.exists(filename):
-                thumb = Image.open(ContentFile(avatar.read()))
-                thumb.thumbnail((self.size, self.size), Image.ANTIALIAS)
-                f = StringIO()
-                thumb.save(f, "JPEG")
-                f.seek(0)
-                storage.save(filename, ContentFile(f.read()))
-
         except:
             avatar_path = DEFAULT_AVATAR
+            avatar = open(avatar_path)
             base, filename = os.path.split(avatar_path)
             generic, extension = os.path.splitext(filename)
             filename = os.path.join(base, "%s.%s%s" % (generic, self.size, extension))
             url = filename.replace(settings.MEDIA_ROOT, settings.MEDIA_URL)
+            url = os.path.normpath(url)
+
+        if not storage.exists(filename):
+            thumb = Image.open(ContentFile(avatar.read()))
+            thumb.thumbnail((self.size, self.size), Image.ANTIALIAS)
+            f = StringIO()
+            thumb.save(f, "JPEG")
+            f.seek(0)
+            storage.save(filename, ContentFile(f.read()))
 
         return url
 
