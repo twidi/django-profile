@@ -1,13 +1,19 @@
 from django.conf import settings
 
-if hasattr(settings, "I18N_URLS") and settings.I18N_URLS:
+try:
+    if not hasattr(settings, "I18N_URLS") or not settings.I18N_URLS \
+                                          or not settings.LANGUAGE_CODE:
+        raise
+
     try:
         module = __import__("userprofile.urls.%s" % (settings.LANGUAGE_CODE), \
                             {}, {}, "urlpatterns")
-        globals().update({ "urlpatterns": module.__dict__["urlpatterns"] })
     except:
-        module = __import__("userprofile.urls.en", {}, {}, "urlpatterns")
-        globals().update({ "urlpatterns": module.__dict__["urlpatterns"] })
-else:
+        module = __import__( \
+            "userprofile.urls.%s" % (settings.LANGUAGE_CODE.split('-')[0]), \
+            {}, {}, "urlpatterns")
+
+except:
     module = __import__("userprofile.urls.en", {}, {}, "urlpatterns")
-    globals().update({ "urlpatterns": module.__dict__["urlpatterns"] })
+
+globals().update({ "urlpatterns": module.__dict__["urlpatterns"] })
