@@ -14,7 +14,7 @@
 {% endblock %}
 
 {% block userprofile_content %}
-	<form name="cropavatar" action="{{ request.path_info }}" method="post" accept-charset="utf-8">
+	<form name="cropavatar" action="{{ request.path_info }}" method="post" accept-charset="utf-8">{% csrf_token %}
 	<fieldset>
 		<legend style='display:none'>{% trans "Crop &amp; resize the area you want" %}</legend>
 

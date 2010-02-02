@@ -27,7 +27,7 @@
 
 {% block userprofile_content %}
 	{% load avatars %}
-	<form action="" method="post">
+	<form action="" method="post">{% csrf_token %}
 	<fieldset>
 		<legend>{% trans "Overview of your profile" %}</legend>
 		<div id="avatar" class="{{ css_classes.overview_avatar }} center">

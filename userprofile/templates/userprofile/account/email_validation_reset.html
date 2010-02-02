@@ -14,7 +14,7 @@
 {% endblock %}
 
 {% block userprofile_content %}
-	<form action="" method="post" accept-charset="utf-8">
+	<form action="" method="post" accept-charset="utf-8">{% csrf_token %}
 	<fieldset>
 		<legend>{% trans "Resend e-mail validation" %}</legend>
 		<label for="id_email">{% trans 'Insert your e-mail address' %}</label>
