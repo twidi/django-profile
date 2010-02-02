@@ -15,6 +15,6 @@ setup(name='userprofile',
     include_package_data=True,
     install_requires=['setuptools'],
     package_data = {
-        'userprofile' : [ 'templates/userprofile/*.html', 'templates/userprofile/account/*.html', 'templates/userprofile/account/includes/*.html', 'templates/userprofile/avatar/*.html', 'templates/userprofile/email/*.html', 'templates/userprofile/profile/*.html', 'locale/*/*/*', ]
+        'userprofile' : [ 'templates/userprofile/*.html', 'templates/userprofile/account/*.html', 'templates/userprofile/account/includes/*.html', 'templates/userprofile/avatar/*.html', 'templates/userprofile/email/*.txt', 'templates/userprofile/profile/*.html', 'locale/*/*/*', ]
     },
 )
