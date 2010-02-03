@@ -117,10 +117,12 @@ class EmailValidationManager(models.Manager):
                 if hasattr(settings, "REQUIRE_EMAIL_CONFIRMATION") and settings.REQUIRE_EMAIL_CONFIRMATION:
                     verify.user.is_active = True
                 verify.user.save()
-                verify.delete()
+                verify.verified = True
+                verify.save()
                 return True
             else:
-                verify.delete()
+                if not verify.verified:
+                    verify.delete()
                 return False
         except:
             return False
@@ -140,7 +142,6 @@ class EmailValidationManager(models.Manager):
             try:
                 EmailValidation.objects.get(key=key)
             except EmailValidation.DoesNotExist:
-                self.key = key
                 break
 
         template_body = "userprofile/email/validation.txt"
@@ -160,6 +161,7 @@ class EmailValidation(models.Model):
     user = models.ForeignKey(User, unique=True)
     email = models.EmailField(blank=True)
     key = models.CharField(max_length=70, unique=True, db_index=True)
+    verified = models.BooleanField(default=False)
     created = models.DateTimeField(auto_now_add=True)
     objects = EmailValidationManager()
 
@@ -167,7 +169,12 @@ class EmailValidation(models.Model):
         return _("Email validation process for %(user)s") % { 'user': self.user }
 
     def is_expired(self):
-        return (datetime.datetime.today() - self.created).days > 0
+        if hasattr(settings, 'EMAIL_CONFIRMATION_DELAY'):
+            expiration_delay = settings.EMAIL_CONFIRMATION_DELAY
+        else:
+            expiration_delay = 1
+        return self.verified or \
+            (self.created + datetime.timedelta(days=expiration_delay) <= datetime.datetime.now())
 
     def resend(self):
         """

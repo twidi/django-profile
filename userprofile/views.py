@@ -110,7 +110,7 @@ def overview(request):
     profile, created = Profile.objects.get_or_create(user=request.user)
     validated = False
     try:
-        email = EmailValidation.objects.get(user=request.user).email
+        email = EmailValidation.objects.exclude(verified=True).get(user=request.user).email
     except EmailValidation.DoesNotExist:
         email = request.user.email
         if email: validated = True
@@ -340,7 +340,6 @@ def avatardelete(request, avatar_id=False):
     else:
         raise Http404()
 
-@login_required
 def email_validation_process(request, key):
     """
     Verify key and change email
@@ -412,7 +411,7 @@ def email_validation_reset(request):
 
     if request.user.is_authenticated():
         try:
-            resend = EmailValidation.objects.get(user=request.user).resend()
+            resend = EmailValidation.objects.exclude(verified=True).get(user=request.user).resend()
             response = "done"
         except EmailValidation.DoesNotExist:
             response = "failed"
@@ -426,7 +425,7 @@ def email_validation_reset(request):
             if form.is_valid():
                 email = form.cleaned_data.get('email')
                 try:
-                    resend = EmailValidation.objects.get(email=email).resend()
+                    resend = EmailValidation.objects.exclude(verified=True).get(email=email).resend()
                     response = "done"
                 except EmailValidation.DoesNotExist:
                     response = "failed"
