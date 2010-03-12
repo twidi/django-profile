@@ -4,7 +4,7 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render_to_response, get_object_or_404
 from django.utils.translation import ugettext as _
 from userprofile.forms import AvatarForm, AvatarCropForm, EmailValidationForm, \
-                              ProfileForm, RegistrationForm, LocationForm, \
+                              ProfileForm, _RegistrationForm, LocationForm, \
                               ResendEmailValidationForm, PublicFieldsForm
 from userprofile.models import BaseProfile
 from django.http import Http404
@@ -382,23 +382,14 @@ def email_validation(request):
 
 def register(request):
     if request.method == 'POST':
-        form = RegistrationForm(request.POST)
+        form = _RegistrationForm(request.POST)
         if form.is_valid():
-            username = form.cleaned_data.get('username')
-            password = form.cleaned_data.get('password1')
-            newuser = User.objects.create_user(username=username, email='', password=password)
-            newuser.is_active = not hasattr(settings, "REQUIRE_EMAIL_CONFIRMATION") or not settings.REQUIRE_EMAIL_CONFIRMATION
-
-            if form.cleaned_data.get('email'):
-                newuser.email = form.cleaned_data.get('email')
-                EmailValidation.objects.add(user=newuser, email=newuser.email)
-
-            newuser.save()
+            newuser = form.save()
 
             signal_responses = signals.post_signal.send(sender=register, request=request, form=form, extra={'newuser': newuser})
             return signals.last_response(signal_responses) or HttpResponseRedirect(reverse('signup_complete'))
     else:
-        form = RegistrationForm()
+        form = _RegistrationForm()
 
     template = "userprofile/account/registration.html"
     data = { 'form': form, }

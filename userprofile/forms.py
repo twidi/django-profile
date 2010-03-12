@@ -8,6 +8,7 @@ from django.contrib.auth.models import User, SiteProfileNotAvailable
 from userprofile.models import EmailValidation
 from django.core.files.uploadedfile import SimpleUploadedFile
 import mimetypes, urllib
+from django.contrib.auth.forms import UserCreationForm
 
 if not settings.AUTH_PROFILE_MODULE:
     raise SiteProfileNotAvailable
@@ -91,34 +92,14 @@ class AvatarCropForm(forms.Form):
 
         return self.cleaned_data
 
-class RegistrationForm(forms.Form):
 
-    username = forms.CharField(max_length=255, min_length = 3, label=_("Username"))
-    email = forms.EmailField(required=hasattr(settings, "REQUIRE_EMAIL_CONFIRMATION") and settings.REQUIRE_EMAIL_CONFIRMATION or False, label=_("E-mail address"))
-    password1 = forms.CharField(widget=forms.PasswordInput, label=_("Password"))
-    password2 = forms.CharField(widget=forms.PasswordInput, label=_("Password (again)"))
 
-    def clean_username(self):
-        """
-        Verify that the username isn't already registered
-        """
-        username = self.cleaned_data.get("username")
-        if not set(username).issubset("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_"):
-            raise forms.ValidationError(_("That username has invalid characters. The valid values are letters, numbers and underscore."))
+class RegistrationForm(UserCreationForm):
+    email = forms.EmailField(required=getattr(settings, "REQUIRE_EMAIL_CONFIRMATION", False), label=_("E-mail address"))
 
-        if User.objects.filter(username__iexact=username).count() == 0:
-            return username
-        else:
-            raise forms.ValidationError(_("The username is already registered."))
-
-    def clean(self):
-        """
-        Verify that the 2 passwords fields are equal
-        """
-        if self.cleaned_data.get("password1") == self.cleaned_data.get("password2"):
-            return self.cleaned_data
-        else:
-            raise forms.ValidationError(_("The passwords inserted are different."))
+    class Meta:
+        model = User
+        fields = ("username","email",)
 
     def clean_email(self):
         """
@@ -137,6 +118,22 @@ class RegistrationForm(forms.Form):
                 raise forms.ValidationError(_("That e-mail is already being confirmed."))
             except EmailValidation.DoesNotExist:
                 return email
+
+    def save(self, *args, **kwargs):
+        user = super(RegistrationForm, self).save(commit=False)
+        user.is_active = not getattr(settings, "REQUIRE_EMAIL_CONFIRMATION", False)
+        user.save()
+        if self.cleaned_data.get('email'):
+            EmailValidation.objects.add(user=user, email=user.email)
+        return user
+
+try:
+    _temp = settings.REGISTRATION_FORM.split('.')
+    _form_class = _temp.pop()
+    _module = __import__('.'.join(_temp), globals(), locals(), [_form_class])
+    _RegistrationForm = getattr(_module, _form_class)
+except:
+    _RegistrationForm = RegistrationForm
 
 class EmailValidationForm(forms.Form):
     email = forms.EmailField()

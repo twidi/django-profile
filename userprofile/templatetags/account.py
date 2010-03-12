@@ -1,12 +1,12 @@
 from django.template import Library, Node
-from userprofile.forms import RegistrationForm
+from userprofile.forms import _RegistrationForm
 from django.template.loader import render_to_string
      
 register = Library()
      
 class RegistationFormNode(Node):
     def render(self, context):
-        form = RegistrationForm()
+        form = _RegistrationForm()
         template = "userprofile/account/includes/registration_form.html"
         data = { 'form': form, }
         return render_to_string(template, data)
