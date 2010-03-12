@@ -28,7 +28,7 @@ try:
 except ImportError:
     import Image, ImageFilter
 
-AVATAR_SIZES = (128, 96, 64, 48, 32, 24, 16)
+AVATAR_SIZES = getattr(settings, 'AVATAR_SIZES', (128, 96, 64, 48, 32, 24, 16))
 
 class BaseProfile(models.Model):
     """
