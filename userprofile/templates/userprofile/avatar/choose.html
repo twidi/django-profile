@@ -33,7 +33,7 @@
 {% endblock %}
 
 {% block userprofile_content %}
-	<form action="{% url profile_edit_avatar %}" method="post" accept-charset="utf-8" enctype="multipart/form-data">{% csrf_token %}
+	<form action="" method="post" accept-charset="utf-8" enctype="multipart/form-data">{% csrf_token %}
 		<fieldset>
 			<legend>{% trans "Choose the location of your avatar" %}</legend>
 			<ul>
