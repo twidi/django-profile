@@ -49,10 +49,11 @@ class ResizedThumbnailNode(Node):
 
     def render(self, context):
         # If size is not an int, then it's a Variable, so try to resolve it.
-        if not isinstance(self.size, int):
-            self.size = int(self.size.resolve(context))
+        size = self.size
+        if not isinstance(size, int):
+            size = int(self.size.resolve(context))
 
-        if not self.size in AVATAR_SIZES:
+        if not size in AVATAR_SIZES:
             return ''
 
         try:
@@ -67,22 +68,22 @@ class ResizedThumbnailNode(Node):
                 raise
             base, filename = os.path.split(avatar_path)
             name, extension = os.path.splitext(filename)
-            filename = os.path.join(base, "%s.%s%s" % (name, self.size, extension))
+            filename = os.path.join(base, "%s.%s%s" % (name, size, extension))
             url_tuple = urlparse.urlparse(avatar.url)
-            url = urlparse.urljoin(urllib.unquote(urlparse.urlunparse(url_tuple)), "%s.%s%s" % (name, self.size, extension))
+            url = urlparse.urljoin(urllib.unquote(urlparse.urlunparse(url_tuple)), "%s.%s%s" % (name, size, extension))
 
         except:
             avatar_path = DEFAULT_AVATAR
             avatar = open(avatar_path)
             base, filename = os.path.split(avatar_path)
             generic, extension = os.path.splitext(filename)
-            filename = os.path.join(base, "%s.%s%s" % (generic, self.size, extension))
+            filename = os.path.join(base, "%s.%s%s" % (generic, size, extension))
             url = filename.replace(settings.MEDIA_ROOT, settings.MEDIA_URL)
             url = os.path.normpath(url)
 
         if not storage.exists(filename):
             thumb = Image.open(ContentFile(avatar.read()))
-            thumb.thumbnail((self.size, self.size), Image.ANTIALIAS)
+            thumb.thumbnail((size, size), Image.ANTIALIAS)
             f = StringIO()
             thumb.save(f, "JPEG")
             f.seek(0)
