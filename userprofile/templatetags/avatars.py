@@ -69,17 +69,18 @@ class ResizedThumbnailNode(Node):
             base, filename = os.path.split(avatar_path)
             name, extension = os.path.splitext(filename)
             filename = os.path.join(base, "%s.%s%s" % (name, size, extension))
-            url_tuple = urlparse.urlparse(avatar.url)
-            url = urlparse.urljoin(urllib.unquote(urlparse.urlunparse(url_tuple)), "%s.%s%s" % (name, size, extension))
+            base_url = avatar.url
 
         except:
             avatar_path = DEFAULT_AVATAR
             avatar = open(avatar_path)
             base, filename = os.path.split(avatar_path)
-            generic, extension = os.path.splitext(filename)
-            filename = os.path.join(base, "%s.%s%s" % (generic, size, extension))
-            url = filename.replace(settings.MEDIA_ROOT, settings.MEDIA_URL)
-            url = os.path.normpath(url)
+            name, extension = os.path.splitext(filename)
+            filename = os.path.join(base, "%s.%s%s" % (name, size, extension))
+            base_url = filename.replace(settings.MEDIA_ROOT, settings.MEDIA_URL)
+
+        url_tuple = urlparse.urlparse(base_url)
+        url = urlparse.urljoin(urllib.unquote(urlparse.urlunparse(url_tuple)), "%s.%s%s" % (name, size, extension))
 
         if not storage.exists(filename):
             thumb = Image.open(ContentFile(avatar.read()))
