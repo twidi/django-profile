@@ -11,7 +11,7 @@
 		$("a.delavatar").click(function() {
 			$.getJSON($(this).attr("href"), function(data) {
 				if (data.success) {
-					$("img#avatarimg").attr("src", "{{ generic96 }}");
+					$("img#avatarimg").attr("src", "{{ generic }}");
 					$("p#avatardelete").remove();
 				}
 			});
@@ -38,13 +38,13 @@
 			<legend>{% trans "Choose the location of your avatar" %}</legend>
 			<ul>
 			<li>
-				<label for="id_photo">{% trans "Select an image from disk" %}:</label>
+				<label for="id_photo">{{ form.photo.help_text }}:</label>
 				<p>{{ form.photo }}
 				<input type="submit" value="{% trans 'Done' %}" />
 				</p>
 			</li>
 			<li>
-				<label for="id_url">{% trans "Select an image from a remote URL. Put the URL on the input below and we'll retrieve the image for you" %}:</label>
+				<label for="id_url">{{ form.url.help_text  }}:</label>
 				<p>{{ form.url }}
 				<input type="submit" value="{% trans 'Done' %}" />
 				</p>
@@ -82,7 +82,7 @@
 
 	{% load avatars %}
   <div class="center">
-		<img class="border" alt="{{ request.user }}" id="avatarimg" src="{% avatar 96 %}" />
-    {% if user.get_profile.has_avatar %}<p id="avatardelete" style="text-align: center;"><a href="{{ request.path_info }}delete/" class="delavatar">{% trans "Delete" %}</a></p>{% endif %}
+		<img class="border" alt="{{ user }}" id="avatarimg" src="{% avatar DEFAULT_AVATAR_SIZE %}" />
+    {% if user.get_profile.has_avatar %}<p id="avatardelete" style="text-align: center;"><a href="{% url profile_avatar_delete %}" class="delavatar">{% trans "Delete" %}</a></p>{% endif %}
 	</div>
 {% endblock %}

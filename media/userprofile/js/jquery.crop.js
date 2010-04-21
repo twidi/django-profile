@@ -5,8 +5,8 @@ var crop_img_size = {
 };
 
 function previewAvatar(img, selection) {
-	var scaleX = 96 / (selection.width || 1);
-	var scaleY = 96 / (selection.height || 1);
+	var scaleX = DEFAULT_AVATAR_SIZE / (selection.width || 1);
+	var scaleY = DEFAULT_AVATAR_SIZE / (selection.height || 1);
 	$('#avatarimg').css({
 		width: Math.round(scaleX * crop_img_size.width) + 'px',
 		height: Math.round(scaleY * crop_img_size.height) + 'px',
@@ -55,8 +55,8 @@ $(function() {
 		$('#avatarimg_container').css({
 			position: 'relative',
 			overflow: 'hidden',
-			width: '96px',
-			height: '96px',
+			width: DEFAULT_AVATAR_SIZE + 'px',
+			height: DEFAULT_AVATAR_SIZE + 'px',
 			margin: 'auto',
 			padding: '1px'
 		});
@@ -71,8 +71,8 @@ $(function() {
 		$("#cropimage").imgAreaSelect({
 			handles: 'corners',
 			aspectRatio: "1:1",
-			minHeight: "96",
-			minWidth: "96",
+			minHeight: DEFAULT_AVATAR_SIZE,
+			minWidth: DEFAULT_AVATAR_SIZE,
 			x1: selection.x1,
 			x2: selection.x2,
 			y1: selection.y1,

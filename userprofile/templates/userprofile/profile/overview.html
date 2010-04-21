@@ -32,7 +32,7 @@
 		<legend>{% trans "Overview of your profile" %}</legend>
 		<div id="avatar" class="{{ css_classes.overview_avatar }} center">
 			<a href="{% url profile_edit_avatar %}">
-				<img class="border" src="{% avatar 96 %}" />
+				<img class="border" src="{% avatar DEFAULT_AVATAR_SIZE %}" />
 			</a>
 			<p><a href="{% url profile_edit_avatar %}">{% if user.get_profile.has_avatar %}{% trans "Change avatar" %}{% else %}{% trans "Add avatar" %}{% endif %}</a></p>
 		</div>

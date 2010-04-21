@@ -5,7 +5,7 @@ from django.db import models
 from django.utils.translation import ugettext as _
 from django.conf import settings
 from django.contrib.auth.models import User, SiteProfileNotAvailable
-from userprofile.models import EmailValidation
+from userprofile.models import EmailValidation, AVATAR_SIZES, DEFAULT_AVATAR_SIZE
 from django.core.files.uploadedfile import SimpleUploadedFile
 import mimetypes, urllib
 from django.contrib.auth.forms import UserCreationForm
@@ -48,8 +48,8 @@ class AvatarForm(forms.Form):
     """
     The avatar form requires only one image field.
     """
-    photo = forms.ImageField(required=False)
-    url = forms.URLField(required=False)
+    photo = forms.ImageField(required=False, help_text=_("Select an image from disk"))
+    url = forms.URLField(required=False, help_text=_("Select an image from a remote URL. Put the URL on the input below and we'll retrieve the image for you"))
 
     def clean_url(self):
         url = self.cleaned_data.get('url')
@@ -87,8 +87,8 @@ class AvatarCropForm(forms.Form):
 
     def clean(self):
         if self.cleaned_data.get('right') and self.cleaned_data.get('left') and \
-           int(self.cleaned_data.get('right')) - int(self.cleaned_data.get('left')) < 96:
-            raise forms.ValidationError(_("You must select a portion of the image with a minimum of 96x96 pixels."))
+           int(self.cleaned_data.get('right')) - int(self.cleaned_data.get('left')) < DEFAULT_AVATAR_SIZE:
+            raise forms.ValidationError(_("You must select a portion of the image with a minimum of %dx%d pixels." % (DEFAULT_AVATAR_SIZE, DEFAULT_AVATAR_SIZE)))
 
         return self.cleaned_data
 

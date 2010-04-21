@@ -5,6 +5,7 @@
 {% block robots %}noindex,nofollow{% endblock %}
 
 {% block extrajs %}
+<script type="text/javascript">DEFAULT_AVATAR_SIZE = {{ DEFAULT_AVATAR_SIZE }};</script>
 <script type="text/javascript" src="{{ MEDIA_URL }}userprofile/js/jquery.imgareaselect-0.8.min.js"></script>
 <script type="text/javascript" src="{{ MEDIA_URL }}userprofile/js/jquery.crop.js"></script>
 {% endblock %}
@@ -14,7 +15,7 @@
 {% endblock %}
 
 {% block userprofile_content %}
-	<form name="cropavatar" action="{{ request.path_info }}" method="post" accept-charset="utf-8">{% csrf_token %}
+	<form name="cropavatar" action="{% url profile_avatar_crop %}" method="post" accept-charset="utf-8">{% csrf_token %}
 	<fieldset>
 		<legend style='display:none'>{% trans "Crop &amp; resize the area you want" %}</legend>
 
@@ -44,7 +45,7 @@
 
   {% load avatars %}
   <div class="center" id="avatarimg_container">
-    <img class="border" id="avatarimg" src="{% avatar 96 %}" />
+    <img class="border" id="avatarimg" src="{% avatar DEFAULT_AVATAR_SIZE %}" />
   </div>
 
 {% endblock %}

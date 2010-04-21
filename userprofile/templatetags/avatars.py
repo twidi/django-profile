@@ -2,7 +2,8 @@
 from django.template import Library, Node, Template, TemplateSyntaxError, \
                             Variable
 from django.utils.translation import ugettext as _
-from userprofile.models import Avatar, AVATAR_SIZES, S3BackendNotFound
+from userprofile.models import Avatar, AVATAR_SIZES, S3BackendNotFound, \
+                            DEFAULT_AVATAR_SIZE
 from django.contrib.auth.models import User
 from django.core.files.base import ContentFile
 import urllib
@@ -103,5 +104,5 @@ def Thumbnail(parser, token):
     elif len(bits) == 3:
         username = bits[2]
     elif len(bits) < 2:
-        bits.append("96")
+        bits.append(str(DEFAULT_AVATAR_SIZE))
     return ResizedThumbnailNode(bits[1], username)

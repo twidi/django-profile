@@ -6,7 +6,7 @@ from django.utils.translation import ugettext as _
 from userprofile.forms import AvatarForm, AvatarCropForm, EmailValidationForm, \
                               ProfileForm, _RegistrationForm, LocationForm, \
                               ResendEmailValidationForm, PublicFieldsForm
-from userprofile.models import BaseProfile
+from userprofile.models import BaseProfile, DEFAULT_AVATAR_SIZE
 from django.http import Http404
 from django.core.exceptions import ObjectDoesNotExist
 from django.core.exceptions import ImproperlyConfigured
@@ -99,7 +99,7 @@ def public(request, username):
         raise Http404
 
     template = "userprofile/profile/public.html"
-    data = { 'profile': profile, 'GOOGLE_MAPS_API_KEY': GOOGLE_MAPS_API_KEY, }
+    data = { 'profile': profile, 'GOOGLE_MAPS_API_KEY': GOOGLE_MAPS_API_KEY, 'DEFAULT_AVATAR_SIZE': DEFAULT_AVATAR_SIZE }
     signals.context_signal.send(sender=public, request=request, context=data)
     return render_to_response(template, data, context_instance=RequestContext(request))
 
@@ -124,7 +124,7 @@ def overview(request):
 
     template = "userprofile/profile/overview.html"
     data = { 'section': 'overview', 'GOOGLE_MAPS_API_KEY': GOOGLE_MAPS_API_KEY,
-            'email': email, 'validated': validated, 'fields' : fields }
+            'email': email, 'validated': validated, 'fields' : fields, 'DEFAULT_AVATAR_SIZE': DEFAULT_AVATAR_SIZE }
     signals.context_signal.send(sender=overview, request=request, context=data)
     return render_to_response(template, data, context_instance=RequestContext(request))
 
@@ -262,14 +262,15 @@ def avatarchoose(request):
     if DEFAULT_AVATAR:
         base, filename = os.path.split(DEFAULT_AVATAR)
         filename, extension = os.path.splitext(filename)
-        generic96 = "%s/%s.96%s" % (base, filename, extension)
-        generic96 = generic96.replace(settings.MEDIA_ROOT, settings.MEDIA_URL)
+        generic = "%s/%s.%d%s" % (base, filename, DEFAULT_AVATAR_SIZE, extension)
+        generic = generic.replace(settings.MEDIA_ROOT, settings.MEDIA_URL)
     else:
-        generic96 = ""
+        generic = ""
 
     template = "userprofile/avatar/choose.html"
-    data = { 'generic96': generic96, 'form': form, "images": images,
-             'AVATAR_WEBSEARCH': AVATAR_WEBSEARCH, 'section': 'avatar', }
+    data = { 'generic': generic, 'form': form, "images": images,
+             'AVATAR_WEBSEARCH': AVATAR_WEBSEARCH, 'section': 'avatar', 
+             'DEFAULT_AVATAR_SIZE': DEFAULT_AVATAR_SIZE, }
     signals.context_signal.send(sender=avatarchoose, request=request, context=data)
     return render_to_response(template, data, context_instance=RequestContext(request))
 
@@ -325,7 +326,7 @@ def avatarcrop(request):
             return signals.last_response(signal_responses) or HttpResponseRedirect(reverse("profile_edit_avatar"))
 
     template = "userprofile/avatar/crop.html"
-    data = { 'section': 'avatar', 'avatar': avatar, 'form': form, }
+    data = { 'section': 'avatar', 'avatar': avatar, 'form': form, 'DEFAULT_AVATAR_SIZE': DEFAULT_AVATAR_SIZE }
     signals.context_signal.send(sender=avatarcrop, request=request, context=data)
     return render_to_response(template, data, context_instance=RequestContext(request))
 
