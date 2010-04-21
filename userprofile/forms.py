@@ -54,7 +54,10 @@ class AvatarForm(forms.Form):
     def clean_url(self):
         url = self.cleaned_data.get('url')
         if not url: return ''
-        filename, headers = urllib.urlretrieve(url)
+        try:
+            filename, headers = urllib.urlretrieve(url)
+        except:
+            raise forms.ValidationError(forms.fields.URLField.default_error_messages['invalid_link'])
         if not mimetypes.guess_all_extensions(headers.get('Content-Type')):
             raise forms.ValidationError(_('The file type is invalid: %s' % type))
         return SimpleUploadedFile(filename, open(filename).read(), content_type=headers.get('Content-Type'))
