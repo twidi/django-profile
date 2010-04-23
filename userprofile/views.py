@@ -6,7 +6,7 @@ from django.utils.translation import ugettext as _
 from userprofile.forms import AvatarForm, AvatarCropForm, EmailValidationForm, \
                               ProfileForm, _RegistrationForm, LocationForm, \
                               ResendEmailValidationForm, PublicFieldsForm
-from userprofile.models import BaseProfile, DEFAULT_AVATAR_SIZE
+from userprofile.models import BaseProfile, DEFAULT_AVATAR_SIZE, MIN_AVATAR_SIZE
 from django.http import Http404
 from django.core.exceptions import ObjectDoesNotExist
 from django.core.exceptions import ImproperlyConfigured
@@ -270,7 +270,7 @@ def avatarchoose(request):
     template = "userprofile/avatar/choose.html"
     data = { 'generic': generic, 'form': form, "images": images,
              'AVATAR_WEBSEARCH': AVATAR_WEBSEARCH, 'section': 'avatar', 
-             'DEFAULT_AVATAR_SIZE': DEFAULT_AVATAR_SIZE, }
+             'DEFAULT_AVATAR_SIZE': DEFAULT_AVATAR_SIZE, 'MIN_AVATAR_SIZE': MIN_AVATAR_SIZE }
     signals.context_signal.send(sender=avatarchoose, request=request, context=data)
     return render_to_response(template, data, context_instance=RequestContext(request))
 
@@ -326,7 +326,8 @@ def avatarcrop(request):
             return signals.last_response(signal_responses) or HttpResponseRedirect(reverse("profile_edit_avatar"))
 
     template = "userprofile/avatar/crop.html"
-    data = { 'section': 'avatar', 'avatar': avatar, 'form': form, 'DEFAULT_AVATAR_SIZE': DEFAULT_AVATAR_SIZE }
+    data = { 'section': 'avatar', 'avatar': avatar, 'form': form, \
+        'DEFAULT_AVATAR_SIZE': DEFAULT_AVATAR_SIZE, 'MIN_AVATAR_SIZE': MIN_AVATAR_SIZE }
     signals.context_signal.send(sender=avatarcrop, request=request, context=data)
     return render_to_response(template, data, context_instance=RequestContext(request))
 

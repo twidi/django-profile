@@ -85,7 +85,10 @@ class ResizedThumbnailNode(Node):
 
         if not storage.exists(filename):
             thumb = Image.open(ContentFile(avatar.read()))
-            thumb.thumbnail((size, size), Image.ANTIALIAS)
+            if thumb.size[0] > size or thumb.size[1] > size or not hasattr(thumb, 'resize'):
+                thumb.thumbnail((size, size), Image.ANTIALIAS)
+            else:
+                thumb = thumb.resize((size, size), Image.BICUBIC)
             f = StringIO()
             thumb.save(f, "JPEG")
             f.seek(0)

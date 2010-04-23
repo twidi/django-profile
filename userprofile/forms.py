@@ -5,7 +5,7 @@ from django.db import models
 from django.utils.translation import ugettext as _
 from django.conf import settings
 from django.contrib.auth.models import User, SiteProfileNotAvailable
-from userprofile.models import EmailValidation, AVATAR_SIZES, DEFAULT_AVATAR_SIZE
+from userprofile.models import EmailValidation, AVATAR_SIZES, DEFAULT_AVATAR_SIZE, MIN_AVATAR_SIZE
 from django.core.files.uploadedfile import SimpleUploadedFile
 import mimetypes, urllib
 from django.contrib.auth.forms import UserCreationForm
@@ -90,8 +90,8 @@ class AvatarCropForm(forms.Form):
 
     def clean(self):
         if self.cleaned_data.get('right') and self.cleaned_data.get('left') and \
-           int(self.cleaned_data.get('right')) - int(self.cleaned_data.get('left')) < DEFAULT_AVATAR_SIZE:
-            raise forms.ValidationError(_("You must select a portion of the image with a minimum of %dx%d pixels." % (DEFAULT_AVATAR_SIZE, DEFAULT_AVATAR_SIZE)))
+           int(self.cleaned_data.get('right')) - int(self.cleaned_data.get('left')) < MIN_AVATAR_SIZE:
+            raise forms.ValidationError(_("You must select a portion of the image with a minimum of %dx%d pixels." % (MIN_AVATAR_SIZE, MIN_AVATAR_SIZE)))
 
         return self.cleaned_data
 

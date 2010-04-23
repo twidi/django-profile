@@ -32,6 +32,7 @@ AVATAR_SIZES = getattr(settings, 'AVATAR_SIZES', (128, 96, 64, 48, 32, 24, 16))
 DEFAULT_AVATAR_SIZE = getattr(settings, 'DEFAULT_AVATAR_SIZE', 96)
 if DEFAULT_AVATAR_SIZE not in AVATAR_SIZES:
     DEFAULT_AVATAR_SIZE = AVATAR_SIZES[0]
+MIN_AVATAR_SIZE = getattr(settings, 'MIN_AVATAR_SIZE', DEFAULT_AVATAR_SIZE)
 
 class BaseProfile(models.Model):
     """

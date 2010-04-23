@@ -71,8 +71,8 @@ $(function() {
 		$("#cropimage").imgAreaSelect({
 			handles: 'corners',
 			aspectRatio: "1:1",
-			minHeight: DEFAULT_AVATAR_SIZE,
-			minWidth: DEFAULT_AVATAR_SIZE,
+			minHeight: MIN_AVATAR_SIZE,
+			minWidth: MIN_AVATAR_SIZE,
 			x1: selection.x1,
 			x2: selection.x2,
 			y1: selection.y1,
