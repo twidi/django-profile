@@ -33,6 +33,8 @@ DEFAULT_AVATAR_SIZE = getattr(settings, 'DEFAULT_AVATAR_SIZE', 96)
 if DEFAULT_AVATAR_SIZE not in AVATAR_SIZES:
     DEFAULT_AVATAR_SIZE = AVATAR_SIZES[0]
 MIN_AVATAR_SIZE = getattr(settings, 'MIN_AVATAR_SIZE', DEFAULT_AVATAR_SIZE)
+DEFAULT_AVATAR = getattr(settings, 'DEFAULT_AVATAR', os.path.join(settings.MEDIA_ROOT, "userprofile", "generic.jpg"))
+DEFAULT_AVATAR_FOR_INACTIVES_USER = getattr(settings, 'DEFAULT_AVATAR_FOR_INACTIVES_USER', False)
 
 class BaseProfile(models.Model):
     """

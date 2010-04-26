@@ -6,7 +6,7 @@ from django.utils.translation import ugettext as _
 from userprofile.forms import AvatarForm, AvatarCropForm, EmailValidationForm, \
                               ProfileForm, _RegistrationForm, LocationForm, \
                               ResendEmailValidationForm, PublicFieldsForm
-from userprofile.models import BaseProfile, DEFAULT_AVATAR_SIZE, MIN_AVATAR_SIZE
+from userprofile.models import BaseProfile, DEFAULT_AVATAR_SIZE, MIN_AVATAR_SIZE, DEFAULT_AVATAR
 from django.http import Http404
 from django.core.exceptions import ObjectDoesNotExist
 from django.core.exceptions import ImproperlyConfigured
@@ -56,11 +56,6 @@ if not Profile:
 
 if not os.path.isdir(os.path.join(settings.MEDIA_ROOT, "userprofile")):
     raise UserProfileMediaNotFound
-
-if hasattr(settings, "DEFAULT_AVATAR") and settings.DEFAULT_AVATAR:
-    DEFAULT_AVATAR = settings.DEFAULT_AVATAR
-else:
-    DEFAULT_AVATAR = os.path.join(settings.MEDIA_ROOT, "userprofile/generic.jpg")
 
 GOOGLE_MAPS_API_KEY = hasattr(settings, "GOOGLE_MAPS_API_KEY") and \
                       settings.GOOGLE_MAPS_API_KEY or None

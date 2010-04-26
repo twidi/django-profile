@@ -3,7 +3,7 @@ from django.template import Library, Node, Template, TemplateSyntaxError, \
                             Variable
 from django.utils.translation import ugettext as _
 from userprofile.models import Avatar, AVATAR_SIZES, S3BackendNotFound, \
-                            DEFAULT_AVATAR_SIZE
+        DEFAULT_AVATAR_SIZE, DEFAULT_AVATAR, DEFAULT_AVATAR_FOR_INACTIVES_USER
 from django.contrib.auth.models import User
 from django.core.files.base import ContentFile
 import urllib
@@ -31,11 +31,6 @@ else:
 
 register = Library()
 
-if hasattr(settings, "DEFAULT_AVATAR") and settings.DEFAULT_AVATAR:
-    DEFAULT_AVATAR = settings.DEFAULT_AVATAR
-else:
-    DEFAULT_AVATAR = os.path.join(settings.MEDIA_ROOT, "userprofile", "generic.jpg")
-
 class ResizedThumbnailNode(Node):
     def __init__(self, size, username=None):
         try:
@@ -59,6 +54,8 @@ class ResizedThumbnailNode(Node):
 
         try:
             user = self.user.resolve(context)
+            if DEFAULT_AVATAR_FOR_INACTIVES_USER and not user.is_active:
+                raise
             avatar = Avatar.objects.get(user=user, valid=True).image
             if hasattr(settings, "AWS_SECRET_ACCESS_KEY"):
                 avatar_path = avatar.name
