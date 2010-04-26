@@ -86,6 +86,8 @@ class ResizedThumbnailNode(Node):
                 thumb.thumbnail((size, size), Image.ANTIALIAS)
             else:
                 thumb = thumb.resize((size, size), Image.BICUBIC)
+            if thumb.mode not in ('L', 'RGB'):
+                thumb = thumb.convert("RGB")
             f = StringIO()
             thumb.save(f, "JPEG")
             f.seek(0)

@@ -240,7 +240,8 @@ def avatarchoose(request):
                 image = form.cleaned_data.get('url') or form.cleaned_data.get('photo')
                 thumb = Image.open(ContentFile(image.read()))
                 thumb.thumbnail((480, 480), Image.ANTIALIAS)
-                thumb.convert("RGB")
+                if thumb.mode not in ('L', 'RGB'):
+                    thumb = thumb.convert("RGB")
                 f = StringIO()
                 thumb.save(f, "JPEG")
                 f.seek(0)
