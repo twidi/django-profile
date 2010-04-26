@@ -92,7 +92,7 @@ class Avatar(models.Model):
 
         super(Avatar, self).delete()
 
-    def save(self):
+    def save(self, *args, **kwargs):
         for avatar in Avatar.objects.filter(user=self.user, valid=self.valid).exclude(id=self.id):
             if hasattr(settings, "AWS_SECRET_ACCESS_KEY"):
                 path = urllib.unquote(self.image.name)
@@ -108,7 +108,7 @@ class Avatar(models.Model):
                     pass
             avatar.delete()
 
-        super(Avatar, self).save()
+        super(Avatar, self).save(*args, **kwargs)
 
 
 class EmailValidationManager(models.Manager):
