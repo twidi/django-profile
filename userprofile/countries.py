@@ -5,6 +5,7 @@
 
 from django.db.models.fields import CharField
 from django.utils.translation import ugettext as _
+from django.template.defaultfilters import slugify
 
 COUNTRIES = [
     ('AD', _('Andorra')),
@@ -247,7 +248,7 @@ COUNTRIES = [
     ('ZW', _('Zimbabwe')),
 ]
 
-COUNTRIES.sort(lambda x,y:cmp(x[1],y[1]))
+COUNTRIES.sort(lambda x,y:cmp(slugify(x[1]),slugify(y[1])))
 COUNTRIES.append(('ZZ', _('Unknown or unspecified country')))
 
 def isValidCountry(field_data, all_data):
