@@ -26,7 +26,7 @@ $(function() {
 	// display legend (hidden if no js)
 	$('form[name=cropavatar] legend').show();
 
-	$("#cropimage").load(function() {
+	$("#cropimage").one("load", function() {
 
 		//calculate source image size
 		crop_img_size.width = $('#cropimage').width();
@@ -80,6 +80,10 @@ $(function() {
 			onSelectChange: previewAvatar,
 			onSelectEnd: updateValues
 		});
+	})
+	.each(function() {
+		if (this.complete || (jQuery.browser.msie && parseInt(jQuery.browser.version) == 6))
+		$(this).trigger("load");
 	});
 });
 
