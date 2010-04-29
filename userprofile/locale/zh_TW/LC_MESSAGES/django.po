@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-22 03:30+0800\n"
+"POT-Creation-Date: 2010-04-29 23:20+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Wei-Chia Chiu <chiu.wei.jia@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,154 +16,1072 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: countries.py:11
+msgid "Andorra"
+msgstr ""
+
+#: countries.py:12
+msgid "United Arab Emirates"
+msgstr ""
+
+#: countries.py:13
+msgid "Afghanistan"
+msgstr ""
+
+#: countries.py:14
+msgid "Antigua & Barbuda"
+msgstr ""
+
+#: countries.py:15
+msgid "Anguilla"
+msgstr ""
+
+#: countries.py:16
+msgid "Albania"
+msgstr ""
+
+#: countries.py:17
+msgid "Armenia"
+msgstr ""
+
+#: countries.py:18
+msgid "Netherlands Antilles"
+msgstr ""
+
+#: countries.py:19
+msgid "Angola"
+msgstr ""
+
+#: countries.py:20
+msgid "Antarctica"
+msgstr ""
+
+#: countries.py:21
+msgid "Argentina"
+msgstr ""
+
+#: countries.py:22
+msgid "American Samoa"
+msgstr ""
+
+#: countries.py:23
+msgid "Austria"
+msgstr ""
+
+#: countries.py:24
+msgid "Australia"
+msgstr ""
+
+#: countries.py:25
+msgid "Aruba"
+msgstr ""
+
+#: countries.py:26
+msgid "Azerbaijan"
+msgstr ""
+
+#: countries.py:27
+msgid "Bosnia and Herzegovina"
+msgstr ""
+
+#: countries.py:28
+msgid "Barbados"
+msgstr ""
+
+#: countries.py:29
+msgid "Bangladesh"
+msgstr ""
+
+#: countries.py:30
+msgid "Belgium"
+msgstr ""
+
+#: countries.py:31
+msgid "Burkina Faso"
+msgstr ""
+
+#: countries.py:32
+msgid "Bulgaria"
+msgstr ""
+
+#: countries.py:33
+msgid "Bahrain"
+msgstr ""
+
+#: countries.py:34
+msgid "Burundi"
+msgstr ""
+
+#: countries.py:35
+msgid "Benin"
+msgstr ""
+
+#: countries.py:36
+msgid "Bermuda"
+msgstr ""
+
+#: countries.py:37
+msgid "Brunei Darussalam"
+msgstr ""
+
+#: countries.py:38
+msgid "Bolivia"
+msgstr ""
+
+#: countries.py:39
+msgid "Brazil"
+msgstr ""
+
+#: countries.py:40
+msgid "Bahama"
+msgstr ""
+
+#: countries.py:41
+msgid "Bhutan"
+msgstr ""
+
+#: countries.py:42
+msgid "Bouvet Island"
+msgstr ""
+
+#: countries.py:43
+msgid "Botswana"
+msgstr ""
+
+#: countries.py:44
+msgid "Belarus"
+msgstr ""
+
+#: countries.py:45
+msgid "Belize"
+msgstr ""
+
+#: countries.py:46
+msgid "Canada"
+msgstr ""
+
+#: countries.py:47
+msgid "Cocos (Keeling) Islands"
+msgstr ""
+
+#: countries.py:48
+msgid "Central African Republic"
+msgstr ""
+
+#: countries.py:49
+msgid "Congo"
+msgstr ""
+
+#: countries.py:50
+msgid "Switzerland"
+msgstr ""
+
+#: countries.py:51
+msgid "Ivory Coast"
+msgstr ""
+
+#: countries.py:52
+msgid "Cook Islands"
+msgstr ""
+
+#: countries.py:53
+msgid "Chile"
+msgstr ""
+
+#: countries.py:54
+msgid "Cameroon"
+msgstr ""
+
+#: countries.py:55
+msgid "China"
+msgstr ""
+
+#: countries.py:56
+msgid "Colombia"
+msgstr ""
+
+#: countries.py:57
+msgid "Costa Rica"
+msgstr ""
+
+#: countries.py:58
+msgid "Cuba"
+msgstr ""
+
+#: countries.py:59
+msgid "Cape Verde"
+msgstr ""
+
+#: countries.py:60
+msgid "Christmas Island"
+msgstr ""
+
+#: countries.py:61
+msgid "Cyprus"
+msgstr ""
+
+#: countries.py:62
+msgid "Czech Republic"
+msgstr ""
+
+#: countries.py:63
+msgid "Germany"
+msgstr ""
+
+#: countries.py:64
+msgid "Djibouti"
+msgstr ""
+
+#: countries.py:65
+msgid "Denmark"
+msgstr ""
+
+#: countries.py:66
+msgid "Dominica"
+msgstr ""
+
+#: countries.py:67
+msgid "Dominican Republic"
+msgstr ""
+
+#: countries.py:68
+msgid "Algeria"
+msgstr ""
+
+#: countries.py:69
+msgid "Ecuador"
+msgstr ""
+
+#: countries.py:70
+msgid "Estonia"
+msgstr ""
+
+#: countries.py:71
+msgid "Egypt"
+msgstr ""
+
+#: countries.py:72
+msgid "Western Sahara"
+msgstr ""
+
+#: countries.py:73
+msgid "Eritrea"
+msgstr ""
+
+#: countries.py:74
+msgid "Spain"
+msgstr ""
+
+#: countries.py:75
+msgid "Ethiopia"
+msgstr ""
+
+#: countries.py:76
+msgid "Finland"
+msgstr ""
+
+#: countries.py:77
+msgid "Fiji"
+msgstr ""
+
+#: countries.py:78
+msgid "Falkland Islands (Malvinas)"
+msgstr ""
+
+#: countries.py:79
+msgid "Micronesia"
+msgstr ""
+
+#: countries.py:80
+msgid "Faroe Islands"
+msgstr ""
+
+#: countries.py:81
+msgid "France"
+msgstr ""
+
+#: countries.py:82
+msgid "France, Metropolitan"
+msgstr ""
+
+#: countries.py:83
+msgid "Gabon"
+msgstr ""
+
+#: countries.py:84
+msgid "United Kingdom (Great Britain)"
+msgstr ""
+
+#: countries.py:85
+msgid "Grenada"
+msgstr ""
+
+#: countries.py:86
+msgid "Georgia"
+msgstr ""
+
+#: countries.py:87
+msgid "French Guiana"
+msgstr ""
+
+#: countries.py:88
+msgid "Ghana"
+msgstr ""
+
+#: countries.py:89
+msgid "Gibraltar"
+msgstr ""
+
+#: countries.py:90
+msgid "Greenland"
+msgstr ""
+
+#: countries.py:91
+msgid "Gambia"
+msgstr ""
+
+#: countries.py:92
+msgid "Guinea"
+msgstr ""
+
+#: countries.py:93
+msgid "Guadeloupe"
+msgstr ""
+
+#: countries.py:94
+msgid "Equatorial Guinea"
+msgstr ""
+
+#: countries.py:95
+msgid "Greece"
+msgstr ""
+
+#: countries.py:96
+msgid "South Georgia and the South Sandwich Islands"
+msgstr ""
+
+#: countries.py:97
+msgid "Guatemala"
+msgstr ""
+
+#: countries.py:98
+msgid "Guam"
+msgstr ""
+
+#: countries.py:99
+msgid "Guinea-Bissau"
+msgstr ""
+
+#: countries.py:100
+msgid "Guyana"
+msgstr ""
+
+#: countries.py:101
+msgid "Hong Kong"
+msgstr ""
+
+#: countries.py:102
+msgid "Heard & McDonald Islands"
+msgstr ""
+
+#: countries.py:103
+msgid "Honduras"
+msgstr ""
+
+#: countries.py:104
+msgid "Croatia"
+msgstr ""
+
+#: countries.py:105
+msgid "Haiti"
+msgstr ""
+
+#: countries.py:106
+msgid "Hungary"
+msgstr ""
+
+#: countries.py:107
+msgid "Indonesia"
+msgstr ""
+
+#: countries.py:108
+msgid "Ireland"
+msgstr ""
+
+#: countries.py:109
+msgid "Israel"
+msgstr ""
+
+#: countries.py:110
+msgid "India"
+msgstr ""
+
+#: countries.py:111
+msgid "British Indian Ocean Territory"
+msgstr ""
+
+#: countries.py:112
+msgid "Iraq"
+msgstr ""
+
+#: countries.py:113
+msgid "Islamic Republic of Iran"
+msgstr ""
+
+#: countries.py:114
+msgid "Iceland"
+msgstr ""
+
+#: countries.py:115
+msgid "Italy"
+msgstr ""
+
+#: countries.py:116
+msgid "Jamaica"
+msgstr ""
+
+#: countries.py:117
+msgid "Jordan"
+msgstr ""
+
+#: countries.py:118
+msgid "Japan"
+msgstr ""
+
+#: countries.py:119
+msgid "Kenya"
+msgstr ""
+
+#: countries.py:120
+msgid "Kyrgyzstan"
+msgstr ""
+
+#: countries.py:121
+msgid "Cambodia"
+msgstr ""
+
+#: countries.py:122
+msgid "Kiribati"
+msgstr ""
+
+#: countries.py:123
+msgid "Comoros"
+msgstr ""
+
+#: countries.py:124
+msgid "St. Kitts and Nevis"
+msgstr ""
+
+#: countries.py:125
+msgid "Korea, Democratic People's Republic of"
+msgstr ""
+
+#: countries.py:126
+msgid "Korea, Republic of"
+msgstr ""
+
+#: countries.py:127
+msgid "Kuwait"
+msgstr ""
+
+#: countries.py:128
+msgid "Cayman Islands"
+msgstr ""
+
+#: countries.py:129
+msgid "Kazakhstan"
+msgstr ""
+
+#: countries.py:130
+msgid "Lao People's Democratic Republic"
+msgstr ""
+
+#: countries.py:131
+msgid "Lebanon"
+msgstr ""
+
+#: countries.py:132
+msgid "Saint Lucia"
+msgstr ""
+
+#: countries.py:133
+msgid "Liechtenstein"
+msgstr ""
+
+#: countries.py:134
+msgid "Sri Lanka"
+msgstr ""
+
+#: countries.py:135
+msgid "Liberia"
+msgstr ""
+
+#: countries.py:136
+msgid "Lesotho"
+msgstr ""
+
+#: countries.py:137
+msgid "Lithuania"
+msgstr ""
+
+#: countries.py:138
+msgid "Luxembourg"
+msgstr ""
+
+#: countries.py:139
+msgid "Latvia"
+msgstr ""
+
+#: countries.py:140
+msgid "Libyan Arab Jamahiriya"
+msgstr ""
+
+#: countries.py:141
+msgid "Morocco"
+msgstr ""
+
+#: countries.py:142
+msgid "Monaco"
+msgstr ""
+
+#: countries.py:143
+msgid "Moldova, Republic of"
+msgstr ""
+
+#: countries.py:144
+msgid "Madagascar"
+msgstr ""
+
+#: countries.py:145
+msgid "Marshall Islands"
+msgstr ""
+
+#: countries.py:146
+msgid "Mali"
+msgstr ""
+
+#: countries.py:147
+msgid "Mongolia"
+msgstr ""
+
+#: countries.py:148
+msgid "Myanmar"
+msgstr ""
+
+#: countries.py:149
+msgid "Macau"
+msgstr ""
+
+#: countries.py:150
+msgid "Northern Mariana Islands"
+msgstr ""
+
+#: countries.py:151
+msgid "Martinique"
+msgstr ""
+
+#: countries.py:152
+msgid "Mauritania"
+msgstr ""
+
+#: countries.py:153
+msgid "Monserrat"
+msgstr ""
+
+#: countries.py:154
+msgid "Malta"
+msgstr ""
+
+#: countries.py:155
+msgid "Mauritius"
+msgstr ""
+
+#: countries.py:156
+msgid "Maldives"
+msgstr ""
+
+#: countries.py:157
+msgid "Malawi"
+msgstr ""
+
+#: countries.py:158
+msgid "Mexico"
+msgstr ""
+
+#: countries.py:159
+msgid "Malaysia"
+msgstr ""
+
+#: countries.py:160
+msgid "Mozambique"
+msgstr ""
+
+#: countries.py:161
+msgid "Namibia"
+msgstr ""
+
+#: countries.py:162
+msgid "New Caledonia"
+msgstr ""
+
+#: countries.py:163
+msgid "Niger"
+msgstr ""
+
+#: countries.py:164
+msgid "Norfolk Island"
+msgstr ""
+
+#: countries.py:165
+msgid "Nigeria"
+msgstr ""
+
+#: countries.py:166
+msgid "Nicaragua"
+msgstr ""
+
+#: countries.py:167
+msgid "Netherlands"
+msgstr ""
+
+#: countries.py:168
+msgid "Norway"
+msgstr ""
+
+#: countries.py:169
+msgid "Nepal"
+msgstr ""
+
+#: countries.py:170
+msgid "Nauru"
+msgstr ""
+
+#: countries.py:171
+msgid "Niue"
+msgstr ""
+
+#: countries.py:172
+#, fuzzy
+msgid "New Zealand"
+msgstr "新的e-mail地址"
+
+#: countries.py:173
+msgid "Oman"
+msgstr ""
+
+#: countries.py:174
+msgid "Panama"
+msgstr ""
+
+#: countries.py:175
+msgid "Peru"
+msgstr ""
+
+#: countries.py:176
+msgid "French Polynesia"
+msgstr ""
+
+#: countries.py:177
+msgid "Papua New Guinea"
+msgstr ""
+
+#: countries.py:178
+#, fuzzy
+msgid "Philippines"
+msgstr "另外的選項"
+
+#: countries.py:179
+msgid "Pakistan"
+msgstr ""
+
+#: countries.py:180
+msgid "Poland"
+msgstr ""
+
+#: countries.py:181
+msgid "St. Pierre & Miquelon"
+msgstr ""
+
+#: countries.py:182
+#, fuzzy
+msgid "Pitcairn"
+msgstr "位置"
+
+#: countries.py:183
+msgid "Puerto Rico"
+msgstr ""
+
+#: countries.py:184
+msgid "Portugal"
+msgstr ""
+
+#: countries.py:185
+msgid "Palau"
+msgstr ""
+
+#: countries.py:186
+msgid "Paraguay"
+msgstr ""
+
+#: countries.py:187
+#, fuzzy
+msgid "Qatar"
+msgstr "圖像"
+
+#: countries.py:188
+msgid "Reunion"
+msgstr ""
+
+#: countries.py:189
+msgid "Romania"
+msgstr ""
+
+#: countries.py:190
+msgid "Russian Federation"
+msgstr ""
+
+#: countries.py:191
+msgid "Rwanda"
+msgstr ""
+
+#: countries.py:192
+msgid "Saudi Arabia"
+msgstr ""
+
+#: countries.py:193
+msgid "Solomon Islands"
+msgstr ""
+
+#: countries.py:194
+msgid "Seychelles"
+msgstr ""
+
+#: countries.py:195
+msgid "Sudan"
+msgstr ""
+
+#: countries.py:196
+msgid "Sweden"
+msgstr ""
+
+#: countries.py:197
+msgid "Singapore"
+msgstr ""
+
+#: countries.py:198
+msgid "St. Helena"
+msgstr ""
+
+#: countries.py:199
+msgid "Slovenia"
+msgstr ""
+
+#: countries.py:200
+msgid "Svalbard & Jan Mayen Islands"
+msgstr ""
+
+#: countries.py:201
+msgid "Slovakia"
+msgstr ""
+
+#: countries.py:202
+msgid "Sierra Leone"
+msgstr ""
+
+#: countries.py:203
+msgid "San Marino"
+msgstr ""
+
+#: countries.py:204
+msgid "Senegal"
+msgstr ""
+
+#: countries.py:205
+msgid "Somalia"
+msgstr ""
+
+#: countries.py:206
+#, fuzzy
+msgid "Suriname"
+msgstr "使用者名稱"
+
+#: countries.py:207
+msgid "Sao Tome & Principe"
+msgstr ""
+
+#: countries.py:208
+msgid "El Salvador"
+msgstr ""
+
+#: countries.py:209
+msgid "Syrian Arab Republic"
+msgstr ""
+
+#: countries.py:210
+msgid "Swaziland"
+msgstr ""
+
+#: countries.py:211
+msgid "Turks & Caicos Islands"
+msgstr ""
+
+#: countries.py:212
+#, fuzzy
+msgid "Chad"
+msgstr "更改"
+
+#: countries.py:213
+msgid "French Southern Territories"
+msgstr ""
+
+#: countries.py:214
+msgid "Togo"
+msgstr ""
+
+#: countries.py:215
+msgid "Thailand"
+msgstr ""
+
+#: countries.py:216
+msgid "Tajikistan"
+msgstr ""
+
+#: countries.py:217
+msgid "Tokelau"
+msgstr ""
+
+#: countries.py:218
+msgid "Turkmenistan"
+msgstr ""
+
+#: countries.py:219
+msgid "Tunisia"
+msgstr ""
+
+#: countries.py:220
+msgid "Tonga"
+msgstr ""
+
+#: countries.py:221
+msgid "East Timor"
+msgstr ""
+
+#: countries.py:222
+msgid "Turkey"
+msgstr ""
+
+#: countries.py:223
+msgid "Trinidad & Tobago"
+msgstr ""
+
+#: countries.py:224
+msgid "Tuvalu"
+msgstr ""
+
+#: countries.py:225
+msgid "Taiwan, Province of China"
+msgstr ""
+
+#: countries.py:226
+msgid "Tanzania, United Republic of"
+msgstr ""
+
+#: countries.py:227
+msgid "Ukraine"
+msgstr ""
+
+#: countries.py:228
+msgid "Uganda"
+msgstr ""
+
+#: countries.py:229
+msgid "United States Minor Outlying Islands"
+msgstr ""
+
+#: countries.py:230
+msgid "United States of America"
+msgstr ""
+
+#: countries.py:231
+msgid "Uruguay"
+msgstr ""
+
+#: countries.py:232
+msgid "Uzbekistan"
+msgstr ""
+
+#: countries.py:233
+msgid "Vatican City State (Holy See)"
+msgstr ""
+
+#: countries.py:234
+msgid "St. Vincent & the Grenadines"
+msgstr ""
+
+#: countries.py:235
+msgid "Venezuela"
+msgstr ""
+
+#: countries.py:236
+msgid "British Virgin Islands"
+msgstr ""
+
+#: countries.py:237
+msgid "United States Virgin Islands"
+msgstr ""
+
+#: countries.py:238
+msgid "Viet Nam"
+msgstr ""
+
+#: countries.py:239
+msgid "Vanuatu"
+msgstr ""
+
+#: countries.py:240
+msgid "Wallis & Futuna Islands"
+msgstr ""
+
+#: countries.py:241
+msgid "Samoa"
+msgstr ""
+
+#: countries.py:242
+msgid "Yemen"
+msgstr ""
+
+#: countries.py:243
+msgid "Mayotte"
+msgstr ""
+
+#: countries.py:244
+msgid "Yugoslavia"
+msgstr ""
+
+#: countries.py:245
+msgid "South Africa"
+msgstr ""
+
+#: countries.py:246
+msgid "Zambia"
+msgstr ""
+
+#: countries.py:247
+msgid "Zaire"
+msgstr ""
+
 #: countries.py:248
+msgid "Zimbabwe"
+msgstr ""
+
+#: countries.py:252
 msgid "Unknown or unspecified country"
 msgstr ""
 
-#: countries.py:253
+#: countries.py:256
 msgid "This value must be in COUNTRIES setting in localflavor.generic package."
 msgstr ""
 
-#: forms.py:58
+#: forms.py:51
+msgid "Select an image from disk"
+msgstr "從你的電腦挑選圖片"
+
+#: forms.py:52
+msgid ""
+"Select an image from a remote URL. Put the URL on the input below and we'll "
+"retrieve the image for you"
+msgstr "從網路上挑選圖片. 只要把圖片的網址填入下面欄位, 我們會為你保存圖片"
+
+#: forms.py:62
 #, python-format
 msgid "The file type is invalid: %s"
 msgstr "不正確的檔案類型: %s"
 
-#: forms.py:63
+#: forms.py:67
 msgid "You must enter one of the options"
 msgstr "你必須輸入一個選項"
 
-#: forms.py:77
-msgid "You must select a portion of the image with a minimum of 96x96 pixels."
-msgstr "你所選擇的部份必須大於96x96像素"
+#: forms.py:94
+#, fuzzy, python-format
+msgid ""
+"You must select a portion of the image with a minimum of %(min_avatar_size)dx"
+"%(min_avatar_size)d pixels."
+msgstr "你所選擇的部份必須大於%(min_avatar_size)dx%(min_avatar_size)d像素"
 
-#: forms.py:83 templates/userprofile/account/login.html:20
-#: templates/userprofile/account/registration.html:20
-#: templates/userprofile/profile/public.html:33
-#: templates/userprofile/profile/usercard.html:11
-#: templates/userprofile/userprofile/account/login.html:20
-#: templates/userprofile/userprofile/account/registration.html:20
-#: templates/userprofile/userprofile/profile/public.html:33
-#: templates/userprofile/userprofile/profile/usercard.html:11
-#: templates/userprofile/userprofile/userprofile/account/login.html:20
-#: templates/userprofile/userprofile/userprofile/account/registration.html:20
-#: templates/userprofile/userprofile/userprofile/profile/public.html:33
-#: templates/userprofile/userprofile/userprofile/profile/usercard.html:11
-msgid "Username"
-msgstr "使用者名稱"
-
-#: forms.py:84 templates/userprofile/account/password_reset.html:21
-#: templates/userprofile/userprofile/account/password_reset.html:21
-#: templates/userprofile/userprofile/userprofile/account/password_reset.html:21
+#: forms.py:101 templates/userprofile/account/password_reset.html:21
 msgid "E-mail address"
 msgstr "E-mail地址"
 
-#: forms.py:85 templates/userprofile/account/login.html:26
-#: templates/userprofile/account/registration.html:32
-#: templates/userprofile/userprofile/account/login.html:26
-#: templates/userprofile/userprofile/account/registration.html:32
-#: templates/userprofile/userprofile/userprofile/account/login.html:26
-#: templates/userprofile/userprofile/userprofile/account/registration.html:32
-msgid "Password"
-msgstr "密碼"
-
-#: forms.py:86 templates/userprofile/account/registration.html:38
-#: templates/userprofile/userprofile/account/registration.html:38
-#: templates/userprofile/userprofile/userprofile/account/registration.html:38
-msgid "Password (again)"
-msgstr "確認密碼"
-
-#: forms.py:94
-msgid ""
-"That username has invalid characters. The valid values are letters, numbers "
-"and underscore."
-msgstr "使用者名稱含有不法字元, 只能接受英文字母, 數字, _(下底線)"
-
-#: forms.py:99
-msgid "The username is already registered."
-msgstr "這個使用者名稱已經被註冊過了"
-
-#: forms.py:108
-msgid "The passwords inserted are different."
-msgstr "你的密碼不一致"
-
-#: forms.py:120 forms.py:139
+#: forms.py:117 forms.py:152
 msgid "That e-mail is already used."
 msgstr "這個e-mail已經被使用"
 
-#: forms.py:124
+#: forms.py:121
 msgid "That e-mail is already being confirmed."
 msgstr "這個e-mail已經通過驗證"
 
-#: models.py:39
+#: forms.py:165
+#, fuzzy
+msgid "That e-mail isn't registered."
+msgstr "這個e-mail已經被使用"
+
+#: models.py:58
 #, python-format
 msgid "%s's profile"
 msgstr "%s的個人資訊"
 
-#: models.py:58
+#: models.py:77
 #, python-format
 msgid "%s's Avatar"
 msgstr "%s的圖像"
 
-#: models.py:143
+#: models.py:175
 #, python-format
 msgid "Email validation process for %(user)s"
 msgstr "%(user)s的e-mail驗證程序"
 
+#: views.py:138 views.py:173
+msgid "Your profile information has been updated successfully."
+msgstr "你的個人資訊已經成功的被更新了"
+
+#: views.py:207
+msgid "Your profile information has been removed successfully."
+msgstr "你的個人資訊已經成功的被移除了"
+
+#: views.py:244
+msgid "This image can't be used as an avatar"
+msgstr ""
+
+#: views.py:321
+msgid "Your new avatar has been saved successfully."
+msgstr "你的新圖像已經儲存成功"
+
 #: templates/userprofile/menu.html:5
-#: templates/userprofile/userprofile/menu.html:5
-#: templates/userprofile/userprofile/userprofile/menu.html:5
 msgid "Overview"
 msgstr "概要"
 
 #: templates/userprofile/menu.html:6
-#: templates/userprofile/profile/personal.html:34
-#: templates/userprofile/profile/personal_done.html:19
-#: templates/userprofile/userprofile/menu.html:6
-#: templates/userprofile/userprofile/profile/personal.html:34
-#: templates/userprofile/userprofile/profile/personal_done.html:19
-#: templates/userprofile/userprofile/userprofile/menu.html:6
-#: templates/userprofile/userprofile/userprofile/profile/personal.html:34
-#: templates/userprofile/userprofile/userprofile/profile/personal_done.html:19
+#: templates/userprofile/profile/personal.html:36
 msgid "Personal information"
 msgstr "個人資訊"
 
 #: templates/userprofile/menu.html:7
-#: templates/userprofile/userprofile/menu.html:7
-#: templates/userprofile/userprofile/userprofile/menu.html:7
 msgid "Avatar"
 msgstr "圖像"
 
 #: templates/userprofile/menu.html:8
-#: templates/userprofile/profile/location.html:26
 #: templates/userprofile/profile/overview.html:60
 #: templates/userprofile/profile/public.html:38
-#: templates/userprofile/userprofile/menu.html:8
-#: templates/userprofile/userprofile/profile/location.html:26
-#: templates/userprofile/userprofile/profile/overview.html:60
-#: templates/userprofile/userprofile/profile/public.html:38
-#: templates/userprofile/userprofile/userprofile/menu.html:8
-#: templates/userprofile/userprofile/userprofile/profile/location.html:26
-#: templates/userprofile/userprofile/userprofile/profile/overview.html:60
-#: templates/userprofile/userprofile/userprofile/profile/public.html:38
 msgid "Location"
 msgstr "地區"
 
 #: templates/userprofile/menu.html:9
 #: templates/userprofile/profile/delete.html:22
-#: templates/userprofile/userprofile/menu.html:9
-#: templates/userprofile/userprofile/profile/delete.html:22
-#: templates/userprofile/userprofile/userprofile/menu.html:9
-#: templates/userprofile/userprofile/userprofile/profile/delete.html:22
 msgid "Remove profile"
 msgstr "移除個人資訊"
 
 #: templates/userprofile/account/email_validation.html:4
 #: templates/userprofile/account/email_validation.html:23
-#: templates/userprofile/userprofile/account/email_validation.html:4
-#: templates/userprofile/userprofile/account/email_validation.html:23
-#: templates/userprofile/userprofile/userprofile/account/email_validation.html:4
-#: templates/userprofile/userprofile/userprofile/account/email_validation.html:23
 msgid "E-mail change"
 msgstr "更改e-mail"
 
@@ -171,254 +1089,191 @@ msgstr "更改e-mail"
 #: templates/userprofile/account/email_validation.html:23
 #: templates/userprofile/account/email_validation.html:40
 #: templates/userprofile/account/email_validation_processed.html:20
-#: templates/userprofile/userprofile/account/email_validation.html:4
-#: templates/userprofile/userprofile/account/email_validation.html:23
-#: templates/userprofile/userprofile/account/email_validation.html:40
-#: templates/userprofile/userprofile/account/email_validation_processed.html:20
-#: templates/userprofile/userprofile/userprofile/account/email_validation.html:4
-#: templates/userprofile/userprofile/userprofile/account/email_validation.html:23
-#: templates/userprofile/userprofile/userprofile/account/email_validation.html:40
-#: templates/userprofile/userprofile/userprofile/account/email_validation_processed.html:20
 msgid "Add e-mail"
 msgstr "加入e-mail"
 
 #: templates/userprofile/account/email_validation.html:24
-#: templates/userprofile/userprofile/account/email_validation.html:24
-#: templates/userprofile/userprofile/userprofile/account/email_validation.html:24
 msgid "New e-mail address"
 msgstr "新的e-mail地址"
 
 #: templates/userprofile/account/email_validation.html:34
-#: templates/userprofile/userprofile/account/email_validation.html:34
-#: templates/userprofile/userprofile/userprofile/account/email_validation.html:34
 msgid "Send confirmation"
 msgstr "發送驗證"
 
 #: templates/userprofile/account/email_validation.html:41
 #: templates/userprofile/account/email_validation_processed.html:21
-#: templates/userprofile/userprofile/account/email_validation.html:41
-#: templates/userprofile/userprofile/account/email_validation_processed.html:21
-#: templates/userprofile/userprofile/userprofile/account/email_validation.html:41
-#: templates/userprofile/userprofile/userprofile/account/email_validation_processed.html:21
 msgid ""
 "Insert the new e-mail address. An e-mail will be send to it for testing and "
 "confirmation"
-msgstr ""
-"輸入一個新的e-mail, 我們將會發一封新信到這個信箱作驗證"
+msgstr "輸入一個新的e-mail, 我們將會發一封新信到這個信箱作驗證"
 
 #: templates/userprofile/account/email_validation_done.html:4
-#: templates/userprofile/userprofile/account/email_validation_done.html:4
-#: templates/userprofile/userprofile/userprofile/account/email_validation_done.html:4
 msgid "E-mail validation successful"
 msgstr "E-mail驗證成功"
 
 #: templates/userprofile/account/email_validation_done.html:4
-#: templates/userprofile/userprofile/account/email_validation_done.html:4
-#: templates/userprofile/userprofile/userprofile/account/email_validation_done.html:4
 msgid "E-mail change unsuccessful"
 msgstr "E-mail更改失敗"
 
 #: templates/userprofile/account/email_validation_done.html:14
-#: templates/userprofile/userprofile/account/email_validation_done.html:14
-#: templates/userprofile/userprofile/userprofile/account/email_validation_done.html:14
 msgid "E-mail address validated successfully"
 msgstr "E-mail地址驗證成功"
 
 #: templates/userprofile/account/email_validation_done.html:16
-#: templates/userprofile/userprofile/account/email_validation_done.html:16
-#: templates/userprofile/userprofile/userprofile/account/email_validation_done.html:16
 msgid ""
 "The key you received via e-mail is no longer valid. Please try the e-mail "
 "validation process again"
-msgstr ""
-"這個驗證碼已經過期, 請再做一次e-mail驗證程序"
+msgstr "這個驗證碼已經過期, 請再做一次e-mail驗證程序"
 
 #: templates/userprofile/account/email_validation_done.html:23
 #: templates/userprofile/account/email_validation_reset_response.html:22
-#: templates/userprofile/userprofile/account/email_validation_done.html:23
-#: templates/userprofile/userprofile/account/email_validation_reset_response.html:22
-#: templates/userprofile/userprofile/userprofile/account/email_validation_done.html:23
-#: templates/userprofile/userprofile/userprofile/account/email_validation_reset_response.html:22
 msgid "E-mail validation process"
 msgstr "E-mail驗證程序"
 
 #: templates/userprofile/account/email_validation_done.html:24
 #: templates/userprofile/account/email_validation_reset_response.html:23
-#: templates/userprofile/userprofile/account/email_validation_done.html:24
-#: templates/userprofile/userprofile/account/email_validation_reset_response.html:23
-#: templates/userprofile/userprofile/userprofile/account/email_validation_done.html:24
-#: templates/userprofile/userprofile/userprofile/account/email_validation_reset_response.html:23
 msgid "You can manage the e-mail validation process from the"
 msgstr "你可以管理e-mail驗證程序透過"
 
 #: templates/userprofile/account/email_validation_done.html:24
 #: templates/userprofile/account/email_validation_reset_response.html:23
-#: templates/userprofile/userprofile/account/email_validation_done.html:24
-#: templates/userprofile/userprofile/account/email_validation_reset_response.html:23
-#: templates/userprofile/userprofile/userprofile/account/email_validation_done.html:24
-#: templates/userprofile/userprofile/userprofile/account/email_validation_reset_response.html:23
 msgid "overview page"
 msgstr "概要頁面"
 
 #: templates/userprofile/account/email_validation_processed.html:4
 #: templates/userprofile/account/email_validation_processed.html:13
-#: templates/userprofile/userprofile/account/email_validation_processed.html:4
-#: templates/userprofile/userprofile/account/email_validation_processed.html:13
-#: templates/userprofile/userprofile/userprofile/account/email_validation_processed.html:4
-#: templates/userprofile/userprofile/userprofile/account/email_validation_processed.html:13
 msgid "E-mail change processed"
 msgstr "E-mail更改程序"
 
 #: templates/userprofile/account/email_validation_processed.html:14
-#: templates/userprofile/userprofile/account/email_validation_processed.html:14
-#: templates/userprofile/userprofile/userprofile/account/email_validation_processed.html:14
 msgid ""
 "An e-mail has been sent to the new e-mail address to verify and activate it. "
 "Please access to your e-mail and complete this process following the "
 "instructions specified in the e-mail body"
 msgstr ""
-"一封e-mail將會寄到你的信箱以完成驗證與啟動, "
-"請到你的信箱完成這個程序, "
-"更詳細的資訊可以在信中找到"
+"一封e-mail將會寄到你的信箱以完成驗證與啟動, 請到你的信箱完成這個程序, 更詳細"
+"的資訊可以在信中找到"
+
+#: templates/userprofile/account/email_validation_reset.html:4
+#: templates/userprofile/account/email_validation_reset.html:19
+#: templates/userprofile/account/email_validation_reset.html:36
+#, fuzzy
+msgid "Resend e-mail validation"
+msgstr "重新寄出驗證信"
+
+#: templates/userprofile/account/email_validation_reset.html:20
+#, fuzzy
+msgid "Insert your e-mail address"
+msgstr "更改e-mail地址"
+
+#: templates/userprofile/account/email_validation_reset.html:30
+#, fuzzy
+msgid "Resend confirmation"
+msgstr "發送驗證"
+
+#: templates/userprofile/account/email_validation_reset.html:37
+msgid ""
+"If you haven't validated your e-mail address yet you couldn't get into the "
+"site. Insert the e-mail address yu have registered with so we can resend the "
+"validation e-mail to you again"
+msgstr ""
 
 #: templates/userprofile/account/email_validation_reset_response.html:4
-#: templates/userprofile/userprofile/account/email_validation_reset_response.html:4
-#: templates/userprofile/userprofile/userprofile/account/email_validation_reset_response.html:4
 msgid "Validation e-mail sent"
 msgstr "送出驗證e-mail"
 
 #: templates/userprofile/account/email_validation_reset_response.html:4
-#: templates/userprofile/userprofile/account/email_validation_reset_response.html:4
-#: templates/userprofile/userprofile/userprofile/account/email_validation_reset_response.html:4
 msgid "Your user account was already active"
 msgstr "你的帳號已經被啟動"
 
 #: templates/userprofile/account/email_validation_reset_response.html:14
-#: templates/userprofile/userprofile/account/email_validation_reset_response.html:14
-#: templates/userprofile/userprofile/userprofile/account/email_validation_reset_response.html:14
 msgid "We've e-mailed you the e-mail validation link"
 msgstr "我們已經寄出e-mail驗證連結"
 
 #: templates/userprofile/account/email_validation_reset_response.html:16
-#: templates/userprofile/userprofile/account/email_validation_reset_response.html:16
-#: templates/userprofile/userprofile/userprofile/account/email_validation_reset_response.html:16
 msgid "Your e-mail was already validated"
 msgstr "你的e-mail已經通過驗證"
 
 #: templates/userprofile/account/login.html:4
 #: templates/userprofile/account/login.html:19
-#: templates/userprofile/userprofile/account/login.html:4
-#: templates/userprofile/userprofile/account/login.html:19
-#: templates/userprofile/userprofile/userprofile/account/login.html:4
-#: templates/userprofile/userprofile/userprofile/account/login.html:19
 msgid "User login"
 msgstr "使用者登入"
 
+#: templates/userprofile/account/login.html:20
+#: templates/userprofile/profile/public.html:33
+msgid "Username"
+msgstr "使用者名稱"
+
+#: templates/userprofile/account/login.html:26
+msgid "Password"
+msgstr "密碼"
+
 #: templates/userprofile/account/login.html:36
-#: templates/userprofile/userprofile/account/login.html:36
-#: templates/userprofile/userprofile/userprofile/account/login.html:36
 msgid "Login"
 msgstr "登入"
 
 #: templates/userprofile/account/login.html:42
-#: templates/userprofile/userprofile/account/login.html:42
-#: templates/userprofile/userprofile/userprofile/account/login.html:42
 msgid "Utilities"
 msgstr "另外的選項"
 
 #: templates/userprofile/account/login.html:44
-#: templates/userprofile/userprofile/account/login.html:44
-#: templates/userprofile/userprofile/userprofile/account/login.html:44
 msgid "Lost your password?"
 msgstr "忘記你的密嗎?"
 
 #: templates/userprofile/account/login.html:46
-#: templates/userprofile/userprofile/account/login.html:46
-#: templates/userprofile/userprofile/userprofile/account/login.html:46
+#: templates/userprofile/profile/overview.html:95
+msgid "Resend validation e-mail"
+msgstr "重新寄出驗證信"
+
+#: templates/userprofile/account/login.html:48
 msgid "Sign up!"
 msgstr "註冊!!"
 
 #: templates/userprofile/account/logout.html:4
 #: templates/userprofile/account/logout.html:9
-#: templates/userprofile/userprofile/account/logout.html:4
-#: templates/userprofile/userprofile/account/logout.html:9
-#: templates/userprofile/userprofile/userprofile/account/logout.html:4
-#: templates/userprofile/userprofile/userprofile/account/logout.html:9
 msgid "Logged out"
 msgstr "已經登出"
 
 #: templates/userprofile/account/logout.html:10
-#: templates/userprofile/userprofile/account/logout.html:10
-#: templates/userprofile/userprofile/userprofile/account/logout.html:10
 msgid "You've been logged out"
 msgstr "你已經被登出"
 
 #: templates/userprofile/account/logout.html:10
-#: templates/userprofile/userprofile/account/logout.html:10
-#: templates/userprofile/userprofile/userprofile/account/logout.html:10
 msgid "Log in again"
 msgstr "再次登入"
 
 #: templates/userprofile/account/password_change.html:4
 #: templates/userprofile/account/password_change.html:23
 #: templates/userprofile/account/password_reset_confirm.html:4
-#: templates/userprofile/userprofile/account/password_change.html:4
-#: templates/userprofile/userprofile/account/password_change.html:23
-#: templates/userprofile/userprofile/account/password_reset_confirm.html:4
-#: templates/userprofile/userprofile/userprofile/account/password_change.html:4
-#: templates/userprofile/userprofile/userprofile/account/password_change.html:23
-#: templates/userprofile/userprofile/userprofile/account/password_reset_confirm.html:4
 msgid "Password change for"
 msgstr "更改密碼"
 
 #: templates/userprofile/account/password_change.html:24
-#: templates/userprofile/userprofile/account/password_change.html:24
-#: templates/userprofile/userprofile/userprofile/account/password_change.html:24
 msgid "Old password"
 msgstr "舊的密碼"
 
 #: templates/userprofile/account/password_change.html:30
 #: templates/userprofile/account/password_reset_confirm.html:26
-#: templates/userprofile/userprofile/account/password_change.html:30
-#: templates/userprofile/userprofile/account/password_reset_confirm.html:26
-#: templates/userprofile/userprofile/userprofile/account/password_change.html:30
-#: templates/userprofile/userprofile/userprofile/account/password_reset_confirm.html:26
 msgid "New password"
 msgstr "新的密碼"
 
 #: templates/userprofile/account/password_change.html:36
 #: templates/userprofile/account/password_reset_confirm.html:32
-#: templates/userprofile/userprofile/account/password_change.html:36
-#: templates/userprofile/userprofile/account/password_reset_confirm.html:32
-#: templates/userprofile/userprofile/userprofile/account/password_change.html:36
-#: templates/userprofile/userprofile/userprofile/account/password_reset_confirm.html:32
 msgid "Confirm password"
 msgstr "確認密碼"
 
 #: templates/userprofile/account/password_change.html:46
 #: templates/userprofile/account/password_reset_confirm.html:42
-#: templates/userprofile/userprofile/account/password_change.html:46
-#: templates/userprofile/userprofile/account/password_reset_confirm.html:42
-#: templates/userprofile/userprofile/userprofile/account/password_change.html:46
-#: templates/userprofile/userprofile/userprofile/account/password_reset_confirm.html:42
 msgid "Change"
 msgstr "更改"
 
 #: templates/userprofile/account/password_change.html:52
 #: templates/userprofile/account/password_change_done.html:19
-#: templates/userprofile/userprofile/account/password_change.html:52
-#: templates/userprofile/userprofile/account/password_change_done.html:19
-#: templates/userprofile/userprofile/userprofile/account/password_change.html:52
-#: templates/userprofile/userprofile/userprofile/account/password_change_done.html:19
 msgid "Password change"
 msgstr "更改密碼"
 
 #: templates/userprofile/account/password_change.html:53
 #: templates/userprofile/account/password_change_done.html:20
-#: templates/userprofile/userprofile/account/password_change.html:53
-#: templates/userprofile/userprofile/account/password_change_done.html:20
-#: templates/userprofile/userprofile/userprofile/account/password_change.html:53
-#: templates/userprofile/userprofile/userprofile/account/password_change_done.html:20
 msgid ""
 "Password change utility page. Please enter your new password twice so we can "
 "verify you typed it in correctly"
@@ -426,604 +1281,369 @@ msgstr "更改密碼頁面, 請輸入你新的密碼兩次, 以確認你密碼�
 
 #: templates/userprofile/account/password_change_done.html:4
 #: templates/userprofile/account/password_reset_complete.html:4
-#: templates/userprofile/userprofile/account/password_change_done.html:4
-#: templates/userprofile/userprofile/account/password_reset_complete.html:4
-#: templates/userprofile/userprofile/userprofile/account/password_change_done.html:4
-#: templates/userprofile/userprofile/userprofile/account/password_reset_complete.html:4
 msgid "Password change successful"
 msgstr "密碼更改成功"
 
 #: templates/userprofile/account/password_change_done.html:13
-#: templates/userprofile/userprofile/account/password_change_done.html:13
-#: templates/userprofile/userprofile/userprofile/account/password_change_done.html:13
 msgid "The password has been changed successfully"
 msgstr "密碼已經成功的被更改"
 
 #: templates/userprofile/account/password_expired.html:4
-#: templates/userprofile/userprofile/account/password_expired.html:4
-#: templates/userprofile/userprofile/userprofile/account/password_expired.html:4
 msgid "Password key expired"
 msgstr "Password key已經失效"
 
 #: templates/userprofile/account/password_expired.html:9
-#: templates/userprofile/userprofile/account/password_expired.html:9
-#: templates/userprofile/userprofile/userprofile/account/password_expired.html:9
 msgid ""
 "The password key you're trying to use is expired. Please, request a new one"
-msgstr ""
-"你輸入的Password key已經失效, 請要求一個新的"
+msgstr "你輸入的Password key已經失效, 請要求一個新的"
 
 #: templates/userprofile/account/password_reset.html:4
 #: templates/userprofile/account/password_reset.html:20
 #: templates/userprofile/account/password_reset_complete.html:19
 #: templates/userprofile/account/password_reset_confirm.html:55
-#: templates/userprofile/userprofile/account/password_reset.html:4
-#: templates/userprofile/userprofile/account/password_reset.html:20
-#: templates/userprofile/userprofile/account/password_reset_complete.html:19
-#: templates/userprofile/userprofile/account/password_reset_confirm.html:55
-#: templates/userprofile/userprofile/userprofile/account/password_reset.html:4
-#: templates/userprofile/userprofile/userprofile/account/password_reset.html:20
-#: templates/userprofile/userprofile/userprofile/account/password_reset_complete.html:19
-#: templates/userprofile/userprofile/userprofile/account/password_reset_confirm.html:55
 msgid "Password reset"
 msgstr "重設密碼"
 
 #: templates/userprofile/account/password_reset.html:31
-#: templates/userprofile/userprofile/account/password_reset.html:31
-#: templates/userprofile/userprofile/userprofile/account/password_reset.html:31
 msgid "Reset my password"
 msgstr "重設我的密碼"
 
 #: templates/userprofile/account/password_reset.html:37
 #: templates/userprofile/account/password_reset_done.html:16
-#: templates/userprofile/userprofile/account/password_reset.html:37
-#: templates/userprofile/userprofile/account/password_reset_done.html:16
-#: templates/userprofile/userprofile/userprofile/account/password_reset.html:37
-#: templates/userprofile/userprofile/userprofile/account/password_reset_done.html:16
 msgid "Password reset form"
 msgstr "重設密碼"
 
 #: templates/userprofile/account/password_reset.html:38
 #: templates/userprofile/account/password_reset_done.html:17
-#: templates/userprofile/userprofile/account/password_reset.html:38
-#: templates/userprofile/userprofile/account/password_reset_done.html:17
-#: templates/userprofile/userprofile/userprofile/account/password_reset.html:38
-#: templates/userprofile/userprofile/userprofile/account/password_reset_done.html:17
 msgid ""
 "Forgotten your password? Enter your e-mail address, and we'll reset your "
 "password and e-mail the new one to you"
-msgstr ""
-"忘記你的密嗎? 輸入你的e-mail信箱, 我們會重設你的密碼並且寄到你的信箱"
+msgstr "忘記你的密嗎? 輸入你的e-mail信箱, 我們會重設你的密碼並且寄到你的信箱"
 
 #: templates/userprofile/account/password_reset_complete.html:13
-#: templates/userprofile/userprofile/account/password_reset_complete.html:13
-#: templates/userprofile/userprofile/userprofile/account/password_reset_complete.html:13
 msgid "Your password has been set.  You may go ahead and log in now."
 msgstr "你的密碼已經被設定, 你現在已經可以登入"
 
 #: templates/userprofile/account/password_reset_complete.html:20
 #: templates/userprofile/account/password_reset_confirm.html:56
-#: templates/userprofile/userprofile/account/password_reset_complete.html:20
-#: templates/userprofile/userprofile/account/password_reset_confirm.html:56
-#: templates/userprofile/userprofile/userprofile/account/password_reset_complete.html:20
-#: templates/userprofile/userprofile/userprofile/account/password_reset_confirm.html:56
 msgid ""
 "Password reset utility page. Please enter your new password twice so we can "
 "verify you typed it in correctly"
-msgstr ""
-"更改密碼頁面, 請輸入你新的密碼兩次, 以確認你密碼是正確的"
+msgstr "更改密碼頁面, 請輸入你新的密碼兩次, 以確認你密碼是正確的"
 
 #: templates/userprofile/account/password_reset_confirm.html:47
-#: templates/userprofile/userprofile/account/password_reset_confirm.html:47
-#: templates/userprofile/userprofile/userprofile/account/password_reset_confirm.html:47
 msgid "Password reset unsuccessful"
 msgstr "密碼重設失敗"
 
 #: templates/userprofile/account/password_reset_confirm.html:48
-#: templates/userprofile/userprofile/account/password_reset_confirm.html:48
-#: templates/userprofile/userprofile/userprofile/account/password_reset_confirm.html:48
 msgid ""
 "The password reset link was invalid, possibly because it has already been "
 "used.  Please request a new password reset."
-msgstr ""
-"密碼重設的連結不正確, 可能已經被使用過了, 你可以請求一個新的密碼"
+msgstr "密碼重設的連結不正確, 可能已經被使用過了, 你可以請求一個新的密碼"
 
 #: templates/userprofile/account/password_reset_done.html:4
 #: templates/userprofile/account/password_reset_done.html:9
-#: templates/userprofile/userprofile/account/password_reset_done.html:4
-#: templates/userprofile/userprofile/account/password_reset_done.html:9
-#: templates/userprofile/userprofile/userprofile/account/password_reset_done.html:4
-#: templates/userprofile/userprofile/userprofile/account/password_reset_done.html:9
 msgid "Password reset successful"
 msgstr "成功重設密碼"
 
 #: templates/userprofile/account/password_reset_done.html:10
-#: templates/userprofile/userprofile/account/password_reset_done.html:10
-#: templates/userprofile/userprofile/userprofile/account/password_reset_done.html:10
 msgid ""
 "We've e-mailed you the instructions to obtain a new password. You should be "
 "receiving it shortly"
-msgstr ""
-"我們已經寄出新的密碼, 你現在可以去收信"
+msgstr "我們已經寄出新的密碼, 你現在可以去收信"
 
 #: templates/userprofile/account/registration.html:4
-#: templates/userprofile/account/registration.html:19
-#: templates/userprofile/userprofile/account/registration.html:4
-#: templates/userprofile/userprofile/account/registration.html:19
-#: templates/userprofile/userprofile/userprofile/account/registration.html:4
-#: templates/userprofile/userprofile/userprofile/account/registration.html:19
+#: templates/userprofile/account/includes/registration_form.html:4
 msgid "User registration"
 msgstr "使用者註冊"
 
-#: templates/userprofile/account/registration.html:26
-#: templates/userprofile/userprofile/account/registration.html:26
-#: templates/userprofile/userprofile/userprofile/account/registration.html:26
-msgid "E-mail (optional)"
-msgstr ""
-
-#: templates/userprofile/account/registration.html:48
-#: templates/userprofile/userprofile/account/registration.html:48
-#: templates/userprofile/userprofile/userprofile/account/registration.html:48
-msgid "Register"
-msgstr "註冊"
-
-#: templates/userprofile/account/registration.html:54
-#: templates/userprofile/account/registration_done.html:14
-#: templates/userprofile/userprofile/account/registration.html:54
-#: templates/userprofile/userprofile/account/registration_done.html:14
-#: templates/userprofile/userprofile/userprofile/account/registration.html:54
-#: templates/userprofile/userprofile/userprofile/account/registration_done.html:14
+#: templates/userprofile/account/registration.html:22
+#: templates/userprofile/account/registration_done.html:19
 msgid "Register a new account"
 msgstr "註冊一個新的帳號"
 
-#: templates/userprofile/account/registration.html:55
-#: templates/userprofile/account/registration_done.html:15
-#: templates/userprofile/userprofile/account/registration.html:55
-#: templates/userprofile/userprofile/account/registration_done.html:15
-#: templates/userprofile/userprofile/userprofile/account/registration.html:55
-#: templates/userprofile/userprofile/userprofile/account/registration_done.html:15
+#: templates/userprofile/account/registration.html:23
+#: templates/userprofile/account/registration_done.html:20
 msgid ""
 "Joining this community is quick and easy. You only need to fill the form to "
 "get access to all the private content"
 msgstr ""
-"要加入這個社群是非常容易而且快速, 你只需要填寫這個簡單的表單, "
-"就可以開始使用進階的功能"
+"要加入這個社群是非常容易而且快速, 你只需要填寫這個簡單的表單, 就可以開始使用"
+"進階的功能"
 
 #: templates/userprofile/account/registration_done.html:4
-#: templates/userprofile/userprofile/account/registration_done.html:4
-#: templates/userprofile/userprofile/userprofile/account/registration_done.html:4
 msgid "Registration complete"
 msgstr "完成註冊"
 
-#: templates/userprofile/account/registration_done.html:9
-#: templates/userprofile/userprofile/account/registration_done.html:9
-#: templates/userprofile/userprofile/userprofile/account/registration_done.html:9
-msgid "You have successfully registered a new account. Go to the"
-msgstr "你已經成功"
+#: templates/userprofile/account/registration_done.html:10
+msgid ""
+"You have successfully registered a new account, and an account activation "
+"url has been sent to your e-mail address. You must access this message on "
+"your e-mail account to finish the registration process."
+msgstr ""
 
-#: templates/userprofile/account/registration_done.html:9
-#: templates/userprofile/userprofile/account/registration_done.html:9
-#: templates/userprofile/userprofile/userprofile/account/registration_done.html:9
-msgid "login page"
-msgstr "登入頁面"
+#: templates/userprofile/account/registration_done.html:13
+#, python-format
+msgid ""
+"You have successfully registered a new account. Go to the <a href=\"%"
+"(overview_url)s\">login page</a> to authenticate and start using this site."
+msgstr ""
 
-#: templates/userprofile/account/registration_done.html:9
-#: templates/userprofile/userprofile/account/registration_done.html:9
-#: templates/userprofile/userprofile/userprofile/account/registration_done.html:9
-msgid "to authenticate and start using this site"
-msgstr "驗證並且開始使用這個網站"
+#: templates/userprofile/account/includes/registration_form.html:23
+msgid "Register"
+msgstr "註冊"
 
 #: templates/userprofile/avatar/choose.html:4
-#: templates/userprofile/avatar/choose.html:36
-#: templates/userprofile/userprofile/avatar/choose.html:4
-#: templates/userprofile/userprofile/avatar/choose.html:36
-#: templates/userprofile/userprofile/userprofile/avatar/choose.html:4
-#: templates/userprofile/userprofile/userprofile/avatar/choose.html:36
+#: templates/userprofile/avatar/choose.html:38
 msgid "Choose the location of your avatar"
 msgstr "選擇你的圖像位置"
 
-#: templates/userprofile/avatar/choose.html:39
-#: templates/userprofile/userprofile/avatar/choose.html:39
-#: templates/userprofile/userprofile/userprofile/avatar/choose.html:39
-msgid "Select an image from disk"
-msgstr "從你的電腦挑選圖片"
-
-#: templates/userprofile/avatar/choose.html:41
-#: templates/userprofile/avatar/choose.html:47
-#: templates/userprofile/avatar/crop.html:47
-#: templates/userprofile/userprofile/avatar/choose.html:41
-#: templates/userprofile/userprofile/avatar/choose.html:47
-#: templates/userprofile/userprofile/avatar/crop.html:47
-#: templates/userprofile/userprofile/userprofile/avatar/choose.html:41
-#: templates/userprofile/userprofile/userprofile/avatar/choose.html:47
-#: templates/userprofile/userprofile/userprofile/avatar/crop.html:47
+#: templates/userprofile/avatar/choose.html:43
+#: templates/userprofile/avatar/choose.html:49
+#: templates/userprofile/avatar/crop.html:36
 msgid "Done"
 msgstr "完成"
 
-#: templates/userprofile/avatar/choose.html:45
-#: templates/userprofile/userprofile/avatar/choose.html:45
-#: templates/userprofile/userprofile/userprofile/avatar/choose.html:45
-msgid ""
-"Select an image from a remote URL. Put the URL on the input below and we'll "
-"retrieve the image for you"
-msgstr ""
-"從網路上挑選圖片. 只要把圖片的網址填入下面欄位, 我們會為你保存圖片"
+#: templates/userprofile/avatar/choose.html:54
+msgid "Search on Picasa Web"
+msgstr "在Picasa Web上搜尋"
 
-#: templates/userprofile/avatar/choose.html:52
-#: templates/userprofile/avatar/search.html:4
-#: templates/userprofile/avatar/search.html:28
-#: templates/userprofile/userprofile/avatar/choose.html:52
-#: templates/userprofile/userprofile/avatar/search.html:4
-#: templates/userprofile/userprofile/avatar/search.html:28
-#: templates/userprofile/userprofile/userprofile/avatar/choose.html:52
-#: templates/userprofile/userprofile/userprofile/avatar/search.html:4
-#: templates/userprofile/userprofile/userprofile/avatar/search.html:28
-msgid "Search for an image on Picasa Web"
-msgstr "從Picase Web上搜尋圖片"
+#: templates/userprofile/avatar/choose.html:57
+msgid "Search"
+msgstr "搜尋"
 
-#: templates/userprofile/avatar/choose.html:62
-#: templates/userprofile/avatar/crop.html:53
-#: templates/userprofile/avatar/done.html:19
-#: templates/userprofile/avatar/search.html:50
-#: templates/userprofile/userprofile/avatar/choose.html:62
-#: templates/userprofile/userprofile/avatar/crop.html:53
-#: templates/userprofile/userprofile/avatar/done.html:19
-#: templates/userprofile/userprofile/avatar/search.html:50
-#: templates/userprofile/userprofile/userprofile/avatar/choose.html:62
-#: templates/userprofile/userprofile/userprofile/avatar/crop.html:53
-#: templates/userprofile/userprofile/userprofile/avatar/done.html:19
-#: templates/userprofile/userprofile/userprofile/avatar/search.html:50
+#: templates/userprofile/avatar/choose.html:79
+#: templates/userprofile/avatar/crop.html:42
 msgid "Avatar selection page"
 msgstr "圖片選取頁面"
 
-#: templates/userprofile/avatar/choose.html:63
-#: templates/userprofile/avatar/crop.html:54
-#: templates/userprofile/avatar/done.html:20
-#: templates/userprofile/avatar/search.html:51
-#: templates/userprofile/userprofile/avatar/choose.html:63
-#: templates/userprofile/userprofile/avatar/crop.html:54
-#: templates/userprofile/userprofile/avatar/done.html:20
-#: templates/userprofile/userprofile/avatar/search.html:51
-#: templates/userprofile/userprofile/userprofile/avatar/choose.html:63
-#: templates/userprofile/userprofile/userprofile/avatar/crop.html:54
-#: templates/userprofile/userprofile/userprofile/avatar/done.html:20
-#: templates/userprofile/userprofile/userprofile/avatar/search.html:51
+#: templates/userprofile/avatar/choose.html:80
+#: templates/userprofile/avatar/crop.html:43
 msgid ""
 "You have several options to select the image you want as avatar on your "
 "profile"
-msgstr ""
-"你有幾個方法選擇圖片作為你的個人圖像"
+msgstr "你有幾個方法選擇圖片作為你的個人圖像"
 
-#: templates/userprofile/avatar/choose.html:69
-#: templates/userprofile/userprofile/avatar/choose.html:69
-#: templates/userprofile/userprofile/userprofile/avatar/choose.html:69
+#: templates/userprofile/avatar/choose.html:86
 msgid "Delete"
 msgstr "刪除"
 
 #: templates/userprofile/avatar/crop.html:4
-#: templates/userprofile/avatar/crop.html:31
-#: templates/userprofile/userprofile/avatar/crop.html:4
-#: templates/userprofile/userprofile/avatar/crop.html:31
-#: templates/userprofile/userprofile/userprofile/avatar/crop.html:4
-#: templates/userprofile/userprofile/userprofile/avatar/crop.html:31
+#: templates/userprofile/avatar/crop.html:20
 msgid "Crop &amp; resize the area you want"
 msgstr "裁剪並縮放你想要的區域"
 
-#: templates/userprofile/avatar/done.html:4
-#: templates/userprofile/userprofile/avatar/done.html:4
-#: templates/userprofile/userprofile/userprofile/avatar/done.html:4
-msgid "Avatar selection finished"
-msgstr "完成圖像選擇"
-
-#: templates/userprofile/avatar/done.html:13
-#: templates/userprofile/userprofile/avatar/done.html:13
-#: templates/userprofile/userprofile/userprofile/avatar/done.html:13
-msgid "Your new avatar has been saved successfully."
-msgstr "你的新圖像已經儲存成功"
-
-#: templates/userprofile/avatar/search.html:29
-#: templates/userprofile/userprofile/avatar/search.html:29
-#: templates/userprofile/userprofile/userprofile/avatar/search.html:29
-msgid "Search on Picasa Web"
-msgstr "在Picasa Web上搜尋"
-
-#: templates/userprofile/avatar/search.html:32
-#: templates/userprofile/userprofile/avatar/search.html:32
-#: templates/userprofile/userprofile/userprofile/avatar/search.html:32
-msgid "Search"
-msgstr "搜尋"
-
 #: templates/userprofile/profile/delete.html:4
-#: templates/userprofile/userprofile/profile/delete.html:4
-#: templates/userprofile/userprofile/userprofile/profile/delete.html:4
 msgid "Delete personal information"
 msgstr "刪除個人資訊"
 
 #: templates/userprofile/profile/delete.html:14
-#: templates/userprofile/profile/delete_done.html:18
-#: templates/userprofile/userprofile/profile/delete.html:14
-#: templates/userprofile/userprofile/profile/delete_done.html:18
-#: templates/userprofile/userprofile/userprofile/profile/delete.html:14
-#: templates/userprofile/userprofile/userprofile/profile/delete_done.html:18
 msgid "Delete your personal information"
 msgstr "刪除你的個人資訊"
 
 #: templates/userprofile/profile/delete.html:15
-#: templates/userprofile/userprofile/profile/delete.html:15
-#: templates/userprofile/userprofile/userprofile/profile/delete.html:15
 msgid "Are you sure?"
 msgstr "你確定嗎?"
 
 #: templates/userprofile/profile/delete.html:15
-#: templates/userprofile/userprofile/profile/delete.html:15
-#: templates/userprofile/userprofile/userprofile/profile/delete.html:15
 msgid "Yes"
 msgstr ""
 
 #: templates/userprofile/profile/delete.html:23
-#: templates/userprofile/userprofile/profile/delete.html:23
-#: templates/userprofile/userprofile/userprofile/profile/delete.html:23
 msgid ""
 "It erases all your private data except your username. You can refill the "
 "information later if you want to"
-msgstr ""
-"刪除你所有的資訊除了你的使用者名稱,"
-"你可以在任何時候重新填寫你的資訊"
-
-#: templates/userprofile/profile/delete_done.html:4
-#: templates/userprofile/userprofile/profile/delete_done.html:4
-#: templates/userprofile/userprofile/userprofile/profile/delete_done.html:4
-msgid "Profile removed"
-msgstr "個人資訊已經被移除"
-
-#: templates/userprofile/profile/delete_done.html:13
-#: templates/userprofile/userprofile/profile/delete_done.html:13
-#: templates/userprofile/userprofile/userprofile/profile/delete_done.html:13
-msgid "Your profile information has been removed successfully."
-msgstr "你的個人資訊已經成功的被移除了"
-
-#: templates/userprofile/profile/delete_done.html:19
-#: templates/userprofile/userprofile/profile/delete_done.html:19
-#: templates/userprofile/userprofile/userprofile/profile/delete_done.html:19
-msgid ""
-"Deleting all your personal information will erase all your private data, "
-"except your username. You can refill the information later if you want to"
-msgstr ""
-"刪除所有你的個人資訊將會清除你所有的個人資料除了你的使用者名稱"
-"你可以在任何時候重新填寫你的資訊"
+msgstr "刪除你所有的資訊除了你的使用者名稱,你可以在任何時候重新填寫你的資訊"
 
 #: templates/userprofile/profile/location.html:4
-#: templates/userprofile/profile/location_done.html:4
-#: templates/userprofile/profile/personal_done.html:4
-#: templates/userprofile/userprofile/profile/location.html:4
-#: templates/userprofile/userprofile/profile/location_done.html:4
-#: templates/userprofile/userprofile/profile/personal_done.html:4
-#: templates/userprofile/userprofile/userprofile/profile/location.html:4
-#: templates/userprofile/userprofile/userprofile/profile/location_done.html:4
-#: templates/userprofile/userprofile/userprofile/profile/personal_done.html:4
 #, python-format
 msgid "%(user)s's Dashboard"
 msgstr "%(user)s's的看板"
 
 #: templates/userprofile/profile/location.html:21
-#: templates/userprofile/userprofile/profile/location.html:21
-#: templates/userprofile/userprofile/userprofile/profile/location.html:21
 msgid "Define your location"
 msgstr "定義你的地區"
+
+#: templates/userprofile/profile/location.html:21
+#, fuzzy
+msgid "Auto-discover location"
+msgstr "加入位置"
 
 #: templates/userprofile/profile/location.html:22
 #: templates/userprofile/profile/overview.html:51
 #: templates/userprofile/profile/public.html:35
-#: templates/userprofile/userprofile/profile/location.html:22
-#: templates/userprofile/userprofile/profile/overview.html:51
-#: templates/userprofile/userprofile/profile/public.html:35
-#: templates/userprofile/userprofile/userprofile/profile/location.html:22
-#: templates/userprofile/userprofile/userprofile/profile/overview.html:51
-#: templates/userprofile/userprofile/userprofile/profile/public.html:35
 msgid "Country"
 msgstr "國家"
 
-#: templates/userprofile/profile/location.html:28
-#: templates/userprofile/userprofile/profile/location.html:28
-#: templates/userprofile/userprofile/userprofile/profile/location.html:28
+#: templates/userprofile/profile/location.html:22
+msgid "Loading..."
+msgstr ""
+
+#: templates/userprofile/profile/location.html:26
+#, fuzzy
+msgid "Location:"
+msgstr "地區"
+
+#: templates/userprofile/profile/location.html:27
 msgid "Position"
 msgstr "位置"
 
 #: templates/userprofile/profile/location.html:35
-#: templates/userprofile/userprofile/profile/location.html:35
-#: templates/userprofile/userprofile/userprofile/profile/location.html:35
+#: templates/userprofile/profile/personal.html:30
 msgid "Save"
 msgstr "儲存"
 
 #: templates/userprofile/profile/location.html:40
-#: templates/userprofile/profile/location_done.html:19
-#: templates/userprofile/userprofile/profile/location.html:40
-#: templates/userprofile/userprofile/profile/location_done.html:19
-#: templates/userprofile/userprofile/userprofile/profile/location.html:40
-#: templates/userprofile/userprofile/userprofile/profile/location_done.html:19
 msgid "Location information"
 msgstr "地區資訊"
 
 #: templates/userprofile/profile/location.html:41
-#: templates/userprofile/profile/location_done.html:20
-#: templates/userprofile/userprofile/profile/location.html:41
-#: templates/userprofile/userprofile/profile/location_done.html:20
-#: templates/userprofile/userprofile/userprofile/profile/location.html:41
-#: templates/userprofile/userprofile/userprofile/profile/location_done.html:20
 msgid "Define your location information"
 msgstr "定義你的地區資訊"
 
-#: templates/userprofile/profile/location_done.html:13
-#: templates/userprofile/profile/personal_done.html:13
-#: templates/userprofile/userprofile/profile/location_done.html:13
-#: templates/userprofile/userprofile/profile/personal_done.html:13
-#: templates/userprofile/userprofile/userprofile/profile/location_done.html:13
-#: templates/userprofile/userprofile/userprofile/profile/personal_done.html:13
-msgid "Your profile information has been updated successfully."
-msgstr "你的個人資訊已經成功的被更新了"
-
 #: templates/userprofile/profile/overview.html:4
 #: templates/userprofile/profile/overview.html:32
-#: templates/userprofile/userprofile/profile/overview.html:4
-#: templates/userprofile/userprofile/profile/overview.html:32
-#: templates/userprofile/userprofile/userprofile/profile/overview.html:4
-#: templates/userprofile/userprofile/userprofile/profile/overview.html:32
 msgid "Overview of your profile"
 msgstr "你的個人資訊概要"
 
 #: templates/userprofile/profile/overview.html:37
-#: templates/userprofile/userprofile/profile/overview.html:37
-#: templates/userprofile/userprofile/userprofile/profile/overview.html:37
 msgid "Change avatar"
 msgstr "更改圖像"
 
 #: templates/userprofile/profile/overview.html:37
-#: templates/userprofile/userprofile/profile/overview.html:37
-#: templates/userprofile/userprofile/userprofile/profile/overview.html:37
 msgid "Add avatar"
 msgstr "加入圖像"
 
 #: templates/userprofile/profile/overview.html:41
-#: templates/userprofile/userprofile/profile/overview.html:41
-#: templates/userprofile/userprofile/userprofile/profile/overview.html:41
 msgid "Username:"
 msgstr "使用者名稱:"
 
 #: templates/userprofile/profile/overview.html:42
-#: templates/userprofile/userprofile/profile/overview.html:42
-#: templates/userprofile/userprofile/userprofile/profile/overview.html:42
 msgid "E-mail:"
 msgstr ""
 
 #: templates/userprofile/profile/overview.html:44
-#: templates/userprofile/userprofile/profile/overview.html:44
-#: templates/userprofile/userprofile/userprofile/profile/overview.html:44
 msgid "Not set yet"
 msgstr "還沒設定"
 
 #: templates/userprofile/profile/overview.html:46
-#: templates/userprofile/userprofile/profile/overview.html:46
-#: templates/userprofile/userprofile/userprofile/profile/overview.html:46
 msgid " (Not validated)"
 msgstr " (尚未驗證)"
 
 #: templates/userprofile/profile/overview.html:55
 #: templates/userprofile/profile/overview.html:64
-#: templates/userprofile/userprofile/profile/overview.html:55
-#: templates/userprofile/userprofile/profile/overview.html:64
-#: templates/userprofile/userprofile/userprofile/profile/overview.html:55
-#: templates/userprofile/userprofile/userprofile/profile/overview.html:64
+#: templates/userprofile/profile/overview.html:73
 msgid "Not set"
 msgstr "未設定"
 
-#: templates/userprofile/profile/overview.html:82
-#: templates/userprofile/userprofile/profile/overview.html:82
-#: templates/userprofile/userprofile/userprofile/profile/overview.html:82
+#: templates/userprofile/profile/overview.html:91
 msgid "Management:"
 msgstr "管理:"
 
-#: templates/userprofile/profile/overview.html:83
-#: templates/userprofile/userprofile/profile/overview.html:83
-#: templates/userprofile/userprofile/userprofile/profile/overview.html:83
+#: templates/userprofile/profile/overview.html:92
 msgid "Change password"
 msgstr "更改密碼"
 
-#: templates/userprofile/profile/overview.html:85
-#: templates/userprofile/userprofile/profile/overview.html:85
-#: templates/userprofile/userprofile/userprofile/profile/overview.html:85
+#: templates/userprofile/profile/overview.html:94
 msgid "Change your e-mail address"
 msgstr "更改e-mail地址"
 
-#: templates/userprofile/profile/overview.html:85
-#: templates/userprofile/userprofile/profile/overview.html:85
-#: templates/userprofile/userprofile/userprofile/profile/overview.html:85
+#: templates/userprofile/profile/overview.html:94
 msgid "Add your e-mail address"
 msgstr "加入你的e-mail地址"
 
-#: templates/userprofile/profile/overview.html:86
-#: templates/userprofile/userprofile/profile/overview.html:86
-#: templates/userprofile/userprofile/userprofile/profile/overview.html:86
-msgid "Resend validation e-mail"
-msgstr "重新寄出驗證信"
-
-#: templates/userprofile/profile/overview.html:90
-#: templates/userprofile/userprofile/profile/overview.html:90
-#: templates/userprofile/userprofile/userprofile/profile/overview.html:90
+#: templates/userprofile/profile/overview.html:99
 msgid "Add location"
 msgstr "加入位置"
 
-#: templates/userprofile/profile/overview.html:92
-#: templates/userprofile/userprofile/profile/overview.html:92
-#: templates/userprofile/userprofile/userprofile/profile/overview.html:92
+#: templates/userprofile/profile/overview.html:101
 msgid "Change location"
 msgstr "更改位置"
 
 #: templates/userprofile/profile/personal.html:4
 #: templates/userprofile/profile/personal.html:27
-#: templates/userprofile/userprofile/profile/personal.html:4
-#: templates/userprofile/userprofile/profile/personal.html:27
-#: templates/userprofile/userprofile/userprofile/profile/personal.html:4
-#: templates/userprofile/userprofile/userprofile/profile/personal.html:27
 msgid "Edit your personal information"
 msgstr "編輯你的個人資訊"
 
-#: templates/userprofile/profile/personal.html:35
-#: templates/userprofile/profile/personal_done.html:20
-#: templates/userprofile/userprofile/profile/personal.html:35
-#: templates/userprofile/userprofile/profile/personal_done.html:20
-#: templates/userprofile/userprofile/userprofile/profile/personal.html:35
-#: templates/userprofile/userprofile/userprofile/profile/personal_done.html:20
+#: templates/userprofile/profile/personal.html:37
 msgid "Insert some information about you"
 msgstr "加入一些關於你的資訊"
 
 #: templates/userprofile/profile/public.html:27
-#: templates/userprofile/userprofile/profile/public.html:27
-#: templates/userprofile/userprofile/userprofile/profile/public.html:27
 #, python-format
 msgid "Public profile of %(user)s"
 msgstr "%(user)s公開的個人資訊"
 
-#: templates/userprofile/profile/usercard.html:12
-#: templates/userprofile/userprofile/profile/usercard.html:12
-#: templates/userprofile/userprofile/userprofile/profile/usercard.html:12
-msgid "Public profile information"
-msgstr "公開的個人資訊"
-
-#: templatetags/avatars.py:68
+#: templatetags/avatars.py:103
 msgid ""
 "You have to provide only the size as             an integer (both sides will "
 "be equal) and optionally, the             username."
-msgstr ""
-"你的大小必須是整數而且左右兩邊等長"
+msgstr "你的大小必須是整數而且左右兩邊等長"
 
-#: templates/userprofile/email/validation.txt
-msgid "Your username, in case you've forgotten:"
-msgstr "如果你忘記你的使用者名稱的話, 這是你的使用者名稱: "
+#~ msgid "Password (again)"
+#~ msgstr "確認密碼"
 
-#: templates/userprofile/email/validation.txt
-msgid ""
-"You're receiving this e-mail because you requested an e-mail validation at "
-msgstr ""
-"你收到的這封信是因為你做了e-mail驗證的請求"
+#~ msgid ""
+#~ "That username has invalid characters. The valid values are letters, "
+#~ "numbers and underscore."
+#~ msgstr "使用者名稱含有不法字元, 只能接受英文字母, 數字, _(下底線)"
 
-#: templates/userprofile/email/validation.txt
-msgid "Following this link, you will validate your e-mail address:"
-msgstr "透過下面這個連結, 可以驗證你的信箱:"
+#~ msgid "The username is already registered."
+#~ msgstr "這個使用者名稱已經被註冊過了"
 
-#: templates/userprofile/email/password_reset_email.txt
-msgid "You're receiving this e-mail because you requested a password reset"
-msgstr "你收到的這封信是因為你做了重設密碼的請求"
+#~ msgid "The passwords inserted are different."
+#~ msgstr "你的密碼不一致"
 
-#: templates/userprofile/email/password_reset_email.txt
-msgid "for your user account at %(site_name)s"
-msgstr "你在%(site_name)s的使用者帳號"
+#~ msgid "You have successfully registered a new account. Go to the"
+#~ msgstr "你已經成功"
 
-#: templates/userprofile/email/password_reset_email.txt
-msgid "Thanks for using our site!"
-msgstr "感謝你使用本站"
+#~ msgid "login page"
+#~ msgstr "登入頁面"
 
-msgid "Please go to the following page and choose a new password:"
-msgstr "請到下面的頁面並且選擇一個新的密碼:"
+#~ msgid "to authenticate and start using this site"
+#~ msgstr "驗證並且開始使用這個網站"
 
-msgid "Email validation for %(site_name)s"
-msgstr "%(site_name)s的e-mail驗證"
+#~ msgid "Search for an image on Picasa Web"
+#~ msgstr "從Picase Web上搜尋圖片"
+
+#~ msgid "Avatar selection finished"
+#~ msgstr "完成圖像選擇"
+
+#~ msgid "Profile removed"
+#~ msgstr "個人資訊已經被移除"
+
+#~ msgid ""
+#~ "Deleting all your personal information will erase all your private data, "
+#~ "except your username. You can refill the information later if you want to"
+#~ msgstr ""
+#~ "刪除所有你的個人資訊將會清除你所有的個人資料除了你的使用者名稱你可以在任何"
+#~ "時候重新填寫你的資訊"
+
+#~ msgid "Public profile information"
+#~ msgstr "公開的個人資訊"
+
+#~ msgid "Your username, in case you've forgotten:"
+#~ msgstr "如果你忘記你的使用者名稱的話, 這是你的使用者名稱: "
+
+#~ msgid ""
+#~ "You're receiving this e-mail because you requested an e-mail validation "
+#~ "at "
+#~ msgstr "你收到的這封信是因為你做了e-mail驗證的請求"
+
+#~ msgid "Following this link, you will validate your e-mail address:"
+#~ msgstr "透過下面這個連結, 可以驗證你的信箱:"
+
+#~ msgid "You're receiving this e-mail because you requested a password reset"
+#~ msgstr "你收到的這封信是因為你做了重設密碼的請求"
+
+#~ msgid "for your user account at %(site_name)s"
+#~ msgstr "你在%(site_name)s的使用者帳號"
+
+#~ msgid "Thanks for using our site!"
+#~ msgstr "感謝你使用本站"
+
+#~ msgid "Please go to the following page and choose a new password:"
+#~ msgstr "請到下面的頁面並且選擇一個新的密碼:"
+
+#~ msgid "Email validation for %(site_name)s"
+#~ msgstr "%(site_name)s的e-mail驗證"

@@ -91,7 +91,7 @@ class AvatarCropForm(forms.Form):
     def clean(self):
         if self.cleaned_data.get('right') and self.cleaned_data.get('left') and \
            int(self.cleaned_data.get('right')) - int(self.cleaned_data.get('left')) < MIN_AVATAR_SIZE:
-            raise forms.ValidationError(_("You must select a portion of the image with a minimum of %dx%d pixels." % (MIN_AVATAR_SIZE, MIN_AVATAR_SIZE)))
+            raise forms.ValidationError(_("You must select a portion of the image with a minimum of %(min_avatar_size)dx%(min_avatar_size)d pixels.") % { 'min_avatar_size': MIN_AVATAR_SIZE })
 
         return self.cleaned_data
 

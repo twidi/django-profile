@@ -238,19 +238,22 @@ def avatarchoose(request):
             form = AvatarForm(request.POST, request.FILES)
             if form.is_valid():
                 image = form.cleaned_data.get('url') or form.cleaned_data.get('photo')
-                thumb = Image.open(ContentFile(image.read()))
-                thumb.thumbnail((480, 480), Image.ANTIALIAS)
-                if thumb.mode not in ('L', 'RGB'):
-                    thumb = thumb.convert("RGB")
-                f = StringIO()
-                thumb.save(f, "JPEG")
-                f.seek(0)
-                avatar = Avatar(user=request.user, image="", valid=False)
-                avatar.image.save("%s.jpg" % request.user.username, ContentFile(f.read()))
-                avatar.save()
+                try:
+                    thumb = Image.open(ContentFile(image.read()))
+                except:
+                    messages.error(request, _("This image can't be used as an avatar"))
+                else:
+                    thumb.thumbnail((480, 480), Image.ANTIALIAS)
+                    f = StringIO()
+                    thumb.save(f, thumb.format)
+                    f.seek(0)
+                    avatar = Avatar(user=request.user, image="", valid=False)
+                    file_ext = image.content_type.split("/")[1] # "image/gif" => "gif"
+                    avatar.image.save("%s.%s" % (request.user.username, file_ext), ContentFile(f.read()))
+                    avatar.save()
 
-                signal_responses = signals.post_signal.send(sender=avatarchoose, request=request, form=form)
-                return signals.last_response(signal_responses) or HttpResponseRedirect(reverse("profile_avatar_crop"))
+                    signal_responses = signals.post_signal.send(sender=avatarchoose, request=request, form=form)
+                    return signals.last_response(signal_responses) or HttpResponseRedirect(reverse("profile_avatar_crop"))
 
     else:
         form = AvatarForm()
@@ -265,7 +268,7 @@ def avatarchoose(request):
 
     template = "userprofile/avatar/choose.html"
     data = { 'generic': generic, 'form': form, "images": images,
-             'AVATAR_WEBSEARCH': AVATAR_WEBSEARCH, 'section': 'avatar', 
+             'AVATAR_WEBSEARCH': AVATAR_WEBSEARCH, 'section': 'avatar',
              'DEFAULT_AVATAR_SIZE': DEFAULT_AVATAR_SIZE, 'MIN_AVATAR_SIZE': MIN_AVATAR_SIZE }
     signals.context_signal.send(sender=avatarchoose, request=request, context=data)
     return render_to_response(template, data, context_instance=RequestContext(request))
@@ -302,15 +305,14 @@ def avatarcrop(request):
 
             box = [ left, top, right, bottom ]
             image = image.crop(box)
-            if image.mode not in ('L', 'RGB'):
-                image = image.convert('RGB')
 
             if hasattr(settings, "AWS_SECRET_ACCESS_KEY"):
                 f = StringIO()
-                image.save(f, "JPEG")
+                image.save(f, image.format)
                 f.seek(0)
                 avatar.image.delete()
-                avatar.image.save("%s.jpg" % request.user.username, ContentFile(f.read()))
+                file_ext = image.content_type.split("/")[1] # "image/gif" => "gif"
+                avatar.image.save("%s.%s" % (request.user.username, file_ext), ContentFile(f.read()))
             else:
                 image.save(avatar.image.path)
 
