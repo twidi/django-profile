@@ -1312,7 +1312,7 @@ msgstr "Réinitilisation du mot de passe"
 
 #: templates/userprofile/account/password_reset.html:31
 msgid "Reset my password"
-msgstr "Réinialisation du mot de passe"
+msgstr "Réinitialisation du mot de passe"
 
 #: templates/userprofile/account/password_reset.html:37
 #: templates/userprofile/account/password_reset_done.html:16
