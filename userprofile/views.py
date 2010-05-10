@@ -31,6 +31,7 @@ import os
 from userprofile import signals
 import copy
 from django.contrib import messages
+from django.utils.encoding import iri_to_uri
 
 if hasattr(settings, "AWS_SECRET_ACCESS_KEY"):
     from backends.S3Storage import S3Storage
@@ -228,7 +229,7 @@ def avatarchoose(request):
     if request.method == "POST":
         form = AvatarForm()
         if request.POST.get('keyword'):
-            keyword = str(request.POST.get('keyword'))
+            keyword = iri_to_uri(request.POST.get('keyword'))
             gd_client = gdata.photos.service.PhotosService()
             feed = gd_client.SearchCommunityPhotos(query = "%s&thumbsize=72c" % keyword.split(" ")[0], limit='48')
             for entry in feed.entry:
@@ -350,7 +351,7 @@ def email_validation_process(request, key):
     else:
         successful = False
 
-    signal_responses = signals.post_signal.send(sender=email_validation_process, request=request, extra={'key': key})
+    signal_responses = signals.post_signal.send(sender=email_validation_process, request=request, extra={'key': key, 'successful': successful})
     last_reponse = signals.last_response(signal_responses)
     if last_reponse:
         return last_response
