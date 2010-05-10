@@ -138,8 +138,8 @@ def personal(request):
             form.save()
             messages.success(request, _("Your profile information has been updated successfully."), fail_silently=True)
             signal_responses = signals.post_signal.send(sender=personal, request=request, form=form, extra={'old_profile':old_profile})
-            last_reponse = signals.last_response(signal_responses)
-            if last_reponse:
+            last_response = signals.last_response(signal_responses)
+            if last_response:
                 return last_response
     else:
         form = ProfileForm(instance=profile)
@@ -174,8 +174,8 @@ def location(request):
             messages.success(request, _("Your profile information has been updated successfully."), fail_silently=True)
 
             signal_responses = signals.post_signal.send(sender=location, request=request, form=form)
-            last_reponse = signals.last_response(signal_responses)
-            if last_reponse:
+            last_response = signals.last_response(signal_responses)
+            if last_response:
                 return last_response
 
     else:
@@ -352,8 +352,8 @@ def email_validation_process(request, key):
         successful = False
 
     signal_responses = signals.post_signal.send(sender=email_validation_process, request=request, extra={'key': key, 'successful': successful})
-    last_reponse = signals.last_response(signal_responses)
-    if last_reponse:
+    last_response = signals.last_response(signal_responses)
+    if last_response:
         return last_response
 
     template = "userprofile/account/email_validation_done.html"
