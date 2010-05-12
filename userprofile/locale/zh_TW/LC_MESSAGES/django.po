@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-29 23:20+0200\n"
+"POT-Creation-Date: 2010-05-12 21:00+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Wei-Chia Chiu <chiu.wei.jia@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1040,19 +1040,19 @@ msgstr "%s的圖像"
 msgid "Email validation process for %(user)s"
 msgstr "%(user)s的e-mail驗證程序"
 
-#: views.py:138 views.py:173
+#: views.py:139 views.py:174
 msgid "Your profile information has been updated successfully."
 msgstr "你的個人資訊已經成功的被更新了"
 
-#: views.py:207
+#: views.py:208
 msgid "Your profile information has been removed successfully."
 msgstr "你的個人資訊已經成功的被移除了"
 
-#: views.py:244
+#: views.py:245
 msgid "This image can't be used as an avatar"
 msgstr ""
 
-#: views.py:321
+#: views.py:322
 msgid "Your new avatar has been saved successfully."
 msgstr "你的新圖像已經儲存成功"
 
@@ -1433,6 +1433,51 @@ msgstr "刪除"
 msgid "Crop &amp; resize the area you want"
 msgstr "裁剪並縮放你想要的區域"
 
+#: templates/userprofile/email/password_reset_email.txt:2
+msgid "You're receiving this e-mail because you requested a password reset"
+msgstr "你收到的這封信是因為你做了重設密碼的請求"
+
+#: templates/userprofile/email/password_reset_email.txt:3
+#, python-format
+msgid "for your user account at %(site_name)s"
+msgstr "你在%(site_name)s的使用者帳號"
+
+#: templates/userprofile/email/password_reset_email.txt:5
+msgid "Please go to the following page and choose a new password:"
+msgstr "請到下面的頁面並且選擇一個新的密碼:"
+
+#: templates/userprofile/email/password_reset_email.txt:9
+#: templates/userprofile/email/validation.txt:8
+msgid "Your username, in case you've forgotten:"
+msgstr "如果你忘記你的使用者名稱的話, 這是你的使用者名稱: "
+
+#: templates/userprofile/email/password_reset_email.txt:11
+#: templates/userprofile/email/validation.txt:10
+msgid "Thanks for using our site!"
+msgstr "感謝你使用本站"
+
+#: templates/userprofile/email/password_reset_email.txt:13
+#: templates/userprofile/email/validation.txt:12
+#, python-format
+msgid "The %(site_name)s team"
+msgstr ""
+
+#: templates/userprofile/email/validation.txt:2
+#, fuzzy, python-format
+msgid ""
+"You're receiving this e-mail because you requested an e-mail validation at %"
+"(site_name)s"
+msgstr "你收到的這封信是因為你做了e-mail驗證的請求"
+
+#: templates/userprofile/email/validation.txt:4
+msgid "Following this link, you will validate your e-mail address:"
+msgstr "透過下面這個連結, 可以驗證你的信箱:"
+
+#: templates/userprofile/email/validation_subject.txt:1
+#, python-format
+msgid "Email validation for %(site_name)s"
+msgstr "%(site_name)s的e-mail驗證"
+
 #: templates/userprofile/profile/delete.html:4
 msgid "Delete personal information"
 msgstr "刪除個人資訊"
@@ -1574,7 +1619,7 @@ msgstr "加入一些關於你的資訊"
 msgid "Public profile of %(user)s"
 msgstr "%(user)s公開的個人資訊"
 
-#: templatetags/avatars.py:103
+#: templatetags/avatars.py:102
 msgid ""
 "You have to provide only the size as             an integer (both sides will "
 "be equal) and optionally, the             username."
@@ -1621,29 +1666,3 @@ msgstr "你的大小必須是整數而且左右兩邊等長"
 
 #~ msgid "Public profile information"
 #~ msgstr "公開的個人資訊"
-
-#~ msgid "Your username, in case you've forgotten:"
-#~ msgstr "如果你忘記你的使用者名稱的話, 這是你的使用者名稱: "
-
-#~ msgid ""
-#~ "You're receiving this e-mail because you requested an e-mail validation "
-#~ "at "
-#~ msgstr "你收到的這封信是因為你做了e-mail驗證的請求"
-
-#~ msgid "Following this link, you will validate your e-mail address:"
-#~ msgstr "透過下面這個連結, 可以驗證你的信箱:"
-
-#~ msgid "You're receiving this e-mail because you requested a password reset"
-#~ msgstr "你收到的這封信是因為你做了重設密碼的請求"
-
-#~ msgid "for your user account at %(site_name)s"
-#~ msgstr "你在%(site_name)s的使用者帳號"
-
-#~ msgid "Thanks for using our site!"
-#~ msgstr "感謝你使用本站"
-
-#~ msgid "Please go to the following page and choose a new password:"
-#~ msgstr "請到下面的頁面並且選擇一個新的密碼:"
-
-#~ msgid "Email validation for %(site_name)s"
-#~ msgstr "%(site_name)s的e-mail驗證"
