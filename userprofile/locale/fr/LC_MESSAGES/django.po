@@ -1488,21 +1488,21 @@ msgid "The %(site_name)s team"
 msgstr "L'équipe de %(site_name)s"
 
 #: templates/userprofile/email/validation.txt:2
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "You're receiving this e-mail because you requested an e-mail validation at %"
 "(site_name)s"
 msgstr ""
-"Vous recevez ce mail suite à une requête de modification d'adresse mail"
+"Vous recevez ce mail suite à une requête de modification d'adresse mail sur %(site_name)s"
 
 #: templates/userprofile/email/validation.txt:4
 msgid "Following this link, you will validate your e-mail address:"
 msgstr "En suivant ce lien, vous validrez votre adresse mail :"
 
 #: templates/userprofile/email/validation_subject.txt:1
-#, fuzzy, python-format
+#, python-format
 msgid "Email validation for %(site_name)s"
-msgstr "Validation de l'adresse mail de %(user)s"
+msgstr "Validation de l'adresse mail sur %(site_name)s"
 
 #: templates/userprofile/profile/delete.html:4
 msgid "Delete personal information"
