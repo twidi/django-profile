@@ -22,7 +22,7 @@
 {% endblock %}
 
 {% block userprofile_content %}
-	<form class="personal" action="{% url profile_edit_personnal %}" method="post" enctype="multipart/form-data">{% csrf_token %}
+	<form class="personal" action="{% url profile_edit_personal %}" method="post" enctype="multipart/form-data">{% csrf_token %}
 	<fieldset>
 		<legend>{% trans "Edit your personal information" %}</legend>
 		{{ form.as_p }}
