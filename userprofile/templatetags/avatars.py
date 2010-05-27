@@ -83,7 +83,7 @@ class ResizedThumbnailNode(Node):
         if not storage.exists(filename):
             thumb = Image.open(ContentFile(avatar.read()))
             img_format = thumb.format
-            if thumb.size[0] > size or thumb.size[1] > size or not hasattr(thumb, 'resize'):
+            if not getattr(settings, 'CAN_ENLARGE_AVATAR', True ) or (thumb.size[0] > size or thumb.size[1] > size or not hasattr(thumb, 'resize')):
                 thumb.thumbnail((size, size), Image.ANTIALIAS)
             else:
                 thumb = thumb.resize((size, size), Image.BICUBIC)
