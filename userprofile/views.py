@@ -6,7 +6,8 @@ from django.utils.translation import ugettext as _
 from userprofile.forms import AvatarForm, AvatarCropForm, EmailValidationForm, \
                               ProfileForm, _RegistrationForm, LocationForm, \
                               ResendEmailValidationForm, PublicFieldsForm
-from userprofile.models import BaseProfile, DEFAULT_AVATAR_SIZE, MIN_AVATAR_SIZE, DEFAULT_AVATAR
+from userprofile.models import BaseProfile, DEFAULT_AVATAR_SIZE, MIN_AVATAR_SIZE, \
+        SAVE_IMG_PARAMS, DEFAULT_AVATAR
 from django.http import Http404
 from django.core.exceptions import ObjectDoesNotExist
 from django.core.exceptions import ImproperlyConfigured
@@ -246,7 +247,11 @@ def avatarchoose(request):
                 else:
                     thumb.thumbnail((480, 480), Image.ANTIALIAS)
                     f = StringIO()
-                    thumb.save(f, thumb.format)
+                    save_img_params = SAVE_IMG_PARAMS.get(thumb.format, {})
+                    try:
+                        thumb.save(f, thumb.format, **SAVE_IMG_PARAMS.get(thumb.format, {}))
+                    except:
+                        thumb.save(f, thumb.format)
                     f.seek(0)
                     avatar = Avatar(user=request.user, image="", valid=False)
                     file_ext = image.content_type.split("/")[1] # "image/gif" => "gif"

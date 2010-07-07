@@ -3,7 +3,8 @@ from django.template import Library, Node, Template, TemplateSyntaxError, \
                             Variable
 from django.utils.translation import ugettext as _
 from userprofile.models import Avatar, AVATAR_SIZES, S3BackendNotFound, \
-        DEFAULT_AVATAR_SIZE, DEFAULT_AVATAR, DEFAULT_AVATAR_FOR_INACTIVES_USER
+        DEFAULT_AVATAR_SIZE, DEFAULT_AVATAR, DEFAULT_AVATAR_FOR_INACTIVES_USER, \
+        SAVE_IMG_PARAMS
 from django.contrib.auth.models import User
 from django.core.files.base import ContentFile
 import urllib
@@ -88,7 +89,10 @@ class ResizedThumbnailNode(Node):
             else:
                 thumb = thumb.resize((size, size), Image.BICUBIC)
             f = StringIO()
-            thumb.save(f, img_format)
+            try:
+                thumb.save(f, img_format, **SAVE_IMG_PARAMS.get(img_format, {}))
+            except:
+                thumb.save(f, img_format)
             f.seek(0)
             storage.save(filename, ContentFile(f.read()))
 

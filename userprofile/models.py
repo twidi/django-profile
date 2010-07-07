@@ -35,6 +35,9 @@ if DEFAULT_AVATAR_SIZE not in AVATAR_SIZES:
 MIN_AVATAR_SIZE = getattr(settings, 'MIN_AVATAR_SIZE', DEFAULT_AVATAR_SIZE)
 DEFAULT_AVATAR = getattr(settings, 'DEFAULT_AVATAR', os.path.join(settings.MEDIA_ROOT, "userprofile", "generic.jpg"))
 DEFAULT_AVATAR_FOR_INACTIVES_USER = getattr(settings, 'DEFAULT_AVATAR_FOR_INACTIVES_USER', False)
+# params to pass to the save method in PIL (dict with formats (JPEG, PNG, GIF...) as keys)
+# see http://www.pythonware.com/library/pil/handbook/format-jpeg.htm and format-png.htm for options
+SAVE_IMG_PARAMS = getattr(settings, 'SAVE_IMG_PARAMS', {})
 
 class BaseProfile(models.Model):
     """
