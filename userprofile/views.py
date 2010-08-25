@@ -255,6 +255,8 @@ def avatarchoose(request):
                     f.seek(0)
                     avatar = Avatar(user=request.user, image="", valid=False)
                     file_ext = image.content_type.split("/")[1] # "image/gif" => "gif"
+                    if file_ext == 'pjpeg':
+                        file_ext = 'jpeg'
                     avatar.image.save("%s.%s" % (request.user.username, file_ext), ContentFile(f.read()))
                     avatar.save()
 
@@ -318,6 +320,8 @@ def avatarcrop(request):
                 f.seek(0)
                 avatar.image.delete()
                 file_ext = image.content_type.split("/")[1] # "image/gif" => "gif"
+                if file_ext == 'pjpeg':
+                    file_ext = 'jpeg'
                 avatar.image.save("%s.%s" % (request.user.username, file_ext), ContentFile(f.read()))
             else:
                 image.save(avatar.image.path)
